@@ -1,0 +1,51 @@
+/**
+ * @file
+ * Visual styles for Base+'s event content type.
+ */
+.node--view-mode-full.node--type-event .node__date {
+  width: 100px;
+  background-color: var(--mt-color-base);
+  color: var(--mt-color-accent);
+  padding: 0.5rem 0;
+  margin-bottom: 1.875rem;
+  display: inline-block;
+}
+.node--view-mode-full.node--type-event .node__date--sameday {
+  width: 7.5rem;
+}
+.node--view-mode-full.node--type-event .node__date-day {
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+.node--view-mode-full.node--type-event .node__date-month {
+  font-size: 1.875rem;
+  line-height: 1.5;
+  margin-top: -0.25rem;
+}
+.node--view-mode-full.node--type-event .node__date-time {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  opacity: 0.85;
+}
+.node--view-mode-full.node--type-event .block-field-blocknodeeventfield-event__date {
+  float: left;
+  margin-right: 1.5rem;
+}
+.node--view-mode-full.node--type-event .block-field-blocknodeeventfield-event__location-name {
+  display: inline-block;
+}
+.node--view-mode-full.node--type-event .field--name-field-event__location-name {
+  font-size: 1.8rem;
+  line-height: 1.2;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.node--view-mode-full.node--type-event .field--name-field-geofield {
+  margin-top: 2.25rem;
+  margin-bottom: 2.25rem;
+}
+.node--view-mode-full.node--type-event .field--name-field-event__link {
+  margin-top: 2.25rem;
+  margin-bottom: 2.25rem;
+}

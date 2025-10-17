@@ -1,0 +1,55 @@
+/**
+ * @file
+ * Visual styles for Base+'s background video block.
+ */
+.container-fluid .field--mt-background-video {
+  margin: 0 -15px;
+}
+.field--mt-background-video .block {
+  padding-bottom: 25px;
+  position: relative;
+}
+.region--no-paddings .field--mt-background-video .block {
+  padding-bottom: 0;
+}
+.container .container {
+  padding-left: 0;
+  padding-right: 0;
+  width: auto;
+}
+.container .container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+.background-video-block__section {
+  position: relative;
+  padding: 90px 0;
+  overflow: hidden;
+}
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  height: auto;
+  width: auto;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-attachment: scroll;
+  background-size: cover;
+  display: block;
+}
+.background-video-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.background-video-block__section .background-video-overlay + .container,
+.background-video-block__section .background-video-overlay + .container-fluid {
+  background-color: transparent;
+}

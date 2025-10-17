@@ -1,0 +1,128 @@
+/**
+ * @file
+ * Visual styles for mt_highlight paragraphs type in Base+.
+ */
+ .field--name-field-mt-prd-highlight {
+  padding-top: 30px;
+}
+.field--type-entity-reference-revisions > .field__item {
+  clear: both;
+}
+.field--type-entity-reference-revisions > .field__item:last-child:after {
+  clear: both;
+  display: table;
+  content: " ";
+}
+
+/*view modes: teaser, default*/
+.paragraph--type--mt-highlight.paragraph--view-mode--mt-teaser,
+.paragraph--type--mt-highlight.paragraph--view-mode--default {
+  padding: 1.8em 0 4.5em;
+}
+.field__item:last-child > .paragraph--type--mt-highlight.paragraph--view-mode--mt-teaser,
+.field__item:last-child > .paragraph--type--mt-highlight.paragraph--view-mode--default {
+  padding: 1.8em 0;
+}
+.paragraph--view-mode--mt-teaser .field--name-field-mt-highlight-title,
+.paragraph--view-mode--default .field--name-field-mt-highlight-title {
+  font-size: 28px;
+  line-height: 1.20;
+  font-weight: 800;
+  padding-bottom: 20px;
+  color: var(--mt-color-high-contrast);
+}
+@media (min-width: 992px) {
+  .paragraph--view-mode--mt-teaser .field--name-field-mt-highlight-title,
+  .paragraph--view-mode--default .field--name-field-mt-highlight-title {
+    font-size: 48px;
+  }
+}
+.paragraph--view-mode--mt-teaser .field--name-field-mt-highlight-body,
+.paragraph--view-mode--default .field--name-field-mt-highlight-body {
+  font-size: 20px;
+  padding-bottom: 20px;
+}
+.paragraph--view-mode--mt-teaser .field__item .field--name-field-mt-highlight-body:after,
+.paragraph--view-mode--default .field__item .field--name-field-mt-highlight-body:after {
+  clear: none;
+}
+.paragraph--view-mode--mt-teaser .field--name-field-mt-highlight-link,
+.paragraph--view-mode--default .field--name-field-mt-highlight-link {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+@media (max-width: 767px) {
+  .paragraph--view-mode--mt-teaser .field--name-field-mt-highlight-title,
+  .paragraph--view-mode--default .field--name-field-mt-highlight-title {
+    padding-top: 20px;
+  }
+}
+@media (min-width: 768px) {
+  .field__item:nth-child(odd) .mt-highlight-image-wrapper {
+    -ms-flex-order: 2;
+    order: 2;
+    padding-left: 1rem;
+  }
+  .field__item:nth-child(odd) .mt-highlight-image-wrapper + .col-md-6 {
+    padding-right: 1rem;
+  }
+  .field__item:nth-child(even) .mt-highlight-image-wrapper {
+    padding-right: 1rem;
+  }
+  .field__item:nth-child(even) .mt-highlight-image-wrapper + .col-md-6 {
+    padding-left: 1rem;
+  }
+  .field__item:nth-child(even) .field--name-field-mt-highlight-link {
+    text-align: right;
+  }
+}
+@media (min-width: 992px) {
+  .field__item:nth-child(odd) .mt-highlight-image-wrapper {
+    padding-left: 3rem;
+  }
+  .field__item:nth-child(odd) .mt-highlight-image-wrapper + .col-md-6 {
+    padding-right: 3rem;
+  }
+  .field__item:nth-child(even) .mt-highlight-image-wrapper {
+    padding-right: 3rem;
+  }
+  .field__item:nth-child(even) .mt-highlight-image-wrapper + .col-md-6 {
+    padding-left: 3rem;
+  }
+}
+
+/*view modes: teaser-tile */
+.paragraph--view-mode--mt-teaser-tile.paragraph--type--mt-highlight .field--name-field-mt-highlight-image {
+  margin-bottom: 25px;
+  position: relative;
+  box-shadow: 0 1px 2px rgb(64 64 64 / 31%), 0 1px 4px rgb(64 64 64 / 26%);
+}
+.paragraph--view-mode--mt-teaser-tile.paragraph--type--mt-highlight .field--name-field-mt-highlight-title {
+  font-size: 24px;
+  margin-bottom: 5px;
+  line-height: 1.2;
+  color: var(--mt-color-high-contrast);
+}
+.paragraph--view-mode--mt-teaser-tile.paragraph--type--mt-highlight.mt-image-fit-contain .field--name-field-mt-highlight-image {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+}
+.paragraph--view-mode--mt-teaser-tile.paragraph--type--mt-highlight.mt-image-fit-contain .field--name-field-mt-highlight-image .overlay-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+.paragraph--view-mode--mt-teaser-tile.paragraph--type--mt-highlight.mt-image-fit-contain .field--name-field-mt-highlight-image img {
+  object-fit: contain;
+  position: absolute;
+  top: 0;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+}
+.field__item:nth-child(even) .paragraph--view-mode--mt-teaser-tile.paragraph--type--mt-highlight .field--name-field-mt-highlight-link {
+  text-align: left;
+}

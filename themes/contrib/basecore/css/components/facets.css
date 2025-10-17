@@ -1,0 +1,106 @@
+/**
+ * @file
+ * Visual styles for Base+'s facets.
+ */
+ .block-facets .facet-block-title {
+  position: relative;
+  margin-bottom: 20px;
+  cursor: pointer;
+  padding-left: 1.8rem;
+}
+.block-facets .facet-block-title[aria-expanded="false"]:after {
+  transform: rotate(-90deg);
+}
+.block-facets .facet-block-title:after {
+  position: absolute;
+  left: 5px;
+  top: 6px;
+  font-size: 14px;
+  line-height: 1;
+  content: "\f078";
+  display: inline-block;
+  vertical-align: middle;
+  font-family: 'Font Awesome 5 Free', 'Font Awesome 5 Pro';
+  font-weight: 900;
+  -webkit-transition: all linear .2s;
+  -moz-transition: all linear .2s;
+  -o-transition: all linear .2s;
+  -ms-transition: all linear .2s;
+  transition: all linear .2s;
+}
+.block-facets .facet-block-title:before {
+  background-color: transparent !important;
+}
+.facets-widget-checkbox ul {
+  margin: 0;
+  padding: 0;
+}
+.facets-widget-checkbox ul li {
+  list-style: none;
+}
+.facets-widget-checkbox [type="checkbox"] {
+  position: absolute;
+  left: -9999px;
+  visibility: hidden;
+}
+.facets-widget-checkbox [type="checkbox"] + label {
+  position: relative;
+  display: inline-block;
+  padding-left: 30px;
+  line-height: 20px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  margin-bottom: 10px;
+}
+.facets-widget-checkbox [type="checkbox"] + label:after {
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  content: '';
+  -webkit-transition: all linear .2s;
+  -moz-transition: all linear .2s;
+  -o-transition: all linear .2s;
+  -ms-transition: all linear .2s;
+  transition: all linear .2s;
+}
+.facets-widget-checkbox [type="checkbox"]:not(:checked) + label:after {
+  top: 0px;
+  z-index: 0;
+  width: 20px;
+  height: 20px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--mt-form-border);
+  background-color: transparent;
+}
+.facets-widget-checkbox [type="checkbox"]:checked + label:after,
+.facets-widget-checkbox .facet-item--active-trail > [type="checkbox"] + label:after,
+.facets-widget-checkbox [type="checkbox"]:hover + label:after {
+  top: 0px;
+  z-index: 0;
+  width: 20px;
+  height: 20px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--mt-form-border);
+  background-color: var(--mt-color-primary);
+}
+.facets-widget-checkbox [type="checkbox"] + label:before {
+  content: '';
+  top: 2px;
+  left: 4px;
+  width: 5px;
+  height: 10px;
+  border-width: 0px;
+  border-style: solid;
+  border-color: transparent;
+  transform: rotateZ(37deg);
+  transform-origin: 100% 100%;
+  position: absolute;
+  z-index: 1;
+  margin-top: 2px;
+}
+.facets-widget-checkbox [type="checkbox"]:checked + label:before {
+  border-width: 1px;
+  border-color: transparent var(--mt-color-base) var(--mt-color-base) transparent;
+}

@@ -1,0 +1,117 @@
+/**
+ * @file
+ * Visual styles for Base+'s media tabs.
+ */
+.field--name-field-mt-mdtb-subtitle {
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: -55px;
+}
+ .field--mt-media-tabs .nav-pills {
+  margin-bottom: 45px;
+}
+.mt-media-title {
+  margin-bottom: 25px;
+}
+.mt-media-title h3 {
+  font-size: 50px;
+}
+.mt-media-body {
+  margin-bottom: 15px;
+}
+.nav-tabs.nav-tabs--enriched li a {
+  border-left: 0;
+  border-right: 0;    
+}
+.field--name-field-mt-mdtb-tab ul {
+  display: flex;
+}
+.field--name-field-mt-mdtb-tab ul li {
+  min-width: 250px;
+  flex-grow: 1;
+}
+.nav-tabs.nav-tabs--enriched {
+  border-bottom-width: 0;
+}
+.nav-tabs.nav-tabs--enriched a.nav-link {
+  font-size: 18px;
+  font-weight: 500;
+  width: 100%;
+  margin-left: 0;
+  display: block!important;
+  text-align: center;
+}
+.mt-style-vertical .nav-tabs.nav-tabs--enriched a.nav-link {
+  text-align: left;
+}
+.nav-tabs.nav-tabs--enriched li > a.nav-link {
+  border-bottom-color: var(--mt-color-secondary-light) !important;
+}
+.nav-tabs.nav-tabs--enriched li > a.nav-link.active,
+.nav-tabs.nav-tabs--enriched li > a.nav-link:hover  {
+  border-bottom-color: var(--mt-color-secondary) !important;
+}
+.mt-media-tabquote {
+  background-color: rgb(244, 244, 244);
+  border-radius: 12px;
+  padding: 32px;
+}
+.mt-media-tabquote p {
+  font-size: 14px;
+}
+.mt-tab-quote-footer p {
+  padding: 0;
+}
+.mt-tab-quote-footer {
+  display: flex;
+  align-items: end;
+}
+.mt-tab-quote-footer h5 {
+  font-size: 14px;
+  font-weight: 600;  
+}
+.mt-tab-quote-footer img {
+  margin-right: 15px;
+}
+.mt-tabquote-logo {
+  align-self: flex-end;
+  margin-left: auto;
+}
+.mt-tabquote-logo img {
+  max-width: 90px;
+}
+@media (max-width:498px) {
+  .mt-tabquote-logo img {
+      display: none;
+  }
+}
+.field--name-field-mt-mdtb-tab li a.active {
+  border-bottom-color: var(--mt-color-danger)!important;
+}
+.mt-style-vertical .nav-tabs.nav-tabs--enriched ~ .tab-content {
+  padding-top: 0;
+}
+.mt-style-vertical .nav-tabs.nav-tabs--enriched a.nav-link {
+  padding-top: 30px;
+  padding-bottom: 28px;
+}
+.mt-style-vertical .nav-tabs.nav-tabs--enriched a.nav-link p {
+  font-size: 14px;
+  padding-top: 18px;
+  padding-bottom: 0;
+}
+.field--mt-media-tabs li a::before {   
+  font: var(--fa-font-solid);
+  padding-right: 1.5rem;
+  font-size: 24px;
+  content: "\f00c";
+}
+.field--mt-media-tabs li:nth-child(1) a::before {   
+  content: "\f007";
+}
+.field--mt-media-tabs li:nth-child(2) a::before {   
+  content: "\f1ea";
+}
+.field--mt-media-tabs li:nth-child(3) a::before {   
+  content: "\f6e3";
+}

@@ -1,0 +1,58 @@
+.mt-layout--label--hero {
+  background-color: var(--mt-color-tint);
+}
+.hero {
+  min-height: 80vh;
+  align-items: center;
+  display: flex;
+  padding: 0;
+}
+.mt-layout--label--services {
+  padding: 7rem 0;
+}
+.service-card {
+  padding: 0 2rem;
+  border: none;
+  transition: transform 0.3s ease;
+}
+.service-card:hover {
+  transform: translateY(-5px);
+}
+.service-card p {
+  margin-top: 0;
+}
+.mt-layout--label--stay-updated {
+  padding: 7rem 0;
+}
+.newsletter-form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+.form-control {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--mt-form-border);
+}
+.form-control .mt-button,
+.form-control .btn {
+  padding: 0.9rem 2rem;
+}
+.mt-layout--label--testimonials {
+  background-color: var(--mt-color-accent);
+  padding: 9rem 0;
+}
+.testimonial-card .testimonial-text {
+  font-size: 1.1rem;
+  font-weight: 300;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+.testimonial-card .testimonial-author {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  font-size: 1.5rem;
+}
+.testimonial-card .testimonial-position {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0;
+}

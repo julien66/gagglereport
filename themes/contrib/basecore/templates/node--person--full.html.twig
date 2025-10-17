@@ -1,0 +1,49 @@
+{% extends "node.html.twig" %}
+{#
+/**
+ * @file
+ * Base+'s theme implementation to display a Person node.
+ */
+#}
+
+{% block content %}
+  {{ attach_library('basecore/node-person') }}
+  <div class="row content">
+    {% if content.field_featured_image|render and page %}
+      <div class="col-lg-6">
+    {% elseif content.field_featured_image|render and not page %}
+      <div class="col-lg-8">
+    {% else %}
+      <div class="col-sm-12">
+    {% endif %}
+      {{ content.field_content }}
+      {% if (content.field_person__role_job_title|render or content.field_person__phone_number|render or content.field_person__email|render) %}
+        <ul class="list-unstyled">
+          {% if content.field_person__role_job_title|render %}
+            <li class="pb-4">
+              {{ content.field_person__role_job_title }}
+            </li>
+          {% endif %}
+          {% if content.field_person__phone_number|render %}
+            <li class="pb-4">
+              {{ content.field_person__phone_number }}
+            </li>
+          {% endif %}
+          {% if content.field_person__email|render %}
+            <li class="pb-4">
+              {{ content.field_person__email }}
+            </li>
+          {% endif %}
+        </ul>
+      {% endif %}
+    </div>
+    {% if content.field_featured_image|render %}
+      <div class="{{ (page) ? 'col-lg-6' : 'col-lg-4' }}">
+        <div class="photo-container">
+          {{ content.field_featured_image }}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+  {{ content|without('field_featured_image','field_person__role_job_title','field_person__phone_number','field_person__email','field_content') }}
+{% endblock %}

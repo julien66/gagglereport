@@ -1,0 +1,51 @@
+/**
+ * @file
+ * Visual styles for Base+'s collapsible block.
+ */
+.container-fluid .field--mt-collapsible {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.field--mt-collapsible.trigger-icon-enabled {
+  padding: 30px 0;
+}
+.region .block:last-child:first-child .field--mt-collapsible.trigger-icon-enabled {
+  padding: 0;
+}
+.collapsible-block__trigger {
+  text-align: center;
+}
+.collapsible-block__trigger a {
+  display: inline-block;
+  z-index: 99;
+  padding: 10px 40px;
+  border-radius: 5px 5px 0 0;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 15px;
+}
+.collapsible-block__trigger-bottom a {
+  border-radius: 0 0 5px 5px;
+}
+.collapsible-block__trigger-bar .collapsible-block-icon {
+  margin-left: 5px;
+}
+.collapsible-block__trigger-icon .collapsible-block-icon {
+  font-size: 16px;
+  width: 100%;
+  height: 100%;
+  line-height: 1;
+  text-align: center;
+}
+.collapsible-block__expand-icon {
+  display: none;
+}
+.collapsible-block__collapse-icon {
+  display: inline-block;
+}
+.collapsed .collapsible-block__expand-icon {
+  display: inline-block;
+}
+.collapsed .collapsible-block__collapse-icon {
+  display: none;
+}

@@ -1,0 +1,11 @@
+// Build the css variables as they won't work if prefixed with .ck-content.
+@import './variables_bootstrap';
+@import './variables_drupal';
+
+// Include parent Bootstrap 5 theme.
+@import '../dist/bootstrap/5.3.8/scss/functions';
+@import '../dist/bootstrap/5.3.8/scss/variables';
+@import '../dist/bootstrap/5.3.8/scss/variables-dark';
+@import '../dist/bootstrap/5.3.8/scss/maps';
+@import '../dist/bootstrap/5.3.8/scss/mixins';
+@import '../dist/bootstrap/5.3.8/scss/root';

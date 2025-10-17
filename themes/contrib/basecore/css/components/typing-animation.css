@@ -1,0 +1,24 @@
+/**
+ * @file
+ * Visual styles for typing animation block in Base+.
+ */
+.typing-animation-container {
+  padding: 160px 0 160px;
+}
+.typing-animation-container h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+  display: inline-block;
+  padding: 0 10px;
+}
+.typing-animation-container .typed {
+  min-height: 55px;
+  font-size: 32px;
+  display: inline-block;
+  padding: 0 10px;
+}
+.typing-animation-container .typed-cursor {
+  font-size: 46px;
+  min-height: 55px;
+  line-height: 1;
+}

@@ -1,0 +1,81 @@
+/**
+ * @file
+ * Visual styles for Base+'s node in teaser tile view.
+ */
+.node--view-mode-mt-teaser-tile-video {
+  margin-bottom: 60px;
+}
+.node--view-mode-mt-teaser-tile-video .node__header {
+  padding-bottom: 0;
+}
+.node--view-mode-mt-teaser-tile-video .field--name-field-mt-pst-video {
+  margin-bottom: 15px;
+}
+.node--view-mode-mt-teaser-tile-video .field--entity-reference-target-type-taxonomy-term,
+.node--view-mode-mt-teaser-tile-video .field--entity-reference-target-type-taxonomy-term.field__item {
+  margin: 0 0 5px;
+  padding: 0;
+  display: inline-block;
+}
+.node--view-mode-mt-teaser-tile-video .field--entity-reference-target-type-taxonomy-term:before,
+.node--view-mode-mt-teaser-tile-video .field--entity-reference-target-type-taxonomy-term.field__item:before {
+  content: "";
+}
+.node--view-mode-mt-teaser-tile-video .field--entity-reference-target-type-taxonomy-term .field__item a,
+.node--view-mode-mt-teaser-tile-video .field--entity-reference-target-type-taxonomy-term.field__item a {
+  font-size: 14px;
+}
+.node--type-mt-product.node--view-mode-mt-teaser-tile-video .field--entity-reference-target-type-taxonomy-term .field__item a,
+.node--type-mt-product.node--view-mode-mt-teaser-tile-video .field--entity-reference-target-type-taxonomy-term.field__item a {
+  background-color: #ffffff;
+  color: #707070;
+}
+.node--view-mode-mt-teaser-tile-video .node__meta {
+  text-transform: capitalize;
+  margin-bottom: 5px;
+}
+.node--view-mode-mt-teaser-tile-video .node__meta-item {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+.node--view-mode-mt-teaser-tile-video .node__meta-tags {
+  margin-bottom: 0;
+}
+.node--view-mode-mt-teaser-tile-video .node__meta-item:after {
+  content: "/";
+  display: inline-block;
+}
+.node--view-mode-mt-teaser-tile-video .node__meta-item:last-child:after {
+  content: "";
+}
+
+/*Visual styles for News distro*/
+.mt-style-oval .node--view-mode-mt-teaser-tile-video .videos-container a,
+.mt-style-oval .node--view-mode-mt-teaser-tile-video .video-item > a:before,
+.mt-style-oval .node--view-mode-mt-teaser-tile-video .videos-container img {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.node--view-mode-mt-teaser-tile-video .node__title,
+.node--view-mode-mt-teaser-tile-video .node__meta {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.node--view-mode-mt-teaser-tile-video.region--default-background .field--name-field-mt-pst-category a {
+  color: var(--mt-color-secondary);
+}
+.node--view-mode-mt-teaser-tile-video.region--default-background a {
+  color: var(--mt-color-accent-contrast);
+  border-color: var(--mt-color-default-contrast);
+  outline-color: var(--mt-color-default-contrast);
+}
+.node--view-mode-mt-teaser-tile-video.region--default-background a:hover {
+  color: var(--mt-color-accent-contrast);
+  text-decoration: underline;
+}
+.node--view-mode-mt-teaser-tile-video .node__meta-user {
+  display: none;
+}
+.node--type-mt-post.node--view-mode-mt-teaser-tile-video.region--default-background {
+  box-shadow: 0 1px 2px rgb(64 64 64 / 31%), 0 1px 4px rgb(64 64 64 / 26%);
+}

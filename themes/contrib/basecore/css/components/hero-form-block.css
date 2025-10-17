@@ -1,0 +1,70 @@
+/**
+ * @file
+ * Visual styles for Base+'s hero form block.
+ */
+.block-mt-hero-form > .content {
+  padding: 50px 0;
+}
+.block-mt-hero-form .field--name-field-mt-hero-form-title {
+  margin-bottom: 25px;
+  font-size: 46px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--mt-color-high-contrast);
+}
+.block-mt-hero-form .field--name-field-mt-hero-form-title .typed-cursor {
+  font-size: 53px;
+}
+@media (min-width: 992px) {
+  .block-mt-hero-form .field--name-field-mt-hero-form-title.mt-typing-animation-enabled {
+    min-height: 135px;
+  }
+}
+@media (min-width: 1200px) {
+  .block-mt-hero-form > .content {
+    padding: 80px 0;
+  }
+  .block-mt-hero-form .field--name-field-mt-hero-form-title {
+    font-size: 55px;
+  }
+}
+@media (max-width: 575px) {
+  .block-mt-hero-form .field--name-field-mt-hero-form-title {
+    font-size: 35px;
+  }
+  .block-mt-hero-form .field--name-field-mt-hero-form-title .typed-cursor {
+    font-size: 34px;
+  }
+}
+.headings-wide-spacing-enabled .block-mt-hero-form .field--name-field-mt-hero-form-title {
+  letter-spacing: var(--mt-headings-letter-spacing);
+  text-transform: uppercase;
+}
+.block-mt-hero-form .field--name-field-mt-hero-form-description {
+  margin-bottom: 15px;
+}
+@media (min-width: 1200px) {
+  .block-mt-hero-form .field--name-field-mt-hero-form-description {
+    margin-bottom: 50px;
+  }
+  .block-mt-hero-form .one-column .field--name-field-mt-hero-form-description {
+    margin-bottom: 25px;
+  }
+}
+.block-mt-hero-form .field--name-field-mt-hero-form-description p {
+  margin-bottom: 15px;
+}
+@media (min-width: 1200px) {
+  .block-mt-hero-form .field--name-field-mt-hero-form-description p {
+    margin-bottom: 25px;
+  }
+}
+.block-mt-hero-form .field--name-field-mt-hero-form-description p:last-child {
+  margin-bottom: 0;
+}
+.block-mt-hero-form .one-column .form-item label {
+  text-align: left;
+}
+.block-mt-hero-form .webform-button--submit {
+  width: 100%;
+}

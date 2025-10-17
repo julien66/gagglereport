@@ -1,0 +1,28 @@
+/**
+ * @file
+ * Visual styles for Base+'s person content type.
+ */
+.node--type-person .node__header {
+  padding: 0;
+}
+@media (max-width: 575px) {
+  .mt-style-sharp.mt-style-image-global .node--type-person .field.field--name-field-featured-image,
+  .mt-style-image-sharp .node--type-person .field.field--name-field-featured-image {
+    margin: 0 -15px 20px;
+  }
+}
+.node--type-person.node--view-mode-full .layout {
+  margin-bottom: 1rem;
+}
+.node--type-person.node--view-mode-full .field--name-field-featured-image img {
+  width: 100%;
+}
+.node--type-person.node--view-mode-full .field--name-field-person__role-job-title {
+  margin-top: 1.1rem;
+}
+.node--type-person.node--view-mode-full .field--type-telephone {
+  font-size: 1.2rem;
+}
+.node--type-person.node--view-mode-full .field--type-email {
+  font-size: 1.2rem;
+}

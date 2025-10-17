@@ -1,0 +1,63 @@
+/* Rate widget thumbsupdown CSS */
+
+.thumbsupdown-rating-wrapper {
+  display: inline;
+  padding: 0;
+}
+
+div.thumbsupdown > form > table > tbody > tr.rating-table-tr {
+  border: none;
+}
+
+div.thumbsupdown > form > table > tbody > tr > td.rating-table-td {
+  padding: 0;
+  border: none;
+}
+
+div.thumbsupdown-rating-wrapper > div.form-type-radio {
+  display: inline;
+  padding: 0;
+}
+
+/* Default button styles, override in widget settings */
+div.thumbsupdown-rating-wrapper > div > label.thumbsupdown-rating-label {
+  display: inline-block;
+  padding: 0;
+}
+
+div.thumbsupdown-rating-wrapper > div > label.thumbsupdown-rating-label-up::before {
+  display: inline;
+  content: "\f087";
+  font-family: FontAwesome, serif;
+  font-size: 1.8em;
+}
+
+div.thumbsupdown-rating-wrapper > div > label.thumbsupdown-rating-label-down::before {
+  display: inline;
+  content: "\f088";
+  font-family: FontAwesome, serif;
+  font-size: 1.8em;
+}
+
+div.thumbsupdown-rating-wrapper > div > label.thumbsupdown-rating-label:hover,
+div.thumbsupdown-rating-wrapper > div > label.thumbsupdown-rating-label:active,
+div.thumbsupdown-rating-wrapper > div > label.thumbsupdown-rating-label:focus {
+  cursor: pointer;
+  color: #666;
+}
+
+div.thumbsupdown-rating-wrapper > div > div.rating-option-result {
+  display: inline;
+  padding: 5px;
+  text-align: center;
+}
+
+input.thumbsupdown-rating-input[type="radio"] {
+  display: none;
+}
+button.thumbsupdown-rating-submit {
+  display: none;
+}
+input.thumbsupdown-rating-submit {
+  display: none;
+}

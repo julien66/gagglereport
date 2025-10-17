@@ -1,0 +1,38 @@
+/**
+ * @file
+ * Visual styles for Base+'s horizontal scroll grid.
+ */
+.horizontal-scroll-grid {
+  overflow-x: scroll;
+}
+.container-fluid .horizontal-scroll-grid {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+@media (min-width: 1200px) {
+  .container-fluid .horizontal-scroll-grid {
+    margin-left: -3rem;
+    margin-right: -3rem;
+  }
+}
+.horizontal-scroll-grid-item {
+  min-width: 380px;
+  max-width: 380px;
+  position: relative;
+  margin-left: -100px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.horizontal-scroll-grid-item:first-child {
+  margin-left: 0;
+  box-shadow: none;
+}
+.horizontal-scroll-grid-item:hover + .horizontal-scroll-grid-item {
+  margin-left: 0;
+}
+.horizontal-scroll-grid-item .node--view-mode-mt-teaser-tile-image {
+  margin-bottom: 0;
+}

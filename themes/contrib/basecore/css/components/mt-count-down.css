@@ -1,0 +1,334 @@
+/**
+ * @file
+ * Visual styles for Base+'s mt-count-down module.
+ */
+.mt-count-down-theme.mt-count-down-inject .mt-count-down__button {
+  text-decoration: none;
+}
+.mt-count-down {
+  padding: 20px 0;
+  margin: 0;
+  border-radius: 0;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #cdcdcd;
+}
+.mt-count-down__title {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+}
+.mt-count-down__message {
+  font-size: 15px;
+  padding-bottom: 0;
+  font-weight: 500;
+}
+.mt-count-down__button {
+  font-size: 15px;
+  font-weight: 500;
+  padding: 15px 40px;
+  text-decoration: none;
+  display: inline-block;
+  line-height: 1;
+  border-width: 2px;
+  border-style: solid;
+  margin: 0;
+  text-align: center;
+  background-color: transparent;
+}
+.mt-count-down__button:hover {
+  text-decoration: none;
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .mt-count-down__title {
+    font-size: 24px;
+  }
+  .mt-count-down__message {
+    font-size: 12px;
+  }
+  .mt-count-down__button {
+    font-size: 14px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .mt-count-down__button {
+    margin-top: 10px;
+  }
+}
+@media (max-width: 767px) {
+  .mt-count-down__title,
+  .mt-count-down__message {
+    text-align: center;
+  }
+  .mt-count-down__button {
+    margin-top: 20px;
+  }
+}
+.mt-count-down .mt-count-down__daysto {
+  text-align: left;
+}
+.mt-count-down__hint {
+  font-size: 12px;
+}
+.mt-count-down__daysto .mt-time {
+  display: inline-block;
+  text-align: center;
+  margin: 0 5px 0 0;
+}
+.mt-count-down__daysto .mt-count-down__notes {
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 5px;
+  display: block;
+}
+.mt-count-down__daysto .mt-count,
+.mt-count-down__daysto .mt-label {
+  display: inline;
+}
+.mt-count-down__daysto .mt-count {
+  font-size: 15px;
+  line-height: 1.2;
+  font-weight: 700;
+  display: inline-block;
+  min-width: 23px;
+}
+.mt-count-down__daysto .mt-label {
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  .mt-count-down__daysto .mt-time {
+    margin: 0 10px 0 0;
+  }
+  .mt-count-down__daysto .mt-count {
+    font-size: 22px;
+    min-width: 0
+  }
+  .mt-count-down__daysto .mt-label {
+    font-size: 10px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .mt-count-down__daysto .mt-time {
+    margin: 0 3px;
+  }
+  .mt-count-down__daysto .mt-count {
+    font-size: 16px;
+    min-width: 0;
+  }
+  .mt-count-down__daysto .mt-label {
+    font-size: 10px;
+  }
+}
+@media (max-width: 767px) {
+  .mt-count-down__daysto > span {
+    margin-top: 20px;
+    display: block;
+  }
+  .mt-count-down__daysto .mt-count {
+    display: block;
+  }
+  .mt-count-down__daysto .mt-count-down__notes {
+    text-align: center;
+  }
+  .mt-count-down .mt-count-down-slot {
+    -ms-flex-pack: distribute!important;
+    justify-content: space-around!important;
+    display: -ms-flexbox!important;
+    display: flex!important;
+  }
+}
+.mt-count-down.alert button.close {
+  top: 10px;
+  right: 20px;
+}
+@media (max-width: 575px) {
+  .mt-count-down.alert button.close {
+    top: 50%;
+    right: 0px;
+    position: absolute;
+    height: 50px;
+    padding: 0 10px 0 20px;
+    z-index: 1;
+    margin-top: -25px;
+  }
+}
+
+/*count down block*/
+.mt-count-down.mt-count-down-block,
+.mt-count-down.mt-count-down-block .mt-count-down__daysto {
+  text-align: left;
+}
+.col-12 .mt-count-down.mt-count-down-block,
+.col-12 .mt-count-down.mt-count-down-block .mt-count-down__daysto {
+  text-align: center;
+}
+.mt-count-down-block .mt-count-down__button {
+  font-size: 15px;
+  font-weight: 400;
+  padding: 13px 30px 13px;
+  text-decoration: none;
+  display: inline-block;
+  line-height: 1;
+  border-width: 2px;
+  border-style: solid;
+  border-color: transparent;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.mt-count-down-block .mt-count-down__title {
+  margin-bottom: 20px;
+  font-size: 36px;
+  font-weight: 400;
+}
+.mt-count-down-block .mt-count-down__message {
+  margin-bottom: 20px;
+  font-size: 20px;
+  position: relative;
+}
+.mt-count-down-block .mt-count-down__message:after {
+  content: "";
+  width: 230px;
+  height: 2px;
+  position: absolute;
+  left: 50%;
+  top: auto;
+  margin-left: -115px;
+  bottom: -20px;
+}
+.region--default-background .mt-count-down-block .mt-count-down__message:after {
+  background-color: var(--mt-color-default-contrast);
+}
+.region--bright-background .mt-count-down-block .mt-count-down__message:after {
+  background-color: var(--mt-color-bright-contrast);
+}
+.region--pattern .mt-count-down-block .mt-count-down__message:after {
+  background-color: var(--mt-color-pattern-contrast);
+}
+.region--accent-background .mt-count-down-block .mt-count-down__message:after {
+  background-color: var(--mt-color-accent-contrast);
+}
+.region--tint-background .mt-count-down-block .mt-count-down__message:after {
+  background-color: var(--mt-color-tint-contrast);
+}
+.region--shade-background .mt-count-down-block .mt-count-down__message:after {
+  background-color: var(--mt-color-shade-contrast);
+}
+.region--colored-background .mt-count-down-block .mt-count-down__message:after {
+  background-color: var(--mt-color-colored-contrast);
+}
+.region--dark-colored-background .mt-count-down-block .mt-count-down__message:after {
+  background-color: var(--mt-color-dark-colored-contrast);
+}
+.region--dark-background .mt-count-down-block .mt-count-down__message:after {
+  background-color: var(--mt-color-dark-contrast);
+}
+.mt-count-down-block .mt-count-down__daysto {
+  margin: 0 0 20px 0;
+}
+.mt-count-down-block .mt-count-down__title + .mt-count-down__daysto,
+.mt-count-down-block .mt-count-down__message + .mt-count-down__daysto {
+  margin-top: 20px;
+}
+.col-12 .mt-count-down-block {
+  padding: 140px 0;
+}
+.col-12 .block .mt-count-down-block {
+  padding: 10px 0 80px;
+}
+.col-12 .mt-count-down-block .mt-count-down__title {
+  font-size: 44px;
+}
+.col-12 .mt-count-down-block .mt-count-down__daysto {
+  padding: 10px 0 0;
+}
+.col-12 .mt-count-down-block .mt-count-down__notes {
+  font-size: 18px;
+  margin-bottom: 15px;
+  display: block;
+}
+.col-12 .mt-count-down-block .mt-count {
+  font-size: 44px;
+  font-weight: 700;
+  padding: 30px 5px;
+  width: 90px;
+  text-align: right;
+}
+.col-12 .mt-count-down-block .mt-label {
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+@media (min-width: 992px) {
+  .col-12 .mt-count-down-block .mt-count-down__title {
+    font-size: 60px;
+  }
+  .mt-count-down-block .mt-count-down__message {
+    font-size: 24px;
+  }
+  .col-12 .mt-count-down-block .mt-count {
+    font-size: 60px;
+    width: 120px;
+  }
+}
+@media (max-width: 575px) {
+  .col-12 .mt-count-down-block .mt-time:last-child {
+    display: none;
+  }
+}
+
+/* Color overrides of injectg element */
+.mt-count-down-theme.mt-count-down-inject {
+  /*color: #ffffff;*/
+}
+.mt-count-down-inject.mt-count-down-theme {
+  /*background-color: #2a2a2a;*/
+}
+.mt-count-down-theme.mt-count-down-inject .mt-count-down__notes,
+.mt-count-down-theme.mt-count-down-inject .mt-count-down__message,
+.mt-count-down-theme.mt-count-down-inject .mt-count-down__title,
+.mt-count-down-theme.mt-count-down-inject .mt-count-down__daysto,
+.mt-count-down-theme.mt-count-down-inject .mt-label {
+  /*color: #ffffff;*/
+}
+.mt-count-down-theme.mt-count-down-inject .mt-count-down__message {
+  /*color: #bdbdbd;*/
+}
+.mt-count-down-theme.mt-count-down-inject .mt-count-down__button {
+/*  color: #ffffff;
+  background-color: transparent;*/
+}
+.mt-count-down-inject.mt-count-down-theme .mt-count-down__button:hover,
+.mt-count-down-inject.mt-count-down-theme .mt-count-down__button:focus {
+  /*background-color: #ffffff;*/
+  /*color: #424242;*/
+  /*border-color: #ffffff;*/
+}
+
+/* Color overrides of block element */
+.mt-count-down-theme.mt-count-down-block {
+  /*background-color: transparent;*/
+}
+.mt-count-down-block.mt-count-down-theme .mt-count-down__button {
+  /*color: #ffffff;*/
+}
+.mt-count-down-block.mt-count-down-theme .mt-count-down__button:hover,
+.mt-count-down-block.mt-count-down-theme .mt-count-down__button:focus {
+  /*background-color: #ffffff;*/
+  /*color: #424242;*/
+  /*border-color: #ffffff;*/
+}
+.mt-count-down-block .mt-count-down__button {
+  /*background-color: transparent;*/
+}

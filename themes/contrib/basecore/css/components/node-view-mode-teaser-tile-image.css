@@ -1,0 +1,131 @@
+/**
+ * @file
+ * Visual styles for Press+'s node in teaser tile view.
+ */
+.node--view-mode-mt-teaser-tile-image {
+  margin-bottom: 30px;
+  box-shadow: 0 1px 2px rgb(64 64 64 / 31%), 0 1px 4px rgb(64 64 64 / 26%);
+}
+.node--view-mode-mt-teaser-tile-image .teaser-tile-image-container {
+  position: relative;
+}
+.node--view-mode-mt-teaser-tile-image .teaser-tile-image-container .images-container {
+  margin-bottom: 0;
+}
+.node--view-mode-mt-teaser-tile-image .overlay--colored {
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 0;
+  opacity: 1;
+}
+.node--view-mode-mt-teaser-tile-image .teaser-tile-image-caption-top {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-transform: translateY(-10px);
+  -moz-transform: translateY(-10px);
+  -ms-transform: translateY(-10px);
+  -o-transform: translateY(-10px);
+  transform: translateY(-10px);
+  color: #ffffff;
+}
+.node--view-mode-mt-teaser-tile-image .teaser-tile-image-caption-top a {
+  color: #ffffff;
+}
+.node--view-mode-mt-teaser-tile-image .teaser-tile-image-caption-top a:hover,
+.node--view-mode-mt-teaser-tile-image .teaser-tile-image-caption-top a:focus {
+  color: #ffffff;
+}
+.node--view-mode-mt-teaser-tile-image:hover .teaser-tile-image-caption-top {
+  -webkit-transform: translateY(0px);
+  -moz-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  -o-transform: translateY(0px);
+  transform: translateY(0px);
+  opacity: 1;
+}
+.node--view-mode-mt-teaser-tile-image .teaser-tile-image-caption-bottom {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  font-size: 16px;
+  text-transform: uppercase;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-transform: translateY(10px);
+  -moz-transform: translateY(10px);
+  -ms-transform: translateY(10px);
+  -o-transform: translateY(10px);
+  transform: translateY(10px);
+  color: #ffffff;
+}
+.node--view-mode-mt-teaser-tile-image .teaser-tile-image-caption-bottom a {
+  color: #ffffff;
+}
+.node--view-mode-mt-teaser-tile-image:hover .teaser-tile-image-caption-bottom {
+  -webkit-transform: translateY(0px);
+  -moz-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  -o-transform: translateY(0px);
+  transform: translateY(0px);
+  opacity: 1;
+}
+.node--view-mode-mt-teaser-tile-image .field--entity-reference-target-type-taxonomy-term,
+.node--view-mode-mt-teaser-tile-image .field--entity-reference-target-type-taxonomy-term.field__item {
+  margin: 0;
+  padding: 0;
+}
+.node--view-mode-mt-teaser-tile-image .field--entity-reference-target-type-taxonomy-term:before,
+.node--view-mode-mt-teaser-tile-image .field--entity-reference-target-type-taxonomy-term.field__item:before {
+  content: "";
+}
+.node--view-mode-mt-teaser-tile-image .field--entity-reference-target-type-taxonomy-term .field__item a,
+.node--view-mode-mt-teaser-tile-image .field--entity-reference-target-type-taxonomy-term.field__item a {
+  font-size: 16px;
+  color: #ffffff;
+  padding: 0.1em 0.06em 0.1em 0;
+}
+.node--view-mode-mt-teaser-tile-image .field--entity-reference-target-type-taxonomy-term:not(.field--label-above)::after {
+  content: "";
+}
+.node--view-mode-mt-teaser-tile-image .node__meta {
+  text-transform: capitalize;
+}
+.node--view-mode-mt-teaser-tile-image .node__meta-item {
+  display: inline-block;
+}
+.node--view-mode-mt-teaser-tile-image .node__meta-item:after {
+  content: "/";
+}
+.node--view-mode-mt-teaser-tile-image .node__meta-item:last-child:after {
+  content: "";
+}
+.node--view-mode-mt-teaser-tile-image a.username {
+  text-transform: uppercase;
+}
+
+/* Move caption below image in mobile views */
+@media (max-width: 767px) {
+  .node--view-mode-mt-teaser-tile-image .teaser-tile-image__caption h4 {
+    font-size: 20px;
+  }
+  .node--view-mode-mt-teaser-tile-image:hover .teaser-tile-image__caption {
+    padding-bottom: 20px;
+  }
+}
+
+/* Hide category in mobile views */
+@media (max-width: 991px) {
+  .teaser-tile-image__caption .field--entity-reference-target-type-taxonomy-term {
+    display: none;
+  }
+}

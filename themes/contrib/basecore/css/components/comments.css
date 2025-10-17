@@ -1,0 +1,52 @@
+/**
+ * @file
+ * Visual styles for comments section in Base+.
+ */
+
+/*comments section*/
+.comment-wrapper h2.title {
+  padding-bottom: 15px;
+  margin: 0 0 30px 0;
+  font-size: 18px;
+  font-weight: 600;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  text-align: left;
+  border-top-width: 0;
+  padding-top: 0;
+  max-width: 100%;
+}
+.region--default-background .comment-wrapper h2.title {
+  border-bottom-color: rgba(var(--mt-color-default-contrast-value), 0.2);
+}
+.region--bright-background .comment-wrapper h2.title {
+  border-bottom-color: rgba(var(--mt-color-bright-contrast-value), 0.2);
+}
+.region--pattern .comment-wrapper h2.title {
+  border-bottom-color: rgba(var(--mt-color-pattern-contrast-value), 0.2);
+}
+.region--accent-background .comment-wrapper h2.title {
+  border-bottom-color: rgba(var(--mt-color-accent-contrast-value), 0.2);
+}
+.region--tint-background .comment-wrapper h2.title {
+  border-bottom-color: rgba(var(--mt-color-tint-contrast-value), 0.2);
+}
+.region--shade-background .comment-wrapper h2.title {
+  border-bottom-color: rgba(var(--mt-color-shade-contrast-value), 0.2);
+}
+.region--colored-background .comment-wrapper h2.title {
+  border-bottom-color: rgba(var(--mt-color-colored-contrast-value), 0.2);
+}
+.region--dark-colored-background .comment-wrapper h2.title {
+  border-bottom-color: rgba(var(--mt-color-dark-colored-contrast-value), 0.2);
+}
+.region--dark-background .comment-wrapper h2.title {
+  border-bottom-color: rgba(var(--mt-color-dark-contrast-value), 0.2);
+}
+.comment-wrapper h2.title:after {
+  width: 0;
+  height: 0;
+}
+.comment-form {
+  padding: 30px 0;
+}

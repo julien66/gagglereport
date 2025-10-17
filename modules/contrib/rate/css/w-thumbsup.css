@@ -1,0 +1,58 @@
+/* Rate widget thumbsup CSS */
+
+.thumbsup-rating-wrapper {
+  display: inline;
+  padding: 0;
+}
+
+div.thumbsup > form > table > tbody > tr.rating-table-tr {
+  border: none;
+}
+
+div.thumbsup > form > table > tbody > tr > td.rating-table-td {
+  padding: 0;
+  border: none;
+}
+
+div.thumbsup-rating-wrapper > div.form-type-radio {
+  display: inline;
+  padding: 0;
+}
+
+/* Default button styles, override in widget settings */
+div.thumbsup-rating-wrapper > div > label.thumbsup-rating-label {
+  display: inline-block;
+  padding: 0;
+}
+
+div.thumbsup-rating-wrapper > div > label.thumbsup-rating-label-up::before {
+  display: inline;
+  content: "\f087";
+  font-family: FontAwesome, serif;
+  font-size: 1.8em;
+}
+
+div.thumbsup-rating-wrapper > div > label.thumbsup-rating-label:hover,
+div.thumbsup-rating-wrapper > div > label.thumbsup-rating-label:active,
+div.thumbsup-rating-wrapper > div > label.thumbsup-rating-label:focus {
+  cursor: pointer;
+  color: #666;
+}
+
+div.thumbsup-rating-wrapper > div > div.rating-option-result {
+  display: inline;
+  padding: 5px;
+  text-align: center;
+}
+
+input.thumbsup-rating-input[type="radio"] {
+  display: none;
+}
+
+button.thumbsup-rating-submit {
+  display: none;
+}
+
+input.thumbsup-rating-submit {
+  display: none;
+}

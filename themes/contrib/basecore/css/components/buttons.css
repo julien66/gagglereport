@@ -1,0 +1,751 @@
+/**
+ * @file
+ * Styles for Base+'s buttons.
+ */
+.klaro {
+  --klaro-button-bg: var(--mt-color-primary);
+  --klaro-button-border: solid 1px var(--mt-color-primary);
+  --klaro-button-border-radius: var(--mt-button-border-radius);
+  --klaro-button-padding: 16px 33px;
+  --klaro-button-font-size: 1rem;
+  --klaro-button-font-weight: 500;
+  --klaro-button-line-height: 1.125;
+  --klaro-button-bg-hover: var(--mt-color-primary-light);
+  --klaro-button-text-color-hover: var(--mt-color-primary-contrast);
+  --klaro-button-border-hover: solid 1px var(--mt-color-primary-light);
+  --klaro-button-focus-outline: 1px solid var(--mt-color-primary-light);
+  --klaro-button-focus-outline-offset: 1px;
+  --green1: var(--mt-color-primary);
+  --green2: var(--mt-color-primary);
+  --green3: var(--mt-color-primary);
+}
+
+/* generic button */
+a.mt-button,
+.mt-button > a,
+button.mt-button,
+input[type='submit'],
+input[type='reset'],
+input[type='button'],
+.btn {
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 16px 33px;
+  text-decoration: none;
+  display: inline-block;
+  line-height: 1.125;
+  border-width: 0px;
+  border-style: solid;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  margin: 0;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+.cm-btn {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+/* commerce product tile button */
+.mt-teaser-tile-card a.mt-button,
+.mt-teaser-tile-card .mt-button > a,
+.mt-teaser-tile-card button.mt-button,
+.mt-teaser-tile-card input[type='submit'],
+.mt-teaser-tile-card input[type='reset'],
+.mt-teaser-tile-card input[type='button'] {
+  font-size: 16px;
+  padding: 12px 25px;
+}
+@media (min-width: 1200px) {
+  .col-xl-2 .mt-teaser-tile-card a.mt-button,
+  .col-xl-2 .mt-teaser-tile-card .mt-button > a,
+  .col-xl-2 .mt-teaser-tile-card button.mt-button,
+  .col-xl-2 .mt-teaser-tile-card input[type='submit'],
+  .col-xl-2 .mt-teaser-tile-card input[type='reset'],
+  .col-xl-2 .mt-teaser-tile-card input[type='button'] {
+    font-size: 16px;
+    padding: 15px 13px;
+  }
+}
+
+/* generic button hover */
+a.mt-button:hover,
+.mt-button > a:hover,
+button.mt-button:hover,
+input[type='submit']:hover,
+input[type='reset']:hover,
+input[type='button']:hover,
+.btn:hover {
+  color: var(--mt-color-primary-contrast);
+  text-decoration: none;
+}
+a.mt-button:before,
+.mt-button > a:before,
+button.mt-button:before,
+.btn:before {
+  position: absolute;
+  content: '';
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  transition: opacity 0.5s linear;
+  opacity: 0;
+}
+a.mt-button:hover:before,
+.mt-button > a:hover:before,
+button.mt-button:hover:before,
+a.btn:hover:before {
+  opacity: 1;
+}
+.region--default-background a.mt-button:hover,
+.region--default-background .mt-button > a:hover,
+.region--default-background a.btn:hover,
+.region--default-background a.mt-button:focus,
+.region--default-background .mt-button > a:focus,
+.region--default-background a.btn:focus {
+  color: var(--mt-color-primary-contrast);
+}
+.region--bright-background a.mt-button:hover,
+.region--bright-background .mt-button > a:hover,
+.region--bright-background a.btn:hover,
+.region--bright-background a.mt-button:focus,
+.region--bright-background .mt-button > a:focus,
+.region--bright-background a.btn:focus {
+  color: var(--mt-color-primary-contrast);
+}
+.region--accent-background a.mt-button:hover,
+.region--accent-background .mt-button > a:hover,
+.region--accent-background a.btn:hover,
+.region--accent-background a.mt-button:focus,
+.region--accent-background .mt-button > a:focus,
+.region--accent-background a.btn:focus {
+  color: var(--mt-color-primary-contrast);
+}
+.region--tint-background a.mt-button:hover,
+.region--tint-background .mt-button > a:hover,
+.region--tint-background a.btn:hover,
+.region--tint-background a.mt-button:focus,
+.region--tint-background .mt-button > a:focus,
+.region--tint-background a.btn:focus {
+  color: var(--mt-color-primary-contrast);
+}
+.region--shade-background a.mt-button:hover,
+.region--shade-background .mt-button > a:hover,
+.region--shade-background a.mt-button:focus,
+.region--shade-background .mt-button > a:focus,
+.region--shade-background a.btn:focus {
+  color: var(--mt-color-primary-contrast);
+}
+.region--colored-background a.mt-button:hover,
+.region--colored-background .mt-button > a:hover,
+.region--colored-background a.btn:hover,
+.region--colored-background a.mt-button:focus,
+.region--colored-background .mt-button > a:focus,
+.region--colored-background a.btn:focus {
+  color: var(--mt-color-primary-contrast);
+}
+.region--dark-colored-background a.mt-button:hover,
+.region--dark-colored-background .mt-button > a:hover,
+.region--dark-colored-background a.btn:hover,
+.region--dark-colored-background a.mt-button:focus,
+.region--dark-colored-background .mt-button > a:focus,
+.region--dark-colored-background a.btn:focus {
+  color: var(--mt-color-primary-contrast);
+}
+.region--dark-background a.mt-button:hover,
+.region--dark-background .mt-button > a:hover,
+.region--dark-background a.btn:hover,
+.region--dark-background a.mt-button:focus,
+.region--dark-background .mt-button > a:focus,
+.region--dark-background a.btn:focus {
+  color: var(--mt-color-primary-contrast);
+}
+.region--pattern a.mt-button:hover,
+.region--pattern .mt-button > a:hover,
+.region--pattern a.btn:hover,
+.region--pattern a.mt-button:focus,
+.region--pattern .mt-button > a:focus,
+.region--pattern a.btn:focus {
+  color: var(--mt-color-primary-contrast);
+}
+a.mt-button:hover:after,
+.mt-button > a:hover:after,
+button.mt-button:hover:after,
+input[type='submit']:hover:after,
+input[type='reset']:hover:after,
+input[type='button']:hover:after {
+  color: inherit;
+}
+a.mt-button:focus,
+.mt-button > a:focus,
+button.mt-button:focus,
+input[type='submit']:focus,
+input[type='reset']:focus,
+input[type='button']:focus {
+  border-width: 0px;
+  outline-width: 2px;
+  outline-style: dashed;
+}
+a.mt-button:active,
+.mt-button > a:active,
+button.mt-button:active,
+input[type='submit']:active,
+input[type='reset']:active,
+input[type='button']:active {
+  outline: none !important;
+  color: var(--mt-color-primary-contrast);
+}
+button.mt-button {
+  -webkit-appearance: none;
+}
+a.mt-button.mt-button--outline,
+.mt-button.mt-button--outline > a,
+input[type='submit'].mt-button--outline,
+input[type='reset'].mt-button--outline,
+input[type='button'].mt-button--outline {
+  background-color: transparent;
+  background: none;
+  border-width: 1px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+a.mt-button.mt-button--outline:not(:active),
+.mt-button.mt-button--outline > a:not(:active),
+input[type='submit'].mt-button--outline:not(:active),
+input[type='reset'].mt-button--outline:not(:active),
+input[type='button'].mt-button--outline:not(:active) {
+  color: unset;
+}
+a.mt-button.mt-button--outline:hover:before,
+.mt-button.mt-button--outline > a:hover:before,
+button.mt-button:hover:before {
+  opacity: 0;
+}
+.region--default-background a.mt-button.mt-button--outline,
+.region--default-background .mt-button.mt-button--outline > a,
+.region--default-background input[type='submit'].mt-button--outline,
+.region--default-background input[type='reset'].mt-button--outline,
+.region--default-background input[type='button'].mt-button--outline {
+  color: var(--mt-color-default-contrast);
+  background-color: var(--mt-color-default);
+}
+.region--default-background a.mt-button.mt-button--outline:hover,
+.region--default-background .mt-button.mt-button--outline > a:hover,
+.region--default-background input[type='submit'].mt-button--outline:hover,
+.region--default-background input[type='reset'].mt-button--outline:hover,
+.region--default-background input[type='button'].mt-button--outline:hover {
+  background-color: var(--mt-color-default);
+}
+.region--bright-background a.mt-button.mt-button--outline,
+.region--bright-background .mt-button.mt-button--outline > a,
+.region--bright-background input[type='submit'].mt-button--outline,
+.region--bright-background input[type='reset'].mt-button--outline,
+.region--bright-background input[type='button'].mt-button--outline {
+  color: var(--mt-color-bright-contrast);
+  background-color: var(--mt-color-bright);
+}
+.region--bright-background a.mt-button.mt-button--outline:hover,
+.region--bright-background .mt-button.mt-button--outline > a:hover,
+.region--bright-background input[type='submit'].mt-button--outline:hover,
+.region--bright-background input[type='reset'].mt-button--outline:hover,
+.region--bright-background input[type='button'].mt-button--outline:hover {
+  background-color: var(--mt-color-primary);
+  color: var(--mt-color-primary-contrast);
+}
+.region--pattern a.mt-button.mt-button--outline,
+.region--pattern .mt-button.mt-button--outline > a,
+.region--pattern input[type='submit'].mt-button--outline,
+.region--pattern input[type='reset'].mt-button--outline,
+.region--pattern input[type='button'].mt-button--outline {
+  color: var(--mt-color-pattern-contrast);
+  background-color: var(--mt-color-pattern);
+}
+.region--pattern a.mt-button.mt-button--outline:hover,
+.region--pattern .mt-button.mt-button--outline:hover > a,
+.region--pattern input[type='submit'].mt-button--outline:hover,
+.region--pattern input[type='reset'].mt-button--outline:hover,
+.region--pattern input[type='button'].mt-button--outline:hover {
+  background-color: var(--mt-color-pattern);
+}
+.region--accent-background a.mt-button.mt-button--outline,
+.region--accent-background .mt-button.mt-button--outline > a,
+.region--accent-background input[type='submit'].mt-button--outline,
+.region--accent-background input[type='reset'].mt-button--outline,
+.region--accent-background input[type='button'].mt-button--outline {
+  color: var(--mt-color-accent-contrast);
+  background-color: var(--mt-color-accent);
+}
+.region--accent-background a.mt-button.mt-button--outline:hover,
+.region--accent-background .mt-button.mt-button--outline:hover > a,
+.region--accent-background input[type='submit'].mt-button--outline:hover,
+.region--accent-background input[type='reset'].mt-button--outline:hover,
+.region--accent-background input[type='button'].mt-button--outline:hover {
+  background-color: var(--mt-color-accent);
+}
+.region--tint-background a.mt-button.mt-button--outline,
+.region--tint-background .mt-button.mt-button--outline > a,
+.region--tint-background input[type='submit'].mt-button--outline,
+.region--tint-background input[type='reset'].mt-button--outline,
+.region--tint-background input[type='button'].mt-button--outline {
+  color: var(--mt-color-tint-contrast);
+  background-color: var(--mt-color-tint);
+}
+.region--tint-background a.mt-button.mt-button--outline:hover,
+.region--tint-background .mt-button.mt-button--outline:hover > a,
+.region--tint-background input[type='submit'].mt-button--outline:hover,
+.region--tint-background input[type='reset'].mt-button--outline:hover,
+.region--tint-background input[type='button'].mt-button--outline:hover {
+  background-color: var(--mt-color-tint);
+}
+.region--shade-background a.mt-button.mt-button--outline,
+.region--shade-background .mt-button.mt-button--outline > a,
+.region--shade-background input[type='submit'].mt-button--outline,
+.region--shade-background input[type='reset'].mt-button--outline,
+.region--shade-background input[type='button'].mt-button--outline {
+  color: var(--mt-color-shade-contrast);
+  background-color: transparent;
+}
+.region--shade-background a.mt-button.mt-button--outline:hover,
+.region--shade-background .mt-button.mt-button--outline > a:hover,
+.region--shade-background input[type='submit'].mt-button--outline:hover,
+.region--shade-background input[type='reset'].mt-button--outline:hover,
+.region--shade-background input[type='button'].mt-button--outline:hover,
+.region--shade-background a.mt-button.mt-button--outline:focus,
+.region--shade-background .mt-button.mt-button--outline > a:focus,
+.region--shade-background input[type='submit'].mt-button--outline:focus,
+.region--shade-background input[type='reset'].mt-button--outline:focus,
+.region--shade-background input[type='button'].mt-button--outline:focus {
+  background-color: transparent;
+}
+.region--colored-background a.mt-button.mt-button--outline,
+.region--colored-background .mt-button.mt-button--outline > a,
+.region--colored-background input[type='submit'].mt-button--outline,
+.region--colored-background input[type='reset'].mt-button--outline,
+.region--colored-background input[type='button'].mt-button--outline {
+  color: var(--mt-color-colored-contrast);
+  background-color: transparent;
+}
+.region--colored-background a.mt-button.mt-button--outline:hover,
+.region--colored-background .mt-button.mt-button--outline > a:hover,
+.region--colored-background input[type='submit'].mt-button--outline:hover,
+.region--colored-background input[type='reset'].mt-button--outline:hover,
+.region--colored-background input[type='button'].mt-button--outline:hover,
+.region--colored-background a.mt-button.mt-button--outline:focus,
+.region--colored-background .mt-button.mt-button--outline > a:focus,
+.region--colored-background input[type='submit'].mt-button--outline:focus,
+.region--colored-background input[type='reset'].mt-button--outline:focus,
+.region--colored-background input[type='button'].mt-button--outline:focus {
+  background-color: transparent;
+}
+.region--dark-colored-background a.mt-button.mt-button--outline,
+.region--dark-colored-background .mt-button.mt-button--outline > a,
+.region--dark-colored-background input[type='submit'].mt-button--outline,
+.region--dark-colored-background input[type='reset'].mt-button--outline,
+.region--dark-colored-background input[type='button'].mt-button--outline {
+  color: var(--mt-color-dark-colored-contrast);
+  background-color: transparent;
+}
+.region--dark-colored-background a.mt-button.mt-button--outline:hover,
+.region--dark-colored-background .mt-button.mt-button--outline > a:hover,
+.region--dark-colored-background input[type='submit'].mt-button--outline:hover,
+.region--dark-colored-background input[type='reset'].mt-button--outline:hover,
+.region--dark-colored-background input[type='button'].mt-button--outline:hover,
+.region--dark-colored-background a.mt-button.mt-button--outline:focus,
+.region--dark-colored-background .mt-button.mt-button--outline > a:focus,
+.region--dark-colored-background input[type='submit'].mt-button--outline:focus,
+.region--dark-colored-background input[type='reset'].mt-button--outline:focus,
+.region--dark-colored-background input[type='button'].mt-button--outline:focus {
+  background-color: transparent;
+}
+.region--dark-background a.mt-button.mt-button--outline,
+.region--dark-background .mt-button.mt-button--outline > a,
+.region--dark-background input[type='submit'].mt-button--outline,
+.region--dark-background input[type='reset'].mt-button--outline,
+.region--dark-background input[type='button'].mt-button--outline {
+  color: var(--mt-color-dark-contrast);
+  background-color: transparent;
+}
+.region--dark-background a.mt-button.mt-button--outline:hover,
+.region--dark-background .mt-button.mt-button--outline > a:hover,
+.region--dark-background input[type='submit'].mt-button--outline:hover,
+.region--dark-background input[type='reset'].mt-button--outline:hover,
+.region--dark-background input[type='button'].mt-button--outline:hover,
+.region--dark-background a.mt-button.mt-button--outline:focus,
+.region--dark-background .mt-button.mt-button--outline > a:focus,
+.region--dark-background input[type='submit'].mt-button--outline:focus,
+.region--dark-background input[type='reset'].mt-button--outline:focus,
+.region--dark-background input[type='button'].mt-button--outline:focus {
+  background-color: transparent;
+}
+a.mt-button.mt-button--outline:hover,
+.mt-button.mt-button--outline > a:hover,
+input[type='submit'].mt-button--outline:hover,
+input[type='reset'].mt-button--outline:hover,
+input[type='button'].mt-button--outline:hover {
+  background-color: transparent;
+}
+a.mt-button.mt-button--small,
+.mt-button.mt-button--small > a,
+button.mt-button.mt-button--small {
+  font-size: 14px;
+  padding: 8px 20px;
+  border-width: 0px;
+  text-transform: none;
+}
+a.mt-button.mt-button--small:hover,
+.mt-button.mt-button--small > a:hover,
+button.mt-button.mt-button--small:hover {
+  padding-right: 30px;
+  padding-left: 10px;
+}
+a.mt-button.mt-button--small:hover:after,
+.mt-button.mt-button--small > a:hover:after,
+button.mt-button.mt-button--small:hover:after {
+  font-size: 12px;
+  right: 13px;
+  margin-top: -6px;
+}
+.headings-wide-spacing-enabled a.mt-button,
+.headings-wide-spacing-enabled .mt-button > a,
+.headings-wide-spacing-enabled button.mt-button,
+.headings-wide-spacing-enabled input[type='submit'],
+.headings-wide-spacing-enabled input[type='reset'],
+.headings-wide-spacing-enabled input[type='button'] {
+  letter-spacing: var(--mt-headings-letter-spacing);
+}
+input[type='submit'] + input[type='submit'],
+.mt-button + .mt-button {
+  margin-left: 20px;
+}
+.region--colored-background a.mt-button,
+.region--colored-background .mt-button > a,
+.region--colored-background button.mt-button,
+.region--colored-background input[type='submit'],
+.region--colored-background input[type='reset'],
+.region--colored-background input[type='button'] {
+  background: none;
+  background-color: var(--mt-color-colored-contrast);
+  border-color: var(--mt-color-colored-contrast);
+  color: var(--mt-color-colored);
+}
+.region--colored-background a.mt-button:hover:before,
+.region--colored-background .mt-button > a:hover:before,
+.region--colored-background button.mt-button:hover:before {
+  opacity: 0;
+}
+.region--colored-background a.mt-button:hover,
+.region--colored-background .mt-button > a:hover,
+.region--colored-background button.mt-button:hover,
+.region--colored-background input[type='submit']:hover,
+.region--colored-background input[type='reset']:hover,
+.region--colored-background input[type='button']:hover,
+.region--colored-background a.mt-button:active,
+.region--colored-background .mt-button > a:active,
+.region--colored-background button.mt-button:active,
+.region--colored-background input[type='submit']:active,
+.region--colored-background input[type='reset']:active,
+.region--colored-background input[type='button']:active {
+  background: none;
+  background-color: var(--mt-color-colored-contrast);
+  border-color: var(--mt-color-colored-contrast);
+}
+.region--colored-background a.mt-button:focus,
+.region--colored-background .mt-button > a:focus,
+.region--colored-background button.mt-button:focus,
+.region--colored-background input[type='submit']:focus,
+.region--colored-background input[type='reset']:focus,
+.region--colored-background input[type='button']:focus {
+  color: var(--mt-color-colored);
+}
+.region--colored-background a.mt-button.mt-button--outline,
+.region--colored-background .mt-button.mt-button--outline > a,
+.region--colored-background button.mt-button.mt-button--outline,
+.region--colored-background input[type='submit'].mt-button--outline,
+.region--colored-background input[type='reset'].mt-button--outline,
+.region--colored-background input[type='button'].mt-button--outline {
+  background-color: transparent;
+  border-color: var(--mt-color-colored-contrast);
+  color: var(--mt-color-colored-contrast);
+}
+.region--colored-background a.mt-button.mt-button--outline:focus,
+.region--colored-background .mt-button.mt-button--outline > a:focus,
+.region--colored-background button.mt-button.mt-button--outline:focus,
+.region--colored-background input[type='submit'].mt-button--outline:focus,
+.region--colored-background input[type='reset'].mt-button--outline:focus,
+.region--colored-background input[type='button'].mt-button--outline:focus {
+  border-color: var(--mt-color-colored-contrast);
+}
+.region--colored-background a.mt-button.mt-button--outline:hover,
+.region--colored-background .mt-button.mt-button--outline > a:hover,
+.region--colored-background button.mt-button.mt-button--outline:hover,
+.region--colored-background input[type='submit'].mt-button--outline:hover,
+.region--colored-background input[type='reset'].mt-button--outline:hover,
+.region--colored-background input[type='button'].mt-button--outline:hover,
+.region--colored-background a.mt-button.mt-button--outline:active,
+.region--colored-background .mt-button.mt-button--outline > a:active,
+.region--colored-background button.mt-button.mt-button--outline:active,
+.region--colored-background input[type='submit'].mt-button--outline:active,
+.region--colored-background input[type='reset'].mt-button--outline:active,
+.region--colored-background input[type='button'].mt-button--outline:active {
+  color: var(--mt-color-colored-contrast);
+}
+.region--dark-colored-background a.mt-button,
+.region--dark-colored-background .mt-button > a,
+.region--dark-colored-background button.mt-button,
+.region--dark-colored-background input[type='submit'],
+.region--dark-colored-background input[type='reset'],
+.region--dark-colored-background input[type='button'] {
+  background: none;
+  background-color: var(--mt-color-dark-colored-contrast);
+  border-color: var(--mt-color-dark-colored-contrast);
+  color: var(--mt-color-dark-colored);
+}
+.region--dark-colored-background a.mt-button:hover:before,
+.region--dark-colored-background .mt-button > a:hover:before,
+.region--dark-colored-background button.mt-button:hover:before {
+  opacity: 0;
+}
+.region--dark-colored-background a.mt-button:hover,
+.region--dark-colored-background .mt-button > a:hover,
+.region--dark-colored-background button.mt-button:hover,
+.region--dark-colored-background input[type='submit']:hover,
+.region--dark-colored-background input[type='reset']:hover,
+.region--dark-colored-background input[type='button']:hover,
+.region--dark-colored-background a.mt-button:active,
+.region--dark-colored-background .mt-button > a:active,
+.region--dark-colored-background button.mt-button:active,
+.region--dark-colored-background input[type='submit']:active,
+.region--dark-colored-background input[type='reset']:active,
+.region--dark-colored-background input[type='button']:active {
+  background: none;
+  background-color: var(--mt-color-dark-colored-contrast);
+  border-color: var(--mt-color-dark-colored-contrast);
+}
+.region--dark-colored-background a.mt-button:focus,
+.region--dark-colored-background .mt-button > a:focus,
+.region--dark-colored-background button.mt-button:focus,
+.region--dark-colored-background input[type='submit']:focus,
+.region--dark-colored-background input[type='reset']:focus,
+.region--dark-colored-background input[type='button']:focus {
+  color: var(--mt-color-dark-colored);
+}
+.region--dark-colored-background a.mt-button.mt-button--outline,
+.region--dark-colored-background .mt-button.mt-button--outline > a,
+.region--dark-colored-background button.mt-button.mt-button--outline,
+.region--dark-colored-background input[type='submit'].mt-button--outline,
+.region--dark-colored-background input[type='reset'].mt-button--outline,
+.region--dark-colored-background input[type='button'].mt-button--outline {
+  background-color: transparent;
+  border-color: var(--mt-color-dark-colored-contrast);
+  color: var(--mt-color-dark-colored-contrast);
+}
+.region--dark-colored-background a.mt-button.mt-button--outline:focus,
+.region--dark-colored-background .mt-button.mt-button--outline > a:focus,
+.region--dark-colored-background button.mt-button.mt-button--outline:focus,
+.region--dark-colored-background input[type='submit'].mt-button--outline:focus,
+.region--dark-colored-background input[type='reset'].mt-button--outline:focus,
+.region--dark-colored-background input[type='button'].mt-button--outline:focus {
+  border-color: var(--mt-color-dark-colored-contrast);
+}
+.region--dark-colored-background a.mt-button.mt-button--outline:hover,
+.region--dark-colored-background .mt-button.mt-button--outline > a:hover,
+.region--dark-colored-background button.mt-button.mt-button--outline:hover,
+.region--dark-colored-background input[type='submit'].mt-button--outline:hover,
+.region--dark-colored-background input[type='reset'].mt-button--outline:hover,
+.region--dark-colored-background input[type='button'].mt-button--outline:hover,
+.region--dark-colored-background a.mt-button.mt-button--outline:active,
+.region--dark-colored-background .mt-button.mt-button--outline > a:active,
+.region--dark-colored-background button.mt-button.mt-button--outline:active,
+.region--dark-colored-background input[type='submit'].mt-button--outline:active,
+.region--dark-colored-background input[type='reset'].mt-button--outline:active,
+.region--dark-colored-background input[type='button'].mt-button--outline:active {
+  color: var(--mt-color-dark-colored-contrast);
+}
+span.mt-button-operator {
+  margin: 0 10px 0 5px;
+}
+a.mt-button .svg-inline--fa {
+  margin-right: 10px;
+}
+a.mt-button--no-margins {
+  margin: 0;
+}
+
+/*Buttons hover style 2*/
+a.mt-button.mt-button--hover-style-2,
+.mt-button.mt-button--hover-style-2 > a {
+  position: relative;
+  z-index: 1;
+  border-width: 0px;
+}
+a.mt-button.mt-button--hover-style-2:hover,
+.mt-button.mt-button--hover-style-2 > a:hover {
+  background: transparent;
+}
+.region--default-background a.mt-button.mt-button--hover-style-2:hover,
+.region--default-background .mt-button.mt-button--hover-style-2 > a:hover {
+  color: var(--mt-color-default-contrast);
+}
+.region--bright-background a.mt-button.mt-button--hover-style-2:hover,
+.region--bright-background .mt-button.mt-button--hover-style-2 > a:hover {
+  color: var(--mt-color-bright-contrast);
+}
+.region--pattern a.mt-button.mt-button--hover-style-2:hover,
+.region--pattern .mt-button.mt-button--hover-style-2 > a:hover {
+  color: var(--mt-color-pattern-contrast);
+}
+.region--accent-background a.mt-button.mt-button--hover-style-2:hover,
+.region--accent-background .mt-button.mt-button--hover-style-2 > a:hover {
+  color: var(--mt-color-accent-contrast);
+}
+.region--tint-background a.mt-button.mt-button--hover-style-2:hover,
+.region--tint-background .mt-button.mt-button--hover-style-2 > a:hover {
+  color: var(--mt-color-tint-contrast);
+}
+.region--shade-background a.mt-button.mt-button--hover-style-2:hover,
+.region--shade-background .mt-button.mt-button--hover-style-2 > a:hover {
+  color: var(--mt-color-shade-contrast);
+}
+.region--colored-background a.mt-button.mt-button--hover-style-2:hover,
+.region--colored-background .mt-button.mt-button--hover-style-2 > a:hover {
+  color: var(--mt-color-colored-contrast);
+}
+.region--dark-colored-background a.mt-button.mt-button--hover-style-2:hover,
+.region--dark-colored-background .mt-button.mt-button--hover-style-2 > a:hover {
+  color: var(--mt-color-dark-colored-contrast);
+}
+.region--dark-background a.mt-button.mt-button--hover-style-2:hover,
+.region--dark-background .mt-button.mt-button--hover-style-2 > a:hover {
+  color: var(--mt-color-dark-contrast);
+}
+a.mt-button.mt-button--hover-style-2:before,
+.mt-button.mt-button--hover-style-2 > a:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: scaleX(0);
+  border-radius: inherit;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+a.mt-button.mt-button--hover-style-2:hover:before,
+.mt-button.mt-button--hover-style-2 > a:hover:before {
+  transform: scaleX(1);
+}
+
+/* highlight features buttons */
+.paragraph--view-mode--mt-teaser-tile.paragraph--type--mt-highlight .mt-button a {
+  font-size: 16px;
+  padding: 12px 25px;
+}
+.paragraph--view-mode--mt-teaser-tile.paragraph--type--mt-highlight .mt-button a:hover {
+  padding-right: 30px;
+  padding-left: 20px;
+}
+
+a.mt-button.mt-button--link,
+.mt-button.mt-button--link > a,
+button.mt-button.mt-button--link,
+a.button {
+  color: var(--mt-link-color);
+  text-decoration: none;
+  position: relative;
+  background-image: linear-gradient(
+    transparent calc(100% - 0px),
+    var(--mt-link-border) calc(100% - 1px),
+    var(--mt-link-border) 100%,
+    transparent 100%
+  );
+  background-repeat: no-repeat;
+  background-size: calc(100% - 48px) 100%;
+  background-position: 50% 100%;
+  transition: background-size 0.3s ease, border-bottom 0.2s ease;
+  padding: 16px 24px;
+  display: inline-block;
+  background-color: transparent;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.125;
+}
+a.mt-button.mt-button--link:hover,
+.mt-button.mt-button--link > a:hover,
+button.mt-button.mt-button--link:hover,
+a.button:hover {
+  color: var(--mt-link-color);
+  text-decoration: none;
+  background-color: transparent;
+  background-image: linear-gradient(
+    transparent calc(100% - 1px),
+    var(--mt-link-border-hover) calc(100% - 1px),
+    var(--mt-link-border-hover) 100%,
+    transparent 100%
+  );
+}
+a.mt-button.mt-button--link:before,
+.mt-button.mt-button--link > a:before,
+button.mt-button.mt-button--link:before,
+a.button:before {
+  background-color: transparent;
+}
+
+/*button external*/
+a.mt-button.mt-button--external-link:after,
+.mt-button.mt-button.mt-button--external-link > a:after,
+button.mt-button.mt-button.mt-button--external-link:after {
+  content: '\f35d';
+  font-family: 'Font Awesome 5 Free', 'Font Awesome 5 Pro';
+  color: inherit;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -ms-transition: none;
+  -o-transition: none;
+  opacity: 1;
+  font-weight: 900;
+  position: relative;
+  right: 0;
+  width: 25px;
+  display: inline-block;
+  text-align: right;
+}
+
+/* Styles for button components on mobile devices */
+@media (max-width: 767px) {
+  a.mt-button,
+  .mt-button > a,
+  button.mt-button,
+  input[type="submit"],
+  input[type="reset"],
+  input[type="button"],
+  .btn,
+  a.button,
+  input[type="submit"] + input[type="submit"],
+  .mt-button + .mt-button {
+    width: 100%;
+    display: block;
+    margin: 10px 0;
+    text-align: center;
+  }
+  a.button,
+  a.mt-button.mt-button--link {
+    padding-left: 0;
+    padding-right: 0;
+    background-size: 100%;
+  }
+}

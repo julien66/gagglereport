@@ -1,0 +1,155 @@
+/**
+ * @file
+ * Visual styles for Base+'s post content type.
+ */
+
+/* field */
+.node--type-mt-post.node--view-mode-full .field {
+  margin-bottom: 40px;
+}
+
+/* Node header */
+.node--type-mt-post .node__header {
+  margin-bottom: 0;
+  padding: 0;
+}
+
+/* post header */
+.page-node-type-mt-post .list-inline-item:not(:last-child) {
+  margin-right: 1rem;
+}
+.page-node-type-mt-post .node__header .field--name-user-picture {
+  margin-bottom: 0;
+}
+@media (max-width: 767px) {
+  .page-node-type-mt-post .node__header .field--name-user-picture img {
+    max-width: 40px;
+  }
+  .page-node-type-mt-post .main-content__section,
+  .page-node-type-mt-post .sidebar__section {
+    padding: 25px 0 40px 0;
+  }
+}
+
+/* node side */
+.node--type-mt-post.node--view-mode-full .node__side {
+  text-align: center;
+}
+.node--type-mt-post.node--view-mode-full .node__side .field--name-user-picture {
+  max-width: 65px;
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
+  margin-bottom: 10px;
+}
+.node--type-mt-post.node--view-mode-full .node__side .username,
+.node--type-mt-post.node--view-mode-full .node__side .node-author span span {
+  font-weight: 700;
+  font-size: 18px;
+}
+.node--type-mt-post.node--view-mode-full .node__side .field--name-user-picture img {
+  border-radius: 100%;
+}
+
+/*node links*/
+.node--type-mt-post.node--view-mode-full .node__links {
+  margin-bottom: 20px;
+}
+
+/* post layout */
+@media (min-width: 768px) {
+  .node--type-mt-post.node--view-mode-full .node__container {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+  .node--type-mt-post.node--view-mode-full .node__main-content {
+    -ms-flex: 0 0 75%;
+    flex: 0 0 75%;
+    max-width: 75%;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .layout-sidebar-second .node--type-mt-post.node--view-mode-full .node__main-content {
+    -ms-flex-order: 2;
+    order: 2;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .node--type-mt-post.node--view-mode-full .node__side {
+    -ms-flex: 0 0 120px;
+    flex: 0 0 120px;
+    max-width: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .layout-sidebar-second .node--type-mt-post.node--view-mode-full .node__side {
+    -ms-flex-order: 1;
+    order: 1;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .layout-no-sidebars .node--type-mt-post.node--view-mode-full .node__side {
+    -ms-flex: 0 0 180px;
+    flex: 0 0 180px;
+    max-width: 180px;
+  }
+  .node--type-mt-post.node--view-mode-full .node__side + .node__main-content {
+    overflow: hidden;
+  }
+}
+@media (min-width: 992px) {
+  .layout-no-sidebars .node--type-mt-post.node--view-mode-full .node__side {
+    -ms-flex: 0 0 210px;
+    flex: 0 0 210px;
+    max-width: 210px;
+  }
+}
+@media (max-width: 767px) {
+  .node--type-mt-post.node--view-mode-full .node__side {
+    display: none;
+  }
+}
+
+/*responsive typography*/
+.paragraph-responsive-typography-enabled.page-node-type-mt-post .node__main-content p {
+  line-height: calc(155% + 0.2vw);
+  font-size: calc(0.85em + 0.2vw);
+}
+.paragraph-responsive-typography-enabled.page-node-type-mt-post .node--view-mode-teaser .node__main-content p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/*post subheader*/
+.node--type-mt-post .node__main-content .field--name-field-mt-pst-subheader {
+  color: var(--mt-color-high-contrast);
+}
+.node--type-mt-post .node__main-content .field--name-field-mt-pst-subheader p {
+  font-size: 30px;
+  line-height: 1.2;
+}
+
+/*post taxonomy*/
+.node--type-mt-post .field--entity-reference-target-type-taxonomy-term + .field--entity-reference-target-type-taxonomy-term--inline {
+  margin-left: 20px;
+  display: inline-block;
+}
+.node--type-mt-post .field--entity-reference-target-type-taxonomy-term + .field--entity-reference-target-type-taxonomy-term--inline .field__item {
+  margin: 0;
+}
+.node--type-mt-post .field--entity-reference-target-type-taxonomy-term + .field--entity-reference-target-type-taxonomy-term--inline .field__item a {
+  display: inline-block;
+}
+.node--type-mt-post .field--entity-reference-target-type-taxonomy-term + .field--entity-reference-target-type-taxonomy-term--inline .field__item:after {
+  content: ", ";
+  display: inline;
+}
+.node--type-mt-post .field--entity-reference-target-type-taxonomy-term + .field--entity-reference-target-type-taxonomy-term--inline .field__item:last-child:after {
+  content: "";
+}

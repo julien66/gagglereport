@@ -1,0 +1,224 @@
+/**
+ * @file
+ * Visual styles for Base+'s hero v2 block.
+ */
+.container .block-mt-hero-v2 .container {
+  padding-left: 0;
+  padding-right: 0;
+}
+@media (min-width: 1200px) and (max-width: 1499px) {
+  .container .block-mt-hero-v2 .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1499px) {
+  .block-mt-hero-v2 .order-lg-1.hero-column-first {
+    padding-left: 0;
+  }
+  .block-mt-hero-v2 .order-lg-2.hero-column-first {
+    padding-right: 0;
+  }
+  .block-mt-hero-v2 .order-lg-2.hero-column-second {
+    padding-right: 0;
+  }
+  .block-mt-hero-v2 .order-lg-1.hero-column-second {
+    padding-left: 0;
+  }
+}
+@media (max-width: 991px) {
+  .block-mt-hero-v2 .hero-column-first {
+    margin-bottom: 3rem;
+  }
+  .block-mt-hero-v2 .hero-column-second {
+    margin-bottom: 3rem;
+  }
+}
+.block-mt-hero-v2 > .content {
+  padding: 40px 0;
+}
+.block-mt-hero-v2 > .content.one-column,
+.block-mt-hero-v2 > .content.align-items-end {
+  padding: 40px 0 0;
+}
+@media (min-width: 992px) {
+  .block-mt-hero-v2 > .content.two-columns.align-items-end .hero-column-first {
+    margin-bottom: 70px;
+  }
+}
+.block-mt-hero-v2 > h2 + .content.align-items-center {
+  padding: 0;
+  margin-top: -55px;
+}
+.block-mt-hero-v2 .field--name-field-mt-hero-v2-title {
+  margin-bottom: 30px;
+  font-size: 46px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--mt-color-high-contrast);
+}
+.block-mt-hero-v2 .field--name-field-mt-hero-v2-title .typed-cursor {
+  font-size: 53px;
+}
+@media (min-width: 992px) {
+  .block-mt-hero-v2 .field--name-field-mt-hero-v2-title.mt-typing-animation-enabled {
+    min-height: 185px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .block-mt-hero-v2 .col-lg-6 .field--name-field-mt-hero-v2-title.mt-typing-animation-enabled {
+    min-height: 130px;
+  }
+}
+@media (min-width: 1200px) {
+  .block-mt-hero-v2 > .content {
+    padding: 80px 0;
+  }
+  .block-mt-hero-v2 > .content.align-items-end.one-column {
+    padding: 40px 0 0;
+  }
+  .block-mt-hero-v2 > .content.align-items-end {
+    padding: 40px 0 0;
+  }
+  .banner__section .block-mt-hero-v2 > .content.align-items-end,
+  .hero__section .block-mt-hero-v2 > .content.align-items-end {
+    padding: 30px 0 0;
+  }
+  .block-mt-hero-v2 .field--name-field-mt-hero-v2-title {
+    font-size: 72px;
+    margin-top: 20px;
+  }
+  .block-mt-hero-v2 .one-column .col-lg-12 .field--name-field-mt-hero-v2-title,
+  .block-mt-hero-v2
+    .one-column
+    .col-lg-12
+    .field--name-field-mt-hero-v2-description,
+  .block-mt-hero-v2 .one-column .col-lg-12 .field--name-field-mt-hero-v2-note {
+    max-width: 66%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .block-mt-hero-v2
+    .field--name-field-mt-hero-v2-title.mt-typing-animation-enabled {
+    min-height: 265px;
+  }
+  .block-mt-hero-v2 .col-lg-6.hero-column-first.order-lg-2 {
+    padding-left: 40px;
+  }
+}
+@media (min-width: 1440px) {
+  .block-mt-hero-v2
+    .field--name-field-mt-hero-v2-title.mt-typing-animation-enabled {
+    min-height: 265px;
+  }
+  .block-mt-hero-v2
+    .col-lg-4
+    .field--name-field-mt-hero-v2-title.mt-typing-animation-enabled {
+    min-height: 350px;
+  }
+}
+@media (max-width: 575px) {
+  .block-mt-hero-v2 .field--name-field-mt-hero-v2-title {
+    font-size: 35px;
+  }
+  .block-mt-hero-v2 .field--name-field-mt-hero-v2-title .typed-cursor {
+    font-size: 34px;
+  }
+  .block-mt-hero-v2 .field--name-field-mt-hero-v2-image {
+    margin-left: -30px;
+    margin-right: -30px;
+  }
+  .block-mt-hero-v2 .overlay-container {
+    overflow: revert;
+  }
+  .container .block-mt-hero-v2 .container .field--name-field-mt-hero-v2-image {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+}
+.headings-wide-spacing-enabled .block-mt-hero-v2 .field--name-field-mt-hero-v2-title {
+  letter-spacing: var(--mt-headings-letter-spacing);
+  text-transform: uppercase;
+}
+.block-mt-hero-v2 .field--name-field-mt-hero-v2-description {
+  margin-bottom: 15px;
+}
+.block-mt-hero-v2 .field--name-field-mt-hero-v2-description > h1:first-child,
+.block-mt-hero-v2 .field--name-field-mt-hero-v2-description > h2:first-child,
+.block-mt-hero-v2 .field--name-field-mt-hero-v2-description > h3:first-child,
+.block-mt-hero-v2 .field--name-field-mt-hero-v2-description > h4:first-child,
+.block-mt-hero-v2 .field--name-field-mt-hero-v2-description > h5:first-child,
+.block-mt-hero-v2 .field--name-field-mt-hero-v2-description > h6:first-child {
+  margin-top: 0;
+}
+@media (min-width: 1200px) {
+  .block-mt-hero-v2 .field--name-field-mt-hero-v2-description {
+    margin-bottom: 25px;
+    font-size: 24px;
+    font-weight: 500;
+  }
+  .block-mt-hero-v2 .one-column .field--name-field-mt-hero-v2-description {
+    margin-bottom: 25px;
+  }
+}
+.block-mt-hero-v2 .field--name-field-mt-hero-v2-description p {
+  margin-bottom: 15px;
+}
+@media (min-width: 1200px) {
+  .block-mt-hero-v2 .field--name-field-mt-hero-v2-description p {
+    margin-bottom: 25px;
+  }
+}
+.block-mt-hero-v2 .field--name-field-mt-hero-v2-description p:last-child {
+  margin-bottom: 0;
+}
+.block-mt-hero-v2 .field--name-field-mt-hero-v2-note {
+  font-size: 12px;
+  opacity: 0.65;
+}
+.block-mt-hero-v2 .one-column .field--name-field-mt-hero-v2-action {
+  margin-bottom: 10px;
+}
+@media (max-width: 575px) {
+  .block-mt-hero-v2 .field--name-field-mt-hero-v2-action .mt-button a {
+    display: block;
+  }
+  .block-mt-hero-v2 .field--name-field-mt-hero-v2-action .mt-button + .mt-button {
+    margin-left: 0;
+  }
+}
+
+/*override list style*/
+.block-mt-hero-v2 .list--fa-star li:before,
+.block-mt-hero-v2 .list--fa-caret-right li:before,
+.block-mt-hero-v2 .list--fa-plus li:before,
+.block-mt-hero-v2 .list--fa-square li:before,
+.block-mt-hero-v2 .list--fa-check li:before,
+.block-mt-hero-v2 .list--fa-check-circle li:before {
+  position: relative;
+  top: -1px;
+  padding-right: 10px;
+}
+.block-mt-hero-v2 .list--fa-star li,
+.block-mt-hero-v2 .list--fa-plus li,
+.block-mt-hero-v2 .list--fa-square li,
+.block-mt-hero-v2 .list--fa-caret-right li,
+.block-mt-hero-v2 .list--fa-check li,
+.block-mt-hero-v2 .list--fa-check-circle li {
+  padding-left: 0;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+/* utility */
+.mt--image-circle .block-mt-hero-v2 .one-column .overlay-container img {
+  border-radius: 100%;
+  max-width: 220px;
+}
+.mt--image-circle .block-mt-hero-v2 .one-column.image-first .mb-4.pb-5 {
+  margin-bottom: 0!important;
+  padding-bottom: 30px!important;
+}
+.mt--image-circle .block-mt-hero-v2 .one-column.image-first .field--name-field-mt-hero-v2-title {
+  margin-top: 0;
+}

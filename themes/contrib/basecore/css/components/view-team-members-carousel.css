@@ -1,0 +1,60 @@
+/**
+ * @file
+ * Visual styles for Base+'s team members carousel.
+ */
+.view-team-members-carousel h2.title {
+  margin-bottom: 0;
+  padding-top: 30px;
+}
+.view-team-members-carousel .owl-item li {
+  margin: 0 15px;
+}
+
+/*navigation controls*/
+.view-team-members-carousel .owl-nav {
+  top: 15px;
+}
+.view-team-members-carousel .owl-nav div {
+  text-transform: uppercase;
+}
+
+/*images overlays*/
+.view-team-members-carousel .views-field-field-mt-tmm-member-photo img,
+.view-team-members-carousel .views-field-field-mt-tmm-member-photo .overlay {
+  border-radius: 5px 5px 0 0;
+}
+.view-team-members-carousel .overlay-inner {
+  top: auto;
+  bottom: 0;
+  margin-top: 0;
+  height: auto;
+}
+.view-team-members-carousel ul.icons-list {
+  padding: 0;
+}
+.view-team-members-carousel ul.icons-list li {
+  width: 25%;
+}
+.view-team-members-carousel ul.icons-list li a {
+  width: 100%;
+}
+
+/*text-container*/
+.view-team-members-carousel .text-container {
+  background-color: #eeeeee;
+  padding: 25px 10px;
+  text-align: center;
+  border-radius: 5px;
+}
+.view-team-members-carousel .views-field-field-mt-tmm-member-photo ~ .text-container {
+  border-radius: 0 0 5px 5px;
+}
+.view-team-members-carousel .text-container .views-field-title a {
+  font-size: 24px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.view-team-members-carousel .text-container .views-field-field-mt-tmm-subtitle {
+  font-size: 16px;
+  color: #424242;
+}

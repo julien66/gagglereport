@@ -1,0 +1,162 @@
+/**
+ * @file
+ * Visual styles for Base+'s pricing tables.
+ */
+.view-pricing-tables {
+  position: relative;
+  padding-top: 30px;
+}
+.view-pricing-tables .view-footer {
+  font-size: 12px;
+  text-align: center;
+  padding-top: 35px;
+}
+.view-pricing-tables .pricing-table {
+  border-width: 1px;
+  border-style: solid;
+  margin: 0 0 40px 0;
+  padding: 0 30px 120px 30px;
+  position: relative;
+  border-color: transparent;
+  color: var(--mt-color-high-contrast);
+  box-shadow: 0 1px 2px rgb(64 64 64 / 31%), 0 1px 4px rgb(64 64 64 / 26%);
+}
+.region--default-background .view-pricing-tables .pricing-table {
+  border-width: 0;
+}
+.region--bright-background .view-pricing-tables .pricing-table {
+  border-color: rgba(var(--mt-color-bright-contrast-value), 0.05);
+  background-color: var(--mt-color-default);
+}
+.region--pattern .view-pricing-tables .pricing-table {
+  border-color: rgba(var(--mt-color-pattern-contrast-value), 0.05);
+  background-color: var(--mt-color-default);
+}
+.region--accent-background .view-pricing-tables .pricing-table {
+  border-color: rgba(var(--mt-color-accent-contrast-value), 0.05);
+  background-color: var(--mt-color-default);
+}
+.region--tint-background .view-pricing-tables .pricing-table {
+  border-color: rgba(var(--mt-color-tint-contrast-value), 0.05);
+  background-color: var(--mt-color-default);
+}
+.region--shade-background .view-pricing-tables .pricing-table {
+  border-color: rgba(var(--mt-color-shade-contrast-value), 0.3);
+}
+.region--colored-background .view-pricing-tables .pricing-table {
+  border-color: rgba(var(--mt-color-colored-contrast-value), 0.3);
+}
+.region--dark-colored-background .view-pricing-tables .pricing-table {
+  border-color: rgba(var(--mt-color-dark-colored-contrast-value), 0.3);
+}
+.region--dark-background .view-pricing-tables .pricing-table {
+  border-color: rgba(var(--mt-color-dark-contrast-value), 0.3);
+}
+.view-pricing-tables .pricing-table .views-field-title {
+  font-weight: 500;
+  font-size: 30px;
+  padding: 40px 0 2px;
+  line-height: 1.2;
+}
+.headings-wide-spacing-enabled .view-pricing-tables .pricing-table .views-field-title {
+  letter-spacing: var(--mt-headings-letter-spacing);
+  text-transform: uppercase;
+}
+.view-pricing-tables .pricing-table .views-field-title a {
+  text-decoration: none;
+  color: var(--mt-color-high-contrast);
+}
+.view-pricing-tables .pricing-table .views-field-title a:hover {
+  text-decoration: none;
+}
+.view-pricing-tables .views-field-field-mt-prd-price {
+  padding: 10px 0 20px 0;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.2;
+  color: var(--mt-color-high-contrast);
+}
+.view-pricing-tables .pricing-table .item-list>ul {
+  list-style: none;
+  margin: 0;
+}
+.view-pricing-tables .views-row:not(.most-popular) .views-field-field-mt-prd-most-popular {
+  display: none;
+}
+.views-field-field-mt-prd-most-popular {
+  position: absolute;
+  right: -5px;
+  top: -5px;
+  z-index: 1;
+  overflow: hidden;
+  width: 120px;
+  height: 120px;
+  text-align: right;
+}
+.views-field-field-mt-prd-most-popular span {
+  font-size: 12px;
+  color: var(--mt-color-base);
+  text-align: center;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  width: 153px;
+  display: block;
+  box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+  position: absolute;
+  top: 24px;
+  right: -35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+}
+.region--default-background .views-field-field-mt-prd-most-popular span {
+  width: 150px;
+  right: -33px;
+}
+.views-field-field-mt-prd-most-popular span::before {
+  content: "";
+  position: absolute; left: 0px; top: 100%;
+  z-index: -1;
+  border-left: 3px solid #2d6952;
+  border-right: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid #2d6952;
+}
+.views-field-field-mt-prd-most-popular span::after {
+  content: "";
+  position: absolute; right: 0px; top: 100%;
+  z-index: -1;
+  border-left: 3px solid transparent;
+  border-right: 3px solid #2d6952;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid #2d6952;
+}
+.view-pricing-tables .pricing-table .item-list li {
+  margin: 5px 0;
+}
+.view-pricing-tables .pricing-table .item-list li svg {
+  margin-right: 20px!important;
+}
+.view-pricing-tables .pricing-table .views-field-item {
+  padding: 3px 0;
+  margin:0;
+}
+.view-pricing-tables .pricing-table-footer {
+  position: absolute;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  padding: 30px 0;
+}
+@media (min-width: 767px) {
+  .view-pricing-tables .pricing-table {
+    height: 100%;
+    padding:0 30px 80px 30px;
+  }
+}
+.view-pricing-tables .mt-button svg {
+  display: none;
+}

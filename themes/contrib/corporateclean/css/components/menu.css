@@ -1,0 +1,22 @@
+.header-container ul.menu > li > a,
+.header-container ul.menu > li > span {
+  color: rgba(44, 53, 57, 0.65);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  padding: 0.5rem;
+}
+.header-container ul.menu > li > a:hover,
+.header-container ul.menu > li > span:hover {
+  color: var(--mt-color-primary);
+}
+.header-container ul.menu a.is-active {
+  color: var(--mt-color-primary);
+}
+.footer__section ul.menu li a,
+.footer__section ul.menu li > span {
+  padding: 0;
+  font-size: 1rem;
+  margin: 0.8rem 0;
+}

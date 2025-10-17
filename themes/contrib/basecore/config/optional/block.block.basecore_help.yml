@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - basecore
+_core:
+  default_config_hash: jjbttJb3110Bij7hqPyZmu7-54ArpfPQDI4nGAoN-Gs
+id: basecore_help
+theme: basecore
+region: content
+weight: -18
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

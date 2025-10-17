@@ -1,0 +1,129 @@
+/**
+ * @file
+ * Visual styles for Base+'s layout page content type.
+ */
+#drupal-off-canvas-wrapper {
+  background-color: transparent;
+}
+.page-node-type-mt-layout-page .main-content__section,
+.page-node-type-mt-layout-page .sidebar__section {
+  padding: 56px 0 70px;
+}
+.mt-patterns-enabled.page-node-type-mt-layout-page .page-top-container:after {
+  background: transparent;
+}
+.mt-patterns-enabled.page-node-type-mt-layout-page .page-top-container {
+  background-position-y: 23px;
+}
+
+/*layout builder*/
+.layout-builder-block {
+  background-color: transparent;
+}
+.page-node-type-mt-layout-page .mt-boxed-width .container-fluid {
+  max-width: 1600px;
+}
+.page-node-type-mt-layout-page .layout-builder__layout .block ~ .block {
+  padding-top: 30px;
+}
+.mt-bg-image-overlay {
+  position: relative;
+}
+.mt-bg-image-overlay:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.layout-builder .mt-bg-image-overlay:after {
+  z-index: -1;
+}
+.mt-bg-image-overlay--bright:before {
+  background-color: rgba(var(--mt-color-bright-value), 0.6);
+}
+.mt-bg-image-overlay--dark:before {
+  background-color: rgba(var(--mt-color-base-value), 0.7);
+}
+.page-node-type-mt-layout-page .block-local-tasks-block,
+.page-node-type-mt-layout-page .node-layout-builder-form,
+.page-node-type-mt-layout-page .block-help-block {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 576px) {
+  .page-node-type-mt-layout-page .block-local-tasks-block,
+  .page-node-type-mt-layout-page .node-layout-builder-form,
+  .page-node-type-mt-layout-page .block-help-block {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .page-node-type-mt-layout-page .block-local-tasks-block,
+  .page-node-type-mt-layout-page .node-layout-builder-form,
+  .page-node-type-mt-layout-page .block-help-block {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .page-node-type-mt-layout-page .block-local-tasks-block,
+  .page-node-type-mt-layout-page .node-layout-builder-form,
+  .page-node-type-mt-layout-page .block-help-block {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .page-node-type-mt-layout-page .block-local-tasks-block,
+  .page-node-type-mt-layout-page .node-layout-builder-form,
+  .page-node-type-mt-layout-page .block-help-block {
+    max-width: 100%;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+@media (min-width: 1500px) {
+  .page-node-type-mt-layout-page .block-local-tasks-block,
+  .page-node-type-mt-layout-page .node-layout-builder-form,
+  .page-node-type-mt-layout-page .block-help-block {
+    max-width: 1440px;
+  }
+}
+#drupal-off-canvas-wrapper .block-categories .layout-builder-browser-block-item {
+  text-align: center;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+}
+
+/* reset off-canvas for mt layout page content type */
+.page-node-type-mt-layout-page #drupal-off-canvas-wrapper ul li,
+.page-node-type-mt-layout-page #drupal-off-canvas-wrapper ol li {
+  border-bottom: none;
+}
+
+/*faded background*/
+.mt-patterns-enabled .mt-fade-background {
+  position: relative;
+  z-index: 1;
+  background-repeat: repeat;
+}
+.mt-patterns-enabled .mt-fade-background .layout-builder__layout {
+  position: relative;
+  z-index: 2;
+}
+.mt-patterns-enabled .mt-fade-background:after {
+  width: 100%;
+  content: '';
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: var(--mt-color-bright);
+  background: linear-gradient(0deg, var(--mt-color-bright) 0%, transparent 80%);
+}

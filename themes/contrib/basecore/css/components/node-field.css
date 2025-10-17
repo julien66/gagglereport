@@ -1,0 +1,36 @@
+/**
+ * @file
+ * Visual styles for Base+'s node field component.
+ */
+.field p:first-child {
+  margin-top: 0;
+}
+.field p:last-child {
+  margin-bottom: 0;
+}
+.node--view-mode-full .field .field {
+  margin-bottom: 0;
+}
+@media (min-width: 1200px) {
+  .layout.layout--onecol .field--name-field-content {
+    max-width: 66.66666667%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.field--type-telephone .field__item:before {
+  content: '\f095';
+  font-family: 'Font Awesome 5 Free', 'Font Awesome 5 Pro';
+  font-weight: 900;
+  line-height: 1;
+  margin-right: 0.5rem;
+  color: var(--mt-color-primary);
+}
+.field--type-email .field__item:before {
+  content: '\f0e0';
+  font-family: 'Font Awesome 5 Free', 'Font Awesome 5 Pro';
+  font-weight: 900;
+  line-height: 1;
+  margin-right: 0.5rem;
+  color: var(--mt-color-primary);
+}

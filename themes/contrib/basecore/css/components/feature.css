@@ -1,0 +1,123 @@
+/**
+ * @file
+ * Visual styles for Base+'s feature.
+ */
+.feature {
+  margin: 25px 0;
+}
+
+/**
+ * @file
+ * Visual styles for Base+'s promoted posts carousel.
+ */
+ .mt-features-carousel h2.title {
+  margin-bottom: 0;
+  padding-top: 30px;
+}
+.container-fluid .field--name-field-mt-fc-feature {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+@media (min-width: 1555px) {
+  .container-fluid .field--name-field-mt-fc-feature {
+    margin-left: -3rem;
+    margin-right: -3rem;
+  }
+}
+.field--name-field-mt-fc-header {
+  padding: 30px 40px;
+}
+.field--name-field-mt-fc-footer {
+  padding: 30px 0;
+}
+.field--name-field-mt-fc-footer .row {
+  align-items: center;
+  display: flex;
+}
+.page-container-border-enabled .container-fluid .field--name-field-mt-fc-footer {
+  padding: 30px 15px;
+}
+@media (max-width: 767px) {
+  .field--name-field-mt-fc-footer {
+    text-align: center;
+  }
+}
+.call-to-action h4 {
+  margin: 10px 0;
+  font-size: 24px;
+  text-transform: none;
+  font-weight: 400;
+}
+.mt-style-oval .mt-features-carousel .feature-item,
+.mt-style-image-oval .mt-features-carousel .feature-item,
+.mt-style-rounded .mt-features-carousel .feature-item,
+.mt-style-image-rounded .mt-features-carousel .feature-item  {
+  padding: 0 0.5rem;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .field--name-field-mt-fc-footer h4 {
+    font-size: 20px;
+  }
+  .field--name-field-mt-fc-footer .mt-button {
+    font-size: 15px;
+  }
+}
+/*navigation controls*/
+.mt-features-carousel .owl-nav {
+  top: -55px;
+  position: absolute;
+}
+.mt-features-carousel .owl-nav div {
+  text-transform: uppercase;
+}
+.mt-features-carousel .owl-nav div:after {
+  font-size: 36px;
+  top: 0px;
+  left: 0;
+  margin-left: 0;
+  width: 40px;
+}
+.mt-features-carousel .owl-nav .owl-prev {
+  left: 15px;
+  margin-left: 0;
+}
+.page-container-border-enabled .mt-features-carousel .owl-nav .owl-prev {
+  left: 30px;
+}
+.mt-features-carousel .owl-nav .owl-next {
+  right: 15px;
+  margin-right: 0;
+}
+.page-container-border-enabled .mt-features-carousel .owl-nav .owl-next {
+  right: 30px;
+}
+
+/*images overlays*/
+.mt-features-carousel .overlay-inner {
+  top: auto;
+  bottom: 0;
+  margin-top: 0;
+  height: auto;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 20px 10px;
+}
+.mt-features-carousel h5 {
+  text-transform: none;
+  margin: 0;
+}
+.mt-features-carousel .overlay-inner h5 a {
+  text-decoration: none;
+}
+.mt-features-carousel .feature-item__title +.field--name-field-mt-feature-body {
+  margin-top: 10px;
+}
+.mt-features-carousel .overlay-inner .field--name-field-mt-feature-body {
+  font-size: 14px;
+}
+.mt-features-carousel .overlay-inner .field--name-field-mt-feature-body p {
+  padding: 0 0 5px;
+}
+.mt-features-carousel .feature-item__text-wrapper {
+  padding: 10px;
+  text-align: center;
+}

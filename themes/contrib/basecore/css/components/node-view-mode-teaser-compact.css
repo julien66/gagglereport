@@ -1,0 +1,39 @@
+/**
+ * @file
+ * Visual styles for Base+'s node in teaser compact view.
+ */
+.node--view-mode-mt-teaser-compact .teaser-compact-image {
+  margin-right: 20px;
+  max-width: 80px;
+}
+.node--view-mode-mt-teaser-compact .node__title {
+  margin-bottom: 15px;
+}
+.node--view-mode-mt-teaser-compact .node__title a {
+  color: var(--mt-color-high-contrast);
+}
+.node--view-mode-mt-teaser-compact .node__content {
+  margin-bottom: 10px;
+}
+.node--view-mode-mt-teaser-compact .node__content .field.field--name-field-mt-prd-body {
+  margin-bottom: 0px;
+}
+@media (max-width: 767px) {
+  .footer__section .node--view-mode-mt-teaser-compact,
+  .footer-bottom__section .node--view-mode-mt-teaser-compact {
+    text-align: left;
+  }
+}
+.node--type-mt-post.node--view-mode-mt-teaser-compact .created-date {
+  font-size: 14px;
+}
+.region--colored-background .node--view-mode-mt-teaser-compact .node__title a {
+  color: var(--mt-color-accent-contrast);
+}
+.region--colored-background .node--view-mode-mt-teaser-compact .node__title a:hover {
+  color: var(--mt-color-accent-contrast);
+  text-decoration: underline;
+}
+.node--type-mt-post.node--view-mode-mt-teaser-compact.region--default-background {
+  box-shadow: 0 1px 2px rgb(64 64 64 / 31%), 0 1px 4px rgb(64 64 64 / 26%);
+}

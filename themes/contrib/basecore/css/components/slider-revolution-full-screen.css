@@ -1,0 +1,25 @@
+/**
+ * @file
+ * Visual styles for Base+'s slider revolution full-screen.
+ */
+.rev_slider_wrapper.slideshow-fullscreen {
+  text-align: left;
+}
+@media (max-width: 767px) {
+  .rev_slider_wrapper.slideshow-fullscreen {
+    text-align: center;
+  }
+}
+.rev_slider_wrapper.slideshow-fullscreen .tp-caption__title {
+  padding: 0 3rem 2rem;
+}
+.rev_slider_wrapper.slideshow-fullscreen .tp-caption__text {
+  font-size: 25px;
+  font-weight: 700;
+  padding: 0 3rem 2rem;
+  margin-top: 0;
+}
+.rev_slider_wrapper.slideshow-fullscreen .tp-caption__buttons-container {
+  margin-top: 0;
+  padding: 0 3rem 0;
+}

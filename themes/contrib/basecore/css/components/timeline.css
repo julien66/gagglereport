@@ -1,0 +1,162 @@
+/**
+ * @file
+ * Visual styles for Base+'s timeline.
+ */
+.field--name-field-mt-tml-timeline-item {
+  list-style: none;
+  padding: 20px 0 20px;
+  position: relative;
+}
+.field--name-field-mt-tml-timeline-item:before {
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  content: " ";
+  width: 10px;
+  left: 50%;
+  margin-left: -5px;
+  border-radius: 10px;
+}
+.region--default-background .field--name-field-mt-tml-timeline-item:before {
+  background: -moz-linear-gradient(top, rgba(var(--mt-color-default-contrast-value), 0.4) 0%, rgba(var(--mt-color-default-contrast-value), 0.4) 80%, rgba(var(--mt-color-default-contrast-value), 0) 100%);
+  background: -webkit-linear-gradient(top, rgba(var(--mt-color-default-contrast-value), 0.4) 0%,rgba(var(--mt-color-default-contrast-value), 0.4) 80%,rgba(var(--mt-color-default-contrast-value), 0) 100%);
+  background: linear-gradient(to bottom, rgba(var(--mt-color-default-contrast-value), 0.4) 0%,rgba(var(--mt-color-default-contrast-value), 0.4) 80%,rgba(var(--mt-color-default-contrast-value), 0) 100%);
+}
+.region--bright-background .field--name-field-mt-tml-timeline-item:before {
+  background: -moz-linear-gradient(top, rgba(var(--mt-color-bright-contrast-value), 0.4) 0%, rgba(var(--mt-color-bright-contrast-value), 0.4) 80%, rgba(var(--mt-color-bright-contrast-value), 0) 100%);
+  background: -webkit-linear-gradient(top, rgba(var(--mt-color-bright-contrast-value), 0.4) 0%,rgba(var(--mt-color-bright-contrast-value), 0.4) 80%,rgba(var(--mt-color-bright-contrast-value), 0) 100%);
+  background: linear-gradient(to bottom, rgba(var(--mt-color-bright-contrast-value), 0.4) 0%,rgba(var(--mt-color-bright-contrast-value), 0.4) 80%,rgba(var(--mt-color-bright-contrast-value), 0) 100%);
+}
+.region--pattern .field--name-field-mt-tml-timeline-item:before {
+  background: -moz-linear-gradient(top, rgba(var(--mt-color-pattern-contrast-value), 0.4) 0%, rgba(var(--mt-color-pattern-contrast-value), 0.4) 80%, rgba(var(--mt-color-pattern-contrast-value), 0) 100%);
+  background: -webkit-linear-gradient(top, rgba(var(--mt-color-pattern-contrast-value), 0.4) 0%,rgba(var(--mt-color-pattern-contrast-value), 0.4) 80%,rgba(var(--mt-color-pattern-contrast-value), 0) 100%);
+  background: linear-gradient(to bottom, rgba(var(--mt-color-pattern-contrast-value), 0.4) 0%,rgba(var(--mt-color-pattern-contrast-value), 0.4) 80%,rgba(var(--mt-color-pattern-contrast-value), 0) 100%);
+}
+.region--accent-background .field--name-field-mt-tml-timeline-item:before {
+  background: -moz-linear-gradient(top, rgba(var(--mt-color-accent-contrast-value), 0.4) 0%, rgba(var(--mt-color-accent-contrast-value), 0.4) 80%, rgba(var(--mt-color-accent-contrast-value), 0) 100%);
+  background: -webkit-linear-gradient(top, rgba(var(--mt-color-accent-contrast-value), 0.4) 0%,rgba(var(--mt-color-accent-contrast-value), 0.4) 80%,rgba(var(--mt-color-accent-contrast-value), 0) 100%);
+  background: linear-gradient(to bottom, rgba(var(--mt-color-accent-contrast-value), 0.4) 0%,rgba(var(--mt-color-accent-contrast-value), 0.4) 80%,rgba(var(--mt-color-accent-contrast-value), 0) 100%);
+}
+.region--tint-background .field--name-field-mt-tml-timeline-item:before {
+  background: -moz-linear-gradient(top, rgba(var(--mt-color-tint-contrast-value), 0.4) 0%, rgba(var(--mt-color-tint-contrast-value), 0.4) 80%, rgba(var(--mt-color-tint-contrast-value), 0) 100%);
+  background: -webkit-linear-gradient(top, rgba(var(--mt-color-tint-contrast-value), 0.4) 0%,rgba(var(--mt-color-tint-contrast-value), 0.4) 80%,rgba(var(--mt-color-tint-contrast-value), 0) 100%);
+  background: linear-gradient(to bottom, rgba(var(--mt-color-tint-contrast-value), 0.4) 0%,rgba(var(--mt-color-tint-contrast-value), 0.4) 80%,rgba(var(--mt-color-tint-contrast-value), 0) 100%);
+}
+.region--shade-background .field--name-field-mt-tml-timeline-item:before {
+  background: -moz-linear-gradient(top, rgba(var(--mt-color-shade-contrast-value), 0.4) 0%, rgba(var(--mt-color-shade-contrast-value), 0.4) 80%, rgba(var(--mt-color-shade-contrast-value), 0) 100%);
+  background: -webkit-linear-gradient(top, rgba(var(--mt-color-shade-contrast-value), 0.4) 0%,rgba(var(--mt-color-shade-contrast-value), 0.4) 80%,rgba(var(--mt-color-shade-contrast-value), 0) 100%);
+  background: linear-gradient(to bottom, rgba(var(--mt-color-shade-contrast-value), 0.4) 0%,rgba(var(--mt-color-shade-contrast-value), 0.4) 80%,rgba(var(--mt-color-shade-contrast-value), 0) 100%);
+}
+.region--colored-background .field--name-field-mt-tml-timeline-item:before {
+  background: -moz-linear-gradient(top, rgba(var(--mt-color-colored-contrast-value), 0.4) 0%, rgba(var(--mt-color-colored-contrast-value), 0.4) 80%, rgba(var(--mt-color-colored-contrast-value), 0) 100%);
+  background: -webkit-linear-gradient(top, rgba(var(--mt-color-colored-contrast-value), 0.4) 0%,rgba(var(--mt-color-colored-contrast-value), 0.4) 80%,rgba(var(--mt-color-colored-contrast-value), 0) 100%);
+  background: linear-gradient(to bottom, rgba(var(--mt-color-colored-contrast-value), 0.4) 0%,rgba(var(--mt-color-colored-contrast-value), 0.4) 80%,rgba(var(--mt-color-colored-contrast-value), 0) 100%);
+}
+.region--dark-colored-background .field--name-field-mt-tml-timeline-item:before {
+  background: -moz-linear-gradient(top, rgba(var(--mt-color-dark-colored-contrast-value), 0.4) 0%, rgba(var(--mt-color-dark-colored-contrast-value), 0.4) 80%, rgba(var(--mt-color-dark-colored-contrast-value), 0) 100%);
+  background: -webkit-linear-gradient(top, rgba(var(--mt-color-dark-colored-contrast-value), 0.4) 0%,rgba(var(--mt-color-dark-colored-contrast-value), 0.4) 80%,rgba(var(--mt-color-dark-colored-contrast-value), 0) 100%);
+  background: linear-gradient(to bottom, rgba(var(--mt-color-dark-colored-contrast-value), 0.4) 0%,rgba(var(--mt-color-dark-colored-contrast-value), 0.4) 80%,rgba(var(--mt-color-dark-colored-contrast-value), 0) 100%);
+}
+.region--dark-background .field--name-field-mt-tml-timeline-item:before {
+  background: -moz-linear-gradient(top, rgba(var(--mt-color-dark-contrast-value), 0.4) 0%, rgba(var(--mt-color-dark-contrast-value), 0.4) 80%, rgba(var(--mt-color-dark-contrast-value), 0) 100%);
+  background: -webkit-linear-gradient(top, rgba(var(--mt-color-dark-contrast-value), 0.4) 0%,rgba(var(--mt-color-dark-contrast-value), 0.4) 80%,rgba(var(--mt-color-dark-contrast-value), 0) 100%);
+  background: linear-gradient(to bottom, rgba(var(--mt-color-dark-contrast-value), 0.4) 0%,rgba(var(--mt-color-dark-contrast-value), 0.4) 80%,rgba(var(--mt-color-dark-contrast-value), 0) 100%);
+}
+.field--name-field-mt-tml-timeline-item > .field__item {
+  margin-bottom: 20px;
+  position: relative;
+}
+.field--name-field-mt-tml-timeline-item > .field__item:first-child {
+  margin-top: 20px;
+}
+.field--name-field-mt-tml-timeline-item > .field__item:before,
+.field--name-field-mt-tml-timeline-item > .field__item:after {
+  content: " ";
+  display: table;
+}
+.field--name-field-mt-tml-timeline-item > .field__item:after {
+  clear: both;
+}
+.field--name-field-mt-tml-timeline-item > .field__item .timeline-item {
+  width: 46%;
+  float: left;
+  position: relative;
+  text-align: right;
+}
+.field--name-field-mt-tml-timeline-item > .field__item .timeline-item.timeline-item--expired {
+  opacity: 0.7;
+}
+.field--name-field-mt-tml-timeline-item > .field__item .timeline__header h5 {
+  margin: 0 0 5px;
+}
+.field--name-field-mt-tml-timeline-item .field__item .timeline__badge {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 3px;
+  left: 50%;
+  margin-left: -10px;
+  background-color: transparent;
+  z-index: 100;
+  border-radius: 100%;
+  border-width: 3px;
+  border-style: solid;
+}
+.region--default-background .field--name-field-mt-tml-timeline-item .field__item .timeline__badge {
+  border-color: var(--mt-color-default-contrast);
+}
+.region--bright-background .field--name-field-mt-tml-timeline-item .field__item .timeline__badge {
+  border-color: var(--mt-color-bright-contrast);
+}
+.region--pattern .field--name-field-mt-tml-timeline-item .field__item .timeline__badge {
+  border-color: var(--mt-color-pattern-contrast);
+}
+.region--accent-background .field--name-field-mt-tml-timeline-item .field__item .timeline__badge {
+  border-color: var(--mt-color-accent-contrast);
+}
+.region--tint-background .field--name-field-mt-tml-timeline-item .field__item .timeline__badge {
+  border-color: var(--mt-color-tint-contrast);
+}
+.region--shade-background .field--name-field-mt-tml-timeline-item .field__item .timeline__badge {
+  border-color: var(--mt-color-shade-contrast);
+}
+.region--colored-background .field--name-field-mt-tml-timeline-item .field__item .timeline__badge {
+  border-color: var(--mt-color-colored-contrast);
+}
+.region--dark-colored-background .field--name-field-mt-tml-timeline-item .field__item .timeline__badge {
+  border-color: var(--mt-color-dark-colored-contrast);
+}
+.region--dark-background .field--name-field-mt-tml-timeline-item .field__item .timeline__badge {
+  border-color: var(--mt-color-dark-contrast);
+}
+.field--name-field-mt-tml-timeline-item > .field__item:nth-child(2n) .timeline-item {
+  float: right;
+  text-align: left;
+}
+@media (min-width: 1200px) {
+  .field--name-field-mt-tml-timeline-item > .field__item .timeline-item {
+    padding-right: 40px;
+  }
+  .field--name-field-mt-tml-timeline-item > .field__item:nth-child(2n) .timeline-item {
+    padding-left: 40px;
+    padding-right: 0;
+  }
+}
+@media (max-width: 767px) {
+  .field--name-field-mt-tml-timeline-item:before {
+    left: 10px;
+  }
+  .field--name-field-mt-tml-timeline-item > .field__item .timeline-item {
+    width: calc(100% - 40px);
+    width: -moz-calc(100% - 40px);
+    width: -webkit-calc(100% - 40px);
+  }
+  .field--name-field-mt-tml-timeline-item > .field__item .timeline__badge {
+    left: 0px;
+    margin-left: 0;
+  }
+  .field--name-field-mt-tml-timeline-item > .field__item .timeline-item {
+    float: right;
+    text-align: left;
+  }
+}

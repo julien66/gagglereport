@@ -1,0 +1,8 @@
+administer httpswww:
+  title: 'Administer HTTPS and WWW Redirects'
+  description: Allows configuration of HTTPS and WWW redirects.
+  restrict access: true
+bypass httpswww redirect:
+  title: 'Bypass HTTPS and WWW Redirects'
+  description: Allows accessing the site without being redirected to the configured URL.
+  restrict access: true

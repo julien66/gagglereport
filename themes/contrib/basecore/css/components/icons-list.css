@@ -1,0 +1,144 @@
+/**
+ * @file
+ * Visual styles for Base+'s icons list.
+ */
+ul.icons-list {
+  list-style: none;
+  margin: 0 -10px;
+  padding: 0;
+}
+ul.icons-list li {
+  display: inline-block;
+  margin: 10px;
+  vertical-align: middle;
+}
+ul.icons-list li a {
+  display: block;
+}
+ul.icons-list li a {
+  color: var(--mt-color-high-contrast);
+}
+ul.icons-list li a:hover {
+  text-decoration: none;
+  -ms-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.header-top__section ul.icons-list li a {
+  -webkit-transition: all 0.15s ease-in-out;
+  -moz-transition: all 0.15s ease-in-out;
+  -ms-transition: all 0.15s ease-in-out;
+  -o-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+}
+ul.icons-list li .svg-inline--fa {
+  font-size: 22px;
+}
+.footer-bottom__section ul.icons-list li .svg-inline--fa,
+.footer__section ul.icons-list li .svg-inline--fa {
+  font-size: 24px;
+}
+ul.icons-list--small li .svg-inline--fa,
+.footer-bottom__section ul.icons-list--small li .svg-inline--fa,
+.footer__section ul.icons-list--small li .svg-inline--fa {
+  font-size: 16px;
+}
+ul.icons-list--large li .svg-inline--fa {
+  font-size: 36px;
+}
+ul.icons-list--extra-large li .svg-inline--fa,
+.footer-bottom__section ul.icons-list--extra-large li .svg-inline--fa,
+.footer__section ul.icons-list--extra-large li .svg-inline--fa {
+  font-size: 55px;
+}
+ul.icons-list.icons-list--bordered {
+  margin: 0 -5px;
+}
+ul.icons-list.icons-list--bordered li {
+  display: inline-block;
+  margin: 4px 5px;
+}
+ul.icons-list.icons-list--bordered li a {
+  display: block;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-width: 2px;
+  border-style: solid;
+}
+.region--default-background ul.icons-list.icons-list--bordered li a {
+  border-color: var(--mt-color-default-contrast);
+}
+.region--bright-background ul.icons-list.icons-list--bordered li a {
+  border-color: rgba(var(--mt-color-bright-contrast-value), 0.8);
+}
+.region--pattern ul.icons-list.icons-list--bordered li a {
+  border-color: var(--mt-color-pattern-contrast);
+}
+.region--accent-background ul.icons-list.icons-list--bordered li a {
+  border-color: var(--mt-color-accent-contrast);
+}
+.region--tint-background ul.icons-list.icons-list--bordered li a {
+  border-color: var(--mt-color-tint-contrast);
+}
+.region--shade-background ul.icons-list.icons-list--bordered li a {
+  border-color: var(--mt-color-shade-contrast);
+}
+.region--colored-background ul.icons-list.icons-list--bordered li a {
+  border-color: var(--mt-color-colored-contrast);
+}
+.region--dark-colored-background ul.icons-list.icons-list--bordered li a {
+  border-color: var(--mt-color-dark-colored-contrast);
+}
+.region--dark-background ul.icons-list.icons-list--bordered li a {
+  border-color: var(--mt-color-dark-contrast);
+}
+ul.icons-list.icons-list--bordered li .svg-inline--fa {
+  padding: 11px;
+}
+ul.icons-list.icons-list--bordered li a:hover {
+  text-decoration: none;
+  -ms-transform: none;
+  -webkit-transform: none;
+  transform: none;
+  opacity: 0.7;
+}
+ul.icons-list.icons-list--bordered.icons-list--large li a {
+  width: 65px;
+  height: 65px;
+}
+ul.icons-list.icons-list--bordered.icons-list--extra-large li a {
+  width: 80px;
+  height: 80px;
+}
+ul.icons-list.icons-list--bordered.icons-list--extra-large li .svg-inline--fa {
+  font-size: 40px;
+}
+ul.icons-list.icons-list--no-margin {
+  font-size: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+ul.icons-list.icons-list--no-margin li {
+  margin: 0;
+}
+
+/*icons list at header top region*/
+.header-top__section ul.icons-list li .svg-inline--fa {
+  font-size: 20px;
+}
+@media (max-width: 767px) {
+  .header-top-highlighted-second .icons-list {
+    text-align: right !important;
+  }
+}
+
+/*icons list at footer top region*/
+.footer-top__section.footer-top-second .icons-list {
+  text-align: right;
+}
+@media (max-width: 991px) {
+  .footer-top__section.footer-top-second .icons-list {
+    text-align: center;
+  }
+}

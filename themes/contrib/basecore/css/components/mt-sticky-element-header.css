@@ -1,0 +1,13 @@
+/**
+ * @file
+ * Styles for sticky elements in header.
+ */
+.mt-sticky-element-header {
+  position: fixed;
+}
+.onscroll .mt-sticky-element-header {
+  z-index: 2000;
+}
+.mfp-zoom-out-cur.onscroll .mt-sticky-element-header {
+  z-index: 1000;
+}

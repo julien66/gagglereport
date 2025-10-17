@@ -1,0 +1,4 @@
+.ui-dialog .ui-dialog-titlebar {
+  background-color: var(--mt-color-tint);
+  border-color: var(--mt-color-tint);
+}

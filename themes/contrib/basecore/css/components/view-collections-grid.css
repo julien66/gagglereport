@@ -1,0 +1,13 @@
+/**
+ * @file
+ * Visual styles for Base+'s collections grid views.
+ */
+.view-collections-grid .views-row {
+  margin-bottom: 30px;
+}
+.view-collections-grid .views-field-field-mt-collection-image {
+  margin-bottom: 15px;
+}
+.view-collections-grid .views-field-name h4 {
+  margin-top: 0;
+}

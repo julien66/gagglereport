@@ -1,0 +1,82 @@
+/**
+ * @file
+ * Styles for Base+'s mini pager.
+ */
+
+/* Using .pager selector on the first one to override .region-content ul. */
+.pager__items {
+  margin: 20px 0;
+  padding: 0;
+  font-size: 0;
+  text-align: center;
+}
+li.pager__item {
+  padding: 0;
+  margin: 0;
+  margin-top: -1px;
+  display: inline-block;
+}
+li.pager__item > a,
+li.pager__item.is-active {
+  font-size: 16px;
+  text-align: center;
+  min-height: 38px;
+  min-width: 38px;
+  padding: 0;
+  margin: 0 12px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: transparent;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  display: inline-block;
+  line-height: 33px;
+  text-decoration: none;
+  background-color: transparent;
+}
+.region--default-background li.pager__item > a {
+  color: var(--mt-color-default-contrast);
+}
+.region--bright-background li.pager__item > a {
+  color: var(--mt-color-bright-contrast);
+}
+.region--pattern li.pager__item > a {
+  color: var(--mt-color-pattern-contrast);
+}
+.region--accent-background li.pager__item > a {
+  color: var(--mt-color-accent-contrast);
+}
+.region--tint-background li.pager__item > a {
+  color: var(--mt-color-tint-contrast);
+}
+.region--shade-background li.pager__item > a {
+  color: var(--mt-color-shade-contrast);
+}
+.region--colored-background li.pager__item > a {
+  color: var(--mt-color-colored-contrast);
+}
+.region--dark-colored-background li.pager__item > a {
+  color: var(--mt-color-dark-colored-contrast);
+}
+.region--dark-background li.pager__item > a {
+  color: var(--mt-color-dark-contrast);
+}
+.region--colored-background li.pager__item.is-active a,
+.region--colored-background li.pager__item.is-active a:hover,
+.region--colored-background li.pager__item.is-active a:focus {
+  border-color: var(--mt-color-colored-contrast);
+}
+.region--colored-background li.pager__item a:not(.mt-button):hover,
+.region--colored-background li.pager__item a:not(.mt-button):focus {
+  background-color: var(--mt-color-colored-contrast);
+}
+li.pager__item.is-active {
+  border-width: 0;
+  margin: 0 15px;
+}
+
+/*Reset Bootstrap's rules*/
+.pager {
+  margin: 0;
+}

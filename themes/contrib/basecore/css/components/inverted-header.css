@@ -1,0 +1,123 @@
+/**
+ * @file
+ * Visual styles for Base+'s inverted header.
+ */
+ @media (min-width: 992px) {
+  /*layout*/
+  .inverted-header-enabled:not(.onscroll) .js-transparent-header .header-top__container,
+  .inverted-header-enabled:not(.onscroll) .js-transparent-header .header-top-highlighted__container {
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+  }
+
+  /*typography*/
+  .inverted-header-enabled:not(.onscroll) .js-transparent-header .header-top__section,
+  .inverted-header-enabled:not(.onscroll) .js-transparent-header .header,
+  .inverted-header-enabled:not(.onscroll) .js-transparent-header .header-top-highlighted__section,
+  .inverted-header-enabled:not(.onscroll) .js-transparent-header .header-highlighted {
+    color: #ffffff;
+  }
+  .inverted-header-enabled:not(.onscroll) .js-transparent-header .header,
+  .inverted-header-enabled:not(.onscroll) .js-transparent-header .header-highlighted {
+    border-color: rgba(255, 255, 255, 0.05);
+  }
+  .inverted-header-enabled:not(.onscroll) .js-transparent-header .header-top__section a,
+  .inverted-header-enabled:not(.onscroll) .js-transparent-header .header a,
+  .inverted-header-enabled:not(.onscroll) .js-transparent-header .header-top-highlighted__section a,
+  .inverted-header-enabled:not(.onscroll) .js-transparent-header .header-highlighted a {
+    color: #ffffff;
+  }
+
+  /*site branding block*/
+  .inverted-header-enabled:not(.onscroll) .js-transparent-header .site-slogan {
+    color: #ffffff;
+  }
+
+  /*menus*/
+  .inverted-header-enabled:not(.onscroll) .js-transparent-header ul.menu > li ul {
+    background-color: #ffffff;
+  }
+  .inverted-header-enabled:not(.onscroll) .js-transparent-header ul.menu > li > a,
+  .inverted-header-enabled:not(.onscroll) .js-transparent-header ul.menu > li > span {
+    color: #ffffff;
+  }
+  .inverted-header-enabled:not(.onscroll) .js-transparent-header ul.menu > li > a:hover,
+  .inverted-header-enabled:not(.onscroll) .js-transparent-header ul.menu > li > span:hover {
+    color: #ffffff;
+  }
+  .inverted-header-enabled:not(.onscroll) .js-transparent-header ul.sf-menu > li > a .sf-sub-indicator:after {
+    color: #ffffff;
+  }
+  .inverted-header-enabled:not(.onscroll) .js-transparent-header  .menu.cta-active > li:last-child > a {
+    border-color: #ffffff;
+  }
+  .inverted-header-enabled:not(.onscroll) .js-transparent-header ul.menu ul li a,
+  .inverted-header-enabled:not(.onscroll) .js-transparent-header ul.menu ul li span {
+    color: var(--mt-color-base);
+  }
+
+  /*dropdowns*/
+  .inverted-header-enabled:not(.onscroll) .js-transparent-header .dropdown-trigger {
+    border-color: rgba(255, 255, 255, 0.5)
+  }
+  .inverted-header-enabled:not(.onscroll) .js-transparent-header .dropdown-menu {
+    background-color: transparent;
+    padding: 20px 0 0 0;
+    box-shadow: none;
+  }
+
+  /*forms*/
+  .inverted-header-enabled:not(.onscroll) .js-transparent-header input.form-search {
+    background-color: transparent;
+    box-shadow: none;
+  }
+  .inverted-header-enabled:not(.onscroll) .js-transparent-header ::-webkit-input-placeholder {
+    color: #ffffff;
+  }
+  .inverted-header-enabled:not(.onscroll) .js-transparent-header :-moz-placeholder {
+    color: #ffffff;
+  }
+  .inverted-header-enabled:not(.onscroll) .js-transparent-header ::-moz-placeholder {
+    color: #ffffff;
+  }
+  .inverted-header-enabled:not(.onscroll) .js-transparent-header :-ms-input-placeholder {
+    color: #ffffff;
+  }
+
+  /* Modal */
+  .inverted-header-enabled:not(.onscroll) .js-transparent-header .block-type--mt-modal {
+    color: var(--mt-color-base);
+  }
+  .inverted-header-enabled:not(.onscroll) .js-transparent-header .block-type--mt-modal .modal-icon-button:not(.mt-button) {
+    color: #ffffff;
+  }
+  .inverted-header-enabled:not(.onscroll) .js-transparent-header .block-type--mt-modal input[type="text"],
+  .inverted-header-enabled:not(.onscroll) .js-transparent-header .block-type--mt-modal input[type="search"]  {
+    color: var(--mt-color-base);
+  }
+  .inverted-header-enabled:not(.onscroll) .js-transparent-header .block-type--mt-modal ::-webkit-input-placeholder {
+    color: var(--mt-color-base);
+  }
+  .inverted-header-enabled:not(.onscroll) .js-transparent-header .block-type--mt-modal :-moz-placeholder {
+    color: var(--mt-color-base);
+  }
+  .inverted-header-enabled:not(.onscroll) .js-transparent-header .block-type--mt-modal ::-moz-placeholder {
+    color: var(--mt-color-base);
+  }
+  .inverted-header-enabled:not(.onscroll) .js-transparent-header .block-type--mt-modal :-ms-input-placeholder {
+    color: var(--mt-color-base);
+  }
+
+  /*icons list*/
+  .inverted-header-enabled:not(.onscroll) .js-transparent-header ul.icons-list.icons-list--bordered li a {
+    border-color: rgba(255, 255, 255, 0.50);
+  }
+  .inverted-header-enabled:not(.onscroll) .js-transparent-header ul.icons-list.icons-list--bordered li a:hover {
+    border-color: rgba(255, 255, 255, 1);
+    color: #ffffff;
+  }
+
+  /*on page scroll*/
+  .inverted-header-enabled.onscroll .js-transparent-header .header {
+    background-color: rgba(255, 255, 255, 0.95)!important;
+  }
+}

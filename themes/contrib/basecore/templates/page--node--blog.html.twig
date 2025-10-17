@@ -1,0 +1,61 @@
+{#
+/**
+ * @file
+ * Directory+s's theme implementation to display internal banner slider of blog node.
+ */
+#}
+
+{% extends "page.html.twig" %}
+{% block internal_banner %}
+  {% if mt_display_submitted or page.hero_top  %}
+    {{ attach_library('basecore/banner-area') }}
+    <div class="internal-banner-container {{ hero_top_background_color }}">
+      {% if page.hero_top %}
+        <div {% if hero_top_id %}id="{{ hero_top_id }}"{% endif %} class="clearfix hero-top d-flex align-items-end {{ (hero_top_blocks_paddings) ? ' region--no-block-paddings' : '' }}{{ (hero_top_region_paddings) ? ' region--no-paddings' : '' }}">
+          <div class="internal-banner d-flex align-items-end">
+          {# hero-top #}
+            <div class="{{ hero_top_layout_container }}">
+              {# hero-top__container #}
+              <div class="clearfix hero-top__container{{ (hero_top_animations == "enabled") ? ' mt-no-opacity' : '' }}"
+                {% if hero_top_animations == "enabled" %}
+                  data-animate-effect="{{ hero_top_animation_effect }}"
+                {% endif %}>
+                <div class="row">
+                  <div class="col-12">
+                    <div class="hero-top__section">
+                      {{ page.hero_top }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {# EOF:hero-top__container #}
+            </div>
+          </div>
+          {# EOF: hero-top #}
+        </div>
+      {% endif %}
+      {% if mt_display_submitted and node is not null %}
+        <div class="container mt-submitted-info">
+          <div class="row">
+            <div class="col-12">
+              <div class="node__meta d-flex">
+                {% if mt_node_user|render %}
+                  <div class="profile pe-3">
+                    {{ mt_node_user }}
+                  </div>
+                {% endif %}
+                <span class="node__submitted-info mb-4">
+                  {% trans %}By{% endtrans %}
+                  <span>{{ node.getOwner().getDisplayName() }}</span>
+                  {% trans %}on{% endtrans %}
+                  <span class="node__submitted-date">{{ node.createdtime|format_date('custom', 'F d, Y') }}</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+
+    </div>
+  {% endif %}
+{% endblock %}

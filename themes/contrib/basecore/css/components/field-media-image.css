@@ -1,0 +1,7 @@
+/**
+ * @file
+ * Visual styles for media image field in Base+.
+ */
+.field--name-field-media-image img {
+  width: 100%;
+}

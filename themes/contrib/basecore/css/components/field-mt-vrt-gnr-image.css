@@ -1,0 +1,7 @@
+/**
+ * @file
+ * Visual styles for Base+'s commerce cart content type.
+ */
+.media--type-mt-mdt-product-image.media--view-mode-mt-teaser img {
+  max-width: 120px;
+}

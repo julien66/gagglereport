@@ -1,0 +1,39 @@
+/**
+ * @file
+ * Visual styles for Base+'s in page slider.
+ */
+.in-page-images-slider ul.slides li {
+  position: relative;
+}
+
+/* navigation */
+.field--name-field-mt-srv-image .flex-control-nav {
+  width: auto;
+  position: absolute;
+  bottom: 0px;
+  text-align: center;
+  right: 0;
+  padding: 6px 30px;
+  background-color: var(--mt-color-default-light);
+  font-size: 0;
+  z-index: 2;
+}
+.field--name-field-mt-srv-image .flex-control-nav li {
+  margin: 0 10px;
+}
+.field--name-field-mt-srv-image .flex-control-paging li a {
+  width: 40px;
+  height: 8px;
+  margin: 5px 0;
+  background-color: transparent;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--mt-color-default-contrast);
+  border-radius: 0;
+  box-shadow: none;
+}
+.field--name-field-mt-srv-image .flex-control-paging li a.flex-active,
+.field--name-field-mt-srv-image .flex-control-paging li a:hover {
+  background-color: var(--mt-color-default-contrast);
+  border-color: var(--mt-color-default-contrast);
+}

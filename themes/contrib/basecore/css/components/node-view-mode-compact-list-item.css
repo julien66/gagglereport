@@ -1,0 +1,42 @@
+/**
+ * @file
+ * Visual styles for Base+'s node in compact list item view.
+ */
+.node--view-mode-mt-compact-list-item {
+  margin-bottom: 30px;
+}
+.node--view-mode-mt-compact-list-item .node__submitted {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.node--view-mode-mt-compact-list-item h6 {
+  font-size: 16px;
+}
+.node--view-mode-mt-compact-list-item.mt-tile-padding {
+  padding: 1.5rem;
+}
+.node--type-mt-post.node--view-mode-mt-compact-list-item.region--default-background {
+  box-shadow: 0 1px 2px rgb(64 64 64 / 31%), 0 1px 4px rgb(64 64 64 / 26%);
+}
+
+/*Changes for news Layout Builder blocks*/
+@media (min-width: 992px) and (max-width:1199px) {
+  .mt-news-hero .node--view-mode-mt-compact-list-item.mt-tile-padding {
+    padding-bottom: 1.1rem;
+    padding-top: 1.1rem
+  }
+}
+@media (min-width: 1200px) and (max-width:1333px) {
+  .mt-news-hero .node--view-mode-mt-compact-list-item.mt-tile-padding {
+    padding-bottom: 1.8rem;
+  }
+}
+@media (min-width:1500px) {
+  .mt-news-hero .node--view-mode-mt-compact-list-item.mt-tile-padding {
+    padding-bottom: 1.1rem;
+    padding-top: 1.1rem
+  }
+}
+.node--type-mt-post.node--view-mode-mt-compact-list-item a {
+  color: var(--mt-color-default-contrast);
+}

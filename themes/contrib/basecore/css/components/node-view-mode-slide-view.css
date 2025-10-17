@@ -1,0 +1,18 @@
+/**
+ * @file
+ * Visual styles for Base+'s product content type slide view.
+ */
+.node--view-mode-mt-slide-view .node__title {
+  margin-bottom: 30px;
+}
+.node--view-mode-mt-slide-view .node__main-content .field {
+  margin-bottom: 50px;
+}
+.node--view-mode-mt-slide-view .node__main-content .field p:last-child {
+  padding-bottom: 0;
+}
+@media (max-width: 991px) {
+  .node--view-mode-mt-slide-view .node__side-content {
+    margin-bottom: 20px;
+  }
+}

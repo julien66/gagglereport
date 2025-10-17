@@ -1,0 +1,24 @@
+/**
+ * @file
+ * Visual styles for Base+'s separators.
+ */
+.separator {
+  width: 60px;
+  height: 5px;
+  margin: 20px 0;
+  display: block;
+  border-radius: 10px;
+}
+.col-12 .separator {
+  margin-left: auto;
+  margin-right: auto;
+}
+.separator--gray {
+  background-color: #e4e8ed;
+}
+.separator--white {
+  background-color: #ffffff;
+}
+.separator--black {
+  background-color: #232323;
+}

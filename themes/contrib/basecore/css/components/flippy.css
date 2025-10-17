@@ -1,0 +1,94 @@
+/**
+ * @file
+ * Styles for Base+'s flippy pager.
+ */
+.flippy {
+  margin-bottom: 40px;
+}
+.flippy__title {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  text-align: center;
+  padding-bottom: 10px;
+}
+.region--default-background .flippy__title {
+  border-bottom-color: rgba(var(--mt-color-default-contrast-value), 0.2);
+}
+.region--bright-background .flippy__title {
+  border-bottom-color: rgba(var(--mt-color-bright-contrast-value), 0.2);
+}
+.region--pattern .flippy__title {
+  border-bottom-color: rgba(var(--mt-color-pattern-contrast-value), 0.2);
+}
+.region--accent-background .flippy__title {
+  border-bottom-color: rgba(var(--mt-color-accent-contrast-value), 0.2);
+}
+.region--tint-background .flippy__title {
+  border-bottom-color: rgba(var(--mt-color-tint-contrast-value), 0.2);
+}
+.region--shade-background .flippy__title {
+  border-bottom-color: rgba(var(--mt-color-shade-contrast-value), 0.2);
+}
+.region--colored-background .flippy__title {
+  border-bottom-color: rgba(var(--mt-color-colored-contrast-value), 0.2);
+}
+.region--dark-colored-background .flippy__title {
+  border-bottom-color: rgba(var(--mt-color-dark-colored-contrast-value), 0.2);
+}
+.region--dark-background .flippy__title {
+  border-bottom-color: rgba(var(--mt-color-dark-contrast-value), 0.2);
+}
+.flippy-link {
+  z-index: 0;
+}
+.flippy-link a {
+  display: block;
+  padding-top: 0px;
+  padding-right: 25px;
+  padding-left: 25px;
+  padding-bottom: 15px;
+}
+.flippy-label {
+  padding-top: 8px;
+}
+.flippy-icon-wrapper {
+  position: absolute;
+  top: 50%;
+  margin-top: -23px;
+  width: 3rem;
+}
+.flippy-icon-wrapper .flippy-icon-target {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  text-indent: -9999px;
+  z-index: 1;
+  top: 0;
+}
+.flippy-icon-wrapper .flippy-icon-target a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-size: 0;
+  color: transparent;
+}
+.flippy-next .flippy-icon-wrapper {
+  right: 0;
+  text-align: right;
+}
+.flippy-previous .flippy-icon-wrapper {
+  left: 0;
+  text-align: left;
+}
+@media (max-width: 575px) {
+  .flippy__title {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+  .flippy-next .flippy-icon-wrapper {
+    right: 10px;
+  }
+  .flippy-previous .flippy-icon-wrapper {
+    left: 10px;
+  }
+}

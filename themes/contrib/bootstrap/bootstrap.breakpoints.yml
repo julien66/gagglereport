@@ -1,0 +1,42 @@
+bootstrap.xs:
+  label: extrasmall
+  mediaQuery: ''
+  weight: 0
+  multipliers:
+    - 1x
+    - 2x
+bootstrap.small:
+  label: small
+  mediaQuery: 'all and (max-width: 576px)'
+  weight: 0
+  multipliers:
+    - 1x
+    - 2x
+bootstrap.medium:
+  label: medium
+  mediaQuery: 'all and (min-width: 768px)'
+  weight: 1
+  multipliers:
+    - 1x
+    - 2x
+bootstrap.large:
+  label: large
+  mediaQuery: 'all and (min-width: 992px)'
+  weight: 2
+  multipliers:
+    - 1x
+    - 2x
+bootstrap.extra:
+  label: extra
+  mediaQuery: 'all and (min-width: 1200px)'
+  weight: 3
+  multipliers:
+    - 1x
+    - 2x
+bootstrap.extraextra:
+  label: extra
+  mediaQuery: 'all and (min-width: 1400px)'
+  weight: 3
+  multipliers:
+    - 1x
+    - 2x

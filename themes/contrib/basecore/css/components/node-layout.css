@@ -1,0 +1,17 @@
+/**
+ * @file
+ * Visual styles for Base+'s node layout.
+ */
+
+/*node layout builder form*/
+.node-layout-builder-form .form-actions {
+  position: relative;
+  padding-bottom: 30px;
+}
+.node-layout-builder-form .form-actions .js-show:has(.js-form-type-checkbox) {
+  position: absolute;
+  top: calc(100% - 20px);
+}
+.node-layout-builder-form .form-actions .js-show + input[type='submit'] {
+  margin-left: 20px;
+}

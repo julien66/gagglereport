@@ -1,0 +1,93 @@
+/**
+ * @file
+ * Visual styles for Base+'s views.
+ */
+.views-field-title a {
+  display: block;
+}
+.view h6 a {
+  color: var(--mt-color-high-contrast);
+}
+.view-header .mt-view-header {
+  display: none;
+}
+.mt-view-header {
+  font-size: 18px;
+  line-height: 1.4;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+.block-views .mt-view-header {
+  font-size: 1em;
+  margin-bottom: 40px;
+  text-transform: none;
+  line-height: 1.5;
+  font-weight: 400;
+  text-align: center;
+  padding-bottom: 0;
+}
+.mt-view-header-enabled > h2.title {
+  margin-bottom: 10px;
+}
+
+/*more links*/
+.headings-wide-spacing-enabled .view > .more-link a {
+  letter-spacing: var(--mt-headings-letter-spacing);
+  text-transform: uppercase;
+}
+.col-12 .view > .more-link {
+  text-align: center;
+  margin-top: 10px;
+}
+.mt-link-style-animated-icon-2 .col-12 .view > .more-link > .mt-link-stylable {
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.col-12 .view.view-mt-showcases-metro-tiles > .more-link {
+  margin-top: 40px;
+}
+
+/*more links @sidebars and footer regions*/
+.footer__section .view > .more-link a {
+  margin: 10px 0 0;
+  text-transform: none;
+}
+
+/*clear grid floats*/
+.view.row .view-content:before,
+.view.row .view-content:after {
+  display: table;
+  content: ' ';
+}
+.view.row .view-content:after {
+  clear: both;
+}
+
+/* exposed filters */
+.views-exposed-form:not(.bef-exposed-form) .form--inline {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.views-exposed-form:not(.bef-exposed-form) .form--inline .form-item {
+  float: none;
+  margin-right: 0;
+  margin-left: 0;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.views-exposed-form:not(.bef-exposed-form) .form--inline .form-actions {
+  padding-left: 15px;
+  padding-right: 15px;
+  -ms-flex-positive: 3;
+  flex-grow: 3;
+}
+.views-exposed-form:not(.bef-exposed-form) .form--inline .form-actions input[type='submit'] {
+  width: 100%;
+}

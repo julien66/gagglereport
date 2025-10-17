@@ -1,0 +1,16 @@
+{
+  "name": "basecore",
+  "version": "1.0.0",
+  "description": "basecore",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "build:styles": "sass-builder styles",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "",
+  "dependencies": {
+    "@skounis/sass-builder": "0.0.1"
+  }
+}

@@ -1,0 +1,52 @@
+/**
+ * @file
+ * Visual styles for Base+'s nav pills.
+ */
+.nav.nav-pills {
+  margin-right: -5px;
+  margin-left: -5px;
+}
+.nav-pills > li > a.nav-link {
+  text-decoration: none;
+  padding: 10px 25px;
+  font-size: 15px;
+  background-color: transparent;
+  border-width: 1px;
+  border-style: solid;
+}
+.headings-wide-spacing-enabled .nav-pills > li > a.nav-link {
+  letter-spacing: var(--mt-headings-letter-spacing);
+  text-transform: uppercase;
+}
+.region--default-background .nav-pills > li > a.nav-link {
+  color: var(--mt-color-default-contrast);
+}
+.region--bright-background .nav-pills > li > a.nav-link {
+  color: var(--mt-color-bright-contrast);
+}
+.region--pattern .nav-pills > li > a.nav-link {
+  color: var(--mt-color-pattern-contrast);
+}
+.region--accent-background .nav-pills > li > a.nav-link {
+  color: var(--mt-color-accent-contrast);
+}
+.region--tint-background .nav-pills > li > a.nav-link {
+  color: var(--mt-color-tint-contrast);
+}
+.region--shade-background .nav-pills > li > a.nav-link {
+  color: var(--mt-color-shade-contrast);
+}
+.region--colored-background .nav-pills > li > a.nav-link {
+  color: var(--mt-color-colored-contrast);
+}
+.region--dark-colored-background .nav-pills > li > a.nav-link {
+  color: var(--mt-color-dark-colored-contrast);
+}
+.region--dark-background .nav-pills > li > a.nav-link {
+  color: var(--mt-color-dark-contrast);
+}
+.nav.nav-pills > li,
+.nav.nav-pills > li + li {
+  margin: 0px 5px 15px;
+}
+

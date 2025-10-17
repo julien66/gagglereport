@@ -1,0 +1,169 @@
+/**
+ * @file
+ * Visual styles for taxonomy terms in Base+.
+ */
+
+.node--view-mode-full .field--name-field-tags {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.field--entity-reference-target-type-taxonomy-term,
+.field--entity-reference-target-type-taxonomy-term.field__item {
+  position: relative;
+  padding-left: 30px;
+  padding-top: 0px;
+  display: flex;
+}
+.field--entity-reference-target-type-taxonomy-term .field__items {
+  display: flex;
+}
+.field--entity-reference-target-type-taxonomy-term:before,
+.field--entity-reference-target-type-taxonomy-term.field__item:before {
+  content: '\f02c';
+  font-family: 'Font Awesome 5 Free', 'Font Awesome 5 Pro';
+  font-weight: 900;
+  left: 1px;
+  padding-left: 0px;
+  font-size: 16px;
+  position: absolute;
+  top: 17px;
+}
+.region--colored-background .field--entity-reference-target-type-taxonomy-term:before,
+.region--colored-background .field--entity-reference-target-type-taxonomy-term.field__item:before {
+  color: var(--mt-color-colored-contrast);
+}
+.region--dark-colored-background .field--entity-reference-target-type-taxonomy-term:before,
+.region--dark-colored-background .field--entity-reference-target-type-taxonomy-term.field__item:before {
+  color: var(--mt-color-dark-colored-contrast);
+}
+.region--shade-background .field--entity-reference-target-type-taxonomy-term:before,
+.region--shade-background .field--entity-reference-target-type-taxonomy-term.field__item:before {
+  color: var(--mt-color-shade-contrast);
+}
+.region--dark-background .field--entity-reference-target-type-taxonomy-term:before,
+.region--dark-background .field--entity-reference-target-type-taxonomy-term.field__item:before {
+  color: var(--mt-color-dark-contrast);
+}
+.field--entity-reference-target-type-taxonomy-term.field--label-hidden:before,
+.field--entity-reference-target-type-taxonomy-term.field--label-hidden.field__item:before {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  top: 1px;
+  line-height: 1;
+  font-size: 14px;
+}
+.field--entity-reference-target-type-taxonomy-term.field--label-inline:before,
+.field--entity-reference-target-type-taxonomy-term.field--label-inline.field__item:before {
+  top: 2px;
+  left: 5px;
+}
+
+/*taxonomy terms icon when label is above*/
+.field--label-above.field--entity-reference-target-type-taxonomy-term {
+  padding-left: 0;
+}
+.field--label-above.field--entity-reference-target-type-taxonomy-term:before {
+  content: '';
+  font-family: '';
+}
+.field--label-above.field--entity-reference-target-type-taxonomy-term .field__label {
+  position: relative;
+}
+.field--label-above.field--entity-reference-target-type-taxonomy-term .field__label:before {
+  content: '\f02c';
+  font-family: 'Font Awesome 5 Free', 'Font Awesome 5 Pro';
+  font-weight: 900;
+  padding-right: 10px;
+  margin-left: 1px;
+}
+
+/*taxonomy terms icon when label is inline*/
+.field--label-inline.field--entity-reference-target-type-taxonomy-term .field__items:before,
+.field--label-inline.field--entity-reference-target-type-taxonomy-term > .field__item:before {
+  top: 20px;
+}
+
+/*taxonomy terms*/
+.field--entity-reference-target-type-taxonomy-term + .field--entity-reference-target-type-taxonomy-term {
+  margin-top: 0;
+}
+.field--entity-reference-target-type-taxonomy-term .field__item a {
+  position: relative;
+  padding-right: 20px;
+  margin-right: 0;
+}
+.field--entity-reference-target-type-taxonomy-term .field__item:last-child a {
+  padding-right: 0;
+}
+.field--entity-reference-target-type-taxonomy-term .field__item a:after {
+  content: '';
+  width: 4px;
+  height: 4px;
+  background-color: #ffffff;
+  border-radius: 100%;
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  margin-top: -2px;
+}
+.field--entity-reference-target-type-taxonomy-term .field__item:last-child a:after {
+  content: '';
+  height: 0;
+  width: 0;
+  background-color: transparent;
+}
+.region--default-background .field--entity-reference-target-type-taxonomy-term .field__item a:after {
+  background-color: rgba(var(--mt-color-default-contrast-value), 0.5);
+}
+.region--bright-background .field--entity-reference-target-type-taxonomy-term .field__item a:after {
+  background-color: rgba(var(--mt-color-bright-contrast-value), 0.5);
+}
+.region--pattern .field--entity-reference-target-type-taxonomy-term .field__item a:after {
+  background-color: rgba(var(--mt-color-pattern-contrast-value), 0.5);
+}
+.region--accent-background .field--entity-reference-target-type-taxonomy-term .field__item a:after {
+  background-color: rgba(var(--mt-color-accent-contrast-value), 0.5);
+}
+.region--tint-background .field--entity-reference-target-type-taxonomy-term .field__item a:after {
+  background-color: rgba(var(--mt-color-tint-contrast-value), 0.5);
+}
+.region--shade-background .field--entity-reference-target-type-taxonomy-term .field__item a:after {
+  background-color: rgba(var(--mt-color-shade-contrast-value), 0.5);
+}
+.region--colored-background .field--entity-reference-target-type-taxonomy-term .field__item a:after {
+  background-color: rgba(var(--mt-color-colored-contrast-value), 0.5);
+}
+.region--dark-colored-background .field--entity-reference-target-type-taxonomy-term .field__item a:after {
+  background-color: rgba(var(--mt-color-dark-colored-contrast-value), 0.5);
+}
+.region--dark-background .field--entity-reference-target-type-taxonomy-term .field__item a:after {
+  background-color: rgba(var(--mt-color-dark-contrast-value), 0.5);
+}
+.field--name-field-mt-affiliation-image {
+  margin-bottom: 30px;
+}
+.vocabulary-mt-affiliations {
+  margin-bottom: 50px;
+}
+
+/* Tags specific styling */
+.field--entity-reference-target-type-taxonomy-term--tags,
+.field--entity-reference-target-type-taxonomy-term--tags.field__item {
+  padding: 0;
+}
+.field--entity-reference-target-type-taxonomy-term--tags:before,
+.field--entity-reference-target-type-taxonomy-term--tags.field__item:before {
+  content: '';
+}
+.field--entity-reference-target-type-taxonomy-term--tags .field__item a,
+.field--entity-reference-target-type-taxonomy-term--tags.field__item a {
+  font-size: 14px;
+  text-decoration: unset;
+}
+.field--entity-reference-target-type-taxonomy-term--tags .field__item a:after,
+.field--entity-reference-target-type-taxonomy-term--tags.field__item a:after {
+  content: '';
+}

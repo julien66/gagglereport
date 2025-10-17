@@ -1,0 +1,80 @@
+/* Banner */
+.internal-banner-container {
+  position: relative;
+  z-index: 2;
+}
+.internal-banner-container--fullscreen .hero-top {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.internal-banner-container .page-title {
+  margin-bottom: 0;
+}
+.internal-banner {
+  font-size: 16px;
+  width: 100%;
+}
+.internal-banner-container + .hero-top {
+  min-height: auto;
+}
+.internal-banner-container + .hero-top .page-title {
+  display: none;
+}
+
+.internal-banner__meta {
+  padding-top: 16px;
+  font-size: 16px;
+}
+.internal-banner__meta-separator {
+  font-size: 5px;
+  line-height: 24px;
+  text-align: center;
+}
+.internal-banner__meta-separator--wide {
+  padding: 0 14px;
+}
+.internal-banner__meta .list-inline-item {
+  font-size: 20px;
+  margin-right: 24px;
+}
+.region--default-background .internal-banner__meta .list-inline-item a {
+  color: var(--mt-color-default-contrast);
+}
+.region--bright-background .internal-banner__meta .list-inline-item a {
+  color: var(--mt-color-bright-contrast);
+}
+.region--accent-background .internal-banner__meta .list-inline-item a {
+  color: var(--mt-color-accent-contrast);
+}
+.region--tint-background .internal-banner__meta .list-inline-item a {
+  color: var(--mt-color-tint-contrast);
+}
+.region--shade-background .internal-banner__meta .list-inline-item a {
+  color: var(--mt-color-shade-contrast);
+}
+.region--colored-background .internal-banner__meta .list-inline-item a {
+  color: var(--mt-color-colored-contrast);
+}
+.region--dark-colored-background .internal-banner__meta .list-inline-item a {
+  color: var(--mt-color-dark-colored-contrast);
+}
+.region--dark-background .internal-banner__meta .list-inline-item a {
+  color: var(--mt-color-dark-contrast);
+}
+.region--pattern .internal-banner__meta .list-inline-item a {
+  color: var(--mt-color-pattern-contrast);
+}
+.internal-banner__meta .list-inline-item:last-child {
+  margin-right: 0;
+}
+.internal-banner__meta
+  .field--entity-reference-target-type-taxonomy-term
+  .field__item {
+  margin-bottom: 0;
+}
+@media (max-width: 575px) {
+  .internal-banner__meta-separator {
+    display: none;
+  }
+}

@@ -1,0 +1,17 @@
+{%
+  set classes = [
+    'layout',
+    'layout--onecol',
+    'section',
+  ]
+%}
+
+{% if content %}
+  <div {{ attributes.addClass(classes) }}>
+    <div class="container">
+      <div {{ region_attributes.content.addClass('layout__region', 'layout__region--content') }}>
+        {{ content.content }}
+      </div>
+    </div>
+  </div>
+{% endif %}

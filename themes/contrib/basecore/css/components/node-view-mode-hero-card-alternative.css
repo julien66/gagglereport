@@ -1,0 +1,116 @@
+/**
+ * @file
+ * Visual styles for Clean+'s node in hero view.
+ */
+.node--view-mode-mt-hero-card-alternative-alternative {
+  margin-bottom: 40px;
+}
+.region-hero-first .node--view-mode-mt-hero-card-alternative {
+  margin-bottom: 70px;
+}
+.node--view-mode-mt-hero-card-alternative h2.node__title {
+  font-size: 24px;
+  position: absolute;
+  bottom: 35px;
+  left: 10px;
+  right: 10px;
+  background-color: rgba(var(--mt-color-base-contrast-value),0.8);
+  color: var(--mt-color-base);
+  padding: 20px;
+  max-width: 100%;
+}
+.node--view-mode-mt-hero-card-alternative .node__meta {
+  margin-bottom: 20px;
+}
+.node--view-mode-mt-hero-card-alternative .field--name-field-mt-pst-body {
+  margin-bottom: 15px;
+}
+.node--view-mode-mt-hero-card-alternative .field--name-field-mt-pst-body > p:last-child {
+  padding-bottom: 0;
+}
+.node--view-mode-mt-hero-card-alternative .profile {
+  display: inline-block;
+}
+.node--view-mode-mt-hero-card-alternative .profile .field--name-user-picture {
+  float: none;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.node--view-mode-mt-hero-card-alternative .field--name-user-picture img {
+  border-radius: 100%;
+  max-width: 40px;
+  margin-right: 10px;
+}
+.node--view-mode-mt-hero-card-alternative .node__submitted {
+  font-weight: 700;
+  font-size: 16px;
+}
+.node--view-mode-mt-hero-card-alternative .node__submitted a {
+  font-weight: 700;
+}
+.node--view-mode-mt-hero-card-alternative .slideshow-image__caption {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 15px 20px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  width: 70%;
+  max-width: 70%;
+  z-index: 20;
+}
+.node--view-mode-mt-hero-card-alternative .field--name-field-mt-pst-slideshow-text {
+  font-size: 14px;
+  color: var(--mt-color-base-dark);
+}
+.node--view-mode-mt-hero-card-alternative .field--name-field-mt-pst-slideshow-text h5 {
+  margin-top: 0;
+  margin-bottom: 5px;
+  color: var(--mt-color-base-dark);
+}
+.node--view-mode-mt-hero-card-alternative .field--name-field-mt-pst-slideshow-text p:last-child {
+  padding-bottom: 0;
+}
+.node--view-mode-mt-hero-card-alternative .node__comments-count {
+  font-size: 12px;
+  color: #575757;
+}
+.region--light-typography .node--view-mode-mt-hero-card-alternative .node__comments-count {
+  color: #ffffff;
+}
+.node--type-mt-post.node--view-mode-mt-hero-card-alternative.region--bright-background a:hover {
+  color: var(--mt-color-primary-light);
+  text-decoration: none;
+}
+.region--default-background .node--view-mode-mt-hero-card-alternative {
+  background-color: var(--mt-color-default-light);
+}
+
+.mt-news-hero .node--view-mode-mt-hero-card-alternative h2.node__title {
+  font-size: 24px;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  background-color: rgba(var(--mt-color-base-contrast-value),0.8);
+  color: var(--mt-color-base);
+  padding: 20px;
+  max-width: 100%;
+  border-radius: 10px;
+}
+.mt-news-hero .node--view-mode-mt-hero-card-alternative h2.node__title a {
+  color: var(--mt-color-accent-contrast);
+}
+.view-mt-posts-hero-slider-card-alternative .flexslider-main {
+  padding-bottom: 45px;
+  margin-bottom: 0;
+}
+.view-mt-posts-hero-slider-card-alternative .flexslider-main .flex-control-nav {
+  bottom: -5px;
+}
+.view-mt-posts-hero-slider-card-alternative .flexslider-main .flex-direction-nav {
+  bottom: -5px;
+}

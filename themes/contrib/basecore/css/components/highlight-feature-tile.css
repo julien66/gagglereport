@@ -1,0 +1,15 @@
+/**
+ * @file
+ * Visual styles for Base+'s highlight feature tile.
+ */
+.field--name-field-mt-hft-feature .row > .field__item {
+  margin-bottom: 40px;
+}
+@media (min-width: 1200px) {
+  .field--name-field-mt-hft-feature .row > .field__item:nth-child(odd) {
+    padding-right: 45px;
+  }
+  .field--name-field-mt-hft-feature .row > .field__item:nth-child(even) {
+    padding-left: 45px;
+  }
+}

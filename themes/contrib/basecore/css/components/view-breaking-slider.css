@@ -1,0 +1,97 @@
+/**
+ * @file
+ * Visual styles for Base+'s breaking slider.
+ */
+.view-mt-breaking-slider {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding: 15px 0;
+}
+.view-mt-breaking-slider .mt-link-stylable {
+  font-size: 18px;
+}
+.view-mt-breaking-slider .flexslider {
+  display: block;
+  padding-left: 120px;
+}
+.view-mt-breaking-slider > .view-content {
+  -ms-flex-order: 2;
+  order: 2;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  max-width: 100%;
+  position: relative;
+  width: 100%;
+}
+.view-mt-breaking-slider .views-field-title {
+  font-size: 16px;
+}
+.view-mt-breaking-slider .flex-direction-nav {
+  width: 65px;
+  height: auto;
+  position: absolute;
+  left: 35px;
+  top: 50%;
+  margin-top: -15px;
+}
+.view-mt-breaking-slider .flex-direction-nav a {
+  width: 30px;
+  height: 30px;
+  display: block;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #c4c4c4;
+}
+.region--light-typography .view-mt-breaking-slider .flex-direction-nav a {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.view-mt-breaking-slider .flex-direction-nav a:before {
+  font-size: 18px;
+  line-height: 30px;
+  margin-top: 0;
+  top: 0;
+  color: #000000;
+}
+.region--light-typography .view-mt-breaking-slider .flex-direction-nav a:before {
+  color: #ffffff;
+}
+.view-mt-breaking-slider .flexslider:hover .flex-direction-nav .flex-prev,
+.view-mt-breaking-slider .flexslider:hover .flex-direction-nav .flex-next {
+  opacity: 1;
+}
+.view-mt-breaking-slider .flex-pauseplay {
+  width: 30px;
+  height: auto;
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  margin-top: -15px;
+}
+.view-mt-breaking-slider .flex-pauseplay a {
+  width: 30px;
+  height: 30px;
+  display: block;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #c4c4c4;
+  top: 0;
+  text-align: center;
+  opacity: 1;
+}
+.region--light-typography .view-mt-breaking-slider .flex-pauseplay a {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.view-mt-breaking-slider .flex-pauseplay a:before {
+  font-size: 15px;
+  line-height: 30px;
+  margin-top: 0;
+  top: 0;
+  color: #000000;
+}
+.region--light-typography .view-mt-breaking-slider .flex-pauseplay a:before {
+  color: #ffffff;
+}

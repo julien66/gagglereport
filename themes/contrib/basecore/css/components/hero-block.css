@@ -1,0 +1,148 @@
+/**
+ * @file
+ * Visual styles for Base+'s hero block.
+ */
+.field--name-field-mt-hero-title {
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: var(--mt-color-high-contrast);
+}
+@media (min-width: 992px) {
+  .field--name-field-mt-hero-title {
+    min-height: 185px;
+  }
+}
+.field--name-field-mt-hero-body {
+  font-size: 18px;
+  margin-bottom: 35px;
+}
+.field--name-field-mt-hero-teaser {
+  margin-bottom: 15px;
+}
+.field--name-field-mt-hero-social-icon {
+  margin-bottom: 50px;
+}
+.field--name-field-mt-hero-teaser {
+  margin-top: 20px;
+}
+.field--name-field-mt-fa-icon-icon .fa-lg {
+  font-size: 22px;
+}
+.paragraph--type--mt-fa-icon {
+  padding: 5px 0;
+}
+.headings-wide-spacing-enabled .field--name-field-mt-hero-link a {
+  letter-spacing: var(--mt-headings-letter-spacing);
+  text-transform: uppercase;
+}
+@media (max-width: 575px) {
+  .mt-style-sharp.mt-style-image-global .field--name-field-mt-hero-image,
+  .mt-style-image-sharp .field--name-field-mt-hero-image {
+    margin: 0 -15px;
+  }
+}
+
+/*stacked layout*/
+.mt-hero--stacked-layout .field--name-field-mt-hero-body {
+  margin-bottom: 20px;
+}
+.mt-hero--stacked-layout .field--name-field-mt-hero-link {
+  margin-bottom: 50px;
+}
+@media (max-width: 991px) {
+  .mt-hero--stacked-layout .field--name-field-mt-hero-title {
+    font-size: 36px;
+  }
+  .mt-hero--stacked-layout .field--name-field-mt-hero-title .typed-cursor {
+    font-size: 36px;
+  }
+  .mt-hero--stacked-layout .field--name-field-mt-hero-body {
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+  .mt-hero--stacked-layout .field--name-field-mt-hero-link {
+    margin-bottom: 20px;
+  }
+  .field--name-field-mt-hero-teaser {
+    margin-top: 0;
+  }
+}
+@media (min-width: 1200px) {
+  .mt-hero-teaser-field--items-1 .field__label {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin-left: auto;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+@media (max-width: 767px) {
+  .mt-hero--stacked-layout .mt-hero-side {
+    display: none;
+  }
+}
+
+/*overlaid layout*/
+.mt-hero--overlaid-layout {
+  position: relative;
+}
+.hero-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  width: 860px;
+  padding: 50px;
+}
+.region--bright-background .hero-caption {
+  background-color: #ffffff;
+  border-width: 1px;
+  border-color: #ededed;
+  border-style: solid;
+}
+.region--tint-background .hero-caption {
+  background-color: #f1f1f1;
+}
+.region--shade-background .hero-caption {
+  background-color: #333333;
+}
+.region--dark-background .hero-caption {
+  background-color: #000000;
+}
+.region--pattern .hero-caption {
+  background-image: url('../../images/white-pattern.png');
+  background-repeat: repeat;
+  background-position: 0 0;
+}
+@media (max-width: 1199px) {
+  .hero-caption {
+    max-width: 550px;
+    padding: 30px;
+  }
+  .mt-hero--overlaid-layout .field--name-field-mt-hero-title {
+    font-size: 36px;
+  }
+  .mt-hero--overlaid-layout .field--name-field-mt-hero-title .typed-cursor {
+    font-size: 36px;
+  }
+  .mt-hero--overlaid-layout .field--name-field-mt-hero-body {
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 991px) {
+  .hero-caption {
+    max-width: 100%;
+    width: auto;
+    position: static;
+    padding: 0 0 30px 0;
+  }
+  .region--bright-background .hero-caption {
+    border-width: 0;
+  }
+}

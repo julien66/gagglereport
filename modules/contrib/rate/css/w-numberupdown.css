@@ -1,0 +1,65 @@
+/* Rate widget numberupdown CSS */
+
+.numberupdown-rating-wrapper {
+  display: inline;
+  padding: 0;
+}
+
+div.numberupdown > form > table > tbody > tr.rating-table-tr {
+  border: none;
+}
+
+div.numberupdown > form > table > tbody > tr > td.rating-table-td {
+  padding: 0;
+  border: none;
+}
+
+div.numberupdown-rating-wrapper > div.form-type-radio {
+  display: inline;
+  padding: 0;
+}
+
+/* Default button styles, override in widget settings */
+div.numberupdown-rating-wrapper > div > label.numberupdown-rating-label {
+  display: inline-block;
+  padding: 0;
+}
+
+div.numberupdown-rating-wrapper > div > label.numberupdown-rating-label-up::before {
+  display: inline;
+  content: "\f067";
+  font-family: FontAwesome, serif;
+  font-size: 1.2em;
+}
+
+div.numberupdown-rating-wrapper > div > label.numberupdown-rating-label-down::before {
+  display: inline;
+  content: "\f068";
+  font-family: FontAwesome, serif;
+  font-size: 1.2em;
+}
+
+div.numberupdown-rating-wrapper > div > label.numberupdown-rating-label:hover,
+div.numberupdown-rating-wrapper > div > label.numberupdown-rating-label:active,
+div.numberupdown-rating-wrapper > div > label.numberupdown-rating-label:focus {
+  cursor: pointer;
+  color: #666;
+}
+
+div.numberupdown-rating-wrapper > div > div.rating-option-result {
+  display: inline;
+  padding: 5px;
+  text-align: center;
+}
+
+input.numberupdown-rating-input[type="radio"] {
+  display: none;
+}
+
+button.numberupdown-rating-submit {
+  display: none;
+}
+
+input.numberupdown-rating-submit {
+  display: none;
+}

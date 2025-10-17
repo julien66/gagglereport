@@ -1,0 +1,176 @@
+/**
+ * @file
+ * Visual styles for Base+'s subscribe forms.
+ */
+/*subscribe form*/
+.subscribe-form-text-large {
+  font-size: 60px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+@media (max-width: 991px) {
+  .subscribe-form-text-large {
+    font-size: 36px;
+  }
+}
+.region--shade-background .footer__section .subscribe-form-text-large {
+  color: #ffffff;
+}
+.subscribe-form-text {
+  font-size: 18px;
+}
+.subscribe-form {
+  position: relative;
+}
+@media (min-width: 992px) {
+  .subscribe-form {
+    max-width: 60%;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1200px) {
+  .subscribe-form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+.subscribe-form .form-group {
+  margin-bottom: 0;
+}
+.subscribe-form .form-actions {
+  margin: 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.subscribe-form .form-actions input[type="submit"] {
+  margin: 0;
+  padding: 15px 33px 16px;
+  min-width: 180px;
+}
+.subscribe-form input.form-text {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  margin: 0;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-right: 195px;
+}
+@media (max-width: 767px) {
+  .subscribe-form .form-group {
+    margin-bottom: 20px;
+  }
+  .subscribe-form input.form-text {
+    padding-right: 15px;
+  }
+  .subscribe-form .form-actions {
+    position: static;
+    padding: 0 5px;
+    width: 100%;
+  }
+  .subscribe-form .form-actions input[type="submit"] {
+    width: 100%;
+  }
+}
+
+/*subscribe full width*/
+.subscribe-full-width h4 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.subscribe-full-width .form-text {
+  margin-top: 0;
+}
+.subscribe-full-width input[type="submit"] {
+  padding: 15px 25px;
+}
+.subscribe-full-width h4 .svg-inline--fa {
+  margin-right: 10px;
+}
+@media (min-width: 768px) {
+  .subscribe-full-width input[type="submit"] {
+    margin: 0;
+  }
+}
+@media (min-width: 992px) {
+  .subscribe-full-width h4 {
+    text-align: left;
+    margin: 15px 0;
+  }
+}
+
+/* Mailchimp subscribe form block */
+.block-mailchimp-signup form {
+  position: relative;
+}
+@media (min-width: 992px) {
+  .block-mailchimp-signup form {
+    max-width: 60%;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1200px) {
+  .block-mailchimp-signup form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+.block-mailchimp-signup input.form-text,
+.block-mailchimp-signup input.form-tel,
+.block-mailchimp-signup input.form-email,
+.block-mailchimp-signup input.form-url,
+.block-mailchimp-signup input.form-search,
+.block-mailchimp-signup input.form-file,
+.block-mailchimp-signup input.form-number,
+.block-mailchimp-signup input.form-color,
+.block-mailchimp-signup input.form-date,
+.block-mailchimp-signup input.form-time,
+.block-mailchimp-signup textarea,
+.block-mailchimp-signup select {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-right: 195px;
+}
+.block-mailchimp-signup .form-actions {
+  margin: 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.block-mailchimp-signup .form-actions input[type="submit"] {
+  margin: 0;
+  padding: 17px 33px 16px;
+  min-width: 180px;
+}
+@media (max-width: 767px) {
+  .block-mailchimp-signup input.form-text,
+  .block-mailchimp-signup input.form-tel,
+  .block-mailchimp-signup input.form-email,
+  .block-mailchimp-signup input.form-url,
+  .block-mailchimp-signup input.form-search,
+  .block-mailchimp-signup input.form-file,
+  .block-mailchimp-signup input.form-number,
+  .block-mailchimp-signup input.form-color,
+  .block-mailchimp-signup input.form-date,
+  .block-mailchimp-signup input.form-time,
+  .block-mailchimp-signup textarea,
+  .block-mailchimp-signup select {
+    padding-right: 15px;
+  }
+  .block-mailchimp-signup .form-actions {
+    position: static;
+  }
+  .block-mailchimp-signup .form-actions input[type="submit"] {
+    width: 100%;
+  }
+}
+
+/* footer top */
+.footer-top .block-mailchimp-signup form label {
+  display: none;
+}
+.footer-top .block-mailchimp-signup .form-item,
+.footer-top .block-mailchimp-signup .form-actions {
+  margin-bottom: 0;
+}

@@ -1,0 +1,202 @@
+{#
+/**
+ * @file
+ * Base+'s theme implementation to display internal banner slider of Service node.
+ */
+#}
+
+{% extends "page.html.twig" %}
+{# block page_container #}
+{% block page_container %}
+
+  {% block page_top %}
+    {% if page.header_top_first or page.header_top_second or page.header_first or page.header or page.header_third or page.header_top_highlighted_first or page.header_top_highlighted_second or post_progress %}
+    <div class="page-top-container">
+      {# header-container #}
+      <div class="header-container">
+
+        {% if page.header_top_highlighted_first or page.header_top_highlighted_second %}
+          {# header_top_highlighted #}
+          <div class="clearfix header-top-highlighted {{ header_top_highlighted_background_color }}{{ (header_top_highlighted_blocks_paddings) ? ' region--no-block-paddings' : '' }}{{ (header_top_highlighted_region_paddings) ? ' region--no-paddings' : '' }}">
+            <div class="{{ header_top_highlighted_layout_container }} {{ header_horizontal_paddings }}">
+              {# header_top_highlighted__container #}
+              <div class="clearfix header-top-highlighted__container{{ (header_top_highlighted_animations == "enabled") ? ' mt-no-opacity' : '' }}"
+                {% if header_top_highlighted_animations == "enabled" %}
+                  data-animate-effect="{{ header_top_highlighted_animation_effect }}"
+                {% endif %}>
+                <div class="row d-flex align-items-center">
+                  {% if page.header_top_highlighted_first %}
+                    <div class="{{ header_top_highlighted_first_grid_class }}">
+                      {# header-top-highlighted-first #}
+                      <div class="clearfix header-top-highlighted__section header-top-highlighted-first">
+                        {{ page.header_top_highlighted_first }}
+                      </div>
+                      {# EOF:header-top-highlighted-first #}
+                    </div>
+                  {% endif %}
+                  {% if page.header_top_highlighted_second %}
+                    <div class="{{ header_top_highlighted_second_grid_class }}">
+                      {# header-top-highlighted-second #}
+                      <div class="clearfix header-top-highlighted__section header-top-highlighted-second">
+                        {{ page.header_top_highlighted_second }}
+                      </div>
+                      {# EOF:header-top-highlighted-second #}
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+              {# EOF:header-top-highlighted__container #}
+            </div>
+          </div>
+          {# EOF: header-top-highlighted #}
+        {% endif %}
+
+        {% if page.header_top_first or page.header_top_second %}
+          {# header-top #}
+          <div class="clearfix header-top {{ header_top_background_color }}{{ (header_top_blocks_paddings) ? ' region--no-block-paddings' : '' }}{{ (header_top_region_paddings) ? ' region--no-paddings' : '' }}">
+            <div class="{{ header_top_layout_container }} {{ header_horizontal_paddings }}">
+              {# header-top__container #}
+              <div class="clearfix header-top__container{{ (header_top_animations == "enabled") ? ' mt-no-opacity' : '' }}"
+                {% if header_top_animations == "enabled" %}
+                  data-animate-effect="{{ header_top_animation_effect }}"
+                {% endif %}>
+                <div class="row">
+                  {% if page.header_top_first %}
+                    <div class="{{ header_top_first_grid_class }}">
+                      {# header-top-first #}
+                      <div class="clearfix header-top__section header-top-first">
+                        {{ page.header_top_first }}
+                      </div>
+                      {# EOF:header-top-first #}
+                    </div>
+                  {% endif %}
+                  {% if page.header_top_second %}
+                    <div class="{{ header_top_second_grid_class }}">
+                      {# header-top-second #}
+                      <div class="clearfix header-top__section header-top-second">
+                        {{ page.header_top_second }}
+                      </div>
+                      {# EOF:header-top-second #}
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+              {# EOF: header-top__container #}
+            </div>
+          </div>
+          {# EOF: header-top #}
+        {% endif %}
+
+        {% if page.header_first or page.header or page.header_third %}
+          {# header #}
+          {% block reading_progress_indicator %}
+          {% endblock %}
+          <header role="banner" class="clearfix header {{ header_background_color }} {{ header_layout_container_class }} {{ header_layout_columns_class }}{{ (header_blocks_paddings) ? ' region--no-block-paddings' : '' }}{{ (header_region_paddings) ? ' region--no-paddings' : '' }}">
+            <div class="{{ header_layout_container }} {{ header_horizontal_paddings }}">
+              {# header__container #}
+              <div class="clearfix header__container">
+                <div class="row align-items-center">
+                  {% if page.header_first %}
+                    <div class="{{ header_first_grid_class }}">
+                      {# header-first #}
+                      <div class="clearfix header__section header-first">
+                        {{ page.header_first }}
+                      </div>
+                      {# EOF:header-first #}
+                    </div>
+                  {% endif %}
+                  {% if page.header %}
+                    <div class="{{ header_second_grid_class }}">
+                      {# header-second #}
+                      <div class="clearfix header__section header-second{{ (slideout_mobile_menu_display) ? ' d-none d-md-block' : '' }}">
+                        {{ page.header }}
+                      </div>
+                      {# EOF:header-second #}
+                    </div>
+                  {% endif %}
+                  {% if page.header_third %}
+                    <div class="{{ header_third_grid_class }}">
+                      {# header-third #}
+                      <div class="clearfix header__section header-third">
+                        {{ page.header_third }}
+                      </div>
+                      {# EOF:header-third #}
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+              {# EOF: header__container #}
+            </div>
+          </header>
+          {# EOF: header #}
+        {% endif %}
+
+      </div>
+      {# EOF: header-container #}
+    </div>
+    {% endif %}
+  {% endblock %}
+
+  {% if page.system_messages %}
+    <div class="system-messages clearfix">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            {{ page.system_messages }}
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+  {% block main_content %}
+  {{ attach_library('basecore/node-landing-page') }}
+  <div {% if main_content_id %}id="{{ main_content_id }}"{% endif %} class="clearfix main-content">
+    <div>
+      <div class="clearfix main-content__container">
+        <div>
+          <section>
+            {# main #}
+            <div class="clearfix main-content__section{{ (main_content_animations == "enabled") ? ' mt-no-opacity' : '' }}{{ (main_content_blocks_paddings) ? ' region--no-block-paddings' : '' }}{{ (main_content_region_paddings) ? ' region--no-paddings' : '' }}"
+            {% if main_content_animations == "enabled" %}
+              data-animate-effect="{{ main_content_animation_effect }}"
+            {% endif %}>
+            {% if page.content %}
+              {{ page.content }}
+            {% endif %}
+            </div>
+            {# EOF:main #}
+          </section>
+          {% if page.sidebar_first %}
+            <aside class="{{ sidebar_first_grid_class }} {{ sidebar_paddings }}">
+            {# sidebar-first #}
+            <section class="sidebar__section sidebar-first clearfix{{ (sidebar_first_animations == "enabled") ? ' mt-no-opacity' : '' }}{{ (sidebar_first_blocks_paddings) ? ' region--no-block-paddings' : '' }}{{ (sidebar_first_region_paddings) ? ' region--no-paddings' : '' }}"
+              {% if sidebar_first_animations == "enabled" %}
+              data-animate-effect="{{ sidebar_first_animation_effect }}"
+              {% endif %}>
+              {{ page.sidebar_first }}
+            </section>
+            {# EOF:sidebar-first #}
+            </aside>
+          {% endif %}
+          {% if page.sidebar_second %}
+            <aside class="{{ sidebar_second_grid_class }} {{ sidebar_paddings }}">
+            {# sidebar-second #}
+            <section class="sidebar__section sidebar-second clearfix{{ (sidebar_second_animations == "enabled") ? ' mt-no-opacity' : '' }}{{ (sidebar_second_blocks_paddings) ? ' region--no-block-paddings' : '' }}{{ (sidebar_second_region_paddings) ? ' region--no-paddings' : '' }}"
+              {% if sidebar_second_animations == "enabled" %}
+              data-animate-effect="{{ sidebar_second_animation_effect }}"
+              {% endif %}>
+              {{ page.sidebar_second }}
+            </section>
+            {# EOF:sidebar-second #}
+            </aside>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+  {# EOF:main-content #}
+
+{% endblock %}
+{# EOF:page_container #}

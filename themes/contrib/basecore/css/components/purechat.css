@@ -1,0 +1,61 @@
+/**
+ * @file
+ * Visual styles for purechat plugin.
+ */
+#PureChatWidget.purechat.purechat-widget .purechat-widget-header,
+#PureChatWidget.purechat.purechat-style-mobile .purechat-widget-header {
+  background-color: rgb(42,42,42)!important;
+  border-radius: 0px !important;
+}
+#PureChatWidget.purechat.purechat-widget .purechat-collapsed .purechat-widget-header,
+#PureChatWidget.purechat.purechat-style-mobile .purechat-collapsed .purechat-widget-header {
+  border-radius: 0px !important;
+}
+#PureChatWidget.purechat.purechat-widget .purechat-btn,
+#PureChatWidget.purechat.purechat-style-mobile .purechat-btn {
+  background-color: rgb(42,42,42)!important;
+  border-radius: 0px!important;
+}
+#PureChatWidget.purechat.purechat-widget .purechat-btn,
+#PureChatWidget.purechat.purechat-style-mobile .purechat-btn {
+  background-color: rgb(42,42,42)!important;
+}
+#PureChatWidget.purechat.purechat-widget .purechat-widget-header .purechat-btn,
+#PureChatWidget.purechat.purechat-style-mobile .purechat-widget-header .purechat-btn {
+  border-radius: 0px!important;
+}
+#PureChatWidget.purechat.purechat-widget .purechat-btn,
+#PureChatWidget.purechat.purechat-style-mobile .purechat-btn {
+  border-radius: 0px!important;
+}
+#PureChatWidget.purechat.purechat-widget .purechat-firstname-input,
+#PureChatWidget.purechat.purechat-widget .purechat-lastname-input,
+#PureChatWidget.purechat.purechat-widget .purechat-phonenumber-input,
+#PureChatWidget.purechat.purechat-widget .purechat-email-input,
+#PureChatWidget.purechat.purechat-widget .purechat-company-input,
+#PureChatWidget.purechat.purechat-widget .purechat-question-input,
+#PureChatWidget.purechat.purechat-widget .purechat-send-form-message,
+#PureChatWidget.purechat.purechat-widget .purechat-send-form,
+#PureChatWidget.purechat.purechat-widget .purechat-emoji-search,
+#PureChatWidget.purechat.purechat-style-mobile .purechat-firstname-input,
+#PureChatWidget.purechat.purechat-style-mobile .purechat-lastname-input,
+#PureChatWidget.purechat.purechat-style-mobile .purechat-phonenumber-input,
+#PureChatWidget.purechat.purechat-style-mobile .purechat-email-input,
+#PureChatWidget.purechat.purechat-style-mobile .purechat-company-input,
+#PureChatWidget.purechat.purechat-style-mobile .purechat-question-input,
+#PureChatWidget.purechat.purechat-style-mobile .purechat-send-form-message,
+#PureChatWidget.purechat.purechat-style-mobile .purechat-send-form,
+#PureChatWidget.purechat.purechat-style-mobile .purechat-emoji-search {
+  border-radius: 0px!important;
+}
+.slideout-filters-open #PureChatWidget.purechat,
+.slideout-filters-open #PureChatWidget.purechat.purechat-popped-out-widget {
+  display: none!important;
+}
+/* Hide widget in mobile while mobile menu is visible */
+@media all and (max-width: 767px) {
+  .headroom--not-top #PureChatWidget.purechat,
+  .headroom--not-top #PureChatWidget.purechat.purechat-popped-out-widget {
+    display: none!important;
+  }
+}

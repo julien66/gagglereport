@@ -1,0 +1,22 @@
+/**
+ * @file
+ * Visual styles for Base+'s isotope filters.
+ */
+.isotope-container {
+  display: none;
+}
+.isotope-container ul {
+  padding: 0;
+}
+.isotope-item {
+  list-style: none;
+}
+@media (max-width:767px) {
+  .isotope-item {
+    max-width: 100%;
+  }
+  .filters {
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+}

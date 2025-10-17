@@ -1,0 +1,142 @@
+/**
+ * @file
+ * Visual styles for Base+'s logo links block.
+ */
+.block-mt-logo-links .logo-container {
+  padding: 16px 33px;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100%;
+  display: flex;
+}
+.block-mt-logo-links.mt-logo-links-extra-small .logo-container {
+  padding: 0px 5px;
+}
+.block-mt-logo-links.mt-logo-links-small .logo-container {
+  padding: 16px;
+}
+.block-mt-logo-links.mt-logo-links-large .logo-container {
+  padding: 16px 20px;
+}
+@media (max-width: 575px) {
+  .block-mt-logo-links .logo-container {
+    padding: 16px 0px;
+  }
+}
+.block-mt-logo-links .logo-container a {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+}
+.region--bright-background .block-mt-logo-links .logo-container .field--name-field-mt-il-image img,
+.region--default-background .block-mt-logo-links .logo-container .field--name-field-mt-il-image img,
+.region--tint-background .block-mt-logo-links .logo-container .field--name-field-mt-il-image img,
+.region--accent-background .block-mt-logo-links .logo-container .field--name-field-mt-il-image img,
+.region--pattern .block-mt-logo-links .logo-container .field--name-field-mt-il-image img {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+.block-mt-logo-links .logo-container .field--name-field-mt-il-image img {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  max-width: 145px;
+  opacity: 0.6;
+  border-radius: 0;
+}
+@media (min-width: 992px) and (max-width:1220px) {
+  .block-mt-logo-links .logo-container {
+    padding: 16px;
+  }
+  .block-mt-logo-links .logo-container .field--name-field-mt-il-image img {
+    max-width: 120px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .block-mt-logo-links .logo-container {
+    padding: 10px;
+  }
+  .block-mt-logo-links .logo-container .field--name-field-mt-il-image img {
+    max-width: 100px;
+  }
+}
+.block-mt-logo-links.mt-logo-links-extra-small .logo-container .field--name-field-mt-il-image img {
+  max-width: 55px;
+}
+.block-mt-logo-links.mt-logo-links-extra-small .field__item {
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: auto;
+  max-width: 100%;
+}
+@media (max-width: 767px) {
+  .block-mt-logo-links.mt-logo-links-extra-small .field__item {
+    padding-bottom: 5px;
+    padding-top: 5px;
+  }
+}
+.block-mt-logo-links.mt-logo-links-small .logo-container .field--name-field-mt-il-image img {
+  max-width: 100px;
+}
+.block-mt-logo-links.mt-logo-links-small .field__item {
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: auto;
+  max-width: 100%;
+}
+.block-mt-logo-links.mt-logo-links-large .logo-container .field--name-field-mt-il-image img {
+  max-width: 200px;
+}
+@media (max-width: 575px) {
+  .block-mt-logo-links .logo-container .field--name-field-mt-il-image img {
+    max-width: 120px;
+  }
+}
+.block-mt-logo-links .logo-container:hover .field--name-field-mt-il-image img {
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+  opacity: 1;
+}
+.block-mt-logo-links .paragraph--type--mt-image-link {
+  height: 100%;
+}
+.block-mt-logo-links .field--name-field-mt-il-image {
+  margin: 0 auto;
+}
+
+/* hero region */
+@media (min-width: 992px) {
+  .hero__section .block-mt-hero-v2 + .block-mt-logo-links {
+    max-width: 51%;
+    margin-bottom: 50px;
+  }
+}
+.hero__section .block-mt-hero-v2 + .block-mt-logo-links .field--name-field-mt-logo-links-logo {
+  -ms-flex-pack: start!important;
+  justify-content: flex-start!important;
+  text-align: left!important;
+}
+.hero__section .block-mt-hero-v2 + .block-mt-logo-links .field--name-field-mt-logo-links-logo > .field__item {
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: auto;
+  max-width: 100%;
+}
+.hero__section .block-mt-hero-v2 + .block-mt-logo-links .logo-container {
+  padding: 16px 0px;
+}
+.hero__section .block-mt-hero-v2 + .block-mt-logo-links .logo-container .field--name-field-mt-il-image img {
+  max-width: 80px;
+}
+@media (max-width: 767px) {
+  .hero__section .block-mt-hero-v2 + .block-mt-logo-links .logo-container .field--name-field-mt-il-image img {
+    max-width: 75px;
+  }
+}

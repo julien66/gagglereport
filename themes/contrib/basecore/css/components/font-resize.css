@@ -1,0 +1,77 @@
+/**
+ * @file
+ * Visual styles for Magazine+'s font resize component.
+ */
+.content-font-settings {
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 25px;
+  width: 90px;
+  display: inline-block;
+}
+.font-resize > a {
+  display: block;
+  padding: 10px 0;
+}
+.font-resize > a:hover,
+.font-resize > a:focus {
+  text-decoration: none;
+}
+.region--default-background .font-resize > a {
+  color: var(--mt-color-default-contrast);
+}
+.region--bright-background .font-resize > a {
+  color: var(--mt-color-bright-contrast);
+}
+.region--accent-background .font-resize > a {
+  color: var(--mt-color-accent-contrast);
+}
+.region--tint-background .font-resize > a {
+  color: var(--mt-color-tint-contrast);
+}
+.region--shade-background .font-resize > a {
+  color: var(--mt-color-shade-contrast);
+}
+.region--colored-background .font-resize > a {
+  color: var(--mt-color-colored-contrast);
+}
+.region--dark-colored-background .font-resize > a {
+  color: var(--mt-color-dark-colored-contrast);
+}
+.region--dark-background .font-resize > a {
+  color: var(--mt-color-dark-contrast);
+}
+.region--pattern .font-resize > a {
+  color: var(--mt-color-pattern-contrast);
+}
+.font-resize > a:last-child {
+  border-top-width: 1px;
+  border-top-style: solid;
+}
+.region--default-background .font-resize > a:last-child {
+  border-color: rgba(var(--mt-color-default-contrast-value), 0.3);
+}
+.region--bright-background .font-resize > a:last-child {
+  border-color: rgba(var(--mt-color-bright-contrast-value), 0.3);
+}
+.region--accent-background .font-resize > a:last-child {
+  border-color: rgba(var(--mt-color-accent-contrast-value), 0.3);
+}
+.region--tint-background .font-resize > a:last-child {
+  border-color: rgba(var(--mt-color-tint-contrast-value), 0.3);
+}
+.region--shade-background .font-resize > a:last-child {
+  border-color: rgba(var(--mt-color-shade-contrast-value), 0.3);
+}
+.region--colored-background .font-resize > a:last-child {
+  border-color: rgba(var(--mt-color-colored-contrast-value), 0.3);
+}
+.region--dark-colored-background .font-resize > a:last-child {
+  border-color: rgba(var(--mt-color-dark-colored-contrast-value), 0.3);
+}
+.region--dark-background .font-resize > a:last-child {
+  border-color: rgba(var(--mt-color-dark-contrast-value), 0.3);
+}
+.region--pattern .font-resize > a:last-child {
+  border-color: rgba(var(--mt-color-pattern-contrast-value), 0.3);
+}

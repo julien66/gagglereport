@@ -1,0 +1,100 @@
+/**
+ * @file
+ * Styles for Base+'s more links.
+ */
+.node ul.links {
+  padding: 10px 0;
+  margin: 0;
+  list-style: none;
+}
+.node ul.links li:not(.node-readmore) a {
+  padding: 0 0 3px;
+  text-decoration: none;
+  display: inline-block;
+  line-height: 1;
+  border-bottom-width: 0px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  text-align: center;
+  text-decoration: none;
+}
+.node ul.links li:not(.node-readmore) a.hidden {
+  margin: 0;
+}
+.node ul.links li:not(.node-readmore) a:hover,
+.node ul.links li:not(.node-readmore) a:focus {
+  border-bottom-color: transparent;
+  background-color: transparent;
+}
+.node ul.links li a.active {
+  color: #575757;
+}
+.node ul.inline li {
+  padding: 0;
+  display: inline-block;
+}
+.node--type-article ul.links li.comment-comments,
+.node--type-article ul.links li.comment-add,
+.node--type-mt-post ul.links li.comment-comments,
+.node--type-mt-post ul.links li.comment-add,
+.node--type-mt-product ul.links li.comment-comments,
+.node--type-mt-showcase ul.links li.comment-add,
+.node--type-mt-product ul.links li.comment-add,
+.node--type-mt-showcase ul.links li.comment-forbidden,
+.node--type-mt-product ul.links li.comment-forbidden,
+.node--type-mt-product ul.links li.comment-new-comments,
+.node--type-mt-showcase ul.links li.comment-new-comments {
+  display: none;
+}
+.node ul.inline li a {
+  margin: 0 30px 10px 0;
+}
+.node .comment-forbidden a:last-child {
+  margin: 0;
+}
+.node .comment-forbidden a:first-child {
+  margin: 0;
+}
+ul.links li.comment-forbidden:not(.node-readmore) a {
+  text-transform: none;
+  font-weight: 400;
+}
+@media (max-width: 575px) {
+  .node ul.links {
+    display: flex;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  ul.links li.node-readmore {
+    display: block;
+    width: 100%;
+  }
+  ul.links li.node-readmore + li {
+    margin-left: auto;
+  }
+  ul.links li.node-readmore ~ li.comment-forbidden {
+    margin-left: auto;
+  }
+  ul.links li.comment-comments a {
+    margin-bottom: 3px;
+  }
+}
+.node--view-mode-teaser ul.links li.comment-forbidden {
+  font-size: 12px;
+}
+
+/*front page view*/
+.view-frontpage .view-empty ul.links {
+  list-style: none;
+  padding: 10px 0 0 0;
+}

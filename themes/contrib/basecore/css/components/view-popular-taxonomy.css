@@ -1,0 +1,43 @@
+/**
+ * @file
+ * Visual styles for Base+'s popular tags views.
+ */
+.view-mt-popular-tags .views-row {
+  display: inline-block;
+  margin: 0 10px 10px 0;
+}
+.view-mt-popular-tags .views-row a {
+  display: block;
+  padding: 0;
+  font-size: 12px;
+}
+.view-mt-popular-tags .views-row a:before {
+  content: "#";
+}
+.region--default-background .view-mt-popular-tags .views-row a {
+  color: var(--mt-color-default-contrast);
+}
+.region--bright-background .view-mt-popular-tags .views-row a {
+  color: var(--mt-color-bright-contrast);
+}
+.region--pattern .view-mt-popular-tags .views-row a {
+  color: var(--mt-color-pattern-contrast);
+}
+.region--accent-background .view-mt-popular-tags .views-row a {
+  color: var(--mt-color-accent-contrast);
+}
+.region--tint-background .view-mt-popular-tags .views-row a {
+  color: var(--mt-color-tint-contrast);
+}
+.region--shade-background .view-mt-popular-tags .views-row a {
+  color: var(--mt-color-shade-contrast);
+}
+.region--colored-background .view-mt-popular-tags .views-row a {
+  color: var(--mt-color-colored-contrast);
+}
+.region--dark-colored-background .view-mt-popular-tags .views-row a {
+  color: var(--mt-color-dark-colored-contrast);
+}
+.region--dark-background .view-mt-popular-tags .views-row a {
+  color: var(--mt-color-dark-contrast);
+}

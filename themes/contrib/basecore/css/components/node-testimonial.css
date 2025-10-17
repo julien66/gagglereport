@@ -1,0 +1,42 @@
+/**
+ * @file
+ * Visual styles for Base+'s testimonial content type.
+ */
+.node--type-mt-testimonial.node--view-mode-full .field--name-field-mt-tst-testimonial-image {
+  text-align: center;
+}
+.node--type-mt-testimonial.node--view-mode-full .field--name-field-mt-tst-testimonial-image .overlay-container {
+  display: inline-block;
+  max-width: 70px;
+}
+.node--type-mt-testimonial.node--view-mode-full .field--name-field-mt-tst-testimonial-image img {
+  border-radius: 100%;
+}
+.node--type-mt-testimonial.node--view-mode-full .field.field--name-field-mt-tst-subtitle {
+  opacity: 0.65;
+  font-style: italic;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+@media (min-width: 768px) {
+  .node--type-mt-testimonial.node--view-mode-full .field--name-field-mt-tst-testimonial-image {
+    margin-right: 30px;
+    float: left;
+    max-width: 70px;
+    max-height: 70px;
+  }
+  .node--type-mt-testimonial.node--view-mode-full .field--name-field-mt-tst-testimonial-image ~ .field--name-field-mt-tst-testimonial-link,
+  .node--type-mt-testimonial.node--view-mode-full .field--name-field-mt-tst-testimonial-image ~ .field--name-field-mt-tst-subtitle,
+  .node--type-mt-testimonial.node--view-mode-full .field--name-field-mt-tst-testimonial-image ~ .field--name-field-mt-tst-body {
+    margin-left: 100px;
+  }
+}
+@media (max-width: 767px) {
+  .node--type-mt-testimonial.node--view-mode-full .field--name-field-mt-tst-testimonial-image {
+    margin-bottom: 10px;
+  }
+}
+.node--type-mt-testimonial.node--view-mode-full .field--name-field-mt-tst-testimonial-link a {
+  min-width: 190px;
+  margin: 10px 0 30px;
+}

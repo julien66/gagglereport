@@ -1,0 +1,77 @@
+/**
+ * @file
+ * Visual styles for Base+'s sticky header.
+ */
+.sticky-wrapper {
+  position: relative;
+}
+.onscroll.transparent-header-active .header-container.js-transparent-header .sticky-wrapper {
+  height: 0 !important;
+}
+@media (min-width: 992px) {
+  .fixed-header-enabled.fixed-header-enabled--scroll .header.js-fixed {
+    opacity: 0;
+    -webkit-transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+  }
+  .onscroll.fixed-header-enabled--scroll-up.headroom--scroll-up .header.js-fixed,
+  .onscroll.fixed-header-enabled--scroll .header.js-fixed {
+    opacity: 1;
+    position: fixed;
+    z-index: 499;
+    top: 0;
+    width: 100%;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgba(0, 0, 0, 0.09);
+  }
+}
+.modal-open.onscroll.fixed-header-enabled--scroll-up.headroom--scroll-up .header.js-fixed,
+.modal-open.onscroll.fixed-header-enabled--scroll .header.js-fixed {
+  z-index: 1041;
+}
+.modal-open.onscroll.fixed-header-enabled--scroll-up.headroom--scroll-up .header.js-fixed .region-header-first,
+.modal-open.onscroll.fixed-header-enabled--scroll .header.js-fixed .region-header-first,
+.modal-open.onscroll.fixed-header-enabled--scroll-up.headroom--scroll-up .header.js-fixed .region-header .block:not(.block-type--mt-modal),
+.modal-open.onscroll.fixed-header-enabled--scroll .header.js-fixed .region-header .block:not(.block-type--mt-modal),
+.modal-open .modal-icon-button {
+  display: none;
+}
+.modal-open.onscroll.fixed-header-enabled--scroll-up.headroom--scroll-up .header.js-fixed .region-header .block-type--mt-modal .block,
+.modal-open.onscroll.fixed-header-enabled--scroll .header.js-fixed .region-header .block-type--mt-modal .block {
+  display: block;
+}
+.fixed-header-enabled.onscroll .header__container,
+.fixed-header-enabled.onscroll .header-second,
+.fixed-header-enabled.onscroll .header-third,
+.fixed-header-enabled.onscroll .header-first,
+.fixed-header-enabled.onscroll .header-container ul.menu {
+  -webkit-transition: ease-in-out 0.2s;
+  -o-transition: ease-in-out 0.2s;
+  transition: ease-in-out 0.2s;
+}
+.fixed-header-enabled.onscroll .header__container {
+  padding: 0;
+}
+.fixed-header-enabled.onscroll .header-container .col-lg-3.mb-md-3 {
+  margin-bottom: 0!important;
+}
+/* .fixed-header-enabled.onscroll .header-container .site-branding:not(.logo-enabled):not(.site-slogan-enabled) a {
+  font-size: 55px;
+} */
+.fixed-header-enabled.onscroll .header-container .logo-enabled .logo-and-site-name-wrapper,
+.fixed-header-enabled.onscroll .header-container .site-slogan-enabled .logo-and-site-name-wrapper {
+  padding: 10px 0;
+}
+.fixed-header-enabled.onscroll .header-container ul.sf-menu > li.menuparent > a {
+  padding-right: 20px;
+}
+.fixed-header-enabled.onscroll .header-container ul.sf-menu ul .sf-sub-indicator {
+  top: 23px;
+}
+@media (max-width: 767px) {
+  .onscroll .header.js-fixed {
+    display: none;
+  }
+}

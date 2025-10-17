@@ -1,0 +1,37 @@
+/**
+ * @file
+ * Visual styles for Base+'s testimonials carousel.
+ */
+.owl-carousel.mt-carousel-testimonials {
+  padding-right: 60px;
+  padding-left: 60px;
+}
+.owl-carousel.mt-carousel-testimonials .node--view-mode-mt-featured-teaser-2 {
+  margin-bottom: 40px!important;
+  margin-top: 40px!important;
+  padding: 0!important;
+}
+.view-mt-testimonials-carousel .view-header h2 {
+  margin-bottom: 70px;
+}
+.mt-carousel-testimonials .owl-item {
+  margin-bottom: 0px;
+}
+.mt-carousel-testimonials .owl-nav {
+  height: 0;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -20px;
+}
+.mt-carousel-testimonials .owl-nav div:after {
+  font-size: 36px;
+}
+.mt-carousel-testimonials .owl-nav .owl-prev {
+  left: 0px;
+  margin-left: 0;
+}
+.mt-carousel-testimonials .owl-nav .owl-next {
+  right: 0px;
+  margin-right: 0;
+}

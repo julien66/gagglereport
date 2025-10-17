@@ -1,0 +1,126 @@
+/**
+ * @file
+ * Visual styles for Base+'s banner.
+ */
+/* caption */
+.mt-banner-item__caption {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  background-color: rgba(var(--mt-color-base-contrast-value), 0.8);
+  color: var(--mt-color-base-dark);
+  padding: 20px;
+  max-width: 100%;
+}
+.mt-banner-item__caption .mt-banner-item__title + .field--name-field-mt-banner-text p {
+  padding-top: 10px;
+}
+.mt-banner-item__caption p {
+  padding-bottom: 0;
+}
+.mt-banner-item__title {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+@media (min-width: 992px) {
+  .mt-banner-item-not-promoted {
+    margin-bottom: 26px;
+  }
+}
+@media (min-width: 1200px) {
+  .mt-banner-item-not-promoted {
+    margin-bottom: 22px;
+  }
+}
+.mt-banner-item-not-promoted:last-child {
+  margin-bottom: 0px;
+}
+.mt-hero-promo-slider-disabled .mt-banner-item-not-promoted {
+  margin: 10px 0;
+}
+.mt-banner-item-not-promoted .mt-banner-item__title {
+  font-size: 22px;
+  margin-bottom: 0;
+}
+.headings-wide-spacing-enabled .mt-banner-item__title {
+  letter-spacing: var(--mt-headings-letter-spacing);
+}
+.mt-banner-item-not-promoted .field--name-field-mt-banner-text {
+  font-size: 14px;
+}
+@media (max-width: 1499px) {
+  .mt-banner-item-not-promoted .mt-banner-item__title {
+    font-size: 1.4vw;
+  }
+  .mt-banner-item-not-promoted .field--name-field-mt-banner-text {
+    font-size: 0.9vw;
+  }
+  .mt-banner-item-not-promoted .mt-banner-item__caption {
+    padding: 15px;
+  }
+}
+@media (max-width: 1199px) {
+  .mt-banner-item-promoted .mt-banner-item__title {
+    font-size: 2.3vw;
+  }
+  .mt-banner-item-promoted .field--name-field-mt-banner-text {
+    font-size: 1.3vw;
+  }
+}
+@media (max-width: 1199px) and (min-width: 992px) {
+  .mt-banner-item-not-promoted .mt-banner-item__caption {
+    padding: 0.6vw;
+  }
+  .mt-banner-item-not-promoted .mt-banner-item__title {
+    font-size: 1vw;
+  }
+  .mt-banner-item-not-promoted .mt-banner-item__title + .field--name-field-mt-banner-text p {
+    padding-top: 0.4vw;
+  }
+}
+@media (max-width: 991px) {
+  .mt-banner-item-promoted .mt-banner-item__title {
+    font-size: 2.6vw;
+  }
+  .mt-banner-item-promoted .field--name-field-mt-banner-text {
+    font-size: 1.6vw;
+  }
+  .mt-banner-item-not-promoted .mt-banner-item__title {
+    font-size: 1.8vw;
+  }
+  .mt-banner-item-not-promoted .mt-banner-item__title + .field--name-field-mt-banner-text p {
+    padding-top: 0.4vw;
+  }
+  .mt-banner-item-not-promoted .field--name-field-mt-banner-text {
+    font-size: 1.2vw;
+  }
+}
+@media (max-width: 767px) {
+  .mt-banner-item-promoted .mt-banner-item__title {
+    font-size: 3.2vw;
+  }
+  .mt-banner-item-promoted .field--name-field-mt-banner-text {
+    font-size: 2.2vw;
+  }
+  .mt-banner-item-not-promoted .mt-banner-item__title {
+    font-size: 2vw;
+  }
+  .mt-banner-item-not-promoted .field--name-field-mt-banner-text {
+    font-size: 1.6vw;
+  }
+}
+@media (max-width: 575px) {
+  .mt-banner-item-promoted .mt-banner-item__title {
+    font-size: 3.6vw;
+  }
+  .mt-banner-item-promoted .field--name-field-mt-banner-text {
+    font-size: 2.6vw;
+  }
+  .mt-banner-item-not-promoted .mt-banner-item__title {
+    font-size: 2.5vw;
+  }
+  .mt-banner-item-not-promoted .field--name-field-mt-banner-text {
+    font-size: 2vw;
+  }
+}

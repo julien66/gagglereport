@@ -1,0 +1,94 @@
+/**
+ * @file
+ * Visual styles for Base+'s social links.
+ */
+.social-links {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: block;
+  font-size: 0;
+}
+.social-links.social-links--inline li {
+  display: inline-block;
+}
+.social-links li a {
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 10px 20px;
+  line-height: 1;
+  display: inline-block;
+  border-radius: 4px;
+}
+.region--default-background .social-links li a:hover {
+  background-color: rgba(var(--mt-color-default-contrast-value), 0.8);
+}
+.region--bright-background .social-links li a:hover {
+  background-color: rgba(var(--mt-color-bright-contrast-value), 0.8);
+}
+.region--pattern .social-links li a:hover {
+  background-color: rgba(var(--mt-color-pattern-contrast-value), 0.8);
+}
+.region--accent-background .social-links li a:hover {
+  background-color: rgba(var(--mt-color-accent-contrast-value), 0.8);
+}
+.region--tint-background .social-links li a:hover {
+  background-color: rgba(var(--mt-color-tint-contrast-value), 0.8);
+}
+.region--shade-background .social-links li a:hover {
+  background-color: rgba(var(--mt-color-shade-contrast-value), 0.8);
+}
+.region--colored-background .social-links li a:hover {
+  background-color: rgba(var(--mt-color-colored-contrast-value), 0.8);
+}
+.region--dark-colored-background .social-links li a:hover {
+  background-color: rgba(var(--mt-color-dark-colored-contrast-value), 0.8);
+}
+.region--dark-background .social-links li a:hover {
+  background-color: rgba(var(--mt-color-dark-contrast-value), 0.8);
+}
+.headings-wide-spacing-enabled .social-links li a {
+  letter-spacing: var(--mt-headings-letter-spacing);
+  text-transform: uppercase;
+}
+.text-color-facebook,
+a.hover-color-facebook:hover {
+  color: #3b5998 !important;
+}
+.text-color-twitter,
+a.hover-color-twitter:hover {
+  color: #1da1f3 !important;
+}
+.text-color-behance,
+a.hover-color-behance:hover {
+  color: #1769ff !important;
+}
+.text-color-dribbble,
+a.hover-color-dribbble:hover {
+  color: #ea4c89 !important;
+}
+.text-color-instagram,
+a.hover-color-instagram:hover {
+  color: #f56040 !important;
+}
+.text-color-vimeo,
+a.hover-color-vimeo:hover {
+  color: #1ab7ea !important;
+}
+.text-color-youtube,
+a.hover-color-youtube:hover {
+  color: #cd201f !important;
+}
+.text-color-googleplus,
+a.hover-color-googleplus:hover {
+  color: #d34836 !important;
+}
+@media (max-width:767px) {
+  .footer-bottom__section ul.social-links li,
+  .footer__section ul.social-links li,
+  .subfooter-top__section ul.social-links li,
+  .subfooter__section ul.social-links li {
+    display: block;
+  }
+}

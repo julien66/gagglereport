@@ -1,0 +1,116 @@
+{#
+/**
+ * @file
+ * Partial template to display a node in teaser tile view mode.
+ */
+#}
+{% if (teaser_mobile_layout == "2-col") %}
+{% set classes = classes|merge(['mt-mobile-layout-2-col']) %}
+{% else %}
+{% set classes = classes|merge(['mt-mobile-layout-1-col']) %}
+{% endif %}
+
+<article{{ attributes.addClass(classes).addClass("region--default-background mt-style-custom-all") }}>
+  {{ title_prefix }}
+  {{ title_suffix }}
+
+  {% block image_container %}
+    {% if image|render or image_caption|render or (display_submitted and date_overlay) %}
+      <div class="teaser-tile-image-container">
+        {% if image|render %}
+          {% block image %}
+            <div class="teaser-tile-image teaser-tile-image--card">
+              {{ image }}
+            </div>
+          {% endblock %}
+        {% endif %}
+        {% if display_submitted and date_overlay %}
+          {{ metadata }}
+          <div class="node__submitted-date mt-style-custom-tl region--default-background">
+            <div class="day">{{ submitted_day }}</div>
+            <div class="month-year">
+              {{ submitted_month }}
+              {{ submitted_year }}
+            </div>
+          </div>
+        {% endif %}
+        {% if image_caption|render %}
+          <div class="image-caption">
+            {{ image_caption }}
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+  {% endblock %}
+
+  {% block teaser_tile_card %}
+    {% if teaser_tile_style == "card-news" %}
+      <div class="mt-tile-padding mt-teaser-tile-card clearfix">
+        <div class="align-items-center mt-tile-margin">
+    {% else %}
+      <div class="p-4 mt-teaser-tile-card">
+        <div class="row align-items-center mb-2">
+    {% endif %}
+        {% if not page %}
+          {% block tile_title %}
+            {% if teaser_tile_style == "card-news" %}
+              <h4{{ title_attributes.addClass("mt-0 mb-0 node__title") }}>
+                <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+              </h4>
+            {% else %}
+              <h4{{ title_attributes.addClass("mt-0 mb-0 node__title col") }}>
+                <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+              </h4>
+            {% endif %}
+          {% endblock %}
+        {% endif %}
+        {% if teaser_tile_subtitle|render %}
+          <div class="teaser-tile-subtitle col-auto">
+            {{ teaser_tile_subtitle }}
+          </div>
+        {% endif %}
+      </div>
+
+      {% if teaser_tile_pre_content_first|render or teaser_tile_pre_content_second|render or teaser_tile_content|render %}
+        <div class="row teaser-tile-content-wrapper align-items-center">
+          {% if teaser_tile_pre_content_first|render or teaser_tile_pre_content_second|render %}
+            <div class="teaser-tile-pre-content col-auto">
+              {% if teaser_tile_pre_content_first|render %}
+                <div class="teaser-tile-pre-content-item">
+                  {{ teaser_tile_pre_content_first }}
+                </div>
+              {% endif %}
+              {% if teaser_tile_pre_content_second|render %}
+                <div class="teaser-tile-pre-content-item">
+                  {{ teaser_tile_pre_content_second }}
+                </div>
+              {% endif %}
+            </div>
+          {% endif %}
+
+          {% if teaser_tile_content|render and (teaser_tile_pre_content_first|render or teaser_tile_pre_content_second|render) %}
+            <div class="teaser-tile-content-separator col-auto px-0"><i class="fas fa-square"></i></div>
+          {% endif %}
+
+          {% if teaser_tile_content|render %}
+            <div class="teaser-tile-content  col-auto">
+              {{ teaser_tile_content }}
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% if rendered_content|render %}
+        <div{{ content_attributes.addClass('node__content') }}>
+          {{ rendered_content }}
+        </div>
+      {% endif %}
+
+      {% if read_more %}
+        {% trans %}
+          <a class="mt-link-stylable mb-0" href="{{ url }}">Read more</a>
+        {% endtrans %}
+      {% endif %}
+    </div>
+  {% endblock %}
+</article>

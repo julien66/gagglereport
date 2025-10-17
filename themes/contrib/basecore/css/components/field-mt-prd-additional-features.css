@@ -1,0 +1,89 @@
+/**
+ * @file
+ * Visual styles for mt-additional-features field in Base+.
+ */
+.field--name-field-mt-prd-additional-features {
+  margin: 0 -15px 0;
+  padding: 20px 0 10px;
+}
+.field--name-field-mt-prd-highlight + .field--name-field-mt-prd-additional-features {
+  padding-top: 10px;
+}
+.field--name-field-mt-prd-additional-features .field__label {
+  text-align: center;
+  font-size: 50px;
+  font-weight: 700;
+  margin-bottom: 50px;
+  color: var(--mt-color-high-contrast);
+}
+@media (max-width: 991px) {
+  .field--name-field-mt-prd-additional-features .field__label {
+    font-size: 32px;
+  }
+  .field--name-field-mt-prd-additional-features .field--name-field-mt-adf-fa-icon {
+    text-align: center;
+  }
+}
+
+/*apply clearfix to field--name-field-mt-prd-additional-features field*/
+.field--name-field-mt-prd-additional-features:before {
+  display: table;
+  content: " ";
+}
+.field--name-field-mt-prd-additional-features:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/*apply full width background color to field-mt-special-feature field*/
+.field--name-field-mt-prd-additional-features > .field__item,
+.field--name-field-mt-prd-additional-features > .field__items > .field__item {
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+  margin-bottom: 20px;
+}
+.paragraph--type--mt-additional-feature {
+  display: grid;
+  grid-template-areas: "icon title" "body body";
+  grid-template-columns: min-content auto;
+}
+.field--name-field-mt-prd-additional-features .field--name-field-mt-adf-title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--mt-color-high-contrast);
+  grid-area: title;
+  display: flex;
+  align-items: center;
+  padding-bottom: 15px;
+}
+.field--name-field-mt-prd-additional-features .field--name-field-mt-adf-image {
+  margin: 0 auto 20px;
+}
+.field--name-field-mt-adf-fa-icon {
+  font-size: 50px;
+  color: var(--mt-color-high-contrast);
+  grid-area: icon;
+}
+.field--name-field-mt-adf-fa-icon ~ .field--name-field-mt-adf-title {
+  padding-left: 25px;
+  padding-bottom: 0;
+}
+.field--name-field-mt-adf-body {
+  grid-area: body;
+}
+@media (min-width: 992px) {
+  .field--name-field-mt-prd-additional-features > .field__item,
+  .field--name-field-mt-prd-additional-features > .field__items > .field__item {
+    width: 33%;
+    float: left;
+  }
+  .field--name-field-mt-prd-additional-features > .field__item:nth-child(3n+1),
+  .field--name-field-mt-prd-additional-features > .field__items > .field__item:nth-child(3n+1) {
+    clear: both;
+  }
+}

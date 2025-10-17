@@ -1,0 +1,189 @@
+/**
+ * @file
+ * Visual styles for the site branding block in Base+.
+ */
+.header-container .logo-enabled .logo-and-site-name-wrapper,
+.header-container .site-slogan-enabled .logo-and-site-name-wrapper {
+  padding: 15px 0;
+}
+.logo-and-site-name-wrapper {
+  display: grid;
+  grid-template-areas:
+    "logo name"
+    "logo slogan";
+  grid-gap: 0;
+  justify-content: start;
+  align-items: center;
+}
+.logo-enabled .logo-and-site-name-wrapper {
+  grid-gap: 0px 10px;
+}
+[class="col-12"] .logo-and-site-name-wrapper,
+[class="col-12 text-center"] .logo-and-site-name-wrapper {
+  grid-template-areas:
+    "logo"
+    "name"
+    "slogan";
+  justify-content: center;
+  grid-gap: 5px 10px;
+}
+.site-branding .logo {
+  grid-area: logo;
+}
+.col-12 .site-branding .logo {
+  float: none;
+  margin: auto 0;
+}
+.col-12 .site-branding .logo-and-site-name-wrapper {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.logo-centered {
+  float: none;
+  text-align: center;
+}
+.logo-centered .site-branding__logo {
+  display: block;
+  margin-bottom: 10px;
+}
+.logo:hover {
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.site-name {
+  grid-area: name;
+}
+.site-name a {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.1;
+  text-decoration: none;
+}
+.region--colored-background .site-name a {
+  color: var(--mt-color-colored-contrast);
+}
+.region--dark-colored-background .site-name a {
+  color: var(--mt-color-dark-colored-contrast);
+}
+/* .site-branding:not(.logo-enabled):not(.site-slogan-enabled) a {
+  font-size: calc(2em + 1.5vw);
+  line-height: 1;
+  display: inline-block;
+}
+@media (min-width: 1440px) {
+  .site-branding:not(.logo-enabled):not(.site-slogan-enabled) a {
+    font-size: 80px;
+  }
+} */
+.site-name a:hover {
+  text-decoration: none;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.site-slogan {
+  font-size: 12px;
+  line-height: 1.3;
+  padding: 0;
+  font-weight: 500;
+  grid-area: slogan;
+}
+.headings-wide-spacing-enabled .site-slogan {
+  letter-spacing: var(--mt-headings-letter-spacing);
+  text-transform: uppercase;
+}
+@media (max-width: 991px) {
+  .header-container .logo-and-site-name-wrapper {
+    text-align: left;
+  }
+  .slideout-mobile-menu-enabled .header-container .logo-and-site-name-wrapper {
+    margin-bottom: 0;
+  }
+  .header-container .site-slogan {
+    display: none;
+  }
+}
+
+/* Site Branding @slideout region*/
+.slideout__section .logo-and-site-name-wrapper {
+  margin: 0 0 15px;
+}
+.slideout__section .logo {
+  display: block;
+  float: none;
+  margin: 0 auto;
+  text-align: center;
+}
+.slideout__section .logo a {
+  margin: 0 auto;
+  display: inline-block;
+}
+.slideout__section .site-name a {
+  margin-bottom: 5px;
+  display: block;
+  text-align: center;
+}
+.slideout__section .site-slogan {
+  color: inherit;
+  text-align: center;
+}
+
+/* Site Branding @footer*/
+.footer__section .logo-and-site-name-wrapper {
+  margin: 0 0 15px;
+}
+.footer__section .site-slogan {
+  color: inherit;
+}
+@media (max-width: 767px) {
+  .footer__section .logo-and-site-name-wrapper {
+    grid-template-areas:
+      "logo"
+      "name"
+      "slogan";
+    justify-content: center;
+    grid-gap: 5px 10px;
+  }
+}
+
+/* Site Branding @footer-bottom*/
+@media (max-width: 991px) {
+  .footer-bottom__section .logo-and-site-name-wrapper {
+    grid-template-areas:
+      "logo"
+      "name"
+      "slogan";
+    justify-content: center;
+    grid-gap: 5px 10px;
+  }
+}
+
+/* Site Branding @subfooter-top*/
+@media (max-width: 991px) {
+  .subfooter-top__section .logo-and-site-name-wrapper {
+    grid-template-areas:
+      "logo"
+      "name"
+      "slogan";
+    justify-content: center;
+    grid-gap: 5px 10px;
+  }
+}
+
+/* Site Branding @mobile widget*/
+.mt-mobile-menu-widget-wrapper .logo-and-site-name-wrapper {
+  text-align: left;
+  margin-bottom: 20px;
+}
+.mt-mobile-menu-widget-wrapper .site-slogan {
+  display: none;
+}

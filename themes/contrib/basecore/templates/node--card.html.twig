@@ -1,0 +1,40 @@
+{#
+/**
+ * @file
+ * Base+'s theme implementation to display a Post node in teaser tile view mode.
+ */
+#}
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    'teaser',
+    'teaser--card'
+  ]
+%}
+{{ attach_library('basecore/node-view-mode-card') }}
+{% set teaser_tile_pre_content_first = null %}
+{% set image = content.field_featured_image|render %}
+
+{% set teaser_tile_pre_content_second = null %}
+{% set rendered_content = content|without('field_featured_image') %}
+
+
+{% if display_submitted %}
+  {% set teaser_tile_content = node.getCreatedTime|date('M d, Y') %}
+{% else %}
+  {% set teaser_tile_content = null %}
+{% endif %}
+{% set image_caption = null %}
+{% set teaser_tile_subtitle = null %}
+{% set date_overlay = false %}
+{% set submitted_day = null %}
+{% set submitted_month = null %}
+{% set submitted_year = null %}
+{% set read_more = null %}
+{% set teaser_tile_style = "card-news" %}
+{% include '@basecore/partials/_mt-teaser-tile-card.html.twig' %}

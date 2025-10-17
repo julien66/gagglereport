@@ -1,0 +1,29 @@
+/**
+ * @file
+ * Visual styles for Base+'s pros and cons.
+ */
+/*pros and cons*/
+.paragraph--type--mt-pros-and-cons {
+  margin-bottom: 6px;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -ms-flexbox;
+  display: flex;
+}
+.field--name-field-mt-pac-icon {
+  margin-right: 10px;
+  line-height: 25px;
+  opacity: 0.7;
+}
+.field--name-field-mt-pac-icon .fontawesome-icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+.mt-feature-positive .field--name-field-mt-pac-icon {
+  color: var(--mt-color-success);
+}
+.mt-feature-negative .field--name-field-mt-pac-icon {
+  color: var(--mt-color-danger);
+}

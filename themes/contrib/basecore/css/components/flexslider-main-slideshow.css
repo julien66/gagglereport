@@ -1,0 +1,171 @@
+/**
+ * @file
+ * Visual styles for Base+'s nodes slider.
+ */
+.flexslider-main {
+  position: relative;
+}
+@media (max-width: 1199px) {
+  .flexslider-main {
+    margin-bottom: 40px;
+  }
+}
+.flexslider-main .flex-control-nav {
+  width: auto;
+  position: absolute;
+  bottom: 0px;
+  text-align: center;
+  left: 0;
+  padding: 10px 0;
+  font-size: 0;
+  z-index: 2;
+}
+.flexslider-main .flex-control-nav li {
+  margin: 0 10px 0 0;
+}
+.flexslider-main .flex-control-paging li a {
+  width: 25px;
+  height: 6px;
+  margin: 5px 0;
+  background-color: transparent;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 0;
+  box-shadow: none;
+}
+.region--default-background .flexslider-main .flex-control-paging li a {
+  border-color: var(--mt-color-default-contrast);
+}
+.region--bright-background .flexslider-main .flex-control-paging li a {
+  border-color: var(--mt-color-bright-contrast);
+}
+.region--pattern .flexslider-main .flex-control-paging li a {
+  border-color: var(--mt-color-pattern-contrast);
+}
+.region--accent-background .flexslider-main .flex-control-paging li a {
+  border-color: var(--mt-color-accent-contrast);
+}
+.region--tint-background .flexslider-main .flex-control-paging li a {
+  border-color: var(--mt-color-tint-contrast);
+}
+.region--shade-background .flexslider-main .flex-control-paging li a {
+  border-color: var(--mt-color-shade-contrast);
+}
+.region--colored-background .flexslider-main .flex-control-paging li a {
+  border-color: var(--mt-color-colored-contrast);
+}
+.region--dark-colored-background .flexslider-main .flex-control-paging li a {
+  border-color: var(--mt-color-dark-colored-contrast);
+}
+.region--dark-background .flexslider-main .flex-control-paging li a {
+  border-color: var(--mt-color-dark-contrast);
+}
+.region--default-background .flexslider-main .flex-control-paging li a.flex-active,
+.region--default-background .flexslider-main .flex-control-paging li a:hover {
+  background-color: var(--mt-color-default-contrast);
+  border-color: var(--mt-color-default-contrast);
+}
+.region--bright-background .flexslider-main .flex-control-paging li a.flex-active,
+.region--bright-background .flexslider-main .flex-control-paging li a:hover {
+  background-color: var(--mt-color-bright-contrast);
+  border-color: var(--mt-color-bright-contrast);
+}
+.region--pattern .flexslider-main .flex-control-paging li a.flex-active,
+.region--pattern .flexslider-main .flex-control-paging li a:hover {
+  background-color: var(--mt-color-pattern-contrast);
+  border-color: var(--mt-color-pattern-contrast);
+}
+.region--accent-background .flexslider-main .flex-control-paging li a.flex-active,
+.region--accent-background .flexslider-main .flex-control-paging li a:hover {
+  background-color: var(--mt-color-accent-contrast);
+  border-color: var(--mt-color-accent-contrast);
+}
+.region--tint-background .flexslider-main .flex-control-paging li a.flex-active,
+.region--tint-background .flexslider-main .flex-control-paging li a:hover {
+  background-color: var(--mt-color-tint-contrast);
+  border-color: var(--mt-color-tint-contrast);
+}
+.region--shade-background .flexslider-main .flex-control-paging li a.flex-active,
+.region--shade-background .flexslider-main .flex-control-paging li a:hover {
+  background-color: var(--mt-color-shade-contrast);
+  border-color: var(--mt-color-shade-contrast);
+}
+.region--colored-background .flexslider-main .flex-control-paging li a.flex-active,
+.region--colored-background .flexslider-main .flex-control-paging li a:hover {
+  background-color: var(--mt-color-colored-contrast);
+  border-color: var(--mt-color-colored-contrast);
+}
+.region--dark-colored-background .flexslider-main .flex-control-paging li a.flex-active,
+.region--dark-colored-background .flexslider-main .flex-control-paging li a:hover {
+  background-color: var(--mt-color-dark-colored-contrast);
+  border-color: var(--mt-color-dark-colored-contrast);
+}
+.region--dark-background .flexslider-main .flex-control-paging li a.flex-active,
+.region--dark-background .flexslider-main .flex-control-paging li a:hover {
+  background-color: var(--mt-color-dark-contrast);
+  border-color: var(--mt-color-dark-contrast);
+}
+.flexslider-main .flex-direction-nav {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 36px;
+}
+.flexslider-main .flex-direction-nav .flex-prev {
+  left: -80px;
+}
+.flexslider-main .flex-direction-nav .flex-next {
+  right: 0;
+  text-align: right;
+}
+.flexslider-main .flex-direction-nav a {
+  opacity: 1;
+  width: 36px;
+  height: 36px;
+  top: 0;
+  margin: 0;
+}
+.flexslider-main .flex-direction-nav a:before {
+  font-size: 22px;
+  width: 100%;
+  height: 36px;
+  text-align: center;
+  display: inline-block;
+  text-shadow: none;
+  line-height: 36px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.region--default-background .flexslider-main .flex-direction-nav a:before {
+  color: var(--mt-color-default-contrast);
+}
+.region--bright-background .flexslider-main .flex-direction-nav a:before {
+  color: var(--mt-color-bright-contrast);
+}
+.region--pattern .flexslider-main .flex-direction-nav a:before {
+  color: var(--mt-color-pattern-contrast);
+}
+.region--accent-background .flexslider-main .flex-direction-nav a:before {
+  color: var(--mt-color-accent-contrast);
+}
+.region--tint-background .flexslider-main .flex-direction-nav a:before {
+  color: var(--mt-color-tint-contrast);
+}
+.region--shade-background .flexslider-main .flex-direction-nav a:before {
+  color: var(--mt-color-shade-contrast);
+}
+.region--colored-background .flexslider-main .flex-direction-nav a:before {
+  color: var(--mt-color-colored-contrast);
+}
+.region--dark-colored-background .flexslider-main .flex-direction-nav a:before {
+  color: var(--mt-color-dark-colored-contrast);
+}
+.region--dark-background .flexslider-main .flex-direction-nav a:before {
+  color: var(--mt-color-dark-contrast);
+}

@@ -1,0 +1,373 @@
+/**
+ * @file
+ * Reset most HTML elements styles for the off-canvas dialog.
+ *
+ * This is a generic reset. Drupal-specific classes are reset in components.
+ */
+
+ /* Reset size and position on elements. */
+ #drupal-off-canvas-wrapper a,
+ #drupal-off-canvas-wrapper abbr,
+ #drupal-off-canvas-wrapper acronym,
+ #drupal-off-canvas-wrapper address,
+ #drupal-off-canvas-wrapper applet,
+ #drupal-off-canvas-wrapper article,
+ #drupal-off-canvas-wrapper aside,
+ #drupal-off-canvas-wrapper audio,
+ #drupal-off-canvas-wrapper b,
+ #drupal-off-canvas-wrapper big,
+ #drupal-off-canvas-wrapper blockquote,
+ #drupal-off-canvas-wrapper body,
+ #drupal-off-canvas-wrapper canvas,
+ #drupal-off-canvas-wrapper caption,
+ #drupal-off-canvas-wrapper cite,
+ #drupal-off-canvas-wrapper code,
+ #drupal-off-canvas-wrapper dd,
+ #drupal-off-canvas-wrapper del,
+ #drupal-off-canvas-wrapper dfn,
+ #drupal-off-canvas-wrapper dialog,
+ #drupal-off-canvas-wrapper dl,
+ #drupal-off-canvas-wrapper dt,
+ #drupal-off-canvas-wrapper em,
+ #drupal-off-canvas-wrapper embed,
+ #drupal-off-canvas-wrapper fieldset,
+ #drupal-off-canvas-wrapper figcaption,
+ #drupal-off-canvas-wrapper figure,
+ #drupal-off-canvas-wrapper footer,
+ #drupal-off-canvas-wrapper form,
+ #drupal-off-canvas-wrapper h1,
+ #drupal-off-canvas-wrapper h2,
+ #drupal-off-canvas-wrapper h3,
+ #drupal-off-canvas-wrapper h4,
+ #drupal-off-canvas-wrapper h5,
+ #drupal-off-canvas-wrapper h6,
+ #drupal-off-canvas-wrapper header,
+ #drupal-off-canvas-wrapper hgroup,
+ #drupal-off-canvas-wrapper hr,
+ #drupal-off-canvas-wrapper html,
+ #drupal-off-canvas-wrapper i,
+ #drupal-off-canvas-wrapper iframe,
+ #drupal-off-canvas-wrapper img,
+ #drupal-off-canvas-wrapper ins,
+ #drupal-off-canvas-wrapper kbd,
+ #drupal-off-canvas-wrapper label,
+ #drupal-off-canvas-wrapper legend,
+ #drupal-off-canvas-wrapper li,
+ #drupal-off-canvas-wrapper main,
+ #drupal-off-canvas-wrapper mark,
+ #drupal-off-canvas-wrapper menu,
+ #drupal-off-canvas-wrapper meter,
+ #drupal-off-canvas-wrapper nav,
+ #drupal-off-canvas-wrapper object,
+ #drupal-off-canvas-wrapper ol,
+ #drupal-off-canvas-wrapper output,
+ #drupal-off-canvas-wrapper p,
+ #drupal-off-canvas-wrapper pre,
+ #drupal-off-canvas-wrapper progress,
+ #drupal-off-canvas-wrapper q,
+ #drupal-off-canvas-wrapper rp,
+ #drupal-off-canvas-wrapper rt,
+ #drupal-off-canvas-wrapper s,
+ #drupal-off-canvas-wrapper samp,
+ #drupal-off-canvas-wrapper section,
+ #drupal-off-canvas-wrapper small,
+ #drupal-off-canvas-wrapper span,
+ #drupal-off-canvas-wrapper strike,
+ #drupal-off-canvas-wrapper strong,
+ #drupal-off-canvas-wrapper sub,
+ #drupal-off-canvas-wrapper sup,
+ #drupal-off-canvas-wrapper table,
+ #drupal-off-canvas-wrapper tbody,
+ #drupal-off-canvas-wrapper td,
+ #drupal-off-canvas-wrapper tfoot,
+ #drupal-off-canvas-wrapper th,
+ #drupal-off-canvas-wrapper thead,
+ #drupal-off-canvas-wrapper time,
+ #drupal-off-canvas-wrapper tr,
+ #drupal-off-canvas-wrapper tt,
+ #drupal-off-canvas-wrapper u,
+ #drupal-off-canvas-wrapper ul,
+ #drupal-off-canvas-wrapper var,
+ #drupal-off-canvas-wrapper video,
+ #drupal-off-canvas-wrapper xmp {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   font-size: 100%;
+ }
+
+ /*
+  * Override the default (display: inline) for browsers that do not recognize HTML5 tags.
+  * IE8 (and lower) requires a shiv: http://ejohn.org/blog/html5-shiv
+  */
+ #drupal-off-canvas-wrapper article,
+ #drupal-off-canvas-wrapper aside,
+ #drupal-off-canvas-wrapper figcaption,
+ #drupal-off-canvas-wrapper figure,
+ #drupal-off-canvas-wrapper footer,
+ #drupal-off-canvas-wrapper header,
+ #drupal-off-canvas-wrapper hgroup,
+ #drupal-off-canvas-wrapper main,
+ #drupal-off-canvas-wrapper menu,
+ #drupal-off-canvas-wrapper nav,
+ #drupal-off-canvas-wrapper section {
+   display: block;
+   border-radius: 0;
+   line-height: normal;
+ }
+
+ /*
+  * Makes browsers agree.
+  * IE + Opera = font-weight: bold.
+  * Gecko + WebKit = font-weight: bolder.
+  */
+ #drupal-off-canvas-wrapper b,
+ #drupal-off-canvas-wrapper strong {
+   font-weight: bold;
+ }
+
+ #drupal-off-canvas-wrapper em,
+ #drupal-off-canvas-wrapper i {
+   font-style: italic;
+ }
+
+ #drupal-off-canvas-wrapper img {
+   vertical-align: middle;
+   color: transparent;
+   font-size: 0;
+ }
+
+ #drupal-off-canvas-wrapper ul,
+ #drupal-off-canvas-wrapper ol {
+   list-style: none;
+ }
+
+ /* reset table styling. */
+ #drupal-off-canvas-wrapper table {
+   border-spacing: 0;
+   border-collapse: collapse;
+ }
+ #drupal-off-canvas-wrapper table thead,
+ #drupal-off-canvas-wrapper table tbody,
+ #drupal-off-canvas-wrapper table tbody tr:nth-child(even),
+ #drupal-off-canvas-wrapper table tbody tr:nth-child(odd),
+ #drupal-off-canvas-wrapper table tfoot {
+   border: 0;
+   background: transparent none;
+ }
+ #drupal-off-canvas-wrapper th,
+ #drupal-off-canvas-wrapper td,
+ #drupal-off-canvas-wrapper caption {
+   font-weight: normal;
+ }
+ #drupal-off-canvas-wrapper q {
+   quotes: none;
+ }
+ #drupal-off-canvas-wrapper q:before,
+ #drupal-off-canvas-wrapper q:after {
+   content: none;
+ }
+ #drupal-off-canvas-wrapper sub,
+ #drupal-off-canvas-wrapper sup,
+ #drupal-off-canvas-wrapper small {
+   font-size: 75%;
+ }
+ #drupal-off-canvas-wrapper sub,
+ #drupal-off-canvas-wrapper sup {
+   position: relative;
+   vertical-align: baseline;
+   line-height: 0;
+ }
+ #drupal-off-canvas-wrapper sub {
+   bottom: -0.25em;
+ }
+ #drupal-off-canvas-wrapper sup {
+   top: -0.5em;
+ }
+
+ /*
+  * For IE9. Without, occasionally draws shapes
+  * outside the boundaries of <svg> rectangle.
+  */
+ #drupal-off-canvas-wrapper svg {
+   overflow: hidden;
+ }
+
+ /* Specific resets for inputs. */
+ #drupal-off-canvas-wrapper input[type="search"]::-webkit-search-decoration {
+   display: none;
+ }
+ #drupal-off-canvas-wrapper input {
+   margin: 0;
+   padding: 0;
+ }
+ #drupal-off-canvas-wrapper input[type="checkbox"],
+ #drupal-off-canvas-wrapper input[type="radio"] {
+   position: static;
+   margin: 0;
+ }
+ #drupal-off-canvas-wrapper input:invalid,
+ #drupal-off-canvas-wrapper button:invalid,
+ #drupal-off-canvas-wrapper select:invalid,
+ #drupal-off-canvas-wrapper textarea:invalid,
+ #drupal-off-canvas-wrapper input:focus,
+ #drupal-off-canvas-wrapper button:focus,
+ #drupal-off-canvas-wrapper select:focus,
+ #drupal-off-canvas-wrapper textarea:focus,
+ #drupal-off-canvas-wrapper input[type="file"]:focus,
+ #drupal-off-canvas-wrapper input[type="file"]:active,
+ #drupal-off-canvas-wrapper input[type="radio"]:focus,
+ #drupal-off-canvas-wrapper input[type="radio"]:active,
+ #drupal-off-canvas-wrapper input[type="checkbox"]:focus,
+ #drupal-off-canvas-wrapper input[type="checkbox"]:active {
+   z-index: 1;
+   box-shadow: none;
+ }
+ #drupal-off-canvas-wrapper input[role="button"] {
+   cursor: pointer;
+ }
+ #drupal-off-canvas-wrapper button,
+ #drupal-off-canvas-wrapper input[type="reset"],
+ #drupal-off-canvas-wrapper input[type="submit"],
+ #drupal-off-canvas-wrapper input[type="button"] {
+   display: inline-block;
+   overflow: visible;
+   cursor: pointer;
+   vertical-align: middle;
+   text-decoration: none;
+   border: 0;
+   outline: 0;
+   background-image: none;
+   text-shadow: none;
+   -webkit-appearance: none;
+   -moz-appearance: none;
+ }
+ #drupal-off-canvas-wrapper button:hover,
+ #drupal-off-canvas-wrapper input[type="reset"]:hover,
+ #drupal-off-canvas-wrapper input[type="submit"]:hover,
+ #drupal-off-canvas-wrapper input[type="button"]:hover {
+   text-decoration: none;
+   background-image: none;
+ }
+ #drupal-off-canvas-wrapper button:active,
+ #drupal-off-canvas-wrapper input[type="reset"]:active,
+ #drupal-off-canvas-wrapper input[type="submit"]:active,
+ #drupal-off-canvas-wrapper input[type="button"]:active {
+   border-color: grey;
+   background-image: none;
+   box-shadow: none;
+ }
+ #drupal-off-canvas-wrapper button::-moz-focus-inner,
+ #drupal-off-canvas-wrapper input[type="reset"]::-moz-focus-inner,
+ #drupal-off-canvas-wrapper input[type="submit"]::-moz-focus-inner,
+ #drupal-off-canvas-wrapper input[type="button"]::-moz-focus-inner {
+   padding: 0;
+   border: 0;
+ }
+ #drupal-off-canvas-wrapper textarea,
+ #drupal-off-canvas-wrapper select,
+ #drupal-off-canvas-wrapper input[type="date"],
+ #drupal-off-canvas-wrapper input[type="datetime"],
+ #drupal-off-canvas-wrapper input[type="datetime-local"],
+ #drupal-off-canvas-wrapper input[type="email"],
+ #drupal-off-canvas-wrapper input[type="month"],
+ #drupal-off-canvas-wrapper input[type="number"],
+ #drupal-off-canvas-wrapper input[type="password"],
+ #drupal-off-canvas-wrapper input[type="search"],
+ #drupal-off-canvas-wrapper input[type="tel"],
+ #drupal-off-canvas-wrapper input[type="text"],
+ #drupal-off-canvas-wrapper input[type="time"],
+ #drupal-off-canvas-wrapper input[type="url"],
+ #drupal-off-canvas-wrapper input[type="week"] {
+   height: auto;
+   vertical-align: middle;
+   border-radius: 0;
+ }
+ #drupal-off-canvas-wrapper textarea[disabled],
+ #drupal-off-canvas-wrapper select[disabled],
+ #drupal-off-canvas-wrapper input[type="date"][disabled],
+ #drupal-off-canvas-wrapper input[type="datetime"][disabled],
+ #drupal-off-canvas-wrapper input[type="datetime-local"][disabled],
+ #drupal-off-canvas-wrapper input[type="email"][disabled],
+ #drupal-off-canvas-wrapper input[type="month"][disabled],
+ #drupal-off-canvas-wrapper input[type="number"][disabled],
+ #drupal-off-canvas-wrapper input[type="password"][disabled],
+ #drupal-off-canvas-wrapper input[type="search"][disabled],
+ #drupal-off-canvas-wrapper input[type="tel"][disabled],
+ #drupal-off-canvas-wrapper input[type="text"][disabled],
+ #drupal-off-canvas-wrapper input[type="time"][disabled],
+ #drupal-off-canvas-wrapper input[type="url"][disabled],
+ #drupal-off-canvas-wrapper input[type="week"][disabled] {
+   background-color: grey;
+ }
+ #drupal-off-canvas-wrapper input[type="hidden"] {
+   visibility: hidden;
+ }
+ #drupal-off-canvas-wrapper button[disabled],
+ #drupal-off-canvas-wrapper input[disabled],
+ #drupal-off-canvas-wrapper select[disabled],
+ #drupal-off-canvas-wrapper select[disabled] option,
+ #drupal-off-canvas-wrapper select[disabled] optgroup,
+ #drupal-off-canvas-wrapper textarea[disabled] {
+   cursor: default;
+   -webkit-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+   box-shadow: none;
+ }
+ #drupal-off-canvas-wrapper input:placeholder,
+ #drupal-off-canvas-wrapper textarea:placeholder {
+   color: grey;
+ }
+ #drupal-off-canvas-wrapper textarea,
+ #drupal-off-canvas-wrapper select[size],
+ #drupal-off-canvas-wrapper select[multiple] {
+   height: auto;
+ }
+ #drupal-off-canvas-wrapper select[size="0"],
+ #drupal-off-canvas-wrapper select[size="1"] {
+   height: auto;
+ }
+ #drupal-off-canvas-wrapper textarea {
+   overflow: auto;
+   width: 100%;
+   min-height: 40px;
+   resize: vertical;
+ }
+ #drupal-off-canvas-wrapper optgroup {
+   color: black;
+   font-weight: normal;
+   font-style: normal;
+ }
+ #drupal-off-canvas-wrapper optgroup::-moz-focus-inner {
+   padding: 0;
+   border: 0;
+ }
+ #drupal-off-canvas-wrapper * button {
+   overflow: visible;
+   width: auto;
+   padding: 0;
+   vertical-align: middle;
+   text-decoration: none;
+   color: black;
+   border: 1px solid grey;
+   background: none;
+ }
+ #drupal-off-canvas-wrapper * textarea,
+ #drupal-off-canvas-wrapper * select,
+ #drupal-off-canvas-wrapper *:not(div) textarea,
+ #drupal-off-canvas-wrapper *:not(div) select {
+   padding: 0;
+   vertical-align: top;
+   color: black;
+   border: 1px solid grey;
+   background: white;
+ }
+
+ /* To standardize off-canvas selection color. */
+ #drupal-off-canvas-wrapper ::-moz-selection,
+ #drupal-off-canvas-wrapper ::selection {
+   color: inherit;
+   background-color: rgba(175, 175, 175, 0.5);
+ }

@@ -1,0 +1,55 @@
+/**
+ * @file
+ * Visual styles for Base+'s slider revolution boxed width.
+ */
+
+ /* rounded corners */
+ .mt-style-sharp .container .view-mt-slideshow-boxed-width .rev_slider {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+.mt-style-oval .container .view-mt-slideshow-boxed-width .rev_slider {
+  -webkit-border-radius: var(--mt-oval-radius);
+  -moz-border-radius: var(--mt-oval-radius);
+  border-radius: var(--mt-oval-radius);
+}
+.mt-style-rounded .container .view-mt-slideshow-boxed-width .rev_slider {
+  -webkit-border-radius: var(--mt-rounded-radius);
+  -moz-border-radius: var(--mt-rounded-radius);
+  border-radius: var(--mt-rounded-radius);
+}
+.mt-style-custom-sharp .container .view-mt-slideshow-boxed-width .rev_slider {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+.mt-style-custom-oval .container .view-mt-slideshow-boxed-width .rev_slider {
+  -webkit-border-radius: var(--mt-oval-radius);
+  -moz-border-radius: var(--mt-oval-radius);
+  border-radius: var(--mt-oval-radius);
+}
+.mt-style-custom-rounded .container .view-mt-slideshow-boxed-width .rev_slider {
+  -webkit-border-radius: var(--mt-rounded-radius);
+  -moz-border-radius: var(--mt-rounded-radius);
+  border-radius: var(--mt-rounded-radius);
+}
+
+/* captions */
+@media (min-width:992px) and (max-width: 1199px) {
+  .view-mt-slideshow-boxed-width .tp-caption__title {
+    font-size: 50px;
+    padding-top: 0;
+  }
+  .view-mt-slideshow-boxed-width .tp-caption__text {
+    padding-top: 0;
+  }
+  .view-mt-slideshow-boxed-width .tp-caption__buttons-container {
+    margin-top: 0;
+  }
+}
+@media (max-width: 575px) {
+  .view-mt-slideshow-boxed-width {
+    margin: 0 -15px;
+  }
+}

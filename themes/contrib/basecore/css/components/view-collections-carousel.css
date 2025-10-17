@@ -1,0 +1,10 @@
+/**
+ * @file
+ * Visual styles for Base+'s collections carousel.
+ */
+.mt-carousel-collections .owl-item {
+  text-align: center;
+}
+.mt-carousel-collections .mt-carousel-item {
+  margin: 0 15px;
+}

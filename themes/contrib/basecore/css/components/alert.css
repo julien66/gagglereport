@@ -1,0 +1,16 @@
+/**
+ * @file
+ * Visual styles for Base+'s alerts.
+ */
+.header-top-highlighted__section .alert {
+  padding: 10px 0;
+  margin: 0;
+  font-size: 14px;
+}
+.alert .btn-close {
+  opacity: 1;
+  filter: alpha(opacity=1);
+}
+.alert .btn-close:hover {
+  color: inherit;
+}

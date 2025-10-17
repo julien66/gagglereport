@@ -1,0 +1,63 @@
+/**
+ * @file
+ * Visual styles for Base+'s modal block.
+ */
+.modal-open .slideout-panel {
+  position: static;
+}
+.block-type--mt-modal .modal-content {
+  border-radius: 0;
+  border: none;
+  background-color: transparent;
+}
+.region--colored-background .modal-content input.form-search {
+  color: var(--mt-color-default-contrast);
+}
+.modal-backdrop {
+  background-color: rgba(var(--mt-color-bright-value), 0.95);
+}
+.modal-backdrop.show {
+  opacity: 1;
+}
+.block-type--mt-modal .modal-icon-button {
+  -webkit-appearance: none;
+  border-width: 0;
+  display: block;
+  margin-left: auto;
+  margin-top: 3px;
+  font-size: 18px;
+}
+.block-type--mt-modal .modal-icon-button:not(.mt-button) {
+  background-color: transparent;
+}
+.block-type--mt-modal .modal-icon-button.mt-button {
+  border-width: 1px;
+}
+.block-type--mt-modal button.btn-close {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  font-size: 16px;
+  opacity: 1;
+  color: var(--mt-default-color-contrast);
+}
+
+/* header modal */
+header.header .modal-icon-button {
+  padding: 15px;
+  margin: 0;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+header.header.region--colored-background .block-type--mt-modal .modal-icon-button {
+  color: var(--mt-color-base-contrast);
+}
+@media (max-width: 1440px) {
+  header.header .modal-icon-button {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

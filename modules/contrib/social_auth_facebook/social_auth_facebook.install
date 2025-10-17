@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * @file
+ * Install, update, and uninstall functions for the Social Auth Facebook module.
+ */
+
+/**
+ * Implements hook_update_N().
+ *
+ * The config key app_id and app_secret is renamed to new keys client_id and
+ * client_secret. Upgrade path for 4.x version.
+ */
+function social_auth_facebook_update_8202(): void {
+  $config = \Drupal::configFactory()->getEditable('social_auth_facebook.settings');
+  if (empty($config->get('client_id'))) {
+    $config->set('client_id', $config->get('app_id'));
+  }
+  if (empty($config->get('client_secret'))) {
+    $config->set('client_secret', $config->get('app_secret'));
+  }
+  $config->clear('app_id');
+  $config->clear('app_secret');
+  $config->save();
+}
+
+/**
+ * Implements hook_update_N().
+ *
+ * The key api_calls was changed to endpoints. This update copies the values
+ * in 'api_calls' to 'endpoints'.
+ */
+function social_auth_facebook_update_8201(): void {
+  $config = \Drupal::configFactory()->getEditable('social_auth_facebook.settings');
+  $endpoints = $config->get('api_calls');
+
+  $config->set('endpoints', $endpoints)->save();
+}

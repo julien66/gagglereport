@@ -1,0 +1,39 @@
+/**
+ * @file
+ * Visual styles for Base+'s articles list 2 views.
+ */
+.view-articles-list-2 .views-row {
+  padding-left: 50px;
+  position: relative;
+  padding-bottom: 20px;
+}
+.view-articles-list-2 .views-row:after {
+  font-family: 'Font Awesome 5 Free', 'Font Awesome 5 Pro';
+  font-weight: 400;
+  content: "\f044";
+  font-size: 30px;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  line-height: 1;
+}
+.view-articles-list-2 .views-field-title h4 {
+  font-size: 22px;
+  margin: 0;
+  padding-top: 4px;
+}
+.view-articles-list-2 .views-field-title a {
+  margin-bottom: 0;
+}
+.view-articles-list-2 .views-field-body p {
+  padding-bottom: 5px;
+}
+.view-articles-list-2 .post-meta {
+  font-size: 14px;
+}
+.view-articles-list-2 .post-meta-item {
+  display: inline-block;
+}
+.view-articles-list-2 > .more-link {
+  padding-left: 50px;
+}

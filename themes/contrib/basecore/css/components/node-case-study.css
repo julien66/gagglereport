@@ -1,0 +1,11 @@
+/**
+ * @file
+ * Visual styles for Base+'s case study content type.
+ */
+.node--view-mode-full.node--type-case-study .field--name-field-case-study__client-logo {
+  margin-bottom: 2.25rem;
+  text-align: center;
+}
+.node--view-mode-full.node--type-case-study .field--name-field-content {
+  margin-bottom: 3.375rem;
+}

@@ -1,0 +1,28 @@
+/**
+ * @file
+ * Styles for Base+'s better exposed filters.
+ */
+.sidebar__section .bef-exposed-form .form--inline > .form-item {
+  float: none;
+}
+.sidebar__section .bef-exposed-form .form--inline fieldset legend {
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  padding-top: 10px;
+  margin: 0 0 12px 0;
+  text-transform: uppercase;
+}
+.sidebar__section .bef-exposed-form .form--inline fieldset legend .fieldset-legend {
+  display: block;
+  float: none;
+}
+@media (min-width: 992px) {
+  .sidebar__section .bef-exposed-form .form--inline > .form-item {
+    margin: 0 0 30px;
+  }
+}
+.sidebar__section .bef-exposed-form .form--inline .form-actions {
+  text-align: right;
+}

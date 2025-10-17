@@ -1,0 +1,47 @@
+/**
+ * @file
+ * Visual styles for Base+'s featured linked text tiles block.
+ */
+.featured-linked-text-tile {
+  text-align: center;
+  padding: 30px 30px 20px;
+  position: relative;
+  overflow: hidden;
+  border-style: none;
+  border-width: 0px;
+  margin-bottom: 30px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 1px 2px rgb(64 64 64 / 31%), 0 1px 4px rgb(64 64 64 / 26%);
+}
+.featured-linked-text-tile .featured-linked-text-tile__title {
+  font-size: 24px;
+  margin-bottom: 30px;
+  font-weight: 600;
+  color: var(--mt-color-high-contrast);
+}
+.headings-wide-spacing-enabled .featured-linked-text-tile .featured-linked-text-tile__title {
+  letter-spacing: var(--mt-headings-letter-spacing);
+  text-transform: uppercase;
+}
+.featured-linked-text-tile .featured-linked-text-tile__title a {
+  text-decoration: none;
+}
+.featured-linked-text-tile .featured-linked-text-tile__title a:hover,
+.featured-linked-text-tile .featured-linked-text-tile__title a:focus {
+  text-decoration: underline;
+}
+.featured-linked-text-tile__body {
+  padding-bottom: 10px;
+}
+.region--shade-background .featured-linked-text-tile,
+.region--dark-background .featured-linked-text-tile,
+.region--dark-colored-background .featured-linked-text-tile,
+.region--colored-background .featured-linked-text-tile {
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--mt-form-border-contrast);
+}

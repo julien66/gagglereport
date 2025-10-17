@@ -1,0 +1,115 @@
+/**
+ * @file
+ * Visual styles for Base+'s service content type.
+ */
+/* service page backgrounds */
+@media (min-width: 992px) {
+  .page-node-type-mt-service .main-content__section,
+  .page-node-type-mt-service .sidebar__section {
+    padding-top: 80px;
+  }
+}
+.node--type-mt-service .node__header {
+  padding: 0;
+}
+
+/*page title*/
+.page-node-type-mt-service .page-title {
+  margin-bottom: 20px;
+}
+@media (min-width: 576px) {
+  .page-node-type-mt-service .page-title {
+    font-size: 46px;
+  }
+}
+@media (min-width: 992px) {
+  .page-node-type-mt-service .page-title {
+    max-width: 70%;
+  }
+}
+
+/*body*/
+.node--type-mt-service .field.field--name-field-mt-srv-body {
+  margin-bottom: 50px;
+}
+.field--name-field-mt-srv-body p:last-child {
+  padding-bottom: 0px;
+}
+
+/*subheader field*/
+.field--name-field-mt-srv-subheader-body {
+  font-size: 28px;
+  line-height: 1.4;
+  font-weight: 700;
+  color: var(--mt-color-high-contrast);
+}
+@media (max-width: 575px) {
+  .field--name-field-mt-srv-subheader-body {
+    font-size: 20px;
+  }
+}
+.field--name-field-mt-srv-subheader-body p:last-child {
+  padding-bottom: 0;
+}
+
+/* image field */
+.node--type-mt-service .field.field--name-field-mt-srv-image {
+  margin-bottom: 30px;
+}
+@media (max-width: 991px) {
+  .node--type-mt-service .field:last-child.field--name-field-mt-srv-image {
+    margin: 0 0 30px;
+  }
+}
+@media (max-width: 575px) {
+  .mt-style-sharp.mt-style-image-global .node--type-mt-service .field.field--name-field-mt-srv-image,
+  .mt-style-image-sharp .node--type-mt-service .field.field--name-field-mt-srv-image {
+    margin: 0 -15px 30px;
+  }
+}
+.node--type-mt-service.node--view-mode-teaser .images-container {
+  margin-bottom: 15px;
+}
+
+/* highlight field */
+.field--name-field-mt-srv-highlight {
+  padding-top: 30px;
+}
+@media (min-width: 992px) {
+  .field--name-field-mt-srv-highlight {
+    padding-top: 80px;
+  }
+}
+.field--name-field-mt-srv-highlight > .field__item:first-child > .paragraph--type--mt-highlight {
+  padding-top: 15px;
+}
+
+/* video field */
+.node--type-mt-service .field.field--name-field-mt-srv-video {
+  margin-bottom: 50px;
+}
+
+/* tags */
+.node--type-mt-service .field.field--name-field-mt-srv-tags {
+  margin-bottom: 50px;
+}
+
+/*buy link field*/
+.node--type-mt-service .field.field--name-field-mt-srv-link {
+  text-align: center;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+@media (min-width: 992px) {
+  .layout-no-sidebars .service-content-first + .service-content-second .field--name-field-mt-srv-link a {
+    display: block;
+  }
+}
+.node--type-mt-service .field--name-field-mt-srv-link a {
+  min-width: 190px;
+  display: block;
+}
+.page-node-type-mt-service .internal-banner .field--name-field-mt-srv-link a {
+  display: block;
+}

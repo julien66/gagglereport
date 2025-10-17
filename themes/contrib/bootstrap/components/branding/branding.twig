@@ -1,0 +1,15 @@
+<div{{ attributes.addClass('container-fluid') }}>
+  {% if site_logo or site_name %}
+    <a href="{{ url }}" rel="home" class="navbar-brand">
+      {% if site_logo %}
+        <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" />
+      {% endif %}
+      {{ site_name }}
+    </a>
+  {% endif %}
+  {% if site_slogan %}
+    <div class="navbar-text">
+      {{ site_slogan }}
+    </div>
+  {% endif %}
+</div>

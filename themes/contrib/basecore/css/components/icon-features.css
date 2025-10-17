@@ -1,0 +1,157 @@
+/**
+ * @file
+ * Visual styles for Base+'s icon features.
+ */
+.paragraph--type--mt-icon-features {
+  margin-bottom: 30px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.paragraph--type--mt-icon-features.region--default-background a {
+  color: var(--mt-color-secondary);
+}
+.paragraph--type--mt-icon-features:hover .feature__title,
+.paragraph--type--mt-icon-features:hover .feature__title a,
+.paragraph--type--mt-icon-features:hover a,
+.paragraph--type--mt-icon-features:hover a:hover,
+.paragraph--type--mt-icon-features:hover a:focus {
+  color: var(--mt-color-primary-contrast);
+}
+
+/* tile view mode */
+@media (max-width: 767px) {
+  .paragraph--view-mode--mt-tile .feature {
+    text-align: center;
+  }
+}
+.paragraph--view-mode--mt-tile .feature__icon {
+  margin-bottom: 25px;
+  font-size: 28px;
+}
+.paragraph--view-mode--mt-tile .feature__title {
+  margin-bottom: 15px;
+  margin-top: 0;
+  font-size: 22px;
+}
+.paragraph--view-mode--mt-tile .feature__title a {
+  color: var(--mt-color-high-contrast);
+}
+.paragraph--view-mode--mt-tile .feature__image {
+  margin-bottom: 30px;
+}
+.paragraph--view-mode--mt-tile .field--name-field-mt-if-body {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+.paragraph--view-mode--mt-tile .field--name-field-mt-if-body p:last-child {
+  padding-bottom: 0;
+}
+.paragraph--view-mode--mt-tile .feature__icon .fontawesome-icon {
+  position: relative;
+  width: 70px;
+  min-height: 70px;
+  text-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 10px;
+}
+@media (max-width: 767px) {
+  .paragraph--view-mode--mt-tile .feature__icon .fontawesome-icon {
+    margin: 0 auto;
+  }
+}
+.paragraph--view-mode--mt-tile .feature div:last-child {
+  margin-bottom: 0;
+}
+
+/* media after view mode */
+@media (max-width: 767px) {
+  .paragraph--view-mode--mt-media-after .feature {
+    text-align: center;
+  }
+}
+.paragraph--view-mode--mt-media-after .feature__icon {
+  margin-top: 25px;
+  font-size: 28px;
+}
+.paragraph--view-mode--mt-media-after .feature__title {
+  margin-bottom: 15px;
+  margin-top: 0;
+  font-size: 22px;
+}
+.paragraph--view-mode--mt-media-after .feature__title a {
+  color: var(--mt-color-high-contrast);
+}
+.paragraph--view-mode--mt-media-after .feature__image {
+  margin-bottom: 30px;
+}
+.paragraph--view-mode--mt-media-after .field--name-field-mt-if-body {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+.paragraph--view-mode--mt-media-after .field--name-field-mt-if-body p:last-child {
+  padding-bottom: 0;
+}
+.paragraph--view-mode--mt-media-after .feature__icon .fontawesome-icon {
+  position: relative;
+  width: 70px;
+  min-height: 70px;
+  text-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 10px;
+}
+@media (max-width: 767px) {
+  .paragraph--view-mode--mt-media-after .feature__icon .fontawesome-icon {
+    margin: 0 auto;
+  }
+}
+.paragraph--view-mode--mt-media-after .feature div:last-child {
+  margin-bottom: 0;
+}
+
+/* tile large view mode */
+.paragraph--view-mode--mt-tile-large .feature__icon {
+  margin-bottom: 30px;
+  font-size: 48px;
+}
+.paragraph--view-mode--mt-tile-large .feature__icon .fontawesome-icon {
+  width: 100px;
+  height: 100px;
+  margin: 0 0 30px;
+  background-color: hsla(var(--mt-color-primary-light-value), 0.1);
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 10px;
+}
+.paragraph--view-mode--mt-tile-large .feature__title {
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+.paragraph--view-mode--mt-tile-large .feature__title a {
+  color: var(--mt-color-high-contrast);
+}
+.paragraph--view-mode--mt-tile-large .field--name-field-mt-if-body {
+  margin-bottom: 15px;
+}
+.paragraph--view-mode--mt-tile-large .field--name-field-mt-if-body p:last-child {
+  padding-bottom: 0;
+}
+.paragraph--view-mode--mt-tile-large .feature div:last-child {
+  margin-bottom: 0;
+}

@@ -1,0 +1,23 @@
+.juicer-feed {
+  font-family: inherit;
+}
+.juicer-feed h1.referral,
+.juicer-feed .feed-item.juicer {
+  display: none!important;
+}
+.juicer-feed li.feed-item {
+  border-radius: 5px;
+  border: 0px none!important;
+}
+.juicer-feed.slider .slick-prev,
+.juicer-feed.slider .slick-next {
+  display: none;
+}
+.juicer-feed.slider:hover .slick-prev,
+.juicer-feed.slider:hover .slick-next {
+  display: block;
+}
+.juicer-feed.slider .slick-prev:hover::before,
+.juicer-feed.slider .slick-next:hover::before {
+  color: #ffffff;
+}

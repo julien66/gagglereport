@@ -1,0 +1,30 @@
+/**
+ * @file
+ * Visual styles for Base+'s team member content type.
+ */
+.page-node-type-mt-team-member .node__header {
+  padding: 0;
+}
+.page-node-type-mt-team-member .field.field--name-field-mt-tmm-body {
+  margin-bottom: 20px;
+}
+.page-node-type-mt-team-member .field.field--name-field-mt-tmm-member-photo {
+  margin-bottom: 20px;
+}
+@media (max-width: 575px) {
+  .mt-style-sharp.mt-style-image-global .page-node-type-mt-team-member .field.field--name-field-mt-tmm-member-photo,
+  .mt-style-image-sharp .page-node-type-mt-team-member .field.field--name-field-mt-tmm-member-photo {
+    margin: 0 -15px 20px;
+  }
+}
+.page-node-type-mt-team-member .icons-list {
+  padding-bottom: 20px;
+}
+.page-node-type-mt-team-member .field.field--name-field-mt-tmm-subheader-body {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: var(--mt-color-high-contrast);
+}
+.field--name-field-mt-tmm-subheader-body p {
+  padding-bottom: 25px;
+}

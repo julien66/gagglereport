@@ -1,0 +1,244 @@
+/**
+ * @file
+ * Visual styles for Base+'s accordions.
+ */
+
+/*Style 1*/
+.collapse-group {
+  margin: 0 0 25px 0;
+  overflow: hidden;
+  border-width: 1px;
+  overflow: visible;
+  border-style: solid;
+  border-color: var(--mt-form-border);
+  box-shadow: 0 1px 2px rgb(64 64 64 / 31%), 0 1px 4px rgb(64 64 64 / 26%);
+}
+.region--dark-background .collapse-group,
+.region--shade-background .collapse-group,
+.region--colored-background .collapse-group,
+.region--dark-colored-background .collapse-group {
+  border-color: var(--mt-form-border-contrast);
+}
+.collapse-group .card {
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  border-width: 0;
+  background-color: transparent;
+  box-shadow: none;
+}
+.collapse-group .card:last-child {
+  border-bottom: none;
+}
+.collapse-group .card + .card {
+  margin: 0;
+  margin-top: 0;
+  padding-top: 0px;
+  border-top-width: 1px;
+  border-top-style: solid;
+}
+.collapse-group .card + .card {
+  border-color: var(--mt-form-border);
+}
+.region--dark-background .collapse-group .card + .card,
+.region--shade-background .collapse-group .card + .card,
+.region--colored-background .collapse-group .card + .card,
+.region--dark-colored-background .collapse-group .card + .card {
+  border-color: var(--mt-form-border-contrast);
+}
+.card-header {
+  background-color: transparent;
+  border-bottom: none;
+  padding: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+}
+.card-title {
+  margin-bottom: 0;
+}
+.card-title a {
+  font-weight: 400;
+  font-size: 18px;
+  padding: 15px 20px;
+  display: inline-block;
+  width: 100%;
+  text-decoration: none;
+  display: inline-block;
+  border-bottom-width: 0px;
+  border-radius: 0;
+  background-color: transparent;
+}
+.card-header--trigger-icon .card-title a {
+  color: var(--mt-color-high-contrast);
+}
+.headings-wide-spacing-enabled .card-title a {
+  letter-spacing: var(--mt-headings-letter-spacing);
+  text-transform: uppercase;
+}
+.card-title a.collapsed {
+  border-bottom-color: transparent;
+}
+.card:last-child .card-title a:not(.collapsed) {
+  border-radius: 0;
+}
+.card:first-child .card-title a {
+  border-radius: 0;
+}
+.card:last-child .card-title a {
+  border-radius: 0;
+}
+.card-header--trigger-icon .card-title a {
+  position: relative;
+  padding-right: 35px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  font-weight: 700;
+}
+.card-header--trigger-icon .card-title a:after {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  font-size: 18px;
+  top: 50%;
+  right: 10px;
+  margin-top: -15px;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -o-border-radius: 100%;
+  border-radius: 100%;
+  background-color: transparent;
+  color: inherit;
+  font-family: 'Font Awesome 5 Free', 'Font Awesome 5 Pro';
+  font-weight: 900;
+  line-height: 30px;
+  -webkit-transition: all linear .2s;
+  -moz-transition: all linear .2s;
+  -o-transition: all linear .2s;
+  -ms-transition: all linear .2s;
+  transition: all linear .2s;
+  content: "\f106";
+  transform: rotate(0deg);
+}
+.headings-wide-spacing-enabled .card-header--trigger-icon .card-title a:after {
+  letter-spacing: 0;
+}
+.card-header--trigger-icon .card-title a.collapsed:after {
+  transform: rotate(180deg);
+}
+.card-title span {
+  display: inline-block;
+  padding-right: 5px;
+}
+.card-body {
+  background-color: transparent;
+  color: inherit;
+  border-top: none;
+  padding: 0px 20px 20px;
+}
+.card-body p:last-child {
+  padding-bottom: 0;
+}
+.card:last-child .card-body {
+  border-radius: 0;
+}
+
+/* in page collapse */
+.mt-collapse {
+  margin-top: 10px;
+}
+.mt-collapse .card-body {
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: rgba(0, 0 ,0 ,.125);
+}
+.region--default-background .mt-collapse .card {
+  background-color: var(--mt-color-default);
+}
+.region--bright-background .mt-collapse .card {
+  background-color: var(--mt-color-bright);
+}
+.region--accent-background .mt-collapse .card {
+  background-color: var(--mt-color-accent);
+}
+.region--tint-background .mt-collapse .card {
+  background-color: var(--mt-color-tint);
+}
+.region--shade-background .mt-collapse .card {
+  background-color: var(--mt-color-shade);
+}
+.region--colored-background .mt-collapse .card {
+  background-color: var(--mt-color-colored);
+}
+.region--dark-colored-background .mt-collapse .card {
+  background-color: var(--mt-color-dark-colored);
+}
+.region--dark-background .mt-collapse .card {
+  background-color: var(--mt-color-dark);
+}
+.region--pattern .mt-collapse .card {
+  background-color: var(--mt-color-pattern);
+}
+.mt-collapse-button {
+  font-size: 18px;
+  padding: 14px;
+  display: block;
+  -webkit-appearance: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  text-align: left;
+  position: relative;
+}
+.mt-collapse-button:after {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  font-size: 20px;
+  top: 50%;
+  right: 10px;
+  margin-top: -15px;
+  background-color: transparent;
+  color: inherit;
+  font-family: 'Font Awesome 5 Free', 'Font Awesome 5 Pro';
+  font-weight: 900;
+  line-height: 30px;
+  content: "\f106";
+}
+.mt-collapse-button.collapsed:after {
+  content: "\f107";
+}
+.mt-collapse-button span {
+  margin-right: 10px;
+  position: relative;
+  width: 30px;
+  display: inline-block;
+  text-align: center;
+}
+.mt-collapse-button span:after {
+  background-color: rgba(255, 255, 255, 0.2);
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -1px;
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+}
+.mt-collapse-button:focus,
+.mt-collapse-button:active {
+  border: none;
+  outline: none;
+}
+.mt-collapse-button-red {
+  background-color: #FF5758;
+  color: #ffffff;
+}
+.mt-collapse-button-gold {
+  background-color: #AE703D;
+  color: #ffffff;
+}

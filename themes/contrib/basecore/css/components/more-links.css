@@ -1,0 +1,12 @@
+/**
+ * @file
+ * Visual styles for Base+'s more links.
+ */
+.more-link {
+  text-align: left;
+  margin-top: 20px;
+  clear: both;
+}
+[class="col-12"] .more-link {
+  text-align: center;
+}

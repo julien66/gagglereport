@@ -1,0 +1,750 @@
+/**
+ * @file
+ * Visual styles for Base+'s forms.
+ */
+.form-item,
+.form-actions {
+  margin: 0 0 20px 0;
+}
+.view-commerce-cart-form table .form-item,
+.view-commerce-cart-form table .form-actions {
+  margin: 10px 0;
+}
+.header__section .form-item,
+.header__section .form-actions {
+  margin: 0;
+}
+input.form-text,
+input.form-tel,
+input.form-email,
+input.form-url,
+input.form-search,
+input.form-file,
+input.form-number,
+input.form-color,
+input.form-date,
+input.form-time,
+textarea,
+select,
+select.form-select {
+  padding: 10px 15px;
+  margin: 0;
+  outline: none;
+  border: none;
+  -webkit-appearance: none;
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  background-color: transparent;
+  font-weight: 400;
+  -webkit-transition: border-color 0.2s linear;
+  -o-transition: border-color 0.2s linear;
+  transition: border-color 0.2s linear;
+  font-size: 18px;
+  line-height: 1.6;
+}
+.region--default-background input.form-text,
+.region--default-background input.form-tel,
+.region--default-background input.form-email,
+.region--default-background input.form-url,
+.region--default-background input.form-search,
+.region--default-background input.form-file,
+.region--default-background input.form-number,
+.region--default-background input.form-color,
+.region--default-background input.form-date,
+.region--default-background input.form-time,
+.region--default-background textarea,
+.region--default-background select,
+.region--default-background fieldset {
+  border-color: var(--mt-form-border);
+  color: var(--mt-form-color);
+  background-color: var(--mt-color-default);
+}
+.region--default-background select option {
+  background-color: var(--mt-color-default);
+}
+.region--bright-background input.form-text,
+.region--bright-background input.form-tel,
+.region--bright-background input.form-email,
+.region--bright-background input.form-url,
+.region--bright-background input.form-search,
+.region--bright-background input.form-file,
+.region--bright-background input.form-number,
+.region--bright-background input.form-color,
+.region--bright-background input.form-date,
+.region--bright-background input.form-time,
+.region--bright-background textarea,
+.region--bright-background select,
+.region--bright-background fieldset {
+  border-color: var(--mt-form-border);
+  color: var(--mt-form-color);
+  background-color: var(--mt-color-bright);
+}
+.region--bright-background select option {
+  background-color: var(--mt-color-bright);
+}
+.region--accent-background input.form-text,
+.region--accent-background input.form-tel,
+.region--accent-background input.form-email,
+.region--accent-background input.form-url,
+.region--accent-background input.form-search,
+.region--accent-background input.form-file,
+.region--accent-background input.form-number,
+.region--accent-background input.form-color,
+.region--accent-background input.form-date,
+.region--accent-background input.form-time,
+.region--accent-background textarea,
+.region--accent-background select,
+.region--accent-background fieldset {
+  border-color: var(--mt-form-border);
+  color: var(--mt-form-color);
+  background-color: var(--mt-color-accent);
+}
+.region--accent-background select option {
+  background-color: var(--mt-color-accent);
+}
+.region--tint-background input.form-text,
+.region--tint-background input.form-tel,
+.region--tint-background input.form-email,
+.region--tint-background input.form-url,
+.region--tint-background input.form-search,
+.region--tint-background input.form-file,
+.region--tint-background input.form-number,
+.region--tint-background input.form-color,
+.region--tint-background input.form-date,
+.region--tint-background input.form-time,
+.region--tint-background textarea,
+.region--tint-background select,
+.region--tint-background fieldset {
+  border-color: var(--mt-form-border);
+  color: var(--mt-form-color);
+  background-color: var(--mt-color-tint);
+}
+.region--tint-background select option {
+  background-color: var(--mt-color-tint);
+}
+.region--shade-background input.form-text,
+.region--shade-background input.form-tel,
+.region--shade-background input.form-email,
+.region--shade-background input.form-url,
+.region--shade-background input.form-search,
+.region--shade-background input.form-file,
+.region--shade-background input.form-number,
+.region--shade-background input.form-color,
+.region--shade-background input.form-date,
+.region--shade-background input.form-time,
+.region--shade-background textarea,
+.region--shade-background select,
+.region--shade-background fieldset {
+  border-color: var(--mt-form-border-contrast);
+  color: var(--mt-form-color-contrast);
+  background-color: var(--mt-color-shade);
+}
+.region--shade-background select option {
+  background-color: var(--mt-color-shade);
+}
+.region--colored-background input.form-text,
+.region--colored-background input.form-tel,
+.region--colored-background input.form-email,
+.region--colored-background input.form-url,
+.region--colored-background input.form-search,
+.region--colored-background input.form-file,
+.region--colored-background input.form-number,
+.region--colored-background input.form-color,
+.region--colored-background input.form-date,
+.region--colored-background input.form-time,
+.region--colored-background textarea,
+.region--colored-background select,
+.region--colored-background fieldset {
+  border-color: var(--mt-form-border-contrast);
+  color: var(--mt-form-color-contrast);
+  background-color: var(--mt-color-colored);
+}
+.region--colored-background select option {
+  background-color: var(--mt-color-colored);
+}
+.region--dark-colored-background input.form-text,
+.region--dark-colored-background input.form-tel,
+.region--dark-colored-background input.form-email,
+.region--dark-colored-background input.form-url,
+.region--dark-colored-background input.form-search,
+.region--dark-colored-background input.form-file,
+.region--dark-colored-background input.form-number,
+.region--dark-colored-background input.form-color,
+.region--dark-colored-background input.form-date,
+.region--dark-colored-background input.form-time,
+.region--dark-colored-background textarea,
+.region--dark-colored-background select,
+.region--dark-colored-background fieldset {
+  border-color: var(--mt-form-border-contrast);
+  color: var(--mt-form-color-contrast);
+  background-color: var(--mt-color-dark-colored);
+}
+.region--dark-colored-background select option {
+  background-color: var(--mt-dark-color-colored);
+}
+.region--dark-background input.form-text,
+.region--dark-background input.form-tel,
+.region--dark-background input.form-email,
+.region--dark-background input.form-url,
+.region--dark-background input.form-search,
+.region--dark-background input.form-file,
+.region--dark-background input.form-number,
+.region--dark-background input.form-color,
+.region--dark-background input.form-date,
+.region--dark-background input.form-time,
+.region--dark-background textarea,
+.region--dark-background select,
+.region--dark-background fieldset {
+  border-color: var(--mt-form-border-contrast);
+  color: var(--mt-form-color-contrast);
+  background-color: var(--mt-color-dark);
+}
+.region--dark-background select option {
+  background-color: var(--mt-color-dark);
+}
+.region--pattern input.form-text,
+.region--pattern input.form-tel,
+.region--pattern input.form-email,
+.region--pattern input.form-url,
+.region--pattern input.form-search,
+.region--pattern input.form-file,
+.region--pattern input.form-number,
+.region--pattern input.form-color,
+.region--pattern input.form-date,
+.region--pattern input.form-time,
+.region--pattern textarea,
+.region--pattern select,
+.region--pattern fieldset {
+  border-color: var(--mt-form-border);
+  color: var(--mt-form-color);
+  background-color: var(--mt-color-pattern);
+}
+.region--pattern select option {
+  background-color: var(--mt-color-pattern);
+}
+.form-composite > .fieldset-wrapper > .description,
+.form-item .description {
+  font-size: 14px;
+  opacity: 0.65;
+  margin-top: 4px;
+}
+input[type='search'] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+form .image-preview {
+  margin-bottom: 0.5rem;
+}
+
+/*webkit specific rules for select list*/
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  select {
+    background-image: url('../../images/angle-down-black.png');
+    background-image: linear-gradient(transparent, transparent),
+      url('../../images/angle-down-black.svg');
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: 98.5% 50%;
+  }
+  .region--default-background select {
+    background-image: url('../../images/angle-down-black.png');
+    background-image: linear-gradient(transparent, transparent),
+      url('../../images/angle-down-black.svg');
+  }
+  .region--shade-background select {
+    background-image: url('../../images/angle-down-white.png');
+    background-image: linear-gradient(transparent, transparent),
+      url('../../images/angle-down-white.svg');
+  }
+  .region--colored-background select {
+    background-image: url('../../images/angle-down-white.png');
+    background-image: linear-gradient(transparent, transparent),
+      url('../../images/angle-down-white.svg');
+  }
+  .region--dark-colored-background select {
+    background-image: url('../../images/angle-down-white.png');
+    background-image: linear-gradient(transparent, transparent),
+      url('../../images/angle-down-white.svg');
+  }
+  .region--dark-background select {
+    background-image: url('../../images/angle-down-white.png');
+    background-image: linear-gradient(transparent, transparent),
+      url('../../images/angle-down-white.svg');
+  }
+}
+
+/*inline form elements*/
+.container-inline div {
+  display: inline-block;
+  vertical-align: top;
+}
+.container-inline input.form-text,
+.container-inline input.form-tel,
+.container-inline input.form-email,
+.container-inline input.form-url,
+.container-inline input.form-search,
+.container-inline input.form-file,
+.container-inline input.form-number,
+.container-inline input.form-color,
+.container-inline input.form-date,
+.container-inline input.form-time {
+  width: auto;
+  margin-right: 0;
+  display: inline-block;
+}
+.container-inline input[type='submit'] {
+  margin: 0;
+}
+.container-inline input[type='submit'],
+.form--inline input[type='submit'] {
+  line-height: 25px;
+  padding: 12px 24px 13px;
+}
+@media (max-width: 767px) {
+  .container-inline div {
+    display: block;
+  }
+  .container-inline .form-actions {
+    margin: 0 0 20px 0;
+    display: block;
+  }
+  .container-inline .form-submit {
+    margin-top: 5px;
+  }
+  .container-inline input.form-text,
+  .container-inline input.form-tel,
+  .container-inline input.form-email,
+  .container-inline input.form-url,
+  .container-inline input.form-search,
+  .container-inline input.form-file,
+  .container-inline input.form-number,
+  .container-inline input.form-color,
+  .container-inline input.form-date,
+  .container-inline input.form-time {
+    width: 100%;
+  }
+}
+
+/*filter wrapper*/
+.filter-wrapper .form-item label {
+  display: inline-block;
+}
+
+/*Form group*/
+.form-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+.form-group:last-child {
+  margin-bottom: 0;
+}
+.form-group .form-item,
+.form-group .form-actions {
+  margin: 0;
+}
+.form-submit-icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 30px;
+  height: 100%;
+  color: var(--mt-form-color-contrast);
+  border: none;
+  border-radius: 0 5px 5px 0;
+}
+.form-submit-icon .svg-inline--fa {
+  height: 100%;
+}
+
+/*textarea*/
+textarea {
+  resize: none;
+}
+label {
+  display: block;
+  font-size: 15px;
+  color: var(--mt-form-label-color);
+}
+.label {
+  color: var(--mt-form-label-color);
+}
+.region--colored-background .label,
+.region--colored-background label,
+.region--dark-colored-background .label,
+.region--dark-colored-background label,
+.region--dark-background .label,
+.region--dark-background label,
+.region--shade-background .label,
+.region--shade-background label {
+  color: var(--mt-form-color-contrast);
+}
+
+/*details*/
+details > .details-wrapper {
+  padding-bottom: 1.5em;
+}
+
+/*fieldset*/
+fieldset,
+fieldset.fieldgroup {
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--mt-form-border);
+  padding: 0.5em 1.5em 1.4em;
+  margin: 0 0 20px;
+}
+fieldset legend,
+fieldset.fieldgroup legend {
+  display: inline-block;
+  width: auto;
+  padding: 0 10px;
+  font-size: 1rem;
+  margin-left: -10px;
+  margin-bottom: 0;
+  float: none;
+  font-weight: 400;
+}
+fieldset p:last-child {
+  padding-bottom: 0;
+}
+fieldset .fieldset-wrapper > div {
+  margin-bottom: 20px;
+}
+fieldset .fieldset-wrapper > div:last-child {
+  margin-bottom: 0;
+}
+fieldset.webform-type-radios,
+fieldset.webform-type-checkboxes {
+  border: none;
+}
+fieldset.webform-type-radios legend,
+fieldset.webform-type-checkboxes legend {
+  border: none;
+  font-weight: 400;
+  font-size: 15px;
+}
+.form-type-checkbox.form-no-label input[type='checkbox'],
+.form-type-checkbox.form-no-label input[type='radio'] {
+  display: inline-block;
+  margin-right: 7px;
+}
+.form-type-checkbox.form-no-label input[type='checkbox'] + .description,
+.form-type-checkbox.form-no-label input[type='radio'] + .description {
+  display: inline-block;
+  margin-left: 0;
+}
+
+/*checkboxes and radios*/
+.form-type-checkbox {
+  display: flex;
+  align-items: center;
+}
+input[type='radio'] {
+  margin: 0px 10px 3px 0;
+}
+input[type='checkbox'] {
+  margin: 0px 10px 0px 0;
+  width: 20px;
+  height: 20px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--mt-form-border);
+  background-color: transparent;
+  border-radius: 0;
+  appearance: none;
+  cursor: pointer;
+  -webkit-transition: all linear 0.2s;
+  -moz-transition: all linear 0.2s;
+  -o-transition: all linear 0.2s;
+  -ms-transition: all linear 0.2s;
+  transition: all linear 0.2s;
+}
+input[type='checkbox'] + label {
+  cursor: pointer;
+}
+input[type='checkbox']:checked,
+input[type='checkbox']:hover {
+  background-color: var(--mt-color-primary);
+}
+.region--colored-background input[type='checkbox'],
+.region--shade-background input[type='checkbox'],
+.region--dark-colored-background input[type='checkbox'],
+.region--dark-background input[type='checkbox'] {
+  border-color: var(--mt-form-border-contrast);
+}
+.region--colored-background input[type='checkbox']:checked,
+.region--shade-background input[type='checkbox']:checked,
+.region--dark-colored-background input[type='checkbox']:checked,
+.region--dark-background input[type='checkbox']:checked,
+.region--colored-background input[type='checkbox']:hover,
+.region--shade-background input[type='checkbox']:hover,
+.region--dark-colored-background input[type='checkbox']:hover,
+.region--dark-background input[type='checkbox']:hover {
+  background-color: var(--mt-color-primary-contrast);
+}
+
+/*form placeholder*/
+::-webkit-input-placeholder {
+  color: var(--mt-form-placeholder);
+}
+:-moz-placeholder {
+  color: var(--mt-form-placeholder);
+}
+::-moz-placeholder {
+  color: var(--mt-form-placeholder);
+}
+:-ms-input-placeholder {
+  color: var(--mt-form-placeholder);
+}
+::placeholder {
+  color: var(--mt-form-placeholder);
+}
+.region--default-background ::-webkit-input-placeholder {
+  color: var(--mt-form-placeholder);
+}
+.region--default-background :-moz-placeholder {
+  color: var(--mt-form-placeholder);
+}
+.region--default-background ::-moz-placeholder {
+  color: var(--mt-form-placeholder);
+}
+.region--default-background :-ms-input-placeholder {
+  color: var(--mt-form-placeholder);
+}
+.region--default-background ::placeholder {
+  color: var(--mt-form-placeholder);
+}
+.region--bright-background ::-webkit-input-placeholder {
+  color: var(--mt-form-placeholder);
+}
+.region--bright-background :-moz-placeholder {
+  color: var(--mt-form-placeholder);
+}
+.region--bright-background ::-moz-placeholder {
+  color: var(--mt-form-placeholder);
+}
+.region--bright-background :-ms-input-placeholder {
+  color: var(--mt-form-placeholder);
+}
+.region--bright-background ::placeholder {
+  color: var(--mt-form-placeholder);
+}
+.region--accent-background ::-webkit-input-placeholder {
+  color: var(--mt-form-placeholder);
+}
+.region--accent-background :-moz-placeholder {
+  color: var(--mt-form-placeholder);
+}
+.region--accent-background ::-moz-placeholder {
+  color: var(--mt-form-placeholder);
+}
+.region--accent-background :-ms-input-placeholder {
+  color: var(--mt-form-placeholder);
+}
+.region--accent-background ::placeholder {
+  color: var(--mt-form-placeholder);
+}
+.region--tint-background ::-webkit-input-placeholder {
+  color: var(--mt-form-placeholder);
+}
+.region--tint-background :-moz-placeholder {
+  color: var(--mt-form-placeholder);
+}
+.region--tint-background ::-moz-placeholder {
+  color: var(--mt-form-placeholder);
+}
+.region--tint-background :-ms-input-placeholder {
+  color: var(--mt-form-placeholder);
+}
+.region--tint-background ::placeholder {
+  color: var(--mt-form-placeholder);
+}
+.region--shade-background ::-webkit-input-placeholder {
+  color: var(--mt-form-placeholder-contrast);
+}
+.region--shade-background :-moz-placeholder {
+  color: var(--mt-form-placeholder-contrast);
+}
+.region--shade-background ::-moz-placeholder {
+  color: var(--mt-form-placeholder-contrast);
+}
+.region--shade-background :-ms-input-placeholder {
+  color: var(--mt-form-placeholder-contrast);
+}
+.region--shade-background ::placeholder {
+  color: var(--mt-form-placeholder-contrast);
+}
+.region--colored-background ::-webkit-input-placeholder {
+  color: var(--mt-form-placeholder-contrast);
+}
+.region--colored-background :-moz-placeholder {
+  color: var(--mt-form-placeholder-contrast);
+}
+.region--colored-background ::-moz-placeholder {
+  color: var(--mt-form-placeholder-contrast);
+}
+.region--colored-background :-ms-input-placeholder {
+  color: var(--mt-form-placeholder-contrast);
+}
+.region--colored-background ::placeholder {
+  color: var(--mt-form-placeholder-contrast);
+}
+.region--dark-colored-background ::-webkit-input-placeholder {
+  color: var(--mt-form-placeholder-contrast);
+}
+.region--dark-colored-background :-moz-placeholder {
+  color: var(--mt-form-placeholder-contrast);
+}
+.region--dark-colored-background ::-moz-placeholder {
+  color: var(--mt-form-placeholder-contrast);
+}
+.region--dark-colored-background :-ms-input-placeholder {
+  color: var(--mt-form-placeholder-contrast);
+}
+.region--dark-colored-background ::placeholder {
+  color: var(--mt-form-placeholder-contrast);
+}
+.region--dark-background ::-webkit-input-placeholder {
+  color: var(--mt-form-placeholder-contrast);
+}
+.region--dark-background :-moz-placeholder {
+  color: var(--mt-form-placeholder-contrast);
+}
+.region--dark-background ::-moz-placeholder {
+  color: var(--mt-form-placeholder-contrast);
+}
+.region--dark-background :-ms-input-placeholder {
+  color: var(--mt-form-placeholder-contrast);
+}
+.region--dark-background ::placeholder {
+  color: var(--mt-form-placeholder-contrast);
+}
+.region--pattern ::-webkit-input-placeholder {
+  color: var(--mt-form-placeholder);
+}
+.region--pattern :-moz-placeholder {
+  color: var(--mt-form-placeholder);
+}
+.region--pattern ::-moz-placeholder {
+  color: var(--mt-form-placeholder);
+}
+.region--pattern :-ms-input-placeholder {
+  color: var(--mt-form-placeholder);
+}
+.region--pattern ::placeholder {
+  color: var(--mt-form-placeholder);
+}
+
+/* Disabled form elements */
+:root .region--default-background,
+:root .region--bright-background,
+:root .region--accent-background,
+:root .region--tint-background,
+:root .region--pattern {
+  /*Disabled and read only forms*/
+  --mt-form-disabled-background-color: #e9ecef;
+  --mt-form-disabled-border-color: #e9ecef;
+  --mt-form-disabled-color: #f9f9f9;
+  --mt-form-disabled-opacity: 0.7;
+
+  /*Disabled submit type*/
+  --mt-submit-disabled-color: #fff;
+  --mt-submit-disabled-background-color: var(--mt-color-primary);
+  --mt-submit-outline-background-color: transparent;
+  --mt-submit-outline-disabled-color: var(--mt-color-base);
+  --mt-submit-disabled-opacity: 0.7;
+}
+:root .region--colored-background {
+  /*Disabled and read only forms*/
+  --mt-form-disabled-background-color: var(--mt-color-dark-colored);
+  --mt-form-disabled-border-color: var(--mt-color-dark-colored);
+  --mt-form-disabled-color: hsl(210deg 50% 98% / 20%);
+  --mt-form-disabled-opacity: 0.5;
+
+  /*Disabled submit type*/
+  --mt-submit-disabled-color: var(--mt-color-base-contrast);
+  --mt-submit-disabled-background-color: var(--mt-color-dark-colored);
+  --mt-submit-outline-background-color: transparent;
+  --mt-submit-outline-disabled-color: var(--mt-color-base-contrast);
+  --mt-submit-disabled-opacity: 0.7;
+}
+:root .region--dark-colored-background {
+  /*Disabled and read only forms*/
+  --mt-form-disabled-background-color: var(--mt-color-colored);
+  --mt-form-disabled-border-color: var(--mt-color-colored);
+  --mt-form-disabled-color: hsl(210deg 50% 98% / 20%);
+  --mt-form-disabled-opacity: 0.5;
+
+  /*Disabled submit type*/
+  --mt-submit-disabled-color: var(--mt-color-base-contrast);
+  --mt-submit-disabled-background-color: var(--mt-color-colored);
+  --mt-submit-outline-background-color: transparent;
+  --mt-submit-outline-disabled-color: var(--mt-color-base-contrast);
+  --mt-submit-disabled-opacity: 0.7;
+}
+:root .region--shade-background,
+:root .region--dark-background {
+  /*Disabled and read only forms*/
+  --mt-form-disabled-background-color: #353535;
+  --mt-form-disabled-border-color: #353535;
+  --mt-form-disabled-color: hsl(210deg 50% 98% / 20%);
+  --mt-form-disabled-opacity: 0.7;
+
+  /*Disabled submit type*/
+  --mt-submit-disabled-color: #fff;
+  --mt-submit-outline-disabled-color: var(--mt-color-base-contrast);
+  --mt-submit-disabled-opacity: 0.7;
+}
+
+/*Disabled form elements*/
+.webform-readonly label,
+.form-disabled label,
+.webform-readonly .description,
+.form-disabled .description,
+fieldset:disabled legend {
+  opacity: 0.5;
+}
+
+/*Disabled and read only inputs*/
+input[readonly='readonly'],
+input:disabled,
+input[readonly],
+textarea:disabled,
+textarea[readonly='readonly'],
+textarea[readonly],
+select:disabled {
+  opacity: var(--mt-form-disabled-opacity);
+  background-color: var(--mt-form-disabled-background-color) !important;
+  border-color: var(--mt-form-disabled-border-color) !important;
+  color: var(--mt-form-disabled-color) !important;
+}
+input[readonly='readonly']:hover,
+input:disabled:hover,
+input[readonly]:hover,
+textarea:disabled:hover,
+textarea[readonly]:hover,
+textarea[readonly='readonly']:hover,
+select:disabled:hover,
+input[readonly='readonly']:focus,
+input:disabled:focus,
+input[readonly]:focus,
+textarea:disabled:focus,
+textarea[readonly]:focus,
+textarea[readonly='readonly']:focus,
+select:disabled:focus {
+  border-color: var(--mt-form-disabled-border-color) !important;
+}
+input[type='submit']:disabled {
+  color: var(--mt-submit-disabled-color) !important;
+  opacity: var(--mt-submit-disabled-opacity);
+  background-color: var(--mt-submit-disabled-background-color) !important;
+  box-shadow: none;
+}
+input[type='submit'].mt-button--outline:disabled {
+  opacity: var(--mt-submit-disabled-opacity);
+  background-color: var(--mt-submit-outline-background-color) !important;
+  color: var(--mt-submit-outline-disabled-color) !important;
+  box-shadow: none;
+}

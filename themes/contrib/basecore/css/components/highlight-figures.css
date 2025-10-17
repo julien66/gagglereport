@@ -1,0 +1,57 @@
+/**
+ * @file
+ * Visual styles for Base+'s highlight figures.
+ */
+.highlight-figures-container {
+  position: relative;
+}
+.mt-highlight-figure {
+  padding: 50px 0;
+}
+.mt-highlight-figure .highlight-figure__label {
+  font-weight: 400;
+  font-size: 20px;
+  color: var(--mt-color-base-light);
+  margin: 0 auto;
+  max-width: 138px;
+}
+.headings-wide-spacing-enabled .mt-highlight-figure .highlight-figure__label {
+    letter-spacing: var(--mt-headings-letter-spacing);
+    text-transform: uppercase;
+}
+.mt-highlight-figure .highlight-figure__figure {
+  font-weight: 500;
+  font-size: 40px;
+  color: var(--mt-color-high-contrast);
+}
+.highlight-figures-wrapper {
+  position: relative;
+}
+.highlight-figures-wrapper .row > .field__item {
+  position: relative;
+}
+.highlight-figures-wrapper .row > .field__item:before {
+  background-color: var(--mt-color-base);
+}
+@media (min-width: 768px) {
+  .highlight-figures-wrapper .row > .four-columns:before {
+    width: 1px;
+    height: 50px;
+    content: "";
+    position: absolute;
+    right: 0;
+    left: auto;
+    top: 50%;
+    margin-top: -25px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .highlight-figures-wrapper .row > .field__item:nth-child(2n):before {
+    width: 0px;
+  }
+}
+@media (min-width: 992px) {
+  .highlight-figures-wrapper .row > .four-columns:nth-child(4n):before {
+    width: 0px;
+  }
+}

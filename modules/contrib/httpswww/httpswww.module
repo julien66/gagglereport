@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ * This module enables basic httpswww functionality.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function httpswww_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the httpswww module.
+    case 'help.page.httpswww':
+      $output = '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Redirects to HTTPS with or without the "www" prefix.') . '</p>';
+      return $output;
+
+    default:
+  }
+}

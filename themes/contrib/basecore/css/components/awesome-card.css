@@ -1,0 +1,57 @@
+/**
+ * @file
+ * Visual styles for Base+'s awesome card block.
+ */
+.mt-awesome-card .paragraph--type--mt-card-awesome {
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 8px 16px 0px, rgba(0, 0, 0, 0.16) 0px 1px 4px 0px;
+    text-align: center;
+    background-color: var(--mt-color-default);
+}
+.block-inline-blockmt-card-awesome h2.title {
+    margin: 20px auto 30px auto;
+    font-size: 80px;
+    max-width: 650px;
+}
+.field--name-field-mt-ca-aw-subheader {
+    font-size: 24px;
+    margin-bottom: 24px;
+    margin: 20px auto 30px auto;
+    max-width: 650px;
+}
+.mt-awesome-card .field--name-field-mt-card-awesome-subtitle {
+    color: var(--mt-color-secondary);
+    font-weight: 600;
+    font-size: 16px;
+    margin: 16px 16px;
+}
+.mt-awesome-card .field--name-field-mt-card-awesome-title {
+    height: 80px;
+    font-size: 28px;
+    margin: 24px 40px 24px;
+}
+.mt-awesome-card .field--name-field-mt-card-awesome-note {
+    margin: 16px 67px 16px;
+    min-height: 80px;
+}
+@media (max-width: 767px) {
+    .mt-awesome-card .field--name-field-mt-card-awesome-note {
+        margin: 16px 0px 16px;
+    }
+}
+@media (max-width: 1200px) {
+    .mt-awesome-card .field--name-field-mt-card-awesome-title {
+        margin: 24px 0px 24px;
+    }
+}
+@media (max-width: 414px) {
+    .mt-awesome-card .field--name-field-mt-card-awesome-title {
+        margin: 0px 0px 10px;
+    }
+}
+.mt-awesome-card .field--name-field-mt-card-awesome-actions {
+    margin-top: 16px;
+    color: var(--mt-color-secondary);
+    text-decoration: underline;
+}

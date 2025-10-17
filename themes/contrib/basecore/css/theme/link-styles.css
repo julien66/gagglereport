@@ -1,0 +1,390 @@
+/**
+ * @file
+ * Styles for Base+'s links.
+ */
+
+/* animated icon */
+.mt-link-style-animated-icon .mt-link-stylable {
+  margin: 0 0 10px 0px;
+  display: inline-block;
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  font-weight: 500;
+  text-decoration: none;
+  position: relative;
+  padding-left: 25px;
+}
+.mt-link-style-animated-icon .mt-link-stylable:hover {
+  padding-left: 40px;
+}
+.mt-link-style-animated-icon .mt-link-stylable:before {
+  width: 15px;
+  height: 1px;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.mt-link-style-animated-icon .mt-link-stylable:hover:before {
+  width: 30px;
+}
+.mt-link-style-animated-icon .region--default-background .mt-link-stylable:before {
+  background-color: var(--mt-color-default-contrast);
+}
+.mt-link-style-animated-icon .region--bright-background .mt-link-stylable:before {
+  background-color: var(--mt-color-bright-contrast);
+}
+.mt-link-style-animated-icon .region--accent-background .mt-link-stylable:before {
+  background-color: var(--mt-color-accent-contrast);
+}
+.mt-link-style-animated-icon .region--tint-background .mt-link-stylable:before {
+  background-color: var(--mt-color-tint-contrast);
+}
+.mt-link-style-animated-icon .region--shade-background .mt-link-stylable:before {
+  background-color: var(--mt-color-shade-contrast);
+}
+.mt-link-style-animated-icon .region--colored-background .mt-link-stylable:before {
+  background-color: var(--mt-color-colored-contrast);
+}
+.mt-link-style-animated-icon .region--dark-colored-background .mt-link-stylable:before {
+  background-color: var(--mt-color-dark-colored-contrast);
+}
+.mt-link-style-animated-icon .region--dark-background .mt-link-stylable:before {
+  background-color: var(--mt-color-dark-contrast);
+}
+.mt-link-style-animated-icon .region--pattern .mt-link-stylable:before {
+  background-color: var(--mt-color-pattern-contrast);
+}
+
+/* animated icon */
+.mt-link-style-animated-icon-2 .mt-link-stylable {
+  margin: 0 0 10px 0px;
+  display: inline-block;
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  font-weight: 500;
+  text-decoration: none;
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.mt-link-style-animated-icon-2 .mt-link-stylable:after {
+  font-family: 'Font Awesome 5 Free', 'Font Awesome 5 Pro';
+  content: "\f30b";
+  font-weight: 900;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+  font-size: 20px;
+  position: relative;
+  left: 10px;
+  top: 1px;
+}
+.mt-link-style-animated-icon-2 .mt-link-stylable:hover:after {
+  left: 15px;
+}
+
+/* animated underline 1 */
+.mt-link-style-animated-underline-1 .mt-link-stylable {
+  padding-bottom: 8px;
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+}
+.mt-link-style-animated-underline-1 .mt-link-stylable:hover {
+  text-decoration: none;
+}
+.mt-link-style-animated-underline-1 .mt-link-stylable:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+.mt-link-style-animated-underline-1 .region--colored-background .mt-link-stylable:after {
+  background-color: var(--mt-color-colored-contrast);
+}
+.mt-link-style-animated-underline-1 .mt-link-stylable:hover:after {
+  left: -3%;
+  width: 106%;
+}
+
+/* animated underline 2 */
+.mt-link-style-animated-underline-2 .mt-link-stylable {
+  padding-bottom: 8px;
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+}
+.mt-link-style-animated-underline-2 .mt-link-stylable:hover {
+  text-decoration: none;
+}
+.mt-link-style-animated-underline-2 .mt-link-stylable:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  -webkit-animation-name: borderOut;
+  animation-name: borderOut;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.mt-link-style-animated-underline-2 .region--colored-background .mt-link-stylable:after {
+  background-color: var(--mt-color-colored-contrast);
+}
+.mt-link-style-animated-underline-2 .mt-link-stylable:hover:after {
+  width: 100%;
+  -webkit-animation-name: borderIn;
+  animation-name: borderIn;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@-webkit-keyframes borderIn {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes borderIn {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@-webkit-keyframes borderOut {
+  0% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0%;
+    left: 100%;
+  }
+}
+@keyframes borderOut {
+  0% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0%;
+    left: 100%;
+  }
+}
+
+/* animated underline 3 */
+.mt-link-style-animated-underline-3 .mt-link-stylable {
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+  z-index: 1;
+}
+.mt-link-style-animated-underline-3 .mt-link-stylable:before {
+  content: "";
+  width: 0;
+  height: 4px;
+  position: absolute;
+  top: 50%;
+  margin-top: -2px;
+  z-index: -1;
+  left: 50%;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+.mt-link-style-animated-underline-3 .region--colored-background .mt-link-stylable:before {
+  background-color: var(--mt-color-colored-contrast);
+}
+.mt-link-style-animated-underline-3 .mt-link-stylable:hover:before {
+  width: 100%;
+  left: 0px;
+}
+
+/* animated background 1 */
+.mt-link-style-animated-background-1 .mt-link-stylable {
+  position: relative;
+  text-decoration: none;
+  z-index: 1;
+}
+.mt-link-style-animated-background-1 .mt-link-stylable:hover,
+.mt-link-style-animated-background-1 .mt-link-stylable:focus {
+  color: var(--mt-color-secondary-contrast);
+  text-decoration: none;
+}
+.mt-link-style-animated-background-1 .mt-link-stylable:before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 0;
+  left: 0;
+  top: 50%;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+.mt-link-style-animated-background-1 .mt-link-stylable:hover:before,
+.mt-link-style-animated-background-1 .mt-link-stylable:focus:before {
+  height: 100%;
+  top: 0;
+}
+.mt-link-style-animated-background-1 .region--colored-background .mt-link-stylable:before {
+  background-color: var(--mt-color-colored-contrast);
+}
+.mt-link-style-animated-background-1 .region--colored-background .mt-link-stylable:hover,
+.mt-link-style-animated-background-1 .region--colored-background .mt-link-stylable:focus {
+  color: var(--mt-color-colored);
+}
+
+/* animated background 2 */
+.mt-link-style-animated-background-2 .mt-link-stylable {
+  position: relative;
+  text-decoration: none;
+  z-index: 1;
+}
+.mt-link-style-animated-background-2 .mt-link-stylable:hover,
+.mt-link-style-animated-background-2 .mt-link-stylable:focus {
+  text-decoration: none;
+  color: var(--mt-color-secondary-contrast);
+}
+.mt-link-style-animated-background-2 .mt-link-stylable:after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  left: -2%;
+  width: 0%;
+  bottom: 0;
+  height: 100%;
+  -webkit-animation-name: backgroundOut;
+  animation-name: backgroundOut;
+  -webkit-animation-duration: 0.2s;
+  animation-duration: 0.2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.mt-link-style-animated-background-2 .mt-link-stylable:hover:after,
+.mt-link-style-animated-background-2 .mt-link-stylable:focus:after {
+  width: 104%;
+  -webkit-animation-name: backgroundIn;
+  animation-name: backgroundIn;
+  -webkit-animation-duration: 0.2s;
+  animation-duration: 0.2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.mt-link-style-animated-background-2 .region--colored-background .mt-link-stylable:after {
+  background-color: var(--mt-color-colored-contrast);
+}
+.mt-link-style-animated-background-2 .region--colored-background .mt-link-stylable:hover,
+.mt-link-style-animated-background-2 .region--colored-background .mt-link-stylable:focus {
+  color: var(--mt-color-colored);
+}
+@-webkit-keyframes backgroundIn {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 104%;
+  }
+}
+@keyframes backgroundIn {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 104%;
+  }
+}
+@-webkit-keyframes backgroundOut {
+  0% {
+    width: 104%;
+    left: -2%;
+  }
+  100% {
+    width: 0%;
+    left: 100%;
+  }
+}
+@keyframes backgroundOut {
+  0% {
+    width: 104%;
+    left: -2%;
+  }
+  100% {
+    width: 0%;
+    left: 100%;
+  }
+}
+
+/* animated background 3 */
+.mt-link-style-animated-background-3 .mt-link-stylable {
+  position: relative;
+  text-decoration: none;
+  z-index: 1;
+}
+.mt-link-style-animated-background-3 .mt-link-stylable:hover,
+.mt-link-style-animated-background-3 .mt-link-stylable:focus {
+  color: var(--mt-color-secondary-contrast);
+  text-decoration: none;
+}
+.mt-link-style-animated-background-3 .mt-link-stylable:before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+.mt-link-style-animated-background-3 .mt-link-stylable:hover:before,
+.mt-link-style-animated-background-3 .mt-link-stylable:focus:before {
+  height: 100%;
+}
+.mt-link-style-animated-background-3 .region--colored-background .mt-link-stylable:before {
+  background-color: var(--mt-color-colored-contrast);
+}
+.mt-link-style-animated-background-3 .region--colored-background .mt-link-stylable:hover,
+.mt-link-style-animated-background-3 .region--colored-background .mt-link-stylable:focus {
+  color: var(--mt-color-colored);
+}

@@ -1,0 +1,24 @@
+/**
+ * @file
+ * Visual styles for Base+'s transparent header.
+ */
+/*Layout*/
+@media (min-width: 992px) {
+  .header-container.js-transparent-header {
+    position: absolute;
+    width: 100%;
+    z-index: 22;
+  }
+  .transparent-header-active:not(.onscroll) .header-container.js-transparent-header {
+    left: 0;
+    right: 0;
+  }
+}
+
+/*Drupal Resets*/
+.js-transparent-header + .banner .block:first-child .contextual {
+  top: 200px;
+}
+.js-transparent-header + .banner .block:first-child .view .contextual {
+  top: 230px !important;
+}

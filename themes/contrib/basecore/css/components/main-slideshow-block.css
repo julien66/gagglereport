@@ -1,0 +1,103 @@
+/*main slider custom block caption*/
+.mt-style-sharp .container .field--name-field-mt-main-slideshow-slide .rev_slider {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+.mt-style-oval .container .field--name-field-mt-main-slideshow-slide .rev_slider {
+  -webkit-border-radius: var(--mt-oval-radius);
+  -moz-border-radius: var(--mt-oval-radius);
+  border-radius: var(--mt-oval-radius);
+}
+.mt-style-rounded .container .field--name-field-mt-main-slideshow-slide .rev_slider {
+  -webkit-border-radius: var(--mt-rounded-radius);
+  -moz-border-radius: var(--mt-rounded-radius);
+  border-radius: var(--mt-rounded-radius);
+}
+.mt-style-custom-sharp .container .field--name-field-mt-main-slideshow-slide .rev_slider {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+.mt-style-custom-oval .container .field--name-field-mt-main-slideshow-slide .rev_slider {
+  -webkit-border-radius: var(--mt-oval-radius);
+  -moz-border-radius: var(--mt-oval-radius);
+  border-radius: var(--mt-oval-radius);
+}
+.mt-style-custom-rounded .container .field--name-field-mt-main-slideshow-slide .rev_slider {
+  -webkit-border-radius: var(--mt-rounded-radius);
+  -moz-border-radius: var(--mt-rounded-radius);
+  border-radius: var(--mt-rounded-radius);
+}
+@media (min-width: 576px) {
+  .mt-style-oval .container .field--name-field-mt-main-slideshow-slide,
+  .mt-style-rounded .container .field--name-field-mt-main-slideshow-slide {
+    padding: 1.5rem;
+  }
+  .mt-style-custom-oval .container .field--name-field-mt-main-slideshow-slide,
+  .mt-style-custom-rounded .container .field--name-field-mt-main-slideshow-slide {
+    padding: 1.5rem;
+  }
+}
+@media (max-width: 575px) {
+  .container .field--name-field-mt-main-slideshow-slide,
+  .container .field--name-field-mt-main-slideshow-slide {
+    margin: 0 -15px;
+  }
+  .mt-style-oval .container .field--name-field-mt-main-slideshow-slide .rev_slider,
+  .mt-style-rounded .container .field--name-field-mt-main-slideshow-slide .rev_slider,
+  .mt-style-custom-oval .container .field--name-field-mt-main-slideshow-slide .rev_slider,
+  .mt-style-custom-rounded .container .field--name-field-mt-main-slideshow-slide .rev_slider {
+    border-radius: 0;
+  }
+}
+.mt-style-custom-sharp .container .field--name-field-mt-main-slideshow-slide {
+  padding: 0;
+}
+.container-fluid .field--name-field-mt-main-slideshow-slide {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+@media (min-width: 1200px) {
+  .container-fluid .field--name-field-mt-main-slideshow-slide {
+    margin-left: -3rem;
+    margin-right: -3rem;
+  }
+}
+.ms-transparent-background .tp-caption__text {
+  font-size: 24px;
+  line-height: 1.50;
+  text-shadow: 0 0 50px rgba(0,0,0,.50);
+  font-weight: 500;
+  padding: 1em;
+  margin-top: 0.2em;
+}
+@media (max-width: 767px) {
+  .ms-transparent-background .tp-caption__text {
+    font-size: 16px;
+  }
+}
+.ms-transparent-background .region--bright-background.tp-caption__text,
+.ms-transparent-background .region--bright-background.tp-caption__title a {
+  color: var(--mt-color-bright-contrast);
+}
+.ms-transparent-background .region--tint-background.tp-caption__text,
+.ms-transparent-background .region--tint-background.tp-caption__title a {
+  color: var(--mt-color-tint-contrast);
+}
+.ms-transparent-background .region--shade-background.tp-caption__text,
+.ms-transparent-background .region--shade-background.tp-caption__title a {
+  color: var(--mt-color-shade-contrast);
+}
+.ms-transparent-background .region--colored-background.tp-caption__text,
+.ms-transparent-background .region--colored-background.tp-caption__title a {
+  color: var(--mt-color-colored-contrast);
+}
+.ms-transparent-background .region--dark-colored-background.tp-caption__text,
+.ms-transparent-background .region--dark-colored-background.tp-caption__title a {
+  color: var(--mt-color-dark-colored-contrast);
+}
+.ms-transparent-background .region--dark-background.tp-caption__text,
+.ms-transparent-background .region--dark-background.tp-caption__title a {
+  color: var(--mt-color-dark-contrast);
+}
