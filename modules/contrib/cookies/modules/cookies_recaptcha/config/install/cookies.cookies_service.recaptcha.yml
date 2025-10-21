@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - cookies_recaptcha
+id: recaptcha
+label: 'reCAPTCHA'
+group: tracking
+weight: 0
+info:
+  format: 'full_html'
+  value: ''
+consentRequired: true
+placeholderMainText: 'This content is blocked because reCAPTCHA cookies have not been accepted.'
+placeholderAcceptText: 'Only accept reCAPTCHA cookies'
+purpose: ''
+processor: ''
+processorContact: ''
+processorUrl: 'https://developers.google.com/recaptcha'
+processorPrivacyPolicyUrl: 'https://policies.google.com/privacy'
+processorCookiePolicyUrl: ''

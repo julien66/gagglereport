@@ -1,0 +1,7 @@
+{
+    "name": "drupal/cookies",
+    "require": {
+        "symfony/dom-crawler": "*",
+        "symfony/css-selector": "*"
+    }
+}

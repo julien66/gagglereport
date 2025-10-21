@@ -1,0 +1,26 @@
+cookies.cookies_service_group.*:
+  type: config_entity
+  label: 'COOKiES service group'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    weight:
+      type: integer
+      label: 'Weight'
+    title:
+      type: label
+      label: 'Title'
+      translatable: true
+    details:
+      type: text
+      label: 'Details'
+      translatable: true
+    uuid:
+      type: string
+    langcode:
+      type: string
+      label: 'Language code'

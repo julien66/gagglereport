@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - poll
+id: poll.teaser
+label: Teaser
+targetEntityType: poll
+cache: true

@@ -1,0 +1,17 @@
+{
+    "name": "drupal/poll",
+    "description": "Allows your site to capture votes on different topics in the form of multiple choice questions.",
+    "type": "drupal-module",
+    "license": "GPL-2.0-or-later",
+    "homepage": "https://www.drupal.org/project/poll",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/poll",
+        "source": "https://git.drupalcode.org/project/poll.git"
+    },
+    "require": {
+        "drupal/core": "^9 || ^10 || ^11"
+    },
+    "require-dev": {
+        "drupal/devel": "^5.3"
+    }
+}

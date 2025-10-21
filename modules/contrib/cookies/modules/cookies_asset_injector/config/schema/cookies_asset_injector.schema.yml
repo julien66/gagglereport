@@ -1,0 +1,8 @@
+asset_injector.js.*.third_party.cookies_asset_injector:
+  type: mapping
+  label: 'Asset injector COOKiES third party settings'
+  mapping:
+    cookies_service:
+      type: string
+      label: 'COOKiES Service'
+      translatable: false

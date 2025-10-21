@@ -1,0 +1,19 @@
+cookies_media:
+  version: VERSION
+  js:
+    js/cookies_media.js: {}
+  css:
+    component:
+      css/cookies_media.css: {}
+  dependencies:
+    - cookies/cookies.lib
+
+cookies_video_embed_field:
+  version: VERSION
+  js:
+    js/cookies_video_embed_field.js: {}
+  css:
+    component:
+      css/cookies_video_embed_field.css: {}
+  dependencies:
+    - cookies/cookies.lib

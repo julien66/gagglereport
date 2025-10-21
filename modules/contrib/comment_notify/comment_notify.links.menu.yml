@@ -1,0 +1,5 @@
+comment_notify.settings:
+  route_name: comment_notify.settings
+  title: 'Comment notification'
+  description: 'Configure settings for emails about new comments.'
+  parent: user.admin_index

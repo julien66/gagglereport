@@ -1,0 +1,9 @@
+configure cookies widget texts:
+  title: 'Configure cookies widget texts'
+  description: 'Grant permissions to configure the COOKiES widget.'
+configure cookies config:
+  title: 'Configure COOKiES base configuration'
+  description: 'Grant permissions to configure the COOKiES base configuration.'
+administer cookies services and service groups:
+  title: 'Administer COOKiES service groups'
+  description: 'Grant permissions to configure and create COOKiES services and service groups.'

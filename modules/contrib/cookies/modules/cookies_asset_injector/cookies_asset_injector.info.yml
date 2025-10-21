@@ -1,0 +1,17 @@
+name: 'COOKiES Asset Injector'
+type: module
+description: 'Submodule of COOKiES to integrate Asset Injector assets with COOKiES Services and its consent configuration.'
+core_version_requirement: ^9.3 || ^10 || ^11
+package: 'COOKiES'
+dependencies:
+  - cookies:cookies
+  - asset_injector:asset_injector
+test_dependencies:
+  - asset_injector:asset_injector
+libraries:
+  - cookies_asset_injector/cookies_asset_injector
+
+# Information added by Drupal.org packaging script on 2025-07-23
+version: '1.2.16'
+project: 'cookies'
+datestamp: 1753262919

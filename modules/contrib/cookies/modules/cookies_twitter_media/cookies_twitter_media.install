@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * @file
+ * Installation information for the 'Cookies Twitter Media' module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function cookies_twitter_media_install() {
+  // Load cookies_ga module after the third-party library.
+  module_set_weight('cookies_twitter_media', 11);
+}
+
+/**
+ * Update service config to enforce module dependency 'cookies_twitter_media'.
+ */
+function cookies_twitter_media_update_8001() {
+  $config = \Drupal::configFactory()
+    ->getEditable('cookies.cookies_service.twitter');
+  if (!$config->isNew()) {
+    $dependencies = $config->get('dependencies');
+    $dependencies['enforced']['module'][] = 'cookies_twitter_media';
+    $config->set('dependencies', $dependencies)->save(TRUE);
+  }
+}

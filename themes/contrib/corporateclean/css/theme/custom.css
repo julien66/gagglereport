@@ -1,0 +1,4 @@
+# Custom CSS for Union website.
+.thumbsupdown-rating-wrapper submit{
+	display:none !important;
+}

@@ -1,0 +1,22 @@
+administer polls:
+  title: 'Administer polls'
+  restrict access: true
+access polls:
+  title: 'View polls'
+access poll overview:
+  title: 'Access the Poll overview page'
+access unpublished polls:
+  title: 'Access unpublished polls'
+  description: 'Can always view polls even when they are unpublished'
+  restrict access: true
+create polls:
+  title: 'Create polls'
+cancel own vote:
+  title: 'Cancel own vote'
+edit any polls:
+  title: 'Edit any polls'
+edit own polls:
+  title: 'Edit own polls'
+view poll results:
+  title: 'Always view poll results'
+  description: 'Can always view poll results without voting, even when that feature is disabled on a poll.'

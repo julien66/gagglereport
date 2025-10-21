@@ -1,0 +1,5 @@
+entity.cookies_service_filter.add_form:
+  route_name: entity.cookies_service_filter.add_form
+  title: 'Add COOKiES service filter entity'
+  appears_on:
+    - entity.cookies_service_filter.collection

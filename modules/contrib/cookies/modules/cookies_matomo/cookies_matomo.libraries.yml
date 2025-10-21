@@ -1,0 +1,4 @@
+analytics:
+  version: VERSION
+  js:
+    js/cookies_matomo.js: {}

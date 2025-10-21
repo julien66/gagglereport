@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - cookies_twitter_media
+id: twitter
+label: 'Twitter media'
+group: social
+weight: 0
+info:
+  format: 'full_html'
+  value: ''
+consentRequired: true
+placeholderMainText: 'This content is blocked because Twitter media cookies have not been accepted.'
+placeholderAcceptText: 'Only accept Twitter media cookies'
+purpose: ''
+processor: 'Twitter, Inc.'
+processorContact: ''
+processorUrl: 'https://twitter.com/'
+processorPrivacyPolicyUrl: 'https://twitter.com/privacy'
+processorCookiePolicyUrl: 'https://help.twitter.com/en/rules-and-policies/twitter-cookies'

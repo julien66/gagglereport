@@ -1,3 +1,10 @@
+# Fix error on OVH due to incorrect content-length header
+# https://www.drupal.org/project/drupal/issues/3419024
+
+<IfModule mod_headers.c>
+  Header always unset Content-Length
+</ifModule>
+
 #
 # Apache/PHP/Drupal settings:
 #

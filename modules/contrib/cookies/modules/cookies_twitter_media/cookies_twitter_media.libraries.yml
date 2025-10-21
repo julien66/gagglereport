@@ -1,0 +1,9 @@
+default:
+  version: VERSION
+  js:
+    js/cookies_twitter_media.js: {}
+  css:
+    component:
+      css/cookies_twitter_media.css: {}
+  dependencies:
+    - cookies/cookies.lib

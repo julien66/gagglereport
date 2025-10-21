@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - cookies_matomo
+id: matomo
+label: 'Matomo Analytics'
+group: tracking
+weight: 0
+info:
+  format: 'full_html'
+  value: ''
+consentRequired: true
+placeholderMainText: 'This content is blocked because Matomo Analytics cookies have not been accepted.'
+placeholderAcceptText: 'Only accept Matomo Analytics cookies'
+purpose: ''
+processor: ''
+processorContact: ''
+processorUrl: ''
+processorPrivacyPolicyUrl: ''
+processorCookiePolicyUrl: ''

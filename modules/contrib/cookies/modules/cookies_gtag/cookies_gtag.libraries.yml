@@ -1,0 +1,6 @@
+gtag:
+  version: VERSION
+  js:
+    js/cookies_gtag.js: {}
+  dependencies:
+    - core/drupal

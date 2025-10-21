@@ -1,0 +1,17 @@
+name: 'COOKiES Instagram Media'
+type: module
+description: 'Submodule of COOKiES to manage Instagram media items (by "Media Entity Instagram" module) in COOKiES consent management.'
+core_version_requirement: ^9 || ^10 || ^11
+package: 'COOKiES'
+dependencies:
+  - cookies:cookies
+  - drupal:media
+  - media_entity_instagram:media_entity_instagram
+
+libraries:
+  - cookies_instagram/default
+
+# Information added by Drupal.org packaging script on 2025-07-23
+version: '1.2.16'
+project: 'cookies'
+datestamp: 1753262919

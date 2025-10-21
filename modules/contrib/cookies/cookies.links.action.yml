@@ -1,0 +1,17 @@
+entity.cookies_service.add_form:
+  route_name: entity.cookies_service.add_form
+  title: 'Add COOKiES service entity'
+  appears_on:
+    - entity.cookies_service.collection
+
+entity.cookies_service_group.add_form:
+  route_name: entity.cookies_service_group.add_form
+  title: 'Add COOKiES service group'
+  appears_on:
+    - entity.cookies_service_group.collection
+
+cookies.texts.translate:
+  route_name: config_translation.item.overview.cookies.texts
+  title: 'Translate'
+  appears_on:
+    - cookies.texts

@@ -1,0 +1,8 @@
+cookies_filter:
+  version: VERSION
+  js:
+    js/cookies_filter.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - cookies/cookies.lib

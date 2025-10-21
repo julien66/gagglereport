@@ -1,0 +1,95 @@
+
+cookies.texts:
+  type: config_object
+  label: 'Texts COOKiES widget'
+  mapping:
+    bannerText:
+      type: text
+      label: 'Banner text'
+    privacyPolicy:
+      type: label
+      label: 'Privacy policy'
+    privacyUri:
+      type: path
+      label: 'Privacy Uri'
+    imprint:
+      type: label
+      label: 'Imprint'
+    imprintUri:
+      type: path
+      label: 'Imprint Uri'
+    cookieDocs:
+      type: label
+      label: 'Cookie documentation'
+    cookieDocsUri:
+      type: path
+      label: 'Cookie documentation Uri'
+    officialWebsite:
+      type: label
+      label: 'Official Website'
+    denyAll:
+      type: label
+      label: 'Deny all'
+    alwaysActive:
+      type: label
+      label: 'Always active'
+    settings:
+      type: label
+      label: 'Cookie settings'
+    acceptAll:
+      type: label
+      label: 'Accept all'
+    requiredCookies:
+      type: label
+      label: 'Required cookies'
+    cookieSettings:
+      type: label
+      label: 'Cookie settings'
+    close:
+      type: label
+      label: 'Close'
+    readMore:
+      type: label
+      label: 'Read more'
+    allowed:
+      type: label
+      label: 'allowed'
+    denied:
+      type: label
+      label: 'denied'
+    settingsAllServices:
+      type: label
+      label: 'Settings all services'
+    saveSettings:
+      type: label
+      label: 'Save settings'
+    default_langcode:
+      type: label
+      label: 'Default langcode'
+    disclaimerText:
+      type: text
+      label: 'Disclaimer text'
+    disclaimerTextPosition:
+      type: string
+      label: 'Disclaimer text position'
+    processorDetailsLabel:
+      type: label
+      label: 'Processor Details Label'
+    processorLabel:
+      type: label
+      label: 'Processor Label'
+    processorWebsiteUrlLabel:
+      type: label
+      label: 'Processor Website URL Label'
+    processorPrivacyPolicyUrlLabel:
+      type: label
+      label: 'Processor Privacy Policy URL Label'
+    processorCookiePolicyUrlLabel:
+      type: label
+      label: 'Processor Cookie Policy URL Label'
+    processorContactLabel:
+      type: label
+      label: 'Processor Contact Label'
+    placeholderAcceptAllText:
+      type: label
+      label: 'Service Blocked Placeholder Accept All Text'

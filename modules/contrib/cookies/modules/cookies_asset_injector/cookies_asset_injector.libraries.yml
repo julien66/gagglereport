@@ -1,0 +1,6 @@
+consentHandler:
+  version: VERSION
+  js:
+    js/consentHandler.js: {}
+  dependencies:
+    - core/drupalSettings

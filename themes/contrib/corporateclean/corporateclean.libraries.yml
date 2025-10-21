@@ -13,6 +13,7 @@ global-styling:
       css/layout/layout.css: {}
     theme:
       css/theme/print.css: { media: print }
+      css/theme/custom.css : {}
 
 local-stylesheets:
   version: VERSION

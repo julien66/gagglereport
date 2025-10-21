@@ -1,0 +1,41 @@
+cookies_filter.cookies_service_filter.*:
+  type: config_entity
+  label: 'COOKiES service filter'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+      translatable: false
+    label:
+      type: label
+      label: 'Label'
+      translatable: true
+    service:
+      type: string
+      label: 'Service'
+      translatable: false
+    elementType:
+      type: string
+      label: 'Element type'
+      translatable: false
+    elementSelectors:
+      type: text
+      label: 'Element selectors'
+      translatable: false
+    placeholderBehaviour:
+      type: string
+      label: 'Element type'
+    placeholderCustomElementSelectors:
+      type: text
+      label: 'Element selectors'
+      translatable: false
+    uuid:
+      type: string
+      translatable: false
+    langcode:
+      type: string
+      label: 'Language code'
+      translatable: false
+    dependencies:
+      type: config_dependencies
+      label: 'Dependencies'

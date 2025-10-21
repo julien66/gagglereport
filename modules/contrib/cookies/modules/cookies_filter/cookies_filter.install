@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * @file
+ * Installation information for the 'Cookies Filter' module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function cookies_filter_install() {
+  // Load module after other third-party module.
+  module_set_weight('cookies_filter', 11);
+}
+
+/**
+ * Implements hook_requirements().
+ */
+function cookies_filter_requirements($phase) {
+  $requirements = [];
+  if ($phase === 'install') {
+    if (!class_exists('Symfony\Component\DomCrawler\Crawler')) {
+      $requirements['cookies_filter']['description'] = t('The cookies_filter module requires "symfony/dom-crawler" please require this composer package, via "composer require symfony/dom-crawler" or follow instructions in hook_help().');
+      $requirements['cookies_filter']['severity'] = REQUIREMENT_ERROR;
+    }
+    if (!class_exists('Symfony\Component\CssSelector\CssSelectorConverter')) {
+      $requirements['cookies_filter']['description'] = t('The cookies_filter module requires "symfony/css-selector" please require this composer package, via "composer require symfony/css-selector" or follow instructions in hook_help().');
+      $requirements['cookies_filter']['severity'] = REQUIREMENT_ERROR;
+    }
+  }
+  return $requirements;
+}

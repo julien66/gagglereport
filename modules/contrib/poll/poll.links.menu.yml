@@ -1,0 +1,10 @@
+poll.poll_list:
+  title: Polls
+  route_name: poll.poll_list
+  parent: system.admin_content
+  description: 'List and edit polls.'
+poll.settings:
+  title: 'Poll settings'
+  parent: system.admin_config_content
+  description: 'Configure polls.'
+  route_name: poll.settings

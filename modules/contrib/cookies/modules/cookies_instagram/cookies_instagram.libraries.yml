@@ -1,0 +1,9 @@
+default:
+  version: VERSION
+  js:
+    js/cookies_instagram.js: {}
+  css:
+    component:
+      css/cookies_instagram.css: {}
+  dependencies:
+    - cookies/cookies.lib

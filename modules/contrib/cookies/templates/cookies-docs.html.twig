@@ -1,0 +1,9 @@
+{% if (disclaimer['#disclaimerTextPosition'] == 'above' or disclaimer['#disclaimerTextPosition'] == 'both') and disclaimer['#disclaimerText'] %}
+  {{ disclaimer }}
+{% endif %}
+
+{{ groups }}
+
+{% if (disclaimer['#disclaimerTextPosition'] == 'below' or disclaimer['#disclaimerTextPosition'] == 'both') and disclaimer['#disclaimerText'] %}
+  {{ disclaimer }}
+{% endif %}

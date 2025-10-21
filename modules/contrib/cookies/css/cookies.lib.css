@@ -1,0 +1,73 @@
+.cookies-fallback,
+.cookies-fallback * {
+  box-sizing: border-box;
+}
+
+.cookies-fallback {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  padding: 1.25rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid #e4e5e6;
+  background: #fff url("data:image/svg+xml,") no-repeat 2rem 2rem scroll;
+  background-size: 75px auto;
+}
+
+.cookies-fallback--btn {
+  -webkit-appearance: none;
+  outline: none;
+  border: 0;
+  background-color: #004c93;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 0 2em;
+  margin: 1.25rem;
+  font-size: 1rem;
+  min-height: 3em;
+  cursor: pointer;
+  z-index: 1;
+  opacity: .9;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  transition: all .3s ease;
+}
+
+.cookies-fallback--text {
+  color: #000f37;
+  font-size: 1.125rem;
+}
+
+a.cookies-fallback--link {
+  font-size: .875rem;
+  color: #000f37;
+  text-decoration: none;
+  border: 0;
+}
+a.cookies-fallback--link:hover {
+  text-decoration: underline;
+}
+
+.cookies-fallback--btn:hover {
+  opacity: 1;
+  -webkit-transform: scale(1.02);
+  transform: scale(1.02);
+}
+
+.cookies-fallback--wrap.disabled {
+  position: relative;
+  min-height: 12rem;
+}
+.cookies-fallback--wrap.disabled .cookies-fallback {
+  display: flex;
+}
+.cookies-fallback--wrap.disabled .cookies-fallback--element {
+  opacity: 0;
+}

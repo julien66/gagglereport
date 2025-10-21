@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - cookies_instagram
+id: instagram
+label: 'Instagram'
+group: social
+weight: 0
+info:
+  format: 'full_html'
+  value: ''
+consentRequired: true
+placeholderMainText: 'This content is blocked because Instagram cookies have not been accepted.'
+placeholderAcceptText: 'Only accept Instagram cookies'
+purpose: ''
+processor: 'Instagram'
+processorContact: ''
+processorUrl: 'https://www.instagram.com/'
+processorPrivacyPolicyUrl: 'https://help.instagram.com/519522125107875/'
+processorCookiePolicyUrl: 'https://help.instagram.com/1896641480634370/'

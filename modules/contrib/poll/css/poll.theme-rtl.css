@@ -1,0 +1,11 @@
+/**
+ * @file
+ * Right-to-left specific theme stylesheet for the Poll module.
+ */
+
+.poll .percent {
+  text-align: left;
+}
+.poll .vote-form {
+  text-align: right;
+}

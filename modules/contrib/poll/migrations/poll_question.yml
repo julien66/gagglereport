@@ -1,0 +1,40 @@
+id: poll_question
+label: Poll question
+migration_tags:
+  - Drupal 7
+  - Content
+source:
+  plugin: poll
+  constants:
+    anonymous_vote_allow: 0
+    cancel_vote_allow: 1
+    result_vote_allow: 1
+process:
+  uid: uid
+  question: title
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: "und"
+  runtime: runtime
+  status: active
+  created: created
+  timestamp: created
+  choice:
+    plugin: sub_process
+    source: choices
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: poll_choice
+        source: chid
+  anonymous_vote_allow: constants/anonymous_vote_allow
+  cancel_vote_allow: constants/cancel_vote_allow
+  result_vote_allow: constants/result_vote_allow
+destination:
+  plugin: entity:poll
+migration_dependencies:
+  required:
+    - poll_choice
+  optional:
+    - language

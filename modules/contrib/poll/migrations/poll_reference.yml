@@ -1,0 +1,25 @@
+id: poll_reference
+label: Entity Reference for poll nodes to polls
+migration_tags:
+  - Drupal 7
+  - Content
+source:
+  plugin: poll
+process:
+  field_poll/target_id:
+    plugin: migration_lookup
+    migration: poll_question
+    source: nid
+  nid: nid
+  title: title
+  changed: changed
+destination:
+  plugin: entity:node
+  default_bundle: poll
+  overwrite_properties:
+    - field_poll
+migration_dependencies:
+  required:
+    - d7_node_complete:poll
+    - poll_question
+    - poll_field_instance

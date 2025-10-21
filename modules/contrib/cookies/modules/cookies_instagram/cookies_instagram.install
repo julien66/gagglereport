@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * @file
+ * Installation information for the 'Cookies Instagram' module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function cookies_instagram_install() {
+  // Load module after other third-party module.
+  module_set_weight('cookies_instagram', 11);
+}
+
+/**
+ * Update service config to enforce module dependency 'cookies_instagram'.
+ */
+function cookies_instagram_update_8001() {
+  $config = \Drupal::configFactory()
+    ->getEditable('cookies.cookies_service.instagram');
+  if (!$config->isNew()) {
+    $dependencies = $config->get('dependencies');
+    $dependencies['enforced']['module'][] = 'cookies_instagram';
+    $config->set('dependencies', $dependencies)->save(TRUE);
+  }
+}

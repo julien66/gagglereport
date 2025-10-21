@@ -1,0 +1,27 @@
+id: poll_field_instance_form_display
+label: Poll field instance widget configuration
+migration_tags:
+  - Drupal 7
+  - Configuration
+source:
+  source_module: poll
+  plugin: empty
+  constants:
+    entity_type: node
+    bundle: poll
+    field_name: field_poll
+    form_mode: default
+    options:
+      type: entity_reference_autocomplete
+      weight: 0
+process:
+  entity_type: 'constants/entity_type'
+  bundle: 'constants/bundle'
+  field_name: 'constants/field_name'
+  form_mode: 'constants/form_mode'
+  options: 'constants/options'
+destination:
+  plugin: component_entity_form_display
+migration_dependencies:
+  required:
+    - poll_field_instance

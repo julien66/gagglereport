@@ -1,0 +1,52 @@
+<?php
+
+/**
+ * @file
+ * Contains cookies_recaptcha.module.
+ */
+
+use Drupal\cookies\Constants\CookiesConstants;
+use Drupal\Core\Asset\AttachedAssetsInterface;
+
+/**
+ * Implements hook_captcha().
+ */
+function cookies_recaptcha_captcha($op, $captcha_type = '') {
+  switch ($op) {
+    case 'list':
+      return ['reCAPTCHA'];
+
+    case 'generate':
+      $doKo = Drupal::service('cookies.knock_out')->doKnockOut();
+      if ($doKo) {
+        $captcha = recaptcha_captcha($op, 'reCAPTCHA');
+        if (!empty($captcha['form']['recaptcha_widget']['#attached']['library'])) {
+          $captcha['form']['recaptcha_widget']['#attached']['library'][] = 'cookies_recaptcha/default';
+        }
+        return $captcha;
+      }
+  }
+}
+
+/**
+ * Implements hook_js_alter().
+ */
+function cookies_recaptcha_js_alter(array &$javascript, AttachedAssetsInterface $assets) {
+  $doKo = Drupal::service('cookies.knock_out')->doKnockOut();
+  if ($doKo) {
+    // Only get the recaptcha scripts:
+    $filteredKeys = array_filter($javascript, function ($key) {
+      if (str_contains($key, '/js/recaptcha.js') || str_contains($key, 'https://www.google.com/recaptcha/api.js')) {
+        return $key;
+      }
+    }, ARRAY_FILTER_USE_KEY);
+    // We only need the keys:
+    $filteredKeys = array_keys($filteredKeys);
+    foreach ($filteredKeys as $num => $name) {
+      $javascript[$name]['preprocess'] = FALSE;
+      $javascript[$name]['attributes']['type'] = CookiesConstants::COOKIES_SCRIPT_KO_TYPE;
+      $javascript[$name]['attributes']['id'] = 'cookies_recaptcha_' . $num;
+      $javascript[$name]['attributes']['data-cookieconsent'] = 'recaptcha';
+    }
+  }
+}

@@ -1,0 +1,118 @@
+
+cookies.getServices:
+  path: '/cookiesjsr/{lang}/services.json'
+  defaults:
+    _controller: '\Drupal\cookies\Controller\ServiceConfigController::getJson'
+    _title: 'Services'
+  requirements:
+    _permission: 'access content'
+
+cookies.overview:
+  path: '/admin/config/system/cookies'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'COOKiES'
+  requirements:
+    _permission: 'configure cookies config'
+
+cookies.config:
+  path: '/admin/config/system/cookies/config'
+  defaults:
+    _form: '\Drupal\cookies\Form\CookiesConfigForm'
+    _title: 'COOKiES Configuration'
+  requirements:
+    _permission: 'configure cookies config'
+  options:
+    _admin_route: TRUE
+
+cookies.texts:
+  path: '/admin/config/system/cookies/texts'
+  defaults:
+    _form: '\Drupal\cookies\Form\CookiesTextsForm'
+    _title: 'COOKiES Widget Texts'
+  requirements:
+    _permission: 'configure cookies widget texts'
+  options:
+    _admin_route: TRUE
+
+cookies.callback:
+  path: '/cookies/consent/callback.json'
+  defaults:
+    _controller: '\Drupal\cookies\Controller\CallbackController::callback'
+    _title: 'callback'
+  requirements:
+    _permission: 'access content'
+
+# Cookies service entity routes:
+cookies.cookies_documentation:
+  path: '/cookies/documentation'
+  defaults:
+    _controller: '\Drupal\cookies\Controller\CookiesDocsController::info'
+    _title: 'Cookie Documentation'
+  requirements:
+    _permission: 'access content'
+
+entity.cookies_service.collection:
+  path: '/admin/config/system/cookies/cookies-service'
+  defaults:
+    _entity_list: 'cookies_service'
+    _title: 'COOKiES Service Entities'
+  requirements:
+    _permission: 'administer cookies services and service groups'
+
+entity.cookies_service.add_form:
+  path: '/admin/config/system/cookies/cookies-service/add'
+  defaults:
+    _entity_form: 'cookies_service.add'
+    _title: 'Add COOKiES service entity'
+  requirements:
+    _permission: 'administer cookies services and service groups'
+
+entity.cookies_service.edit_form:
+  path: '/admin/config/system/cookies/cookies-service/{cookies_service}/edit'
+  defaults:
+    _entity_form: 'cookies_service.edit'
+    _title: 'Edit COOKiES service entity'
+  requirements:
+    _permission: 'administer cookies services and service groups'
+
+entity.cookies_service.delete_form:
+  path: '/admin/config/system/cookies/cookies-service/{cookies_service}/delete'
+  defaults:
+    _entity_form: 'cookies_service.delete'
+    _title: 'Delete COOKiES service entity'
+  requirements:
+    _permission: 'administer cookies services and service groups'
+
+# Cookies service group entity routes:
+entity.cookies_service_group.collection:
+  path: '/admin/config/system/cookies/cookies-service-group'
+  defaults:
+    _entity_list: 'cookies_service_group'
+    _title: 'COOKiES Service Group Entities'
+  requirements:
+    _permission: 'administer cookies services and service groups'
+
+entity.cookies_service_group.add_form:
+  path: '/admin/config/system/cookies/cookies-service-group/add'
+  defaults:
+    _entity_form: 'cookies_service_group.add'
+    _title: 'Add COOKiES service group entity'
+  requirements:
+    _permission: 'administer cookies services and service groups'
+
+entity.cookies_service_group.edit_form:
+  path: '/admin/config/system/cookies/cookies-service-group/{cookies_service_group}/edit'
+  defaults:
+    _entity_form: 'cookies_service_group.edit'
+    _title: 'Edit COOKiES service group entity'
+  requirements:
+    _permission: 'administer cookies services and service groups'
+
+entity.cookies_service_group.delete_form:
+  path: '/admin/config/system/cookies/cookies-service-group/{cookies_service_group}/delete'
+  defaults:
+    _entity_form: 'cookies_service_group.delete'
+    _title: 'Delete COOKiES service group entity'
+  requirements:
+    _permission: 'administer cookies services and service groups'

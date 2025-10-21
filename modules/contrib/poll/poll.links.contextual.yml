@@ -1,0 +1,4 @@
+entity.poll.edit_form:
+  title: 'Edit poll'
+  route_name: 'entity.poll.edit_form'
+  group: 'poll'

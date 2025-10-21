@@ -1,0 +1,60 @@
+{% set classes = ['cookies-docs-service'] %}
+{% set HideProcessorDetails = (processor is empty) and (processorContact is empty) and (processorContact is empty) and (processorUrl is empty) and (processorPrivacyPolicyUrl is empty) and (processorCookiePolicyUrl is empty) %}
+
+<article{{attributes.setAttribute('id', id|clean_class).addClass(classes)}}>
+  <h3>{{ label }}</h3>
+  {% if processorCookiePolicyUrl %}
+    <div class="cookies-docs-service__website"></div>
+  {% endif %}
+  <div class="cookies-docs-service__info">
+    {{ info }}
+  </div>
+  {% if not HideProcessorDetails %}
+    <h4 class="cookies-docs-service__processor-details-header">{{ attributes.processorDetailsLabel }}</h4>
+    <div class="cookies-docs-service__processor-details">
+      <dl>
+        {% if processor %}
+          <div class="cookies-docs-service__processor-company">
+            <dt><strong>{{ attributes.processorLabel }}</strong></dt>
+            <dd>
+              {{ processor }}
+            </dd>
+          </div>
+        {% endif %}
+        {% if processorUrl %}
+          <div class="cookies-docs-service__processor-website">
+            <dt><strong>{{ attributes.processorWebsiteUrlLabel }}</strong></dt>
+            <dd>
+              <a href={{ processorUrl }} target="_blank" rel="nofollow noreferrer" class="cookies-docs-service__processor-website-link">{{ processorUrl }}</a>
+            </dd>
+          </div>
+        {% endif %}
+        {% if processorPrivacyPolicyUrl %}
+          <div class="cookies-docs-service__processor-privacy-policy">
+            <dt><strong>{{ attributes.processorPrivacyPolicyUrlLabel }}</strong></dt>
+            <dd>
+              <a href={{ processorPrivacyPolicyUrl }} target="_blank" rel="nofollow noreferrer" class="cookies-docs-service__processor-privacy-policy-link">{{ processorPrivacyPolicyUrl }}</a>
+            </dd>
+          </div>
+        {% endif %}
+        {% if processorCookiePolicyUrl %}
+          <div class="cookies-docs-service__processor-cookie-policy">
+            <dt><strong>{{ attributes.processorCookiePolicyUrlLabel }}</strong></dt>
+            <dd>
+              <a href={{ processorCookiePolicyUrl }} target="_blank" rel="nofollow noreferrer" class="cookies-docs-service__processor-cookie-policy-link">{{ processorCookiePolicyUrl }}</a>
+            </dd>
+          </div>
+        {% endif %}
+        {% if processorContact %}
+          <div class="cookies-docs-service__processor-contact">
+            <dt>
+              <strong>{{ attributes.processorContactLabel }}</strong></dt>
+            <dd>
+              {{ processorContact }}
+            </dd>
+          </div>
+        {% endif %}
+      </dl>
+    </div>
+  {% endif %}
+</article>

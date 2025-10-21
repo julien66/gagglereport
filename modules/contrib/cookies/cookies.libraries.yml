@@ -1,0 +1,54 @@
+cookiesjsr.conf:
+  version: VERSION
+  header: true
+  js:
+    js/cookiesjsr.conf.js:
+      preprocess: false
+      attributes:
+        defer: true
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+    - core/drupal.message
+
+cookiesjsr:
+  version: VERSION
+  header: true
+  js:
+    /libraries/cookiesjsr/dist/cookiesjsr-preloader.min.js:
+      preprocess: false
+      minified: true
+      attributes:
+        defer: true
+  dependencies:
+    - cookies/cookiesjsr.conf
+
+cookiesjsr.cdn:
+  version: VERSION
+  js:
+    https://cdn.jsdelivr.net/gh/jfeltkamp/cookiesjsr@1/dist/cookiesjsr-preloader.min.js:
+      preprocess: false
+      type: external
+      minified: true
+      attributes:
+        defer: true
+  dependencies:
+    - cookies/cookiesjsr.conf
+
+cookiesjsr.styles:
+  version: VERSION
+  css:
+    component:
+      /libraries/cookiesjsr/dist/cookiesjsr.min.css: {}
+
+cookies.lib:
+  version: VERSION
+  js:
+    js/cookies.lib.js: {}
+  css:
+    component:
+      css/cookies.lib.css: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/drupalSettings

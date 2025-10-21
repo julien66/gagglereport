@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - cookies_ga
+id: analytics
+label: 'Google Analytics'
+group: tracking
+weight: 0
+info:
+  format: 'full_html'
+  value: ''
+consentRequired: true
+placeholderMainText: 'This content is blocked because Google Analytics cookies have not been accepted.'
+placeholderAcceptText: 'Only accept Google Analytics cookies'
+purpose: ''
+processor: ''
+processorContact: ''
+processorUrl: 'https://analytics.google.com/'
+processorPrivacyPolicyUrl: ''
+processorCookiePolicyUrl: 'https://support.google.com/analytics/answer/6004245'

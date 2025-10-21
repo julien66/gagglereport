@@ -1,0 +1,48 @@
+<?php
+
+/**
+ * @file
+ * Contains cookies_matomo.module.
+ */
+
+use Drupal\cookies\Constants\CookiesConstants;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Template\Attribute;
+
+/**
+ * Implements hook_help().
+ */
+function cookies_matomo_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the cookies_matomo module.
+    case 'help.page.cookies_matomo':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Submodule of cookies to manage Matomo Analytics implemented by so named module.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function cookies_matomo_page_attachments(&$page) {
+  $doKo = Drupal::service('cookies.knock_out')->doKnockOut();
+  if ($doKo && isset($page["#attached"]["html_head"])) {
+    foreach ($page["#attached"]["html_head"] as $key => $head_tag) {
+      if (in_array('matomo_tracking_script', $head_tag)) {
+        $attr = (isset($head_tag[0]['#attributes'])) ? $head_tag[0]['#attributes'] : [];
+        $attr = array_merge($attr, [
+          'type' => CookiesConstants::COOKIES_SCRIPT_KO_TYPE,
+          'id' => 'cookies_matomo',
+          'data-cookieconsent' => 'matomo',
+        ]);
+        $page["#attached"]["html_head"][$key][0]['#attributes'] = new Attribute($attr);
+        $page["#attached"]["library"][] = 'cookies_matomo/analytics';
+        break;
+      }
+    }
+  }
+}

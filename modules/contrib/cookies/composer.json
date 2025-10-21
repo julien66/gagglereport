@@ -1,0 +1,27 @@
+{
+    "name": "drupal/cookies",
+    "type": "drupal-module",
+    "description": "Cookie consent tool.",
+    "keywords": [
+    ],
+    "homepage": "https://www.drupal.org/project/cookies",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/cookies",
+        "source": "http://cgit.drupalcode.org/cookies"
+    },
+    "require": {
+        "jfeltkamp/cookiesjsr": "^1.0.12"
+    },
+    "require-dev": {
+        "drupal/facebook_pixel": "^2.0",
+        "drupal/google_analytics": "^4.0",
+        "drupal/google_tag": "^2.0",
+        "drupal/media_entity_instagram": "^3.0",
+        "drupal/ivw_integration": "^2.0",
+        "drupal/matomo": "^1.0",
+        "drupal/recaptcha": "^3.4",
+        "drupal/media_entity_twitter": "^2.0",
+        "drupal/asset_injector": "^2"
+    }
+}

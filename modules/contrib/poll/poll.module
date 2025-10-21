@@ -1,0 +1,204 @@
+<?php
+
+/**
+ * @file
+ * Collects votes on different topics in the form of multiple choice questions.
+ */
+
+use Drupal\Core\Render\Element;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Template\Attribute;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_help().
+ */
+function poll_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.poll':
+      $output = '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('The Poll module can be used to create simple surveys or questionnaires that display cumulative results. A poll is a good way to receive feedback from site users and community members. For more information, see the online handbook entry for the <a href=":poll">Poll module</a>.', [
+        ':poll' => 'https://www.drupal.org/docs/8/modules/poll',
+      ]) . '</p>';
+      $output .= '<h3>' . t('Uses') . '</h3>';
+      $output .= '<dl>';
+      $output .= '<dt>' . t('Creating a poll') . '</dt>';
+      $output .= '<dd>' . t('Users can create a poll by clicking on <a href=":add-poll">Add poll</a> on the <a href=":polls">Polls</a> page, and entering the question being posed, the answer choices, and beginning vote counts for each choice. The status (closed or active) and duration (length of time the poll remains active for new votes) can also be specified.', [
+        ':add-poll' => Url::fromRoute('poll.poll_add')->toString(),
+        ':polls' => Url::fromRoute('poll.poll_list')->toString(),
+      ]) . '</dd>';
+      $output .= '<dt>' . t('Viewing polls') . '</dt>';
+      $output .= '<dd>' . t('You can visit the <a href=":polls">Polls</a> page to view all current polls, or alternately enable the <em>Most recent poll</em> block on the <a href=":blocks">Blocks administration page</a>. To vote in or view the results of a specific poll, you can click on the poll itself.', [
+        ':polls' => Url::fromRoute('poll.poll_list')->toString(),
+        ':blocks' => Url::fromRoute('block.admin_display')->toString(),
+      ]) . '</dd>';
+      $output .= '</dl>';
+      return $output;
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function poll_theme() {
+  $theme_hooks = [
+    'poll' => [
+      'template' => 'poll',
+      'render element' => 'elements',
+    ],
+    'poll_vote' => [
+      'template' => 'poll-vote',
+      'render element' => 'form',
+    ],
+    'poll_choices' => [
+      'render element' => 'form',
+    ],
+    'poll_results' => [
+      'template' => 'poll-results',
+      'variables' => [
+        'raw_question' => NULL,
+        'results' => NULL,
+        'votes' => NULL,
+        'block' => NULL,
+        'pid' => NULL,
+        'poll' => NULL,
+        'view_mode' => NULL,
+        'vote' => NULL,
+        'show_question' => FALSE,
+      ],
+    ],
+    'poll_meter' => [
+      'template' => 'poll-meter',
+      'variables' => [
+        'display_value' => NULL,
+        'form' => NULL,
+        'high' => NULL,
+        'low' => NULL,
+        'max' => NULL,
+        'min' => NULL,
+        'optimum' => NULL,
+        'choice' => NULL,
+        'is_current_selection' => FALSE,
+        'value' => NULL,
+        'percentage' => NULL,
+        'attributes' => [],
+        'poll' => NULL,
+      ],
+    ],
+  ];
+
+  return $theme_hooks;
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function poll_page_attachments(array &$page) {
+  $page['#attached']['library'][] = 'poll/drupal.poll-links';
+}
+
+/**
+ * Implements hook_cron().
+ */
+function poll_cron() {
+  // Close expired polls.
+  $polls = \Drupal::entityTypeManager()->getStorage('poll')->getExpiredPolls();
+  foreach ($polls as $poll) {
+    $poll->close();
+    $poll->save();
+  }
+}
+
+/**
+ * Implements hook_entity_extra_field_info().
+ */
+function poll_entity_extra_field_info() {
+  $extra = [];
+  $extra['poll']['poll']['display']['poll_votes'] = [
+    'label' => t('Vote form/Results'),
+    'description' => t('Vote form of the poll or the results depending on current user.'),
+    'weight' => 0,
+  ];
+  return $extra;
+}
+
+/**
+ * Implements template_preprocess_HOOK() for poll-vote.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - form: The renderable form array for the poll voting form.
+ */
+function template_preprocess_poll_vote(array &$variables) {
+  $form = $variables['form'];
+  $variables['question'] = $form['#entity']->label();
+  $variables['show_question'] = !empty($form['#show_question']);
+}
+
+/**
+ * Prepares variables for meter templates.
+ *
+ * Default template: poll-meter.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - display_value: The textual representation of the meter bar.
+ *   - form: A string specifying one or more forms to which the <meter> element
+ *     belongs; multiple forms separated by spaces.
+ *   - attributes: Associative array of attributes to be placed in the meter
+ *     tag.
+ */
+function template_preprocess_poll_meter(array &$variables) {
+  $poll = $variables['poll'];
+  $attributes = $variables['attributes'];
+  foreach ([
+    'form',
+    'high',
+    'low',
+    'max',
+    'min',
+    'optimum',
+    'choice',
+    'value',
+  ] as $key) {
+    if (isset($variables[$key])) {
+      // This function was initially designed for the <meter> tag, but due to
+      // the lack of browser and styling support for it, we're currently using
+      // its attributes as HTML5 data attributes.
+      $attributes['data-' . $key] = $variables[$key];
+    }
+  }
+  $variables['attributes'] = new Attribute($attributes);
+}
+
+/**
+ * Implements template_preprocess_HOOK() for poll-results.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - raw_title: A string for the title of the poll.
+ *   - results: The results of the poll.
+ *   - votes: The total results in the poll.
+ *   - block: A boolean to define if the poll is a block.
+ *   - nid: The node ID of the poll.
+ *   - vote: The choice number of the current user's vote.
+ *   The raw_* inputs to this are naturally unsafe; often safe versions are
+ *   made to simply overwrite the raw version, but in this case it seems likely
+ *   that the title and the links may be overridden by the theme layer, so they
+ *   are left in with a different name for that purpose.
+ *
+ * @see poll-results.html.twig
+ */
+function template_preprocess_poll_results(array &$variables) {
+  $variables['question'] = $variables['raw_question'];
+  $variables['results_title'] = t('Results');
+}
+
+/**
+ * Implements template_preprocess_entity().
+ */
+function poll_preprocess_poll(array &$variables) {
+  foreach (Element::children($variables['elements']) as $key) {
+    $variables['content'][$key] = $variables['elements'][$key];
+  }
+}

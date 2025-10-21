@@ -1,0 +1,252 @@
+<?php
+
+/**
+ * @file
+ * Contains cookies.module.
+ */
+
+use Drupal\Component\Utility\Html;
+use Drupal\cookies\Entity\CookiesServiceEntity;
+use Drupal\cookies\Entity\CookiesServiceGroup;
+use Drupal\cookies\Plugin\Block\CookiesUiBlock;
+use Drupal\cookies\Services\CookiesConfigService;
+use Drupal\Core\Render\BubbleableMetadata;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\user\UserInterface;
+
+/**
+ * Implements hook_help().
+ */
+function cookies_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.cookies':
+      $text = file_get_contents(__DIR__ . '/README.md');
+      if (!\Drupal::moduleHandler()->moduleExists('markdown')) {
+        return '<pre>' . Html::escape($text) . '</pre>';
+      }
+      else {
+        // Use the Markdown filter to render the README.
+        $filter_manager = \Drupal::service('plugin.manager.filter');
+        $settings = \Drupal::configFactory()->get('markdown.settings')->getRawData();
+        $config = ['settings' => $settings];
+        $filter = $filter_manager->createInstance('markdown', $config);
+        return $filter->process($text, 'en');
+      }
+  }
+  return NULL;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function cookies_theme() {
+  return [
+    CookiesUiBlock::THEME_DEFINITION => [
+      'variables' => [
+        'id' => NULL,
+        'styles' => NULL,
+      ],
+    ],
+    CookiesConfigService::DOCUMENTATION_THEME_DEFINITION => [
+      'variables' => [
+        'groups' => [],
+        'disclaimer' => [],
+      ],
+    ],
+    CookiesConfigService::DISCLAIMER_THEME_DEFINITION => [
+      'variables' => [
+        'disclaimerText' => NULL,
+        'disclaimerTextPosition' => NULL,
+      ],
+    ],
+    CookiesServiceGroup::THEME_DEFINITION => [
+      'variables' => [
+        'attributes' => [],
+        'label' => NULL,
+        'weight' => NULL,
+        'title' => NULL,
+        'details' => NULL,
+        'services' => [],
+      ],
+    ],
+    CookiesServiceEntity::THEME_DEFINITION => [
+      'variables' => [
+        'attributes' => [],
+        'id' => NULL,
+        'label' => NULL,
+        'group' => NULL,
+        'consentRequired' => TRUE,
+        'info' => [],
+        'purpose' => NULL,
+        'processor' => NULL,
+        'processorContact' => NULL,
+        'processorUrl' => NULL,
+        'processorPrivacyPolicyUrl' => NULL,
+        'processorCookiePolicyUrl' => NULL,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_menu_links_discovered_alter().
+ */
+function cookies_menu_links_discovered_alter(&$links) {
+
+  /*
+   * Define the "Cookie settings" menu item in Tools.
+   * Dynamic equivalent of links.menu.yml entry, but we need to set the URL
+   * dynamically because the dialog open fragment can be configured in COOKiES
+   * settings.
+   *
+   * cookies.open_cookie_consent_dialog:
+   * title: "Cookie settings"
+   * description: "Open the cookie consent dialog."
+   * url: "internal:<DYNAMIC:#editCookieSettings>"
+   * menu_name: tools
+   * options:
+   *   attributes:
+   *     class:
+   *       - cookies-open-cookie-consent-dialog
+   */
+  $open_settings_hash = \Drupal::config('cookies.config')->get('open_settings_hash');
+  if (!empty($open_settings_hash)) {
+    $links['cookies.open_cookie_consent_dialog'] = [
+      'title' => new TranslatableMarkup("Cookie settings"),
+      'description' => new TranslatableMarkup("Open the cookie consent dialog."),
+      'url' => "internal:#" . htmlspecialchars($open_settings_hash, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'),
+      'menu_name' => 'tools',
+      'provider' => 'cookies',
+      'options' => [
+        'attributes' => [
+          'class' => ['cookies-open-cookie-consent-dialog'],
+        ],
+      ],
+    ];
+  }
+}
+
+/**
+ * Implements hook_cookies_user_consent().
+ *
+ * Changes of COOKiES cookie content are stored in the db if the user is
+ * authenticated. So their settings can be revived in sessions on other
+ * browsers.
+ */
+function cookies_cookies_user_consent($consent) {
+  $account = \Drupal::currentUser();
+  if ($account->isAuthenticated()
+    && \Drupal::config('cookies.config')->get('store_auth_user_consent')
+  ) {
+    $key = "uid:{$account->id()}";
+    $store = \Drupal::keyValue('cookies.consent.user');
+    $store->set($key, $consent);
+    return [
+      'cookies' => [
+        'status' => t('Your cookie settings have been saved in your account.'),
+      ],
+    ];
+  }
+  return [];
+}
+
+/**
+ * Implements hook_user_login().
+ *
+ * If COOKiES cookie exists save/update content for user in key-value storage.
+ * If not, check key-value storage, if cookie content is stored and re-install
+ * cookie if exists.
+ */
+function cookies_user_login(UserInterface $account) {
+  $config = \Drupal::config('cookies.config');
+  if ($config->get('store_auth_user_consent')) {
+    /** @var string $cookie_name */
+    $cookie_name = $config->get('cookie_name');
+    $store = \Drupal::keyValue('cookies.consent.user');
+    $key = "uid:{$account->id()}";
+    if ($cookie_content = \Drupal::request()->cookies->get($cookie_name)) {
+      // User has set or update cookie before logged in.
+      // => Update cookie consent in db.
+      $store->set($key, json_decode($cookie_content, TRUE));
+    }
+    elseif ($cookie_content = $store->get($key)) {
+      // User gets COOKiES-cookie from storage.
+      $expires = $config->get('cookie_expires') ?? 365;
+      $options = [
+        "expires" => \Drupal::time()->getRequestTime() + ($expires * 24 * 60 * 60),
+        "path" => "/",
+        "domain" => $config->get('cookie_domain') ?? "",
+        "secure" => $config->get('cookie_secure') ?? FALSE,
+        "samesite" => $config->get('cookie_same_site') ?? "Lax",
+      ];
+      setcookie($cookie_name, json_encode($cookie_content), $options);
+    }
+  }
+}
+
+/**
+ * Implements hook_token_info().
+ */
+function cookies_token_info() {
+  $type = [
+    'name' => t('COOKiES'),
+    'description' => t('COOKiES related tokens.'),
+  ];
+  $cookies = [
+    'docs' => [
+      'name' => t('Cookie Documentation'),
+      'description' => t('Provides the cookies documentation as markup.'),
+    ],
+  ];
+
+  return [
+    'types' => [
+      'cookies' => $type,
+    ],
+    'tokens' => [
+      'cookies' => $cookies,
+    ],
+  ];
+}
+
+/**
+ * Implements hook_tokens().
+ */
+function cookies_tokens($type, $tokens, array $data, array $options, BubbleableMetadata $bubbleable_metadata) {
+  $replacements = [];
+  if ($type == 'cookies') {
+    $lang_code = $options['langcode'] ?? NULL;
+    foreach ($tokens as $name => $original) {
+      switch ($name) {
+        case 'docs':
+          $cookiesConfigService = \Drupal::service('cookies.config')
+            ->getRenderedCookiesDocs($lang_code);
+          $replacements[$original] = \Drupal::service('renderer')
+            ->render($cookiesConfigService);
+          break;
+      }
+    }
+  }
+
+  return $replacements;
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function cookies_preprocess_config_translation_manage_form_element(&$variables) {
+  // Temporary fix for: https://www.drupal.org/project/cookies/issues/3327045
+  // Drupal limits config translation textfields (string) to a maxlength of 128.
+  // In our forms we set #maxlength to a higher limit so we need to remove
+  // the limit also for the config translation forms:
+  // Only for textfields:
+  if (!empty($variables['element']['translation']['#type']) && $variables['element']['translation']['#type'] == 'textfield') {
+    // Only for items starting with 'source[config_names][cookies.',
+    // so we don't affect other items.
+    if (strpos($variables['element']['source']['#name'], 'source[config_names][cookies.') === 0) {
+      // Remove the #maxlength limit entirely. There's no technical limit.
+      unset($variables['element']['translation']['#maxlength']);
+    }
+  }
+}

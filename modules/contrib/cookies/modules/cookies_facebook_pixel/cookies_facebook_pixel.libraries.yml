@@ -1,0 +1,4 @@
+facebook_pixel:
+  version: VERSION
+  js:
+    js/cookies_facebook_pixel.js: {}

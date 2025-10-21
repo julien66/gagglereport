@@ -1,0 +1,16 @@
+name: 'COOKiES IVW'
+type: module
+description: 'Submodule of COOKiES to manage IVW Tracking inside of COOKiES consent management.'
+core_version_requirement: ^9 || ^10 || ^11
+package: 'COOKiES'
+dependencies:
+  - cookies:cookies
+  - ivw_integration:ivw_integration
+
+libraries:
+  - cookies_ivw/ivw
+
+# Information added by Drupal.org packaging script on 2025-07-23
+version: '1.2.16'
+project: 'cookies'
+datestamp: 1753262919

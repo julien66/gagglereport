@@ -1,0 +1,32 @@
+cookies.config:
+  route_name: cookies.config
+  base_route: cookies.config
+  title: 'Base config'
+
+cookies.texts:
+  route_name: cookies.texts
+  base_route: cookies.config
+  title: 'Widget texts'
+  weight: 10
+
+entity.cookies_service_group.collection:
+  route_name: entity.cookies_service_group.collection
+  base_route: cookies.config
+  title: 'Groups'
+  weight: 15
+
+entity.cookies_service.collection:
+  route_name: entity.cookies_service.collection
+  base_route: cookies.config
+  title: 'Services'
+  weight: 20
+
+entity.cookies_service_group.edit_form:
+  title: 'Edit'
+  route_name: entity.cookies_service_group.edit_form
+  base_route: entity.cookies_service_group.edit_form
+
+entity.cookies_service.edit_form:
+  title: 'Edit'
+  route_name: entity.cookies_service.edit_form
+  base_route: entity.cookies_service.edit_form

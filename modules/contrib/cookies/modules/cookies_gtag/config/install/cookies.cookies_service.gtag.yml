@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - cookies_gtag
+id: gtag
+label: 'Google Tag Manager'
+group: performance
+weight: 0
+info:
+  format: 'full_html'
+  value: ''
+consentRequired: true
+placeholderMainText: 'This content is blocked because Google Tag Manager cookies have not been accepted.'
+placeholderAcceptText: 'Only accept Google Tag Manager cookies'
+purpose: ''
+processor: ''
+processorContact: ''
+processorUrl: 'https://tagmanager.google.com/'
+processorPrivacyPolicyUrl: 'https://policies.google.com/privacy'
+processorCookiePolicyUrl: ''

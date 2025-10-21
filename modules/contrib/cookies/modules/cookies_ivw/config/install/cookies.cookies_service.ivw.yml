@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - cookies_ivw
+id: ivw
+label: 'IVW Tracking'
+group: tracking
+weight: 0
+info:
+  format: 'full_html'
+  value: ''
+consentRequired: true
+placeholderMainText: 'This content is blocked because IVW Tracking cookies have not been accepted.'
+placeholderAcceptText: 'Only accept IVW Tracking cookies'
+purpose: ''
+processor: 'Informationsgemeinschaft zur Feststellung der Verbreitung von Werbeträgern e. V.'
+processorContact: 'IVW, Am Weidendamm 1A, D-10117 Berlin'
+processorUrl: 'https://www.ivw.de'
+processorPrivacyPolicyUrl: 'https://www.ivw.de/datenschutz'
+processorCookiePolicyUrl: ''

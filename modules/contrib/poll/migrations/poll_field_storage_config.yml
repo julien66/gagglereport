@@ -1,0 +1,34 @@
+#modified from \Drupal\migrate\Plugin\migrate\destination\EntityFieldStorageConfig
+id: poll_field_storage_config
+label: Poll entity reference field storage
+migration_tags:
+  - Drupal 7
+  - Configuration
+source:
+  source_module: poll
+  plugin: embedded_data
+  data_rows:
+    -
+      id: node.field_poll
+      field_name: field_poll
+      entity_type: node
+      type: entity_reference
+      cardinality: 1
+      settings:
+        target_type: poll
+      langcode: und
+      translatable: true
+  ids:
+    id:
+      type: string
+process:
+  entity_type: entity_type
+  id: id
+  field_name: field_name
+  type: type
+  cardinality: cardinality
+  settings: settings
+  langcode: langcode
+  translatable: translatable
+destination:
+  plugin: entity:field_storage_config

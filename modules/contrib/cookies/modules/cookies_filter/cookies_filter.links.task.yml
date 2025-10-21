@@ -1,0 +1,5 @@
+entity.cookies_service_filter.collection:
+  route_name: entity.cookies_service_filter.collection
+  base_route: cookies.config
+  title: 'Filter services'
+  weight: 25

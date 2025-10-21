@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * @file
+ * Installation information for the 'Cookies GTAG' module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function cookies_gtag_install() {
+  // Load cookies_ga module after the third-party library.
+  module_set_weight('cookies_gtag', 11);
+}
+
+/**
+ * Update service config to enforce module dependency 'cookies_gtag'.
+ */
+function cookies_gtag_update_8001() {
+  $config = \Drupal::configFactory()
+    ->getEditable('cookies.cookies_service.gtag');
+  if (!$config->isNew()) {
+    $dependencies = $config->get('dependencies');
+    $dependencies['enforced']['module'][] = 'cookies_gtag';
+    $config->set('dependencies', $dependencies)->save(TRUE);
+  }
+}

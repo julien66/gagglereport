@@ -1,0 +1,199 @@
+<?php
+
+/**
+ * @file
+ * Contains cookies_asset_injector.module.
+ */
+
+use Drupal\asset_injector\AssetInjectorInterface;
+use Drupal\Component\Utility\Html;
+use Drupal\cookies\Constants\CookiesConstants;
+use Drupal\cookies_asset_injector\Constants\CookiesAssetInjectorConstants;
+use Drupal\Core\Asset\AttachedAssetsInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_help().
+ */
+function cookies_asset_injector_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the cookies_asset_injector module.
+    case 'help.page.cookies_asset_injector':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Submodule of COOKiES to integrate Asset Injector assets with COOKiES Services and its consent configuration.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function cookies_asset_injector_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (in_array($form_id, [
+    'asset_injector_js_add_form', 'asset_injector_js_edit_form',
+    'asset_injector_js_duplicate_form',
+  ])) {
+    $entity = $form_state->getFormObject()->getEntity();
+
+    // Advanced options fieldset.
+    $form['third_party_settings']['cookies_asset_injector'] = [
+      '#type' => 'fieldset',
+      '#title' => t('COOKiES Integration'),
+      '#collapsible' => TRUE,
+      '#collapsed' => TRUE,
+      // This important for auto-saving as third_party_settings:
+      '#tree' => TRUE,
+    ];
+
+    $services = \Drupal::entityTypeManager()->getStorage('cookies_service')->loadMultiple();
+    $service_options = [];
+    /** @var \Drupal\cookies\Entity\CookiesServiceEntityInterface $service */
+    foreach ($services as $serviceId => $service) {
+      $service_options[$serviceId] = t('@label [@consent_required_status]', [
+        '@label' => $service->label(),
+        '@consent_required_status' => $service->get('consentRequired') ? t('Consent required') : t('Consent not required'),
+      ]);
+    }
+    $form['advanced']['preprocess']['#states'] = [
+      'unchecked' => [
+        ':input[name="third_party_settings[cookies_asset_injector][cookies_service]"]' => ['!value' => ''],
+      ],
+      'disabled' => [
+        ':input[name="third_party_settings[cookies_asset_injector][cookies_service]"]' => ['!value' => ''],
+      ],
+    ];
+    $form['third_party_settings']['cookies_asset_injector']['cookies_service'] = [
+      '#type' => 'select',
+      '#title' => t('COOKiES Service'),
+      '#options' => $service_options,
+      '#default_value' => $entity->getThirdPartySetting('cookies_asset_injector', 'cookies_service'),
+      '#empty_value' => '',
+      '#description' => t('The COOKiES service this asset belongs to (check your existing services <a href="@collection">here</a>).
+        You may add a new service <a href="@add_form">here</a>, if this is a filter
+        for a not yet existing service. Also you may need to add further information
+        to the service description for this use-case. <strong>Note, that js preprocessing is NOT compatible with the COOKiES service!</strong>', [
+          '@add_form' => Url::fromRoute('entity.cookies_service.add_form')->toString(),
+          '@collection' => Url::fromRoute('entity.cookies_service.collection')->toString(),
+        ]),
+      '#required' => FALSE,
+    ];
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_presave().
+ */
+function cookies_asset_injector_asset_injector_js_presave(AssetInjectorInterface $entity) {
+  // Remove the third party setting, if it is empty (no service selected):
+  if (empty($entity->getThirdPartySetting('cookies_asset_injector', 'cookies_service'))) {
+    $entity->unsetThirdPartySetting('cookies_asset_injector', 'cookies_service');
+  }
+}
+
+/**
+ * Get all COOKiES blocked asset_injector assets.
+ *
+ * @param bool|null $active
+ *   Get only active (true), inactive (false), or all (null) assets.
+ * @param array $types
+ *   Array of entity type ids to limit the return.
+ *
+ * @return \Drupal\asset_injector\AssetInjectorInterface[]
+ *   Assets from css & js injectors.
+ */
+function cookies_asset_injector_get_blocked_assets($active = TRUE, array $types = ['asset_injector_js']) {
+  // @todo Cache results!
+  $blockedAssets = [];
+  $asset_injector_assets = asset_injector_get_assets($active, $types);
+  if (!empty($asset_injector_assets)) {
+    /** @var \Drupal\asset_injector\AssetInjectorInterface $asset */
+    foreach ($asset_injector_assets as $asset) {
+      $assetCookieServiceId = $asset->getThirdPartySetting('cookies_asset_injector', 'cookies_service', FALSE);
+      if (!empty($assetCookieServiceId)) {
+        /** @var \Drupal\cookies\Entity\CookiesServiceEntityInterface $assetCookieService */
+        $assetCookieService = \Drupal::entityTypeManager()->getStorage('cookies_service')->load($assetCookieServiceId);
+        $consentRequired = $assetCookieService->get('consentRequired');
+        if ($consentRequired) {
+          $blockedAssets[$assetCookieServiceId][] = $asset;
+        }
+      }
+    }
+  }
+  return $blockedAssets;
+}
+
+/**
+ * Helper function to get DOM details for the blocked assets.
+ *
+ * @param bool|null $active
+ *   Get only active (true), inactive (false), or all (null) assets.
+ * @param array $types
+ *   Array of entity type ids to limit the return.
+ *
+ * @return array
+ *   The DOM details.
+ */
+function _cookies_asset_injector_get_blocked_assets_dom_info($active = TRUE, array $types = ['asset_injector_js']) {
+  $blockedAssetDomInfo = [];
+  $blockedAssets = cookies_asset_injector_get_blocked_assets();
+  if (!empty($blockedAssets)) {
+    foreach ($blockedAssets as $cookiesServiceId => $blockedAssets) {
+      /** @var \Drupal\asset_injector\AssetInjectorInterface $blockedAsset */
+      foreach ($blockedAssets as $blockedAsset) {
+        $blockedAssetId = $blockedAsset->id();
+        $blockedAssetIdCleaned = Html::cleanCssIdentifier($blockedAssetId);
+        $blockedAssetDomInfo[$cookiesServiceId][$blockedAssetId] = [
+          'id' => $blockedAssetId,
+          'id_cleaned' => $blockedAssetIdCleaned,
+          'script_dom_id' => CookiesAssetInjectorConstants::COOKIES_ASSET_INJECTOR_BLOCKED_SCRIPT_ID_PREFIX . $blockedAssetIdCleaned,
+          'cookies_service_id' => $cookiesServiceId,
+        ];
+      }
+    }
+  }
+
+  return $blockedAssetDomInfo;
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function cookies_asset_injector_page_attachments_alter(array &$attachments) {
+  $doKo = Drupal::service('cookies.knock_out')->doKnockOut();
+  if ($doKo && !empty($attachments["#attached"]["library"])) {
+    $blockedAssetsDomInfo = _cookies_asset_injector_get_blocked_assets_dom_info();
+    $attachments["#attached"]['drupalSettings']['cookies']['cookies_asset_injector']['blocked_assets'] = $blockedAssetsDomInfo;
+    $attachments["#attached"]["library"][] = 'cookies_asset_injector/consentHandler';
+  }
+}
+
+/**
+ * Implements hook_js_alter().
+ */
+function cookies_asset_injector_js_alter(&$javascript, AttachedAssetsInterface $attached_assets) {
+  $doKo = Drupal::service('cookies.knock_out')->doKnockOut();
+  if ($doKo) {
+    $blockedAssets = cookies_asset_injector_get_blocked_assets();
+    if (!empty($blockedAssets)) {
+      foreach ($blockedAssets as $cookiesServiceId => $blockedAssets) {
+        /** @var \Drupal\asset_injector\AssetInjectorInterface $blockedAsset */
+        foreach ($blockedAssets as $blockedAsset) {
+          $filePath = ltrim($blockedAsset->filePathRelativeToDrupalRoot(), '/');
+          // Consent is required, so we have to block this library, until
+          // consent is given:
+          if (isset($javascript[$filePath])) {
+            $javascript[$filePath]['preprocess'] = FALSE;
+            $javascript[$filePath]['attributes']['type'] = CookiesConstants::COOKIES_SCRIPT_KO_TYPE;
+            $javascript[$filePath]['attributes']['id'] = CookiesAssetInjectorConstants::COOKIES_ASSET_INJECTOR_BLOCKED_SCRIPT_ID_PREFIX . Html::cleanCssIdentifier($blockedAsset->id());
+            $javascript[$filePath]['attributes']['data-cookieconsent'] = Html::cleanCssIdentifier($cookiesServiceId);
+          }
+        }
+      }
+    }
+  }
+}

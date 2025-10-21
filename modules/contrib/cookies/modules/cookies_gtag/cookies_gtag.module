@@ -1,0 +1,59 @@
+<?php
+
+/**
+ * @file
+ * Contains cookies_ga.module.
+ */
+
+use Drupal\cookies\Constants\CookiesConstants;
+use Drupal\Core\Asset\AttachedAssetsInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function cookies_gtag_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the cookies_ga module.
+    case 'help.page.cookies_ga':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Submodule of COOKiES to manage Google Analytics (by "google_analytics" module) inside of COOKiES consent management.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function cookies_gtag_page_attachments(&$page) {
+  $doKo = Drupal::service('cookies.knock_out')->doKnockOut();
+  if ($doKo) {
+    $page["#attached"]["library"][] = 'cookies_gtag/gtag';
+  }
+}
+
+/**
+ * Implements hook_js_alter().
+ */
+function cookies_gtag_js_alter(&$javascript, AttachedAssetsInterface $assets) {
+  $doKo = Drupal::service('cookies.knock_out')->doKnockOut();
+  if ($doKo) {
+    $module_path = \Drupal::service('extension.list.module')->getPath('google_tag');
+    $scripts = [
+      'gtag' => $module_path . '/js/gtag.js',
+      'gtag_ajax' => $module_path . '/js/gtag.ajax.js',
+      'gtm' => $module_path . '/js/gtm.js',
+    ];
+    foreach ($scripts as $key => $script) {
+      if (isset($javascript[$script])) {
+        $javascript[$script]['preprocess'] = FALSE;
+        $javascript[$script]['attributes']['type'] = CookiesConstants::COOKIES_SCRIPT_KO_TYPE;
+        $javascript[$script]['attributes']['id'] = 'cookies_gtag_' . $key;
+        $javascript[$script]['attributes']['data-cookieconsent'] = 'gtag';
+      }
+    }
+  }
+}

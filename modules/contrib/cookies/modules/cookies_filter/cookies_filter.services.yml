@@ -1,0 +1,4 @@
+services:
+  cookies_filter.element_types:
+    class: Drupal\cookies_filter\Services\CookiesFilterElementTypesService
+    arguments: ['@entity_type.manager']

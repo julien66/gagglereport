@@ -1,0 +1,51 @@
+cookies.cookies_service.*:
+  type: config_entity
+  label: 'COOKiES service'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    group:
+      type: string
+      label: 'Group'
+    info:
+      type: text_format
+      label: 'Info'
+    consentRequired:
+      type: boolean
+      label: 'Consent required'
+    uuid:
+      type: string
+    langcode:
+      type: string
+      label: 'Language code'
+    dependencies:
+      type: config_dependencies
+      label: 'Dependencies'
+    purpose:
+      type: label
+      label: 'Purpose'
+    placeholderMainText:
+      type: label
+      label: 'Blocked Placeholder Message'
+    placeholderAcceptText:
+      type: label
+      label: 'Accept Message'
+    processor:
+      type: label
+      label: 'Processor Company'
+    processorContact:
+      type: label
+      label: 'Processor Company Contact'
+    processorUrl:
+      type: label
+      label: 'Processor URL'
+    processorPrivacyPolicyUrl:
+      type: label
+      label: 'Processor Privacy Policy URL'
+    processorCookiePolicyUrl:
+      type: label
+      label: 'Processor Cookie Policy URL'

@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: social
+label: 'Social Plugins'
+weight: 20
+title: 'Social Plugins'
+details: 'Social media widgets provide additional content originally published on third party platforms.'

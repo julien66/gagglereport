@@ -348,7 +348,7 @@ class RateWidgetBaseForm extends ContentEntityForm {
     $form['submit'] += [
       '#type' => 'button',
       '#attributes' => [
-        'class' => [$template . '-rating-submit'],
+        'class' => [$template . '-rating-submit', 'invisible'],
       ],
       '#ajax' => [
         'disable-refocus' => TRUE,

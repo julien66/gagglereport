@@ -1,0 +1,14 @@
+<?php
+
+/**
+ * @file
+ * Installation information for the 'COOKiES Facebook Pixel' module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function cookies_facebook_pixel_install() {
+  // Load cookies_facebook_pixel module after the third-party library:
+  module_set_weight('cookies_facebook_pixel', 11);
+}

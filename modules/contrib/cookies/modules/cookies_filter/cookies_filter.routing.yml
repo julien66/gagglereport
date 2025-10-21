@@ -1,0 +1,31 @@
+entity.cookies_service_filter.collection:
+  path: '/admin/config/system/cookies/cookies-service-filter'
+  defaults:
+    _entity_list: 'cookies_service_filter'
+    _title: 'Cookies Service Filter'
+  requirements:
+    _permission: 'access cookies_service_filter'
+
+entity.cookies_service_filter.add_form:
+  path: '/admin/config/system/cookies/cookies-service-filter/add'
+  defaults:
+    _entity_form: 'cookies_service_filter.add'
+    _title: 'Add cookies service filter'
+  requirements:
+    _permission: 'access cookies_service_filter'
+
+entity.cookies_service_filter.edit_form:
+  path: '/admin/config/system/cookies/cookies-service-filter/{cookies_service_filter}/edit'
+  defaults:
+    _entity_form: 'cookies_service_filter.edit'
+    _title: 'Edit cookies service filter'
+  requirements:
+    _permission: 'access cookies_service_filter'
+
+entity.cookies_service_filter.delete_form:
+  path: '/admin/config/system/cookies/cookies-service-filter/{cookies_service_filter}/delete'
+  defaults:
+    _entity_form: 'cookies_service_filter.delete'
+    _title: 'Delete cookies service filter'
+  requirements:
+    _permission: 'access cookies_service_filter'

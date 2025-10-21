@@ -1,0 +1,34 @@
+
+cookies.overview:
+  title: 'COOKiES'
+  route_name: cookies.overview
+  description: 'COOKiES overview page'
+  parent: system.admin_config_system
+
+cookies.config:
+  title: 'COOKiES configuration'
+  route_name: cookies.config
+  description: 'COOKiES base configuration'
+  parent: cookies.overview
+  weight: 0
+
+cookies.texts:
+  title: 'Widget texts'
+  route_name: cookies.texts
+  description: 'Translatable texts assigned in the COOKiES widget.'
+  parent: cookies.overview
+  weight: 10
+
+entity.cookies_service_group.collection:
+  title: 'Groups'
+  route_name: entity.cookies_service_group.collection
+  description: 'Groups of third-party services (e.g. tracking or advertising)'
+  parent: cookies.overview
+  weight: 15
+
+entity.cookies_service.collection:
+  title: 'Services'
+  route_name: entity.cookies_service.collection
+  description: 'Third-party services where user consent is required.'
+  parent: cookies.overview
+  weight: 20

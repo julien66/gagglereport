@@ -1,0 +1,233 @@
+<?php
+
+/**
+ * @file
+ * Installation and update functions for this project.
+ */
+
+use Drupal\cookies\Entity\CookiesServiceEntity;
+use Drupal\cookies\Entity\CookiesServiceGroup;
+
+/**
+ * Add configuration to the module config for CDN, scroll limit and time out.
+ */
+function cookies_update_8001() {
+  $config_factory = \Drupal::configFactory();
+  $config = $config_factory->getEditable('cookies.config');
+  $update_config = [
+    'lib_load_from_cdn' => 1,
+    'lib_scroll_limit' => 250,
+    'lib_timeout' => 0,
+  ];
+  foreach ($update_config as $key => $value) {
+    if ($config->get($key) === NULL) {
+      $config->set($key, $value);
+    }
+  }
+  $config->save(TRUE);
+}
+
+/**
+ * Remove time out setting.
+ */
+function cookies_update_8002() {
+  $config_factory = \Drupal::configFactory();
+  $config = $config_factory->getEditable('cookies.config');
+  if ($config->get('lib_timeout') !== NULL) {
+    $config->clear('lib_timeout');
+  }
+  $config->save(TRUE);
+}
+
+/**
+ * Remove deprecated callback settings.
+ */
+function cookies_update_8003() {
+  $config_factory = \Drupal::configFactory();
+  $config = $config_factory->getEditable('cookies.config');
+  $callback_url = $config->get('callback_url');
+
+  if (
+    (!$config->get('use_callback'))
+    || ($callback_url == '/cookies/example/callback.json')
+    || ($callback_url == '')
+  ) {
+    $config->clear('use_callback');
+    $config->clear('callback_method');
+    $config->clear('callback_url');
+  }
+
+  $config->set('store_auth_user_consent', FALSE);
+  $config->save(TRUE);
+}
+
+/**
+ * NOTE.
+ *
+ * COOKiES twig template files were modified in 1.2.0. If you're
+ * overriding these in your theme, please compare changes. If not, all is fine!
+ */
+function cookies_update_8004() {
+}
+
+/**
+ * Grant new permissions for users with configure cookies widget permission.
+ *
+ * Previously the "configure cookies widget texts" permission granted permission
+ * to everything COOKiES related. Now it is split in several permission.
+ */
+function cookies_update_8005() {
+  $user_roles = \Drupal::entityTypeManager()->getStorage('user_role')->loadMultiple();
+  foreach ($user_roles as $user_role) {
+    if ($user_role->hasPermission('configure cookies widget')) {
+      user_role_grant_permissions($user_role->id(), [
+        'administer cookies services and service groups',
+        'configure cookies config',
+        'configure cookies widget texts',
+      ]);
+    }
+  }
+}
+
+/**
+ * Map service "consent" values to new attribute "consentRequired".
+ */
+function cookies_update_8006() {
+  $cookies_service_entities = \Drupal::entityTypeManager()->getStorage('cookies_service')->loadMultiple();
+  foreach ($cookies_service_entities as $cookies_service_entity) {
+    $cookies_service_entity->set('consentRequired', $cookies_service_entity->get('consent'));
+    // Remove the old key and value:
+    unset($cookies_service_entity->consent);
+    $cookies_service_entity->save();
+  }
+}
+
+/**
+ * Map old default cookie service entity values to new ones.
+ */
+function cookies_update_8007() {
+  // Create new functional cookies_service_group (if not yet existing):
+  $cookies_service_group_entity = \Drupal::entityTypeManager()->getStorage('cookies_service_group')->load('default');
+  if ($cookies_service_group_entity !== NULL && \Drupal::entityTypeManager()->getStorage('cookies_service_group')->load('functional') === NULL) {
+    CookiesServiceGroup::create([
+      'langcode' => $cookies_service_group_entity->get('langcode') ?? 'en',
+      'id' => 'functional',
+      'label' => 'Functional',
+      'status' => $cookies_service_group_entity->get('status') ?? FALSE,
+      'dependencies' => $cookies_service_group_entity->get('dependencies') ?? [],
+      'weight' => $cookies_service_group_entity->get('weight') ?? 0,
+      'title' => 'Functional',
+      'details' => $cookies_service_group_entity->get('details') ?? '',
+    ])->save();
+  }
+
+  // Create new functional cookies_service and set all values
+  // (if not yet existing):
+  $cookies_service_entity = \Drupal::entityTypeManager()->getStorage('cookies_service')->load('base');
+  if ($cookies_service_entity !== NULL && \Drupal::entityTypeManager()->getStorage('cookies_service')->load('functional') === NULL) {
+    CookiesServiceEntity::create([
+      'langcode' => $cookies_service_entity->get('langcode') ?? 'en',
+      'id' => 'functional',
+      'label' => 'Required functional cookies',
+      'status' => $cookies_service_entity->get('status') ?? FALSE,
+      'dependencies' => $cookies_service_entity->get('dependencies') ?? [],
+      'group' => 'functional',
+      'info' => $cookies_service_entity->get('info') ?? [
+        'value' => 'Fallback',
+        'format' => 'full_html',
+      ],
+      'url' => $cookies_service_entity->get('url') ?? '',
+      'consentRequired' => $cookies_service_entity->get('consentRequired') ?? TRUE,
+    ])->save();
+  }
+
+  // Load all service entities which had "default" as group and set their group
+  // to 'functional':
+  $cookies_service_entities_default = \Drupal::entityTypeManager()->getStorage('cookies_service')->loadByProperties(['group' => 'default']);
+  foreach ($cookies_service_entities_default as $cookies_service_entity_default) {
+    $cookies_service_entity_default->set('group', 'functional');
+    $cookies_service_entity_default->save();
+  }
+
+  if ($cookies_service_group_entity !== NULL) {
+    // Delete the old one:
+    $cookies_service_group_entity->delete();
+  }
+
+  if ($cookies_service_entity !== NULL) {
+    // Delete the old one:
+    $cookies_service_entity->delete();
+  }
+}
+
+/**
+ * Three changes.
+ *
+ * Remap legacy "url" cookies service key, set newly added service entity
+ * variables on all existing service entities and add / remove newly added
+ * cookies text variables.
+ */
+function cookies_update_8008() {
+  // Remap legacy "url" cookies service key, set newly added service entity
+  // variables on all existing service entities:
+  $cookies_service_entities = \Drupal::entityTypeManager()->getStorage('cookies_service')->loadMultiple();
+  /**
+   * @var \Drupal\cookies\Entity\CookiesServiceEntity $cookies_service_entity
+   */
+  foreach ($cookies_service_entities as $cookies_service_entity) {
+    // Remove the old functional cookies service legacy url as it was an
+    // internal path which was obsolete anyway:
+    if ($cookies_service_entity->id() == 'functional') {
+      $cookies_service_entity->setProcessorCookiePolicyUrl('');
+      // Also change label so the message "[...] accept [serviceName] cookies
+      // [...]" is correct:
+      $cookies_service_entity->set('label', 'Required functional');
+    }
+    // Set the old url value otherwise:
+    else {
+      $cookies_service_entity->setProcessorCookiePolicyUrl($cookies_service_entity->get('url') ?? '');
+    }
+    $cookies_service_entity->setPurpose('');
+    $cookies_service_entity->setProcessor('');
+    $cookies_service_entity->setProcessorContact('');
+    $cookies_service_entity->setProcessorUrl('');
+    $cookies_service_entity->setProcessorPrivacyPolicyUrl('');
+    $cookies_service_entity->setPlaceholderMainText('This content is blocked because ' . strtolower($cookies_service_entity->label()) . ' cookies have not been accepted.');
+    $cookies_service_entity->setPlaceholderAcceptText('Only accept ' . strtolower($cookies_service_entity->label()) . ' cookies');
+    // Delete the old legacy service entity url:
+    unset($cookies_service_entity->url);
+    $cookies_service_entity->save();
+  }
+  // Add / remove newly added cookies text variables:
+  $textsConfig = \Drupal::configFactory()->getEditable('cookies.texts');
+  $textsConfig
+    ->set('processorDetailsLabel', 'Processor Company Details')
+    ->set('processorLabel', 'Company')
+    ->set('processorWebsiteUrlLabel', 'Company Website')
+    ->set('processorPrivacyPolicyUrlLabel', 'Company Privacy Policy')
+    ->set('processorCookiePolicyUrlLabel', 'Company Cookie Policy')
+    ->set('processorContactLabel', 'Data Protection Contact Details')
+    ->set('disclaimerText', 'All cookie information is subject to change by the service providers. We update this information regularly.')
+    ->set('disclaimerTextPosition', 'above')
+    ->set('placeholderAcceptAllText', 'Accept All Cookies')
+    ->clear('official_website_text')
+    // "allowAll" was never used instead "acceptAll" was used:
+    ->clear('allowAll')
+    ->save();
+}
+
+/**
+ * Removes unused "credit" config key.
+ */
+function cookies_update_8009() {
+  $config_factory = \Drupal::configFactory();
+  $config_factory->getEditable('cookies.texts')->clear('credit')->save();
+}
+
+/**
+ * Adds new translatable "officialWebsite" link text config value.
+ */
+function cookies_update_8901() {
+  $config_factory = \Drupal::configFactory();
+  $config_factory->getEditable('cookies.texts')->set('officialWebsite', 'Official website')->save();
+}

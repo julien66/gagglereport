@@ -1,0 +1,30 @@
+# modified from \Drupal\migrate\Plugin\migrate\destination\EntityFieldInstance
+id: poll_field_instance
+label: Poll entity reference field instance
+migration_tags:
+  - Drupal 7
+  - Configuration
+source:
+  source_module: poll
+  plugin: embedded_data
+  data_rows:
+    -
+      entity_type: node
+      field_name: field_poll
+      bundle: poll
+      label: poll
+      translatable: true
+  ids:
+    field_name:
+      type: string
+process:
+  entity_type: entity_type
+  field_name: field_name
+  bundle: bundle
+  label: label
+  translatable: translatable
+destination:
+  plugin: entity:field_config
+migration_dependencies:
+  required:
+    - poll_field_storage_config

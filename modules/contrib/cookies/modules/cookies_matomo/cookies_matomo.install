@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * @file
+ * Installation information for the 'Cookies Matomo' module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function cookies_matomo_install() {
+  // Load cookies_matomo module after the third-party library.
+  module_set_weight('cookies_matomo', 11);
+}
+
+/**
+ * Update service config to enforce module dependency 'cookies_matomo'.
+ */
+function cookies_matomo_update_8001() {
+  $config = \Drupal::configFactory()
+    ->getEditable('cookies.cookies_service.matomo');
+  if (!$config->isNew()) {
+    $dependencies = $config->get('dependencies');
+    $dependencies['enforced']['module'][] = 'cookies_matomo';
+    $config->set('dependencies', $dependencies)->save(TRUE);
+  }
+}

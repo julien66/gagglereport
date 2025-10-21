@@ -1,0 +1,11 @@
+default:
+  version: VERSION
+  js:
+    js/cookies_recaptcha.js: {}
+  css:
+    component:
+      css/cookies_recaptcha.css: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - cookies/cookies.lib

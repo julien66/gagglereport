@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c5fa0df1df8dcb1b9e6f8858659dfc21",
+    "content-hash": "ec8ffee4ec3a19f27173ae0206abeb23",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1243,6 +1243,136 @@
             }
         },
         {
+            "name": "drupal/comment_notify",
+            "version": "1.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/comment_notify.git",
+                "reference": "8.x-1.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/comment_notify-8.x-1.5.zip",
+                "reference": "8.x-1.5",
+                "shasum": "7a9a10f7023700a0c5342d1b7ae95f209cb8993d"
+            },
+            "require": {
+                "drupal/core": "^9 || ^10 || ^11",
+                "drupal/token": "^1.6"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.5",
+                    "datestamp": "1759250642",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Greg Knaddison (greggles)",
+                    "homepage": "https://www.drupal.org/u/greggles",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "David Valdez (gnuget)",
+                    "homepage": "https://www.drupal.org/u/gnuget",
+                    "role": "Co-maintainer"
+                },
+                {
+                    "name": "greggles",
+                    "homepage": "https://www.drupal.org/user/36762"
+                },
+                {
+                    "name": "stefanos.petrakis",
+                    "homepage": "https://www.drupal.org/user/2573064"
+                }
+            ],
+            "description": "Comment follow-up email notification for anonymous as well as registered users.",
+            "homepage": "https://drupal.org/project/comment_notify",
+            "support": {
+                "source": "https://git.drupalcode.org/project/comment_notify",
+                "issues": "https://drupal.org/project/issues/comment_notify",
+                "irc": "irc://irc.freenode.org/drupal-contribute"
+            }
+        },
+        {
+            "name": "drupal/cookies",
+            "version": "1.2.16",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/cookies.git",
+                "reference": "1.2.16"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/cookies-1.2.16.zip",
+                "reference": "1.2.16",
+                "shasum": "48000f389f2ce672c67692526aced9efd7a4630a"
+            },
+            "require": {
+                "drupal/core": "^9 || ^10 || ^11",
+                "jfeltkamp/cookiesjsr": "^1.0.12"
+            },
+            "require-dev": {
+                "drupal/asset_injector": "^2",
+                "drupal/facebook_pixel": "^2.0",
+                "drupal/google_analytics": "^4.0",
+                "drupal/google_tag": "^2.0",
+                "drupal/ivw_integration": "^2.0",
+                "drupal/matomo": "^1.0",
+                "drupal/media_entity_instagram": "^3.0",
+                "drupal/media_entity_twitter": "^2.0",
+                "drupal/recaptcha": "^3.4"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.2.16",
+                    "datestamp": "1753290602",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "anybody",
+                    "homepage": "https://www.drupal.org/user/291091"
+                },
+                {
+                    "name": "grevil",
+                    "homepage": "https://www.drupal.org/user/3668491"
+                },
+                {
+                    "name": "jfeltkamp",
+                    "homepage": "https://www.drupal.org/user/2471686"
+                },
+                {
+                    "name": "thomas.frobieter",
+                    "homepage": "https://www.drupal.org/user/409335"
+                }
+            ],
+            "description": "Cookie consent tool.",
+            "homepage": "https://www.drupal.org/project/cookies",
+            "support": {
+                "source": "http://cgit.drupalcode.org/cookies",
+                "issues": "https://www.drupal.org/project/issues/cookies"
+            }
+        },
+        {
             "name": "drupal/core",
             "version": "11.2.5",
             "source": {
@@ -1793,6 +1923,71 @@
             }
         },
         {
+            "name": "drupal/poll",
+            "version": "2.0.0-alpha5",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/poll.git",
+                "reference": "2.0.0-alpha5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/poll-2.0.0-alpha5.zip",
+                "reference": "2.0.0-alpha5",
+                "shasum": "d29077800738cd4244aa45b456eb735bbfc391a9"
+            },
+            "require": {
+                "drupal/core": "^9 || ^10 || ^11"
+            },
+            "require-dev": {
+                "drupal/devel": "^5.3",
+                "drupal/devel_generate-devel_generate": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.0-alpha5",
+                    "datestamp": "1744287698",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "adammalone",
+                    "homepage": "https://www.drupal.org/user/1295980"
+                },
+                {
+                    "name": "berdir",
+                    "homepage": "https://www.drupal.org/user/214652"
+                },
+                {
+                    "name": "bramdriesen",
+                    "homepage": "https://www.drupal.org/user/3383264"
+                },
+                {
+                    "name": "ivnish",
+                    "homepage": "https://www.drupal.org/user/3547706"
+                },
+                {
+                    "name": "mqanneh",
+                    "homepage": "https://www.drupal.org/user/2833163"
+                }
+            ],
+            "description": "Allows your site to capture votes on different topics in the form of multiple choice questions.",
+            "homepage": "https://www.drupal.org/project/poll",
+            "support": {
+                "source": "https://git.drupalcode.org/project/poll.git",
+                "issues": "https://www.drupal.org/project/issues/poll"
+            }
+        },
+        {
             "name": "drupal/rate",
             "version": "3.2.0-rc2",
             "source": {
@@ -2187,6 +2382,78 @@
             }
         },
         {
+            "name": "drupal/token",
+            "version": "1.16.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/token.git",
+                "reference": "8.x-1.16"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/token-8.x-1.16.zip",
+                "reference": "8.x-1.16",
+                "shasum": "f7ae77316ef8135068d995c09507da7517b20572"
+            },
+            "require": {
+                "drupal/core": "^9.2 || ^10 || ^11"
+            },
+            "require-dev": {
+                "drupal/book": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.16",
+                    "datestamp": "1757151197",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": ">=9"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "berdir",
+                    "homepage": "https://www.drupal.org/user/214652"
+                },
+                {
+                    "name": "dave reid",
+                    "homepage": "https://www.drupal.org/user/53892"
+                },
+                {
+                    "name": "eaton",
+                    "homepage": "https://www.drupal.org/user/16496"
+                },
+                {
+                    "name": "fago",
+                    "homepage": "https://www.drupal.org/user/16747"
+                },
+                {
+                    "name": "greggles",
+                    "homepage": "https://www.drupal.org/user/36762"
+                },
+                {
+                    "name": "mikeryan",
+                    "homepage": "https://www.drupal.org/user/4420"
+                }
+            ],
+            "description": "Provides a user interface for the Token API, some missing core tokens.",
+            "homepage": "https://www.drupal.org/project/token",
+            "support": {
+                "source": "https://git.drupalcode.org/project/token"
+            }
+        },
+        {
             "name": "drupal/votingapi",
             "version": "dev-4.0.x",
             "source": {
@@ -2252,16 +2519,16 @@
         },
         {
             "name": "drush/drush",
-            "version": "13.6.0",
+            "version": "13.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drush-ops/drush.git",
-                "reference": "570a05dce7aea9770f17306808804290764127ad"
+                "reference": "635fce5f8223bae5c39495ee5709e993127ca413"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drush-ops/drush/zipball/570a05dce7aea9770f17306808804290764127ad",
-                "reference": "570a05dce7aea9770f17306808804290764127ad",
+                "url": "https://api.github.com/repos/drush-ops/drush/zipball/635fce5f8223bae5c39495ee5709e993127ca413",
+                "reference": "635fce5f8223bae5c39495ee5709e993127ca413",
                 "shasum": ""
             },
             "require": {
@@ -2297,11 +2564,11 @@
             "require-dev": {
                 "composer/installers": "^2",
                 "cweagans/composer-patches": "~1.7.3",
-                "drupal/core-recommended": "^10.2.5 || 11.x-dev",
+                "drupal/core-recommended": "^10.3.0 || 11.x-dev",
                 "drupal/semver_example": "2.3.0",
                 "jetbrains/phpstorm-attributes": "^1.0",
                 "mglaman/phpstan-drupal": "^1.2",
-                "phpunit/phpunit": "^9 || ^10",
+                "phpunit/phpunit": "^9 || ^10 || ^11",
                 "rector/rector": "^1",
                 "squizlabs/php_codesniffer": "^3.7"
             },
@@ -2388,7 +2655,7 @@
                 "issues": "https://github.com/drush-ops/drush/issues",
                 "security": "https://github.com/drush-ops/drush/security/advisories",
                 "slack": "https://drupal.slack.com/messages/C62H9CWQM",
-                "source": "https://github.com/drush-ops/drush/tree/13.6.0"
+                "source": "https://github.com/drush-ops/drush/tree/13.6.2"
             },
             "funding": [
                 {
@@ -2396,7 +2663,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-04-22T12:14:13+00:00"
+            "time": "2025-08-04T21:21:58+00:00"
         },
         {
             "name": "egulias/email-validator",
@@ -2897,6 +3164,33 @@
                 }
             ],
             "time": "2025-03-27T12:30:47+00:00"
+        },
+        {
+            "name": "jfeltkamp/cookiesjsr",
+            "version": "1.0.13",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jfeltkamp/cookiesjsr.git",
+                "reference": "a25132aadb01975cbe77dc7746fd5cf15f06d246"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jfeltkamp/cookiesjsr/zipball/a25132aadb01975cbe77dc7746fd5cf15f06d246",
+                "reference": "a25132aadb01975cbe77dc7746fd5cf15f06d246",
+                "shasum": ""
+            },
+            "type": "drupal-library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "Cookie consent tool.",
+            "homepage": "https://github.com/jfeltkamp/cookiesjsr",
+            "support": {
+                "issues": "https://github.com/jfeltkamp/cookiesjsr/issues",
+                "source": "https://github.com/jfeltkamp/cookiesjsr.git"
+            },
+            "time": "2022-03-25T09:05:23+00:00"
         },
         {
             "name": "laravel/prompts",
@@ -7257,6 +7551,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "drupal/poll": 15,
         "drupal/rate": 5,
         "drupal/votingapi": 20
     },

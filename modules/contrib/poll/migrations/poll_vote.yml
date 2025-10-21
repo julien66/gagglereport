@@ -1,0 +1,33 @@
+id: poll_vote
+label: Poll vote
+migration_tags:
+  - Drupal 7
+  - Content
+source:
+  plugin: poll_vote
+process:
+  chid:
+    -
+      plugin: migration_lookup
+      migration: poll_choice
+      source: chid
+    -
+      plugin: skip_on_empty
+      method: row
+  pid:
+    -
+      plugin: migration_lookup
+      migration: poll_question
+      source: nid
+    -
+      plugin: skip_on_empty
+      method: row
+  uid: uid
+  hostname: hostname
+  timestamp: timestamp
+destination:
+  plugin: poll_vote
+migration_dependencies:
+  required:
+    - poll_question
+    - poll_choice

@@ -1,0 +1,18 @@
+name: Poll Devel
+type: module
+core_version_requirement: ^9 || ^10 || ^11
+description: 'Devel integration for the Poll module'
+package: Development
+
+dependencies:
+  - poll:poll
+  - devel:devel
+  - devel_generate:devel_generate
+
+tags:
+  - developer
+
+# Information added by Drupal.org packaging script on 2025-04-10
+version: '2.0.0-alpha5'
+project: 'poll'
+datestamp: 1744287710

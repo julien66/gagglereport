@@ -1,0 +1,6 @@
+entity.cookies_service_filter.collection:
+  title: 'Filter Services'
+  route_name: entity.cookies_service_filter.collection
+  description: 'Filter services where known cookies services can be selected, so that user consent is required for specific HTML-Objects.'
+  parent: cookies.overview
+  weight: 25

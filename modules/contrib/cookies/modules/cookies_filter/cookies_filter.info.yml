@@ -1,0 +1,13 @@
+name: 'COOKiES Filter (Beta)'
+type: module
+description: 'Submodule of COOKiES to provide an input filter to dynamically disable page elements loading external sources like iframes and provide a two-click solution.'
+core_version_requirement: ^9.3 || ^10 || ^11
+lifecycle: experimental
+package: 'COOKiES'
+dependencies:
+  - cookies:cookies
+
+# Information added by Drupal.org packaging script on 2025-07-23
+version: '1.2.16'
+project: 'cookies'
+datestamp: 1753262919

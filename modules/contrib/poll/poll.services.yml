@@ -1,0 +1,8 @@
+services:
+  poll.post_render_cache:
+    class: Drupal\poll\PollPostRenderCache
+    arguments: ['@entity_type.manager', '@class_resolver', '@form_builder', '@request_stack']
+
+  poll_vote.storage:
+    class: Drupal\poll\PollVoteStorage
+    arguments: ['@database', '@cache_tags.invalidator', '@current_user' ,'@request_stack']

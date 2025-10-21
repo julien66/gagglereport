@@ -1,0 +1,193 @@
+<?php
+
+/**
+ * @file
+ * Contains cookies_video.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_help().
+ */
+function cookies_video_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the cookies_ga module.
+    case 'help.page.cookies_video':
+      $output = '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Submodule of COOKiES to manage video media items (by "media" module) inside of COOKiES consent management.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function cookies_video_preprocess_field(&$variables) {
+  $formatter = $variables["element"]["#formatter"];
+  switch ($formatter) {
+    case 'oembed':
+    case 'blazy_oembed':
+    case 'blazy_media':
+      _cookies_video_media_oembed_handler($variables);
+      break;
+
+    case 'video_embed_field_colorbox':
+    case 'video_embed_field_lazyload':
+    case 'video_embed_field_thumbnail':
+    case 'video_embed_field_video':
+    case 'video_embed_field_video_url':
+      _cookies_video_video_embed_field_handler($variables);
+      break;
+
+    default:
+      // Don't do anything.
+      break;
+  }
+}
+
+/**
+ * Handling oembed and blazy_oembed field formatters.
+ *
+ * @param array $variables
+ *   Field template variables (s. cookies_video_preprocess_field()).
+ */
+function _cookies_video_media_oembed_handler(array &$variables) {
+  $formatter = $variables["element"]["#formatter"];
+  $doKo = Drupal::service('cookies.knock_out')->doKnockOut();
+  if ($doKo) {
+    foreach ($variables["items"] as &$item) {
+      switch ($formatter) {
+        case 'oembed':
+          _cookies_video_preprocess_field_item_oembed($item);
+          break;
+
+        case 'blazy_media':
+          // @todo Improve:
+          // blazy_media formatter can be applied on all media types!
+          // We don't have a really good way to identify videos only.
+          // So for now use hard-coded core media types:
+          // @see https://www.drupal.org/project/cookies/issues/3427213
+          /** @var Drupal\media\Entity\Media $media */
+          $media = $item['content']['#media'] ?? NULL;
+          if ($media && in_array($media->bundle(), ['video', 'remote_video'])) {
+            // Only handle core media types video & remote_video:
+            _cookies_video_preprocess_field_item_blazy_oembed($item);
+          }
+          break;
+
+        case 'blazy_oembed':
+          _cookies_video_preprocess_field_item_blazy_oembed($item);
+          break;
+
+        default:
+          // Don't do anything.
+        break;
+      }
+
+      // Attach library.
+      if (!isset($item["content"]["#attached"])) {
+        $item["content"]["#attached"] = ["library" => []];
+      }
+      if (!isset($item["content"]["#attached"]["library"])) {
+        $item["content"]["#attached"]["library"] = [];
+      }
+      $item["content"]["#attached"]["library"][] = 'cookies_video/cookies_media';
+    }
+  }
+}
+
+/**
+ * Handling field_item from oembed formatter.
+ */
+function _cookies_video_preprocess_field_item_oembed(&$item) {
+  // Move src to data-src and replace src by fallback.
+  $src = $item["content"]["#attributes"]["src"];
+  $item["content"]["#attributes"]["data-src"] = $src;
+  $item["content"]["#attributes"]["src"] = '';
+
+  // Set marker class.
+  if (!isset($item["content"]["#attributes"]["class"]) || !is_array($item["content"]["#attributes"]["class"])) {
+    $item["content"]["#attributes"]["class"] = [];
+  }
+  $item["content"]["#attributes"]["class"][] = 'cookies-video';
+}
+
+/**
+ * Handling field_item from blazy_oembed formatter.
+ */
+function _cookies_video_preprocess_field_item_blazy_oembed(&$item) {
+  // Hide the blazy preview by default and set marker class.
+  // This has to be done in ['#build'] for blazy to take effect:
+  $item["content"]["#build"]['#attributes']["class"][] = 'hidden';
+  $item["content"]["#build"]['#attributes']["class"][] = 'cookies-video-blazy-oembed';
+}
+
+/**
+ * Implements hook_preprocess_blazy().
+ */
+function cookies_video_preprocess_blazy(&$variables) {
+  // Blazy elements need additional blocking by COOKiES, as they already use
+  // data-src, but Blazy unblocks that itself by lazy-loading and doesn't
+  // respect COOKiES consent.
+  // So we have to add an extra layer of blocking by moving the data-src
+  // attribute to data-cookies-video-blazy-src
+  // And unblocking it in cookies_media.js
+  // See https://www.drupal.org/project/cookies/issues/3322867 for details.
+  if (!empty($variables['iframe']['#attributes']['data-src'])) {
+    $variables['iframe']['#attributes']['data-cookies-video-blazy-src'] = $variables['iframe']['#attributes']['data-src'];
+    unset($variables['iframe']['#attributes']['data-src']);
+  }
+}
+
+/**
+ * Handling videos embed with "Video Embed Field (video_embed_field)" module.
+ *
+ * @param array $variables
+ *   Field template variables (s. cookies_video_preprocess_field()).
+ *
+ * @warning Video Embed Field module is unsupported. Consider using media oembed.
+ */
+function _cookies_video_video_embed_field_handler(array &$variables) {
+  $formatter = $variables["element"]["#formatter"];
+  $doKo = Drupal::service('cookies.knock_out')->doKnockOut();
+  if ($doKo) {
+    foreach ($variables["items"] as &$item) {
+      if (!empty($item['content']['children']['#type'])
+        && $item['content']['children']['#type'] == 'video_embed_iframe'
+        && !empty($item["content"]['children']["#url"])
+      ) {
+        // We have to build the URL in attributes as video_embed_field
+        // builds src in twig and we can't simply override
+        // the twig file in our module. This workaround seems cleaner,
+        // especially as video_embed_field isn't actively maintained anymore.
+        $url = $item["content"]['children']["#url"];
+        $query = !empty($item["content"]['children']["#query"])
+          ? $item["content"]['children']["#query"] : [];
+        $fragment = $item["content"]['children']["#fragment"] ?? '';
+        $src = Url::fromUri($url, [
+          'query' => $query,
+          'fragment' => $fragment,
+          'absolute' => TRUE,
+        ]);
+        // Clear original URL to prevent iframe src loading.
+        $item["content"]['children']["#url"] = NULL;
+        // Set data-src to the original URL.
+        $item["content"]['children']["#attributes"]["data-src"] = $src->toString();
+        // Set the original source to empty.
+        $item["content"]['children']["#attributes"]["src"] = '';
+        // Set marker class:
+        $item["content"]['children']["#attributes"]["class"][] = 'cookies-video-embed-field';
+        // Attach library.
+        $item["content"]['children']["#attached"]["library"][] = 'cookies_video/cookies_video_embed_field';
+      }
+      elseif ($formatter == 'video_embed_field_lazyload') {
+        // Lazy load gets just the library.
+        $item["content"]["#attached"]["library"][] = 'cookies_video/cookies_video_embed_field';
+      }
+    }
+  }
+}

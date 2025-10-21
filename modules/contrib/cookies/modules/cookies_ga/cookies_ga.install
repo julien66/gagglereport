@@ -1,0 +1,56 @@
+<?php
+
+/**
+ * @file
+ * Installation information for the 'Cookies Google Analytics' module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function cookies_ga_install() {
+  // Load cookies_ga module after the third-party library.
+  module_set_weight('cookies_ga', 11);
+}
+
+/**
+ * Update service config to enforce module dependency 'cookies_ga'.
+ */
+function cookies_ga_update_8001() {
+  $config = \Drupal::configFactory()
+    ->getEditable('cookies.cookies_service.analytics');
+  if (!$config->isNew()) {
+    $dependencies = $config->get('dependencies');
+    $dependencies['enforced']['module'][] = 'cookies_ga';
+    $config->set('dependencies', $dependencies)->save(TRUE);
+  }
+}
+
+/**
+ * IMPORTANT!
+ *
+ * If you are still using the deprecated Googalytics (ga) module, instead of
+ * the supported Google Analytics (google_analytics) module, this update hook
+ * will UNINSTALL "cookies_ga"! If you are already using "google_analytics",
+ * nothing will change.
+ *
+ * Please consider switching to Google Analytics
+ * (google_analytics) module ASAP, otherwise you will run into this issue:
+ * https://www.drupal.org/project/cookies/issues/3390680 and Googalytics (ga)
+ * will NOT be Cookie-protected anymore! To keep support for Googalytics (ga)
+ * downgrade to COOKiES <= 1.2.4 as temporary fix. We suggest
+ * switching to google_analytics instead, uninstall ga and re-run the update
+ * (without executing it now). Another alternative is switching to google_tag
+ * with cookies_gtag support!
+ */
+function cookies_ga_update_8002() {
+  if (\Drupal::moduleHandler()->moduleExists('ga')) {
+    // The ga module is no more supported by cookies_ga and leads to ERROR, see
+    // https://www.drupal.org/i/3390680:
+    \Drupal::service('module_installer')->uninstall(['cookies_ga']);
+    return t('Uninstalled cookies_ga submodule, as Googalytics (ga) is deprecated and no more supported!');
+  }
+  else {
+    return t('Nothing changed, as the deprecated Googalytics (ga) module is not in use here.');
+  }
+}

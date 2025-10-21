@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: marketing
+label: 'Marketing'
+weight: 20
+title: 'Marketing'
+details: 'Customer communication and marketing tools.'

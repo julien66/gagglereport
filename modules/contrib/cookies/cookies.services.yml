@@ -1,0 +1,10 @@
+services:
+  logger.channel.cookies:
+    parent: logger.channel_base
+    arguments: ['cookies']
+  cookies.config:
+    class: Drupal\cookies\Services\CookiesConfigService
+    arguments: ['@entity_type.manager', '@config.factory', '@language_manager', '@library.discovery', '@logger.channel.cookies', '@current_user']
+  cookies.knock_out:
+    class: Drupal\cookies\CookiesKnockOutService
+    arguments: ['@entity_type.manager', '@theme.manager']

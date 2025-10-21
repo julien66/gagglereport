@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - cookies_video
+id: video
+label: 'Video provided by YouTube, Vimeo'
+group: video
+weight: 0
+info:
+  format: 'full_html'
+  value: ''
+consentRequired: true
+placeholderMainText: 'This content is blocked because Video cookies have not been accepted.'
+placeholderAcceptText: 'Only accept Video cookies'
+purpose: ''
+processor: ''
+processorContact: ''
+processorUrl: ''
+processorPrivacyPolicyUrl: ''
+processorCookiePolicyUrl: 'https://policies.google.com/privacy'

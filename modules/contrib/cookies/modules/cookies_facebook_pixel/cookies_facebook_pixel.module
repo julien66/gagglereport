@@ -1,0 +1,75 @@
+<?php
+
+/**
+ * @file
+ * Contains cookies_facebook_pixel.module.
+ */
+
+use Drupal\cookies\Constants\CookiesConstants;
+use Drupal\Core\Asset\AttachedAssetsInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Template\Attribute;
+
+/**
+ * Implements hook_help().
+ */
+function cookies_facebook_pixel_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the cookies_facebook_pixel module.
+    case 'help.page.cookies_facebook_pixel':
+      $output = '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Submodule of COOKiES to manage Facebook Pixel implemented by facebook_pixel module.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function cookies_facebook_pixel_page_attachments(&$page) {
+  $doKo = Drupal::service('cookies.knock_out')->doKnockOut();
+
+  // Knock-Out supporting the module "Facebook Pixel (facebook_pixel)".
+  if ($doKo && isset($page["#attached"]["html_head"])) {
+    foreach ($page["#attached"]["html_head"] as $key => $head_tag) {
+      $scripts = [
+        'facebook_tracking_pixel_script',
+      ];
+      foreach ($scripts as $script) {
+        if (in_array($script, $head_tag)) {
+          $attr = (isset($head_tag[0]['#attributes'])) ? $head_tag[0]['#attributes'] : [];
+          $attr = array_merge(
+            $attr,
+            [
+              'type' => CookiesConstants::COOKIES_SCRIPT_KO_TYPE,
+              'id' => "cookies_{$script}",
+              'data-cookieconsent' => 'facebook_pixel',
+            ],
+          );
+          $page["#attached"]["html_head"][$key][0]['#attributes'] = new Attribute($attr);
+          break;
+        }
+      }
+    }
+    $page["#attached"]["library"][] = 'cookies_facebook_pixel/facebook_pixel';
+  }
+}
+
+/**
+ * Implements hook_js_alter().
+ */
+function cookies_facebook_pixel_js_alter(array &$javascript, AttachedAssetsInterface $assets) {
+  $doKo = Drupal::service('cookies.knock_out')->doKnockOut();
+  if ($doKo) {
+    $modulePath = \Drupal::service('module_handler')->getModule('facebook_pixel')->getPath();
+    $script = $modulePath . '/js/facebook_pixel.js';
+    if (isset($javascript[$script])) {
+      $javascript[$script]['preprocess'] = FALSE;
+      $javascript[$script]['attributes']['type'] = CookiesConstants::COOKIES_SCRIPT_KO_TYPE;
+      $javascript[$script]['attributes']['id'] = 'facebook_tracking_pixel_script';
+      $javascript[$script]['attributes']['data-cookieconsent'] = 'facebook_pixel';
+    }
+  }
+}

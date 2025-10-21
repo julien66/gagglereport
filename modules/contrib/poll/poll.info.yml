@@ -1,0 +1,17 @@
+name: Poll
+type: module
+core_version_requirement: ^9 || ^10 || ^11
+description: 'Allows your site to capture votes on different topics in the form of multiple choice questions.'
+package: Other
+configure: poll.settings
+dependencies:
+  - drupal:field
+  - drupal:node
+  - drupal:options
+  - drupal:views
+  - drupal:user
+
+# Information added by Drupal.org packaging script on 2025-04-10
+version: '2.0.0-alpha5'
+project: 'poll'
+datestamp: 1744287710

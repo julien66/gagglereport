@@ -1,0 +1,47 @@
+<?php
+
+/**
+ * @file
+ * Contains cookies_ga.module.
+ */
+
+use Drupal\Core\Asset\AttachedAssetsInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function cookies_twitter_media_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the cookies_ga module.
+    case 'help.page.cookies_twitter':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Submodule of COOKiES to manage Twitter media items (by "media_entity_twitter" module) inside of COOKiES consent management.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function cookies_twitter_media_page_attachments(&$page) {
+  $doKo = Drupal::service('cookies.knock_out')->doKnockOut();
+  if ($doKo) {
+    $page["#attached"]["library"][] = 'cookies_twitter_media/default';
+  }
+}
+
+/**
+ * Implements hook_js_alter().
+ *
+ * Remove Twitter JS library. Will be added in js/cookies_twitter_media.js.
+ */
+function cookies_twitter_media_js_alter(&$javascript, AttachedAssetsInterface $assets) {
+  $doKo = Drupal::service('cookies.knock_out')->doKnockOut();
+  if ($doKo && isset($javascript['//platform.twitter.com/widgets.js'])) {
+    unset($javascript['//platform.twitter.com/widgets.js']);
+  }
+}

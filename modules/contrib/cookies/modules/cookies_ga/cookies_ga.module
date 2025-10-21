@@ -1,0 +1,79 @@
+<?php
+
+/**
+ * @file
+ * Contains cookies_ga.module.
+ */
+
+use Drupal\cookies\Constants\CookiesConstants;
+use Drupal\Core\Asset\AttachedAssetsInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function cookies_ga_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the cookies_ga module.
+    case 'help.page.cookies_ga':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Submodule of cookies to manage Google Analytics implemented by so named module.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function cookies_ga_page_attachments(array &$attachments) {
+  $doKo = Drupal::service('cookies.knock_out')->doKnockOut();
+  if ($doKo && !empty($attachments['#attached']['html_head'])) {
+    $scripts = [
+      'google_analytics_tracking_script',
+      'google_analytics_tracking_file',
+    ];
+    foreach ($attachments['#attached']['html_head'] as &$head_tag) {
+      if (in_array($head_tag[1], $scripts)) {
+        $attr = (isset($head_tag[0]['#attributes'])) ? $head_tag[0]['#attributes'] : [];
+        $attr = array_merge(
+          $attr,
+          [
+            'type' => CookiesConstants::COOKIES_SCRIPT_KO_TYPE,
+            'id' => 'cookies_ga_' . $head_tag[1],
+            'data-cookieconsent' => 'analytics',
+          ],
+        );
+        $head_tag[0]['#attributes'] = $attr;
+        break;
+      }
+    }
+    $attachments['#attached']['library'][] = 'cookies_ga/analytics';
+  }
+}
+
+/**
+ * Implements hook_js_alter().
+ *
+ * Disable analytics.js on page load.
+ */
+function cookies_ga_js_alter(&$javascript, AttachedAssetsInterface $assets) {
+  $doKo = Drupal::service('cookies.knock_out')->doKnockOut();
+  if ($doKo) {
+    $module_path = \Drupal::service('extension.list.module')->getPath('google_analytics');
+    $scripts = [
+      'ga' => $module_path . '/js/google_analytics.js',
+      'ga_debug' => $module_path . '/js/google_analytics.debug.js',
+    ];
+    foreach ($scripts as $key => $script) {
+      if (isset($javascript[$script])) {
+        $javascript[$script]['preprocess'] = FALSE;
+        $javascript[$script]['attributes']['type'] = CookiesConstants::COOKIES_SCRIPT_KO_TYPE;
+        $javascript[$script]['attributes']['id'] = 'cookies_ga_' . $key;
+        $javascript[$script]['attributes']['data-cookieconsent'] = 'analytics';
+      }
+    }
+  }
+}

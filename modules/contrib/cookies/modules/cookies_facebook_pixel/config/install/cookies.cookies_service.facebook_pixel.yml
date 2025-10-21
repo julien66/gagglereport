@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - cookies_facebook_pixel
+id: facebook_pixel
+label: 'Facebook Pixel'
+group: tracking
+weight: 0
+info:
+  format: 'full_html'
+  value: ''
+consentRequired: true
+placeholderMainText: 'This content is blocked because Facebook Pixel cookies have not been accepted.'
+placeholderAcceptText: 'Only accept Facebook Pixel cookies'
+purpose: ''
+processor: ''
+processorContact: ''
+processorUrl: ''
+processorPrivacyPolicyUrl: ''
+processorCookiePolicyUrl: 'https://www.facebook.com/policies/cookies'

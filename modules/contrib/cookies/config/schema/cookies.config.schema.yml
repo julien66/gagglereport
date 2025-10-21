@@ -1,0 +1,58 @@
+cookies.config:
+  type: config_object
+  label: 'COOKiES config'
+  mapping:
+    cookie_name:
+      type: string
+      label: 'Name'
+    cookie_expires:
+      type: integer
+      label: 'Expiration'
+    cookie_domain:
+      type: string
+      label: 'Domain'
+    cookie_secure:
+      type: boolean
+      label: 'Secure mode'
+    cookie_same_site:
+      type: string
+      label: 'SameSite'
+    open_settings_hash:
+      type: string
+      label: 'URL hash'
+    show_deny_all:
+      type: boolean
+      label: 'Show "Deny All" button'
+    deny_all_on_layer_close:
+      type: boolean
+      label: 'Deny all when using close button'
+    settings_as_link:
+      type: boolean
+      label: 'Display "Settings" as Link'
+    group_consent:
+      type: boolean
+      label: 'Group consent'
+    cookie_docs:
+      type: boolean
+      label: 'Display "cookie documentation" links.'
+    lib_load_from_cdn:
+      type: boolean
+      label: 'Load Cookies JSR from CDN.'
+    lib_scroll_limit:
+      type: integer
+      label: 'Scroll limit (px)'
+    use_default_styles:
+      type: boolean
+      label: 'Use original Cookies JSR layout.'
+    use_callback:
+      type: boolean
+      label: 'Use callback'
+    callback_method:
+      type: string
+      label: 'Callback method'
+    callback_url:
+      type: path
+      label: 'Callback URL'
+    store_auth_user_consent:
+      type: boolean
+      label: 'Stores the user consent'

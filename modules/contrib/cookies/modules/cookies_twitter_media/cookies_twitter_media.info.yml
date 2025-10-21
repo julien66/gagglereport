@@ -1,0 +1,19 @@
+name: 'COOKiES Twitter Media'
+type: module
+description: 'Submodule of COOKiES to manage Twitter media items (by "media_entity_twitter" module) inside of COOKiES consent management.'
+core_version_requirement: ^9 || ^10 || ^11
+package: 'COOKiES'
+dependencies:
+  - cookies:cookies
+  - media_entity_twitter:media_entity_twitter
+
+libraries:
+  - cookies_twitter_media/default
+
+libraries-override:
+  media_entity_twitter/twttr.widgets: false
+
+# Information added by Drupal.org packaging script on 2025-07-23
+version: '1.2.16'
+project: 'cookies'
+datestamp: 1753262919

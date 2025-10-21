@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * @file
+ * Installation information for the 'Cookies Video' module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function cookies_video_install() {
+  // Load module after other third-party module.
+  module_set_weight('cookies_video', 11);
+}
+
+/**
+ * Update service config to enforce module dependency 'cookies_video'.
+ */
+function cookies_video_update_8001() {
+  $config = \Drupal::configFactory()
+    ->getEditable('cookies.cookies_service.video');
+  if (!$config->isNew()) {
+    $dependencies = $config->get('dependencies');
+    $dependencies['enforced']['module'][] = 'cookies_video';
+    $config->set('dependencies', $dependencies)->save(TRUE);
+  }
+}

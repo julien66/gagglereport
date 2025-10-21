@@ -1,0 +1,22 @@
+entity.poll.canonical:
+  route_name: entity.poll.canonical
+  base_route: entity.poll.canonical
+  title: View
+entity.poll.edit_form:
+  route_name: entity.poll.edit_form
+  base_route: entity.poll.canonical
+  title: Edit
+entity.poll.delete_form:
+  route_name: entity.poll.delete_form
+  base_route: entity.poll.canonical
+  title: Delete
+  weight: 8
+poll.poll_overview:
+  route_name: poll.poll_list
+  base_route: system.admin_content
+  title: 'Polls'
+  description: 'Manage polls for your site.'
+poll.settings:
+  route_name: poll.settings
+  base_route: poll.settings
+  title: Poll settings

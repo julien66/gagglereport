@@ -1,0 +1,25 @@
+id: poll_choice
+label: Poll choice
+migration_tags:
+  - Drupal 7
+  - Content
+source:
+  plugin: poll_choice
+process:
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: "und"
+  choice: chtext
+  id: chid
+  bundle:
+    plugin: default_value
+    default_value: poll
+  deleted:
+    plugin: default_value
+    default_value: 0
+destination:
+  plugin: entity:poll_choice
+migration_dependencies:
+  optional:
+    - language

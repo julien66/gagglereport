@@ -1,0 +1,62 @@
+poll.poll_list:
+  path: '/admin/content/poll'
+  defaults:
+    _entity_list: 'poll'
+    _title: 'Polls'
+  requirements:
+    _permission: 'administer polls'
+
+poll.poll_add:
+  path: '/poll/add'
+  defaults:
+    _entity_form: 'poll.default'
+    _title: 'Add poll'
+  options:
+    _admin_route: TRUE
+  requirements:
+    _entity_create_access: 'poll'
+
+entity.poll.edit_form:
+  path: '/poll/{poll}/edit'
+  options:
+    _admin_route: TRUE
+  defaults:
+    _entity_form: 'poll.edit'
+  requirements:
+    _entity_access: 'poll.update'
+
+entity.poll.delete_form:
+  path: '/poll/{poll}/delete'
+  defaults:
+    _entity_form: 'poll.delete'
+    _title: 'Delete form'
+  requirements:
+    _entity_access: 'poll.delete'
+
+entity.poll.canonical:
+  path: '/poll/{poll}'
+  defaults:
+    _entity_view: 'poll'
+    _title_callback: '\Drupal\poll\Controller\PollController::pollTitle'
+  requirements:
+    _entity_access: 'poll.view'
+
+poll.poll_vote_delete:
+  path: '/poll/{poll}/delete/vote/{user}'
+  options:
+    _admin_route: TRUE
+  defaults:
+    _entity_form: 'poll.delete_vote'
+    _title: 'Delete vote'
+  requirements:
+    # @todo Add custom access check to verify that user is allowed to delete
+    #   the vote of that user.
+    _permission: 'access polls'
+
+poll.settings:
+  path: '/admin/config/content/poll'
+  defaults:
+    _form: '\Drupal\poll\Form\PollSettingsForm'
+    _title: 'Poll settings'
+  requirements:
+    _permission: 'administer polls'

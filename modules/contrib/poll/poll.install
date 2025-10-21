@@ -1,0 +1,385 @@
+<?php
+
+/**
+ * @file
+ * Install, update, and uninstall functions for the Poll module.
+ */
+
+use Drupal\Core\Database\Database;
+use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\poll\Entity\Poll;
+use Drupal\poll\Entity\PollChoice;
+use Drupal\poll\PollInterface;
+
+/**
+ * Implements hook_schema().
+ */
+function poll_schema() {
+  $schema['poll_vote'] = [
+    'description' => 'Stores per-{users} votes for each {poll}.',
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'description' => "The {users}'s vote id.",
+      ],
+      'chid' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'description' => "The {users}'s vote for this poll.",
+      ],
+      'pid' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'description' => 'The {poll} entity this vote is for.',
+      ],
+      'uid' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'The {users}.uid this vote is from unless the voter was anonymous.',
+      ],
+      'hostname' => [
+        'type' => 'varchar',
+        'length' => 128,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'The IP address this vote is from unless the voter was logged in.',
+      ],
+      'timestamp' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'The timestamp of the vote creation.',
+      ],
+    ],
+    'primary key' => ['id'],
+    'foreign keys' => [
+      'poll_entity' => [
+        'table' => 'poll',
+        'columns' => ['pid' => 'pid'],
+      ],
+      'voter' => [
+        'table' => 'users',
+        'columns' => ['uid' => 'uid'],
+      ],
+    ],
+    'indexes' => [
+      'chid' => ['chid'],
+      'hostname' => ['hostname'],
+      'uid' => ['uid'],
+    ],
+  ];
+
+  return $schema;
+}
+
+/**
+ * Convert choices to a separate entity type.
+ */
+function poll_update_8001() {
+  // Create the entity type.
+  \Drupal::entityTypeManager()->clearCachedDefinitions();
+  // Don't update if the entity type already exists.
+  if (\Drupal::entityDefinitionUpdateManager()->getEntityType('poll_choice')) {
+    return;
+  }
+  $poll_choice = \Drupal::entityTypeManager()->getDefinition('poll_choice');
+  \Drupal::entityDefinitionUpdateManager()->installEntityType($poll_choice);
+
+  // Migrate the data to the new entity type.
+  $result = \Drupal::database()->query('SELECT * FROM {poll__choice}');
+  foreach ($result as $row) {
+    $choice = PollChoice::create([
+      'langcode' => $row->langcode,
+      'id' => $row->choice_chid,
+      'choice' => $row->choice_choice,
+    ]);
+    $choice->enforceIsNew(TRUE);
+
+    $choice->setChoice($row->choice_choice);
+    $choice->save();
+  }
+
+  $target_id_schema = [
+    'description' => 'The ID of the target entity.',
+    'type' => 'int',
+    'unsigned' => TRUE,
+    'not null' => TRUE,
+  ];
+
+  // Convert the choice reference table.
+  $schema = \Drupal::database()->schema();
+  $schema->dropField('poll__choice', 'choice_choice');
+  $schema->dropField('poll__choice', 'choice_vote');
+  $schema->changeField('poll__choice', 'choice_chid', 'choice_target_id', $target_id_schema);
+  $schema->addIndex('poll__choice', 'choice_target_id', ['choice_target_id'], ['fields' => ['choice_target_id' => $target_id_schema]]);
+
+  // Update the field storage repository.
+  \Drupal::service('entity_field.manager')->clearCachedFieldDefinitions();
+  $storage_definition = \Drupal::service('entity_field.manager')->getFieldStorageDefinitions('poll')['choice'];
+  \Drupal::service('entity.last_installed_schema.repository')->setLastInstalledFieldStorageDefinition($storage_definition);
+
+  // Update the stored field schema.
+  // @todo There has to be a better way to do this.
+  $field_schema = \Drupal::keyValue('entity.storage_schema.sql')->get('poll.field_schema_data.choice');
+  unset($field_schema['poll__choice']['fields']['choice_chid']);
+  unset($field_schema['poll__choice']['fields']['choice_choice']);
+  unset($field_schema['poll__choice']['fields']['choice_vote']);
+  unset($field_schema['poll__choice']['indexes']['choice_chid']);
+  $field_schema['poll__choice']['fields']['choice_target_id'] = $target_id_schema;
+  $field_schema['poll__choice']['indexes']['choice_target_id'] = ['choice_target_id'];
+  \Drupal::keyValue('entity.storage_schema.sql')->set('poll.field_schema_data.choice', $field_schema);
+}
+
+/**
+ * Update poll entity with new auto_submit option.
+ */
+function poll_update_8002() {
+  $field_storage_definition = BaseFieldDefinition::create('boolean')
+    ->setLabel(t('Auto submit voting form'))
+    ->setDescription(t('If enabled the voting form will submit as soon as a choice is selected.'))
+    ->setDefaultValue(0)
+    ->setDisplayOptions('form', [
+      'type' => 'boolean_checkbox',
+      'settings' => [
+        'display_label' => TRUE,
+      ],
+      'weight' => 3,
+    ])
+    ->setDisplayConfigurable('form', TRUE)
+    ->setInitialValue(0);
+
+  \Drupal::entityDefinitionUpdateManager()
+    ->installFieldStorageDefinition('auto_submit', 'poll', 'poll', $field_storage_definition);
+}
+
+/**
+ * Update the poll entity with the new "order by" option.
+ */
+function poll_update_8003() {
+  $field_storage_definition = BaseFieldDefinition::create('list_string')
+    ->setLabel(t('Order results'))
+    ->setRequired(TRUE)
+    ->setSettings([
+      'allowed_values' => [
+        PollInterface::VOTES_ORDER_WEIGHT => 'By weight (default)',
+        PollInterface::VOTES_ORDER_COUNT_ASC => 'By votes count (ascending)',
+        PollInterface::VOTES_ORDER_COUNT_DESC => 'By votes count (descending)',
+      ],
+    ])
+    ->setDefaultValue(PollInterface::VOTES_ORDER_WEIGHT)
+    ->setDisplayOptions('form', [
+      'type' => 'options_select',
+      'weight' => 3,
+    ])
+    ->setDisplayConfigurable('form', TRUE)
+    ->setInitialValue(PollInterface::VOTES_ORDER_WEIGHT);
+
+  \Drupal::entityDefinitionUpdateManager()
+    ->installFieldStorageDefinition('order_results', 'poll', 'poll', $field_storage_definition);
+}
+
+/**
+ * Update poll entity with new active option.
+ */
+function poll_update_8004() {
+  $field_storage_definition = BaseFieldDefinition::create('boolean')
+    ->setLabel(t('Active'))
+    ->setDescription(t('A flag indicating whether the poll is active.'))
+    ->setDefaultValue(1)
+    ->setDisplayOptions('form', [
+      'type' => 'boolean_checkbox',
+      'settings' => [
+        'display_label' => TRUE,
+      ],
+      'weight' => -5,
+    ])
+    ->setDisplayConfigurable('form', TRUE);
+
+  \Drupal::entityDefinitionUpdateManager()
+    ->installFieldStorageDefinition('active', 'poll', 'poll', $field_storage_definition);
+}
+
+/**
+ * Update all existing polls.
+ *
+ * Note that all existing polls will be set to published by default.
+ */
+function poll_update_8005(&$sandbox) {
+  if (!isset($sandbox['total'])) {
+    $polls = \Drupal::entityQuery('poll')
+      ->accessCheck(FALSE)
+      ->execute();
+    $sandbox['total'] = count($polls);
+    $sandbox['current'] = 0;
+
+    if (empty($sandbox['total'])) {
+      $sandbox['#finished'] = 1;
+      return;
+    }
+  }
+
+  $polls_per_batch = 25;
+  $poll_ids = \Drupal::entityQuery('poll')
+    ->accessCheck(FALSE)
+    ->range($sandbox['current'], $polls_per_batch)
+    ->execute();
+  if (empty($poll_ids)) {
+    $sandbox['#finished'] = 1;
+    return;
+  }
+
+  foreach ($poll_ids as $poll_id) {
+    $poll = Poll::load($poll_id);
+
+    // Copy over the value from what is now published to the new Active field.
+    $poll->set('active', $poll->get('status')->value);
+    // Set default to active.
+    $poll->set('status', TRUE);
+
+    $poll->save();
+    $sandbox['current']++;
+  }
+
+  \Drupal::messenger()
+    ->addMessage($sandbox['current'] . ' polls processed.');
+
+  if ($sandbox['current'] >= $sandbox['total']) {
+    $sandbox['#finished'] = 1;
+  }
+  else {
+    $sandbox['#finished'] = ($sandbox['current'] / $sandbox['total']);
+  }
+}
+
+/**
+ * Extend poll choices more than 255 characters.
+ */
+function poll_update_8006() {
+  $connection = Database::getConnection();
+  $entity_definition_update_manager = Drupal::entityDefinitionUpdateManager();
+  $entity_type_id = 'poll_choice';
+
+  // Check if we have updates for entity type.
+  if ($entity_definition_update_manager->needsUpdates()) {
+    $changes = $entity_definition_update_manager->getChangeSummary();
+    if (array_key_exists($entity_type_id, $changes)) {
+      // Set tables to update.
+      $tables_to_update = [
+        $entity_type_id . '_field_data',
+      ];
+
+      $tables_data = [];
+      // Copy content from entity tables.
+      foreach ($tables_to_update as $table_to_update) {
+        $tables_data[$table_to_update] = $connection->select($table_to_update)
+          ->fields($table_to_update)
+          ->execute()->fetchAll();
+        $connection->truncate($table_to_update)->execute();
+      }
+
+      // Apply updates.
+      $entity_field_manager = \Drupal::service('entity_field.manager');
+      $entity_field_manager->clearCachedFieldDefinitions();
+      $storage_definitions = $entity_field_manager->getFieldStorageDefinitions($entity_type_id);
+      if ($storage_definitions['choice']) {
+        $entity_definition_update_manager->updateFieldStorageDefinition($storage_definitions['choice']);
+      }
+
+      // Insert content into updated entity tables.
+      foreach ($tables_data as $table_name => $table_data) {
+        foreach ($table_data as $result) {
+          $data = (array) $result;
+          // Save the information in the table.
+          $connection->insert($table_name)
+            ->fields($data)
+            ->execute();
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Add unique id to votes and add setting for multiple votes per IP.
+ */
+function poll_update_8007() {
+  $schema = \Drupal::database()->schema();
+  if (!$schema->fieldExists('poll_vote', 'id')) {
+    $schema->dropPrimaryKey('poll_vote');
+
+    $target_id_schema = [
+      'type' => 'serial',
+      'unsigned' => TRUE,
+      'not null' => TRUE,
+      'description' => "The {users}'s vote id.",
+    ];
+    $schema->addField('poll_vote', 'id', $target_id_schema, ['primary key' => ['id']]);
+  }
+
+  $field_definition = \Drupal::entityDefinitionUpdateManager()->getFieldStorageDefinition('anonymous_vote_restriction', 'poll');
+  if (empty($field_definition)) {
+    // Add new base field 'anonymous_vote_restriction'.
+    $anonymous_vote_restriction = BaseFieldDefinition::create('list_string')
+      ->setLabel(t('Anonymous vote restriction'))
+      ->setSetting('allowed_values', [
+        'ip' => t('One vote per IP'),
+        'session' => t('One vote per session'),
+        'unlimited' => t('Unlimited votes'),
+      ])
+      ->setDefaultValue('ip')
+      ->setInitialValue('ip');
+
+    \Drupal::entityDefinitionUpdateManager()
+      ->installFieldStorageDefinition('anonymous_vote_restriction', 'poll', 'poll', $anonymous_vote_restriction);
+  }
+}
+
+/**
+ * Re run updated poll_update_8007.
+ */
+function poll_update_8008() {
+  poll_update_8007();
+}
+
+/**
+ * Add status entity_key if needed.
+ */
+function poll_update_8009() {
+  $entity_definition_update_manager = \Drupal::entityDefinitionUpdateManager();
+  $entity_type_id = 'poll';
+
+  // Check if we have updates for entity type.
+  if ($entity_definition_update_manager->needsUpdates()) {
+    $changes = $entity_definition_update_manager->getChangeSummary();
+    if (array_key_exists($entity_type_id, $changes)) {
+      $entity_type = $entity_definition_update_manager->getEntityType($entity_type_id);
+      $entity_keys = $entity_type->get('entity_keys');
+      $entity_keys += [
+        'published' => 'status',
+      ];
+      $entity_type->set('entity_keys', $entity_keys);
+      $entity_definition_update_manager->updateEntityType($entity_type);
+
+      $status = BaseFieldDefinition::create('boolean')
+        ->setLabel(t('Published'))
+        ->setDescription(t('A flag indicating whether the poll is published.'))
+        ->setDefaultValue(1)
+        ->setDisplayOptions('form', [
+          'type' => 'boolean_checkbox',
+          'settings' => [
+            'display_label' => TRUE,
+          ],
+          'weight' => -5,
+        ])
+        ->setDisplayConfigurable('form', TRUE);
+
+      $entity_definition_update_manager->installFieldStorageDefinition('status', $entity_type_id, 'poll', $status);
+    }
+  }
+}

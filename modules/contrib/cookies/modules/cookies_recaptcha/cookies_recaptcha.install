@@ -1,0 +1,44 @@
+<?php
+
+/**
+ * @file
+ * Installation information for the 'Cookies reCAPTCHA' module.
+ */
+
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_install().
+ */
+function cookies_recaptcha_install() {
+  // To ensure that you con use the same hooks
+  // Execute hooks of this module after hooks from other modules (especially
+  // from the third-party module) you want to support.
+  module_set_weight('cookies_recaptcha', 11);
+
+  \Drupal::messenger()->addWarning(t('You installed COOKiES reCAPTCHA. To enable the service please go to the <a href="@link">Captcha admin settings</a> and select "reCAPTCHA (from module cookies_recaptcha)" as "Default challenge type".',
+  ['@link' => Url::fromRoute('captcha_settings')->toString()]
+  ));
+}
+
+/**
+ * Update service config to enforce module dependency 'cookies_recaptcha'.
+ */
+function cookies_recaptcha_update_8001() {
+  $config = \Drupal::configFactory()
+    ->getEditable('cookies.cookies_service.recaptcha');
+  if (!$config->isNew()) {
+    $dependencies = $config->get('dependencies');
+    $dependencies['enforced']['module'][] = 'cookies_recaptcha';
+    $config->set('dependencies', $dependencies)->save(TRUE);
+  }
+}
+
+/**
+ * The "cookies_recaptcha" module requires drupal/recaptcha ">=8.x-3.4" to work.
+ *
+ * Please update the module to the latest version using:
+ * `composer require 'drupal/recaptcha:^3.4'`.
+ */
+function cookies_recaptcha_update_8002() {
+}
