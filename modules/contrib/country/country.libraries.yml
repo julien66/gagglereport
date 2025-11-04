@@ -1,0 +1,6 @@
+country.country-icon:
+  css:
+    theme:
+      css/country.icon.theme.css: {}
+  dependencies:
+    - field_ui/drupal.field_ui.manage_fields

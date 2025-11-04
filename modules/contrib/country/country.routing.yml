@@ -1,0 +1,7 @@
+country.autocomplete:
+  path: '/country/autocomplete/{entity_type}/{bundle}/{field_name}'
+  defaults:
+    _controller: '\Drupal\country\Controller\CountryAutocompleteController::autocomplete'
+  requirements:
+    # This is a autocomplete controller,hence no access check is needed.
+    _access: 'TRUE'

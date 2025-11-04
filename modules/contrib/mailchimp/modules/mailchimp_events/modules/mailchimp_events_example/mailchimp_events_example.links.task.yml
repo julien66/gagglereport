@@ -1,0 +1,10 @@
+# Mailchimp Event routing definition
+mailchimp_events_example.add_mailchimp_event_tab:
+  route_name: mailchimp_events_example.add_mailchimp_event
+  base_route: mailchimp_events_example.list_mailchimp_events_for_member
+  title: 'Create an event'
+
+mailchimp_events_example.list_mailchimp_events_for_member_tab:
+  route_name: mailchimp_events_example.list_mailchimp_events_for_member
+  base_route: mailchimp_events_example.list_mailchimp_events_for_member
+  title: 'List recent events'

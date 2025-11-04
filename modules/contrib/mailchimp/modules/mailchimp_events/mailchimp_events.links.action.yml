@@ -1,0 +1,5 @@
+entity.mailchimp_event.add_form:
+  route_name: entity.mailchimp_event.add_form
+  title: 'Add Event Type'
+  appears_on:
+    - entity.mailchimp_event.collection

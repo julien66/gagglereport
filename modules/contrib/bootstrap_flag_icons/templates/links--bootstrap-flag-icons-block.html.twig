@@ -1,0 +1,45 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a set of links.
+ *
+ * Available variables:
+ * - attributes: Attributes for the UL containing the list of links.
+ * - links: Links to be output.
+ *   Each link will have the following elements:
+ *   - title: The link text.
+ *   - url: The link URL. If omitted, the 'title' is shown as a plain text
+ *     item in the links list. If 'url' is supplied, the entire link is passed
+ *     to l() as its $options parameter.
+ *   - attributes: (optional) HTML attributes for the anchor, or for the <span>
+ *     tag if no 'url' is supplied.
+ * - languages: languages to be output.
+ *
+ * @see template_preprocess_links()
+ * @see bootstrap_flag_icons_preprocess_links__bootstrap_flag_icons_block()
+ *
+ * @ingroup themeable
+ */
+#}
+{% if languages -%}
+  <div{{ attributes }}>
+    <button class="btn btn-default dropdown-toggle" type="button" data-bs-toggle="dropdown" data-toggle="dropdown" aria-expanded="false">
+      <span class="lang-sm" lang="{{ current_language }}">
+        {%- if languages[current_language] is defined -%}
+          <i class="fi fil-{{ current_language }}"></i>
+        {%- else -%}
+          <i class="bi bi-globe2"></i>
+        {%- endif -%}
+      </span>
+    </button>
+    <ul class="dropdown-menu{% if key == current_language %} active{% endif %}" role="menu">
+      {%- for key, language in languages -%}
+        <li>
+          <a class="dropdown-item" href="{{ language.url.toString }}">
+            <i class="fi fil-{{ key }}" lang="{{ key }}"> {{ language.title }}</i>
+          </a>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+{%- endif %}

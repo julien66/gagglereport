@@ -1,0 +1,24 @@
+{
+    "name": "drupal/bootstrap_flag_icons",
+    "description": "Provides a Bootstrap 5 dropdown button to switch between available languages",
+    "type": "drupal-module",
+    "minimum-stability": "dev",
+    "keywords": ["Drupal", "bootstrap", "flag", "icon"],
+    "homepage": "https://www.drupal.org/project/bootstrap_flag_icons",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/bootstrap_flag_icons",
+        "source": "https://git.drupalcode.org/project/bootstrap_flag_icons"
+    },
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "NGUYEN Bao",
+            "email": "n.bao@yahoo.com",
+            "homepage": "https://www.drupal.org/u/lazzyvn",
+            "role": "Maintainer"
+        }
+    ],
+    "require": {
+        "drupal/core": "^9 || ^10 || ^11 || ^12"
+    }
+}

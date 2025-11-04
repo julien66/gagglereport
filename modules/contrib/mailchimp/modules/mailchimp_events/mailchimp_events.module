@@ -1,0 +1,207 @@
+<?php
+
+/**
+ * @file
+ * Contains mailchimp_events.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function mailchimp_events_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the mailchimp_events module.
+    case 'help.page.mailchimp_events':
+      $module_handler = \Drupal::service('module_handler');
+      $module_path = $module_handler->getModule('mailchimp_events')->getPath();
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Adds ability to get and post Events to an audience member&#039;&#039;s feed.') . '</p>';
+      $output .= '<p>' . t("More information found in the module's README.md file (included below).") . '</p>';
+      $output .= '<h3>' . t('Readme') . '</h3>';
+      $output .= '<pre>' . file_get_contents($module_path . '/README.md') . '</pre>';
+      return $output;
+
+    case 'entity.mailchimp_event.collection':
+      return t('
+        <p>Event types represent custom <a href=":behavioral_targeting_documentation_url" target="_blank">Mailchimp events</a> you want to create.</p>
+        <p>Once an event type is listed here, Drupal can create it in Mailchimp, usually through a <a href=":webform_handler_documentation_url" target="_blank">webform handler</a>, or custom code.</p>
+        <p>Events are not imported from Mailchimp.</p>',
+        [
+          ':behavioral_targeting_documentation_url' => 'https://mailchimp.com/help/use-events-behavioral-targeting/',
+          ':webform_handler_documentation_url' => 'https://www.drupal.org/docs/8/modules/webform/webform-features#s-emails-handlers',
+        ]);
+
+    default:
+  }
+}
+
+/**
+ * Gets a list of all events for a given email in a given audience.
+ *
+ * @param string $list_id
+ *   The ID of the Mailchimp audience the member is subscribed to.
+ * @param string $email
+ *   The Mailchimp user email address to load an event list for.
+ * @param int $count
+ *   The number of records to return up to 1000 from newest to oldest.
+ * @param int $offset
+ *   Used for pagination, the number of records from a collection to skip.
+ * @param array $fields
+ *   An array of fields to return, like 'events.name', or 'events.value'.
+ * @param array $exclude_fields
+ *   An array of fields to exclude, like 'events.name', or 'events.value'.
+ *
+ * @return false|object
+ *   The body of the response from Mailchimp as an object.
+ */
+function mailchimp_events_list_member_events($list_id, $email, $count = 10, $offset = 0, array $fields = [], array $exclude_fields = []) {
+  if (empty($email)) {
+    \Drupal::logger('mailchimp_events')->error('Attempted to find events on an empty email.');
+    return FALSE;
+  }
+  if (empty($list_id)) {
+    \Drupal::logger('mailchimp_events')->error('Attempted to find events on an email without an audience.');
+    return FALSE;
+  }
+  $cache = \Drupal::cache('mailchimp');
+  $cached_data = FALSE;
+  // Only cache the results if this is getting all results.
+  $can_cache = FALSE;
+  if (empty($offset) && empty($fields) && empty($excluded_fields)) {
+    $can_cache = TRUE;
+    $cached_data = $cache->get($list_id . '-' . $email . '-events');
+  }
+
+  if ($cached_data) {
+    $results = $cached_data->data;
+  }
+  else {
+    try {
+      /** @var \Mailchimp\MailchimpLists $mcapi */
+      $mcapi = \Drupal::service('mailchimp.api')->getApiObject('MailchimpLists');
+      $options = [];
+
+      if ($count != 10) {
+        $options['count'] = $count;
+      }
+
+      if ($offset) {
+        $options['offset'] = $offset;
+      }
+
+      if (!empty($fields)) {
+        $options['fields'] = implode(',', $fields);
+      }
+
+      if (!empty($exclude_fields)) {
+        $options['exclude_fields'] = implode(',', $exclude_fields);
+      }
+
+      $results = $mcapi->getMemberEvents($list_id, $email, $options);
+
+      if ($can_cache) {
+        $cache->set($list_id . '-' . $email . '-events', $results);
+      }
+    }
+    catch (\Exception $e) {
+      \Drupal::logger('mailchimp')
+        ->error('An error occurred pulling member event info for {person}. "{message}"', [
+          'person' => $email,
+          'message' => $e->getMessage(),
+        ]);
+
+      return FALSE;
+    }
+  }
+
+  return $results;
+}
+
+/**
+ * Add an event for a Mailchimp audience member with the given email address.
+ *
+ * @param string $list_id
+ *   The ID of the Mailchimp audience the member is subscribed to.
+ * @param string $email
+ *   The Mailchimp user email address to add an event for.
+ * @param string $name
+ *   The name of the event: letters, numbers, underscores, and dashes.
+ * @param array $properties
+ *   Properties for the event in an associative array format (value => hello).
+ * @param bool $is_syncing
+ *   Events created with is_syncing set to TRUE will not trigger automations.
+ * @param int $occurred_at
+ *   The timestamp of when the event occurred.
+ *
+ * @return false|object
+ *   The body of the response from Mailchimp as an object.
+ */
+function mailchimp_events_add_member_event($list_id, $email, $name, array $properties = [], $is_syncing = FALSE, $occurred_at = 0) {
+  if (empty($email)) {
+    \Drupal::logger('mailchimp_events')->error('Attempted to add an event without an email.');
+    return FALSE;
+  }
+  if (empty($list_id)) {
+    \Drupal::logger('mailchimp_events')->error('Attempted to add an event without an audience id.');
+    return FALSE;
+  }
+  if (empty($name)) {
+    \Drupal::logger('mailchimp_events')->error('Attempted to add an event without a name.');
+    return FALSE;
+  }
+  $results = FALSE;
+  $lock = \Drupal::lock();
+  $cache = \Drupal::cache('mailchimp');
+
+  if ($lock->acquire('mailchimp_events_add_member_events', 60)) {
+    try {
+      /** @var \Mailchimp\MailchimpLists $mcapi */
+      $mcapi = \Drupal::service('mailchimp.api')->getApiObject('MailchimpLists');
+
+      $options['name'] = $name;
+
+      if (!empty($properties)) {
+        $options['properties'] = $properties;
+      }
+
+      if ($is_syncing) {
+        $options['is_syncing'] = TRUE;
+      }
+
+      if ($occurred_at) {
+        $options['occurred_at'] = date(DateTime::ISO8601, $occurred_at);
+      }
+
+      $results = $mcapi->addMemberEvent($list_id, $email, $options);
+      $cache->invalidate($list_id . '-' . $email . '-events');
+    }
+    catch (\Exception $e) {
+      \Drupal::logger('mailchimp')->error('An error occurred adding member event {event} info for {person}. "{message}"', [
+        'event' => $name,
+        'person' => $email,
+        'message' => $e->getMessage(),
+      ]);
+      return FALSE;
+    }
+
+    $lock->release('mailchimp_events_add_member_events');
+  }
+
+  return $results;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function mailchimp_events_theme() {
+  $info = [
+    'webform_handler_add_mailchimp_event_summary' => [
+      'variables' => ['settings' => NULL, 'handler' => NULL],
+    ],
+  ];
+
+  return $info;
+}

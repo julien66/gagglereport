@@ -1,0 +1,13 @@
+name: Views Event Dispatcher
+type: module
+description: Dispatches events for multiple views hooks
+core_version_requirement: ^10.2 || ^11
+package: Hook events
+dependencies:
+  - hook_event_dispatcher:hook_event_dispatcher
+  - drupal:views
+
+# Information added by Drupal.org packaging script on 2024-09-22
+version: '4.2.0'
+project: 'hook_event_dispatcher'
+datestamp: 1727021698

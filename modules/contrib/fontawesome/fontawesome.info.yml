@@ -1,0 +1,12 @@
+name: 'Font Awesome'
+type: module
+description: 'The most popular icon set and toolkit on the web.'
+# @todo Remove DeprecationHelper from src/Form/SettingsForm when minimum version
+# is 11.1.
+core_version_requirement: ^10.2 || ^11.0
+configure: fontawesome.admin_settings
+
+# Information added by Drupal.org packaging script on 2025-01-21
+version: '3.0.0'
+project: 'fontawesome'
+datestamp: 1737497164

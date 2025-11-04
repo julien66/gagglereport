@@ -1,0 +1,7 @@
+# Mailchimp Events menu items definition
+entity.mailchimp_event.collection:
+  title: 'Events'
+  route_name: entity.mailchimp_event.collection
+  description: 'List Mailchimp event types'
+  parent: mailchimp.admin
+  weight: 100

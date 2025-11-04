@@ -1,0 +1,5 @@
+mailchimp_lists.refresh:
+  route_name: 'mailchimp_lists.refresh'
+  title: 'Refresh audiences from Mailchimp'
+  appears_on:
+    - mailchimp_lists.overview

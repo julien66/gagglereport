@@ -1,0 +1,7 @@
+rules_test_event.dispatch_form:
+  path: '/dispatch-form'
+  defaults:
+    _form: '\Drupal\rules_test_event\Form\DispatchForm'
+    _title: 'Dispatch Form'
+  requirements:
+    _permission: 'access content'

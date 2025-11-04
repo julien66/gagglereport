@@ -1,0 +1,47 @@
+# See \Drupal\rules_test_event\Event\PlainEvent
+rules_test_event.plain_event:
+  label: 'Subclass of Event'
+  category: 'Tests'
+  context_definitions:
+    publicProperty:
+      type: 'string'
+      label: 'A public string'
+    protectedProperty:
+      type: 'string'
+      label: 'A protected string'
+    privateProperty:
+      type: 'string'
+      label: 'A private string'
+
+# See \Drupal\rules_test_event\Event\GenericEvent
+rules_test_event.generic_event:
+  label: 'Subclass of GenericEvent'
+  category: 'Tests'
+  context_definitions:
+    publicProperty:
+      type: 'string'
+      label: 'A public string'
+    protectedProperty:
+      type: 'string'
+      label: 'A protected string'
+    privateProperty:
+      type: 'string'
+      label: 'A private string'
+
+# See \Drupal\rules_test_event\Event\GetterEvent
+rules_test_event.getter_event:
+  label: 'Event with getter methods'
+  category: 'Tests'
+  context_definitions:
+    publicProperty:
+      type: 'string'
+      label: 'A public string'
+      getter: publicGetter
+    protectedProperty:
+      type: 'string'
+      label: 'A protected string'
+      getter: protectedGetter
+    privateProperty:
+      type: 'string'
+      label: 'A private string'
+      getter: privateGetter

@@ -1,0 +1,11 @@
+name: Rules test event
+type: module
+description: 'Support module for tests of Rules events.'
+package: Testing
+dependencies:
+  - rules:rules
+
+# Information added by Drupal.org packaging script on 2024-07-25
+version: '4.0.0'
+project: 'rules'
+datestamp: 1721935275

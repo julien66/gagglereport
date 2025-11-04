@@ -1,0 +1,5 @@
+mailchimp_events_example.list_mailchimp_events_for_member:
+  title: 'Debug Mailchimp Events'
+  description: 'List or add Mailchimp events to a given member in an audience'
+  route_name: mailchimp_events_example.list_mailchimp_events_for_member
+  parent: entity.mailchimp_event.collection

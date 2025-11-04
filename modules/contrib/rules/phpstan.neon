@@ -1,0 +1,75 @@
+parameters:
+  level: 1
+
+  ignoreErrors:
+    -
+      message: '#\Drupal calls should be avoided in classes, use dependency injection instead#'
+      paths:
+        - src/Drush/Commands/RulesDrushCommands.php
+        - src/Engine/RulesComponent.php
+        - src/Form/Expression/ActionForm.php
+        - src/Form/Expression/ConditionForm.php
+        - src/Logger/RulesDebugLog.php
+
+    # new static() is a best practice in Drupal, so we cannot fix that.
+    # @see https://www.drupal.org/docs/develop/development-tools/phpstan/handling-unsafe-usage-of-new-static
+    -
+      message: "#^Unsafe usage of new static#"
+      paths:
+        - src/Context/ExecutionMetadataState.php
+        - src/Context/ExecutionState.php
+        - src/Controller/RulesComponentListBuilder.php
+        - src/Controller/RulesReactionListBuilder.php
+        - src/Engine/ExpressionContainerBase.php
+        - src/Engine/RulesComponent.php
+        - src/Entity/ReactionRuleStorage.php
+        - src/Form/AddEventForm.php
+        - src/Form/AddExpressionForm.php
+        - src/Form/BreakLockForm.php
+        - src/Form/BreakLockForm.php
+        - src/Form/DeleteEventForm.php
+        - src/Form/ReactionRuleAddForm.php
+        - src/Form/ReactionRuleEditForm.php
+        - src/Form/RulesComponentFormBase.php
+        - src/Plugin/Condition/IpIsBanned.php
+        - src/Plugin/Condition/PathAliasExists.php
+        - src/Plugin/Condition/PathHasAlias.php
+        - src/Plugin/Condition/UserHasEntityFieldAccess.php
+        - src/Plugin/RulesAction/EntityCreate.php
+        - src/Plugin/RulesAction/EntityCreateDeriver.php
+        - src/Plugin/RulesAction/EntityFetchByField.php
+        - src/Plugin/RulesAction/EntityFetchById.php
+        - src/Plugin/RulesAction/EntityPathAliasCreate.php
+        - src/Plugin/RulesAction/EntityPathAliasCreate.php
+        - src/Plugin/RulesAction/EntityPathAliasCreateDeriver.php
+        - src/Plugin/RulesAction/PathAliasCreate.php
+        - src/Plugin/RulesAction/PathAliasDeleteByAlias.php
+        - src/Plugin/RulesAction/PathAliasDeleteByPath.php
+        - src/Plugin/RulesAction/RulesBanActionBase.php
+        - src/Plugin/RulesAction/RulesComponentAction.php
+        - src/Plugin/RulesAction/RulesComponentActionDeriver.php
+        - src/Plugin/RulesAction/SendAccountEmail.php
+        - src/Plugin/RulesAction/SystemEmailToUsersOfRole.php
+        - src/Plugin/RulesAction/SystemMessage.php
+        - src/Plugin/RulesAction/SystemPageRedirect.php
+        - src/Plugin/RulesAction/SystemSendEmail.php
+        - src/Plugin/RulesAction/UserBlock.php
+        - src/Plugin/RulesDataProcessor/TokenProcessor.php
+        - src/Plugin/RulesEvent/EntityDeleteDeriver.php
+        - src/Plugin/RulesEvent/EntityInsertDeriver.php
+        - src/Plugin/RulesEvent/EntityPresaveDeriver.php
+        - src/Plugin/RulesEvent/EntityUpdateDeriver.php
+        - src/Plugin/RulesEvent/EntityViewDeriver.php
+        - src/Plugin/RulesExpression/ActionExpression.php
+        - src/Plugin/RulesExpression/ConditionExpression.php
+        - src/Plugin/RulesExpression/RuleExpression.php
+        - src/TypedData/Options/EntityBundleOptions.php
+        - src/TypedData/Options/EntityTypeOptions.php
+        - src/TypedData/Options/FieldListOptions.php
+        - src/TypedData/Options/LanguageOptions.php
+        - src/TypedData/Options/NodeTypeOptions.ph
+        - src/Ui/RulesUiConfigHandler.php
+        - tests/modules/rules_test/src/Plugin/RulesAction/TestDebugLogAction.php
+        - tests/modules/rules_test_event/src/Form/DispatchForm.php
+        - src/Context/ContextConfig.php
+        - src/Context/ContextDefinition.php

@@ -1,0 +1,15 @@
+{#
+/**
+ * @file
+ * Default theme implementation for the mailchimp_signup subscribe form.
+ *
+ * @see template_preprocess_form()
+ * @see template_preprocess_mailchimp_signup_subscribe_form()
+ *
+ * @ingroup themeable
+ */
+#}
+<form{{ attributes }}>
+  <div class="mailchimp-signup-subscribe-description">{{ element.description }}</div>
+  {{ element|without('description') }}
+</form>

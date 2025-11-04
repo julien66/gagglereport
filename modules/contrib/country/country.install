@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Contains install and update functions for Country module.
+ */
+
+/**
+ * Update configuration schema.
+ */
+function country_update_8001() {
+  // Incorrect update has been removed.
+}
+
+/**
+ * Remove unneeded configuration.
+ */
+function country_update_8002() {
+  $config_factory = \Drupal::configFactory();
+  $config_factory->getEditable('views.filter.country_item')->delete();
+  $config_factory->getEditable('views.filter_value.country_item')->delete();
+}

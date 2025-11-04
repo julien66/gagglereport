@@ -1,0 +1,53 @@
+# Action links for Rules module.
+
+# Rules reaction related actions.
+rules_reaction_rule_add_action:
+  title: 'Add reaction rule'
+  route_name: entity.rules_reaction_rule.add_form
+  appears_on:
+    - entity.rules_reaction_rule.collection
+
+# Rules component related actions.
+rules_component_add_action:
+  title: 'Add component'
+  route_name: entity.rules_component.add_form.rule
+  appears_on:
+    - entity.rules_component.collection
+
+# Shortcut to import Reaction Rules.
+rules_import_rule_action:
+  title: 'Import rule'
+  route_name: config.import_single
+  options:
+    query:
+      - destination: admin/config/workflow/rules
+  appears_on:
+    - entity.rules_reaction_rule.collection
+# Shortcut to import Rules Components.
+rules_import_component_action:
+  title: 'Import component'
+  route_name: config.import_single
+  options:
+    query:
+      - destination: admin/config/workflow/rules/components
+  appears_on:
+    - entity.rules_component.collection
+
+# Shortcut to export Reaction Rules.
+rules_export_rule_action:
+  title: 'Export rule'
+  route_name: config.export_single
+  options:
+    query:
+      - destination: admin/config/workflow/rules
+  appears_on:
+    - entity.rules_reaction_rule.collection
+# Shortcut to export Rules Components.
+rules_export_component_action:
+  title: 'Export component'
+  route_name: config.export_single
+  options:
+    query:
+      - destination: admin/config/workflow/rules/components
+  appears_on:
+    - entity.rules_component.collection

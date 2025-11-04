@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<ruleset name="Drupal Coding Standards">
+  <description>Enforce Drupal coding standards with some exceptions</description>
+
+  <rule ref="./web/core/phpcs.xml.dist">
+    <exclude name="Drupal.Commenting.ClassComment.Short"/>
+  </rule>
+
+  <rule ref="Drupal"/>
+
+  <rule ref="DrupalPractice">
+    <exclude name="DrupalPractice.Commenting.CommentEmptyLine.SpacingAfter"/>
+  </rule>
+</ruleset>

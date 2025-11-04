@@ -1,0 +1,9 @@
+services:
+    pilots.pilots_events_subscriber :
+        class : Drupal\pilots\EventSubscriber\PilotsEventsSubscriber
+        tags:
+            - {name : 'event_subscriber'}
+
+    pilots.wprs_forecast_call :
+        class : Drupal\pilots\Utils\WPRS_Forecast_Call
+        arguments: []

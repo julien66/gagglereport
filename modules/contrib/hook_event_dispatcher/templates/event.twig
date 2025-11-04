@@ -1,0 +1,29 @@
+<?php
+
+namespace Drupal\{{ machine_name }}\Event{{ sub_namespace ? '\\' ~ sub_namespace }};
+
+use Drupal\Component\EventDispatcher\Event;
+use Drupal\hook_event_dispatcher\Attribute\HookEvent;
+use Drupal\hook_event_dispatcher\Event\EventInterface;
+use Drupal\hook_event_dispatcher\HookEventDispatcherInterface;
+
+/**
+ * Class {{ class }}.
+ */
+ #[HookEvent(id: '{{ id }}', {{ event }}: '{{ hook }}{{ alter }}')]
+class {{ class }} extends Event implements EventInterface {
+
+  /**
+   * {{ class }} constructor.
+   */
+  public function __construct() {
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getDispatcherType(): string {
+    return HookEventDispatcherInterface::{{ type }};
+  }
+
+}

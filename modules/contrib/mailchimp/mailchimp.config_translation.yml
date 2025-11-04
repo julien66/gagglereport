@@ -1,0 +1,5 @@
+mailchimp.admin:
+  title: 'Mailchimp configuration translation settings'
+  base_route_name: mailchimp.admin
+  names:
+    - 'mailchimp.settings'

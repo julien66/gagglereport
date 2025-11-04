@@ -58,14 +58,16 @@
     is_form_group ? 'form-group',
     is_checkbox ? 'checkbox',
     is_autocomplete ? 'form-autocomplete',
-    has_error ? 'error has-error'
+    has_error ? 'error has-error',
+    option_result > 0 ? 'text-success',
+    option_result < 0 ? 'text-danger'
   ]
 %}
 <div{{ attributes.addClass(classes) }}>
   <label{{ attributes.addClass(label_attributes.class)}}>{{ children }}{{ title }}
   </label>
   {% if option_result is not empty %}
-    <div class="rating-option-result">{{ option_result }}</div>
+    {#<div class="rating-option-result">{{ option_result }}</div>#}
   {% endif %}
   {% if errors %}
     <div class="form-item--error-message">

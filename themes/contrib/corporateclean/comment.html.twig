@@ -74,6 +74,7 @@
   set classes = [
     'comment',
     'card',
+    'p-3',
     'js-comment',
     status != 'published' ? 'comment--' ~ status,
     comment.owner.anonymous ? 'by-anonymous',
@@ -88,34 +89,23 @@
     server which comments are new for the user. Rendering the final "new"
     indicator here would break the render cache.
   #}
-  <span class="hidden new-indicator" data-comment-timestamp="{{ new_indicator_timestamp }}"></span>
+  <span class="hidden new-indicator badge" data-comment-timestamp="{{ new_indicator_timestamp }}"></span>
 
-  <div class="comment__content-container card-body pt-3">
+  <div class="comment__content-container card-body">
     {#{% if title %}
       {{ title_prefix }}
       <h3{{ title_attributes.addClass('title') }}>{{ title }}</h3>
       {{ title_suffix }}
     {% endif %}#}
-
-    <div class="row d-flex">
-      <div class="d-flex">
-        <div class="flex-shrink-0">
           {% if user_picture %}
-            <header>
               {{ user_picture }}
-            </header>
           {% endif %}
-        </div>
-        <div class="flex-grow-1 ms-3">
           <div class="comment__meta">
-            <div>{{ created }}</div>
-            <div>{{ author }}</div>
+            <div>By {{ author }} on <span class="small">{{ created }}</span></div>
             {% if parent %}
               <p class="visually-hidden">{{ parent }}</p>
             {% endif %}
-          </div>
-        </div>
-      </div>
+	  </div>
       <div class="col-12">
         {% if content.links %}
           <nav class="comment__links">{{ content.links }}</nav>

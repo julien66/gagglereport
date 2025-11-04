@@ -1,0 +1,5 @@
+mailchimp_events_example.debug_events_for_member:
+  route_name: mailchimp_events_example.list_mailchimp_events_for_member
+  title: 'Debug Mailchimp Events'
+  appears_on:
+    - entity.mailchimp_event.collection

@@ -1,0 +1,11 @@
+name: Rules UI embedding test
+type: module
+description: 'A module testing embedding the Rules UI.'
+package: Testing
+dependencies:
+  - rules:rules
+
+# Information added by Drupal.org packaging script on 2024-07-25
+version: '4.0.0'
+project: 'rules'
+datestamp: 1721935275

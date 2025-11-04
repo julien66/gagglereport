@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="rules">
+  <description>Default PHP CodeSniffer configuration for Rules.</description>
+  <file>.</file>
+
+  <!-- Temporary fix until drupal.org testbot script is changed. This is also
+    compatible with running phpcs locally, and on Travis, so can be committed.
+    See https://www.drupal.org/project/drupalci_testbot/issues/3283978 -->
+  <config name="installed_paths" value="../../drupal/coder/coder_sniffer/,../../sirbrillig/phpcs-variable-analysis/,../../slevomat/coding-standard/"/>
+
+  <exclude-pattern>./d7-tests/</exclude-pattern>
+  <exclude-pattern>./vendor/</exclude-pattern>
+  <exclude-pattern>./config/</exclude-pattern>
+  <exclude-pattern>./*interdif*</exclude-pattern>
+
+  <arg name="extensions" value="inc,install,module,php,profile,test,theme,yml"/>
+
+  <!-- Use 's' to print the full sniff name in the report and use colors. -->
+  <arg value="s"/>
+  <arg value="-colors"/>
+
+  <!-- Include all Drupal and DrupalPractice sniffs by default, then adjust. -->
+  <rule ref="Drupal"/>
+  <rule ref="DrupalPractice"/>
+
+  <rule ref="Drupal.NamingConventions.ValidVariableName.LowerCamelName">
+    <!-- Annotations must use the same property names as in the configuration. -->
+    <exclude-pattern>src/Annotation</exclude-pattern>
+    <exclude-pattern>src/Core/Annotation</exclude-pattern>
+    <exclude-pattern>src/Ui/RulesUiDefinition.php</exclude-pattern>
+  </rule>
+
+  <rule ref="Drupal.Files.TxtFileLineLength.TooLong">
+    <!-- Do not run this sniff on README.md as the file has long markup lines.
+     -->
+    <exclude-pattern>README.md</exclude-pattern>
+  </rule>
+
+  <!-- The method is overridden with a reason - for better PHPdoc! -->
+  <rule ref="Generic.CodeAnalysis.UselessOverridingMethod.Found">
+    <exclude-pattern>./src/Core/ConditionManager.php</exclude-pattern>
+   </rule>
+
+  <!--Blacklist of coding standard rules that are not yet fixed. -->
+  <rule ref="Drupal">
+    <exclude name="Drupal.Commenting.DocComment.MissingShort"/>
+  </rule>
+
+  <!-- Allow empty lines after comments, we don't care. -->
+  <rule ref="Drupal">
+    <exclude name="Drupal.Commenting.InlineComment.SpacingAfter"/>
+  </rule>
+  <rule ref="DrupalPractice">
+    <exclude name="DrupalPractice.Commenting.CommentEmptyLine.SpacingAfter"/>
+  </rule>
+
+  <!-- Increase the allowed line length for inline array declarations. -->
+  <rule ref="Drupal.Arrays.Array">
+    <properties>
+      <property name="lineLimit" value="116"/>
+    </properties>
+  </rule>
+
+  <!-- Don't require strict alphabetical ordering of use statements. -->
+  <rule ref="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses.IncorrectlyOrderedUses"><severity>0</severity></rule>
+
+  <!-- We always want short array syntax only. -->
+  <rule ref="Generic.Arrays.DisallowLongArraySyntax" />
+</ruleset>

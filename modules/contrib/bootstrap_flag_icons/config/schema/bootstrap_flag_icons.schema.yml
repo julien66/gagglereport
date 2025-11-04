@@ -1,0 +1,13 @@
+ckeditor5.plugin.bootstrap_flag_icons_plugin:
+  type: mapping
+  label: List
+  mapping:
+    cdn_flag:
+      type: boolean
+      label: 'Use cdn bootstrap'
+    img:
+      type: boolean
+      label: 'Insert image'
+    ratio:
+      type: string
+      label: 'Ration'

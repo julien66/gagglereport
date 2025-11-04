@@ -1,0 +1,82 @@
+<?php
+
+/**
+ * @file
+ * Defines simple country field type.
+ */
+
+use Drupal\Core\Field\FieldTypeCategoryManagerInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_help().
+ */
+function country_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.country':
+      $output = '';
+      $output .= '<h3>' . t('Country') . '</h3>';
+      $output .= '<p>' . t('The Country module defines a simple country field type for the Field module. It provides 2 widgets - select options and autocomplete textfield - for this purpose.  See the <a href=":field">Field module help page</a> for more information about fields.', [':field' => Url::fromRoute('help.page', ['name' => 'field'])->toString()]) . '</p>';
+      return $output;
+  }
+}
+
+/**
+ * Implements hook_field_widget_WIDGET_TYPE_form_alter().
+ */
+function country_field_widget_country_default_form_alter(&$element, FormStateInterface $form_state, $context) {
+  $country =& $element['value'];
+  $country_code = '';
+
+  if (!empty($country['#default_value'])) {
+    return FALSE;
+  }
+
+  if (!\Drupal::moduleHandler()->moduleExists('ip2country')) {
+    return FALSE;
+  }
+
+  if (\Drupal::currentUser()->isAuthenticated()) {
+    $uid = \Drupal::currentUser()->id();
+    $user_data = \Drupal::service('user.data')->get('ip2country', $uid);
+    if (isset($user_data)) {
+      $country_code = $user_data['country_iso_code_2'];
+    }
+  }
+  else {
+    $ip = \Drupal::request()->getClientIp();
+    $country_code = \Drupal::service('ip2country.lookup')->getCountry($ip);
+  }
+
+  if (in_array($country_code, array_keys($country['#options']))) {
+    $country['#default_value'] = $country_code;
+  }
+}
+
+/**
+ * Implements hook_field_widget_info_alter().
+ */
+function country_field_widget_info_alter(array &$info) {
+  // Allow boxes/radio buttons widget to be used for country field.
+  $info['options_buttons']['field_types'][] = 'country';
+}
+
+/**
+ * Implements hook_module_implements_alter().
+ */
+function country_module_implements_alter(&$implementations, $hook) {
+  if ($hook == 'tokens') {
+    $group = $implementations['country'];
+    unset($implementations['country']);
+    $implementations['country'] = $group;
+  }
+}
+
+/**
+ * Implements hook_field_type_category_info_alter().
+ */
+function country_field_type_category_info_alter(&$definitions) {
+  $definitions[FieldTypeCategoryManagerInterface::FALLBACK_CATEGORY]['libraries'][] = 'country/country.country-icon';
+}

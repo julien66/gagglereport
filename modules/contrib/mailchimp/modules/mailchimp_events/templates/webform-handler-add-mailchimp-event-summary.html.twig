@@ -1,0 +1,20 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a summary of a webform debug handler.
+ *
+ * Available variables:
+ * - settings: The current configuration for this debug handler.
+ * - handler: The debug handler.
+ *
+ * @ingroup themeable
+ */
+#}
+{% if settings.debug %}<strong class="color-error">{{ 'Debugging is enabled'|t }}</strong><br />{% endif %}
+<b>{{ 'Audience:'|t }}</b> {{ settings.list }}<br />
+<b>{{ 'Email value:'|t }}</b> {{ settings.email }} ({{ settings.email_type }})<br />
+<b>{{ 'Event:'|t }}</b> {{ settings.event_name }}<br />
+<b>{{ 'Event values:'|t }}</b><br />
+{% for property_name, property in settings.event_value %}
+<b>{{ property_name }}</b>:{{ property }}<br />
+{% endfor %}

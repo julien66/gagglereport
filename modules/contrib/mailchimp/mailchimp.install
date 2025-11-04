@@ -1,0 +1,96 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the Mailchimp Module.
+ */
+
+/**
+ * Implements hook_requirements().
+ */
+function mailchimp_requirements($phase) {
+  $requirements = [
+    'mailchimp' => [
+      'title' => t('Mailchimp'),
+    ],
+  ];
+
+  if ($phase == 'runtime') {
+    $config = \Drupal::config('mailchimp.settings');
+
+    // Check for Mailchimp library.
+    if (!empty($config->get('api_classname')) && class_exists($config->get('api_classname'))) {
+      $requirements['mailchimp']['description'] = t('The Mailchimp MCAPI wrapper library is installed correctly.');
+      $requirements['mailchimp']['severity'] = REQUIREMENT_OK;
+    }
+    else {
+      $requirements['mailchimp']['description'] = t('The Mailchimp MCAPI wrapper library has not been installed correctly.');
+      $requirements['mailchimp']['severity'] = REQUIREMENT_ERROR;
+    }
+  }
+
+  return $requirements;
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function mailchimp_uninstall() {
+  $queue = \Drupal::queue(MAILCHIMP_QUEUE_CRON);
+  $queue->deleteQueue();
+
+  $collection = \Drupal::keyValue('mailchimp_lists');
+  $collection->deleteAll();
+
+  \Drupal::state()->deleteMultiple([
+    'mailchimp_access_token',
+    'mailchimp_data_center',
+  ]);
+}
+
+/**
+ * Update the class name in configuration.
+ */
+function mailchimp_update_8001(&$sandbox) {
+  $config = \Drupal::configFactory()->getEditable('mailchimp.settings');
+  $config->set('api_classname', 'Mailchimp\Mailchimp');
+  $config->save();
+}
+
+/**
+ * Update to add a configurable timeout period for the API.
+ */
+function mailchimp_update_8002(&$sandbox) {
+  $config = \Drupal::configFactory()->getEditable('mailchimp.settings');
+  $config->set('api_timeout', 10);
+  $config->save();
+}
+
+/**
+ * Update to add a configurable message for double opt-in.
+ */
+function mailchimp_update_8003(&$sandbox) {
+  $config = \Drupal::configFactory()->getEditable('mailchimp.settings');
+  if (!isset($config->getRawData()['optin_check_email_msg'])) {
+    $config->set('optin_check_email_msg', 'Please check your email to confirm your subscription.');
+    $config->save();
+  }
+}
+
+/**
+ * Adds oauth middleware url.
+ */
+function mailchimp_update_8004(&$sandbox) {
+  $config = \Drupal::configFactory()->getEditable('mailchimp.settings');
+  $config->set('oauth_middleware_url', 'https://drupal-mailchimp-oauth.uw.r.appspot.com');
+  $config->save();
+}
+
+/**
+ * Removes oauth middleware url.
+ */
+function mailchimp_update_8005(&$sandbox) {
+  $config = \Drupal::configFactory()->getEditable('mailchimp.settings');
+  $config->clear('oauth_middleware_url');
+  $config->save();
+}

@@ -1,0 +1,4 @@
+services:
+  country.field.manager:
+    class: Drupal\country\CountryFieldManager
+    arguments: ['@country_manager', '@language_manager']

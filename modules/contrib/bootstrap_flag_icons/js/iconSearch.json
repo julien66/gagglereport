@@ -1,0 +1,2333 @@
+[
+  {
+    "title": "af",
+    "searchTerms": [
+      "Afghanistan",
+      "AFG",
+      4
+    ]
+  },
+  {
+    "title": "al",
+    "searchTerms": [
+      "Albania",
+      "Albanie",
+      "ALB",
+      8
+    ]
+  },
+  {
+    "title": "dz",
+    "searchTerms": [
+      "Algeria",
+      "Algérie",
+      "DZA",
+      12
+    ]
+  },
+  {
+    "title": "as",
+    "searchTerms": [
+      "American Samoa",
+      "Samoa américaines",
+      "ASM",
+      16
+    ]
+  },
+  {
+    "title": "ad",
+    "searchTerms": [
+      "Andorra",
+      "Andorre",
+      "AND",
+      20
+    ]
+  },
+  {
+    "title": "ao",
+    "searchTerms": [
+      "Angola",
+      "AGO",
+      24
+    ]
+  },
+  {
+    "title": "ai",
+    "searchTerms": [
+      "Anguilla",
+      "AIA",
+      660
+    ]
+  },
+  {
+    "title": "aq",
+    "searchTerms": [
+      "Antarctica",
+      "Antarctique",
+      "ATA",
+      10
+    ]
+  },
+  {
+    "title": "ag",
+    "searchTerms": [
+      "Antigua and Barbuda",
+      "Antigua et Barbuda",
+      "ATG",
+      28
+    ]
+  },
+  {
+    "title": "ar",
+    "searchTerms": [
+      "Argentina",
+      "Argentine",
+      "ARG",
+      32
+    ]
+  },
+  {
+    "title": "am",
+    "searchTerms": [
+      "Armenia",
+      "Arménie",
+      "ARM",
+      51
+    ]
+  },
+  {
+    "title": "aw",
+    "searchTerms": [
+      "Aruba",
+      "ABW",
+      533
+    ]
+  },
+  {
+    "title": "au",
+    "searchTerms": [
+      "Australia",
+      "Australie",
+      "AUS",
+      36
+    ]
+  },
+  {
+    "title": "at",
+    "searchTerms": [
+      "Austria",
+      "Autriche",
+      "AUT",
+      40
+    ]
+  },
+  {
+    "title": "az",
+    "searchTerms": [
+      "Azerbaijan",
+      "Azerbaïdjan",
+      "AZE",
+      31
+    ]
+  },
+  {
+    "title": "bs",
+    "searchTerms": [
+      "Bahamas",
+      "BHS",
+      44
+    ]
+  },
+  {
+    "title": "bh",
+    "searchTerms": [
+      "Bahrain",
+      "Bahreïn",
+      "BHR",
+      48
+    ]
+  },
+  {
+    "title": "bd",
+    "searchTerms": [
+      "Bangladesh",
+      "BGD",
+      50
+    ]
+  },
+  {
+    "title": "bb",
+    "searchTerms": [
+      "Barbados",
+      "Barbade",
+      "BRB",
+      52
+    ]
+  },
+  {
+    "title": "by",
+    "searchTerms": [
+      "Belarus",
+      "Bélarus",
+      "BLR",
+      112
+    ]
+  },
+  {
+    "title": "be",
+    "searchTerms": [
+      "Belgium",
+      "Belgique",
+      "BEL",
+      56
+    ]
+  },
+  {
+    "title": "bz",
+    "searchTerms": [
+      "Belize",
+      "BLZ",
+      84
+    ]
+  },
+  {
+    "title": "bj",
+    "searchTerms": [
+      "Benin",
+      "Bénin",
+      "BEN",
+      204
+    ]
+  },
+  {
+    "title": "bm",
+    "searchTerms": [
+      "Bermuda",
+      "Bermudes",
+      "BMU",
+      60
+    ]
+  },
+  {
+    "title": "ax",
+    "searchTerms": [
+      "Åland Islands",
+      "Åland(les Îles)",
+      "ALA",
+      248
+    ]
+  },
+  {
+    "title": "bt",
+    "searchTerms": [
+      "Bhutan",
+      "Bhoutan",
+      "BTN",
+      64
+    ]
+  },
+  {
+    "title": "bo",
+    "searchTerms": [
+      "Bolivia (Plurinational State of)",
+      "Bolivie (État plurinational de)",
+      "BOL",
+      68
+    ]
+  },
+  {
+    "title": "bq",
+    "searchTerms": [
+      "Bonaire, Sint Eustatius and Saba",
+      "Bonaire, Saint Eustache et Saba",
+      "BES",
+      535
+    ]
+  },
+  {
+    "title": "ba",
+    "searchTerms": [
+      "Bosnia and Herzegovina",
+      "Bosnie Herzégovine",
+      "BIH",
+      70
+    ]
+  },
+  {
+    "title": "bw",
+    "searchTerms": [
+      "Botswana",
+      "BWA",
+      72
+    ]
+  },
+  {
+    "title": "bv",
+    "searchTerms": [
+      "Bouvet Island",
+      "Bouvet (l'Île)",
+      "BVT",
+      74
+    ]
+  },
+  {
+    "title": "br",
+    "searchTerms": [
+      "Brazil",
+      "Brésil",
+      "BRA",
+      76
+    ]
+  },
+  {
+    "title": "io",
+    "searchTerms": [
+      "British Indian Ocean Territory",
+      "Indien (le Territoire britannique de l'océan)",
+      "IOT",
+      86
+    ]
+  },
+  {
+    "title": "bn",
+    "searchTerms": [
+      "Brunei Darussalam",
+      "Brunéi Darussalam",
+      "BRN",
+      96
+    ]
+  },
+  {
+    "title": "bg",
+    "searchTerms": [
+      "Bulgaria",
+      "Bulgarie",
+      "BGR",
+      100
+    ]
+  },
+  {
+    "title": "bf",
+    "searchTerms": [
+      "Burkina Faso",
+      "BFA",
+      854
+    ]
+  },
+  {
+    "title": "bi",
+    "searchTerms": [
+      "Burundi",
+      "BDI",
+      108
+    ]
+  },
+  {
+    "title": "cv",
+    "searchTerms": [
+      "Cabo Verde",
+      "CPV",
+      132
+    ]
+  },
+  {
+    "title": "kh",
+    "searchTerms": [
+      "Cambodia",
+      "Cambodge",
+      "KHM",
+      116
+    ]
+  },
+  {
+    "title": "cm",
+    "searchTerms": [
+      "Cameroon",
+      "Cameroun",
+      "CMR",
+      120
+    ]
+  },
+  {
+    "title": "ca",
+    "searchTerms": [
+      "Canada",
+      "CAN",
+      124
+    ]
+  },
+  {
+    "title": "ky",
+    "searchTerms": [
+      "Cayman Islands",
+      "Caïmans (les Îles)",
+      "CYM",
+      136
+    ]
+  },
+  {
+    "title": "cf",
+    "searchTerms": [
+      "Central African Republic",
+      "République centrafricaine",
+      "CAF",
+      140
+    ]
+  },
+  {
+    "title": "td",
+    "searchTerms": [
+      "Chad",
+      "Tchad",
+      "TCD",
+      148
+    ]
+  },
+  {
+    "title": "cl",
+    "searchTerms": [
+      "Chile",
+      "Chili",
+      "CHL",
+      152
+    ]
+  },
+  {
+    "title": "cn",
+    "searchTerms": [
+      "China",
+      "Chine",
+      "CHN",
+      156
+    ]
+  },
+  {
+    "title": "cx",
+    "searchTerms": [
+      "Christmas Island",
+      "Christmas (l'Île)",
+      "CXR",
+      162
+    ]
+  },
+  {
+    "title": "cc",
+    "searchTerms": [
+      "Cocos (Keeling) Islands",
+      "Cocos (les Îles)/ Keeling (les Îles)",
+      "CCK",
+      166
+    ]
+  },
+  {
+    "title": "co",
+    "searchTerms": [
+      "Colombia",
+      "Colombie",
+      "COL",
+      170
+    ]
+  },
+  {
+    "title": "km",
+    "searchTerms": [
+      "Comoros",
+      "Comores",
+      "COM",
+      174
+    ]
+  },
+  {
+    "title": "cd",
+    "searchTerms": [
+      "Congo (the Democratic Republic of the)",
+      "Congo (la République démocratique du)",
+      "COD",
+      180
+    ]
+  },
+  {
+    "title": "cg",
+    "searchTerms": [
+      "Congo",
+      "COG",
+      178
+    ]
+  },
+  {
+    "title": "ck",
+    "searchTerms": [
+      "Cook Islands",
+      "Cook (les Îles)",
+      "COK",
+      184
+    ]
+  },
+  {
+    "title": "cr",
+    "searchTerms": [
+      "Costa Rica",
+      "CRI",
+      188
+    ]
+  },
+  {
+    "title": "hr",
+    "searchTerms": [
+      "Croatia",
+      "Croatie",
+      "HRV",
+      191
+    ]
+  },
+  {
+    "title": "cu",
+    "searchTerms": [
+      "Cuba",
+      "CUB",
+      192
+    ]
+  },
+  {
+    "title": "cw",
+    "searchTerms": [
+      "Curaçao",
+      "Curaçao",
+      "CUW",
+      531
+    ]
+  },
+  {
+    "title": "cy",
+    "searchTerms": [
+      "Cyprus",
+      "Chypre",
+      "CYP",
+      196
+    ]
+  },
+  {
+    "title": "cz",
+    "searchTerms": [
+      "Czechia",
+      "Tchéquie",
+      "CZE",
+      203
+    ]
+  },
+  {
+    "title": "ci",
+    "searchTerms": [
+      "Ivory Coast",
+      "Côte d'Ivoire",
+      "CIV",
+      384
+    ]
+  },
+  {
+    "title": "dk",
+    "searchTerms": [
+      "Denmark",
+      "Danemark",
+      "DNK",
+      208
+    ]
+  },
+  {
+    "title": "dj",
+    "searchTerms": [
+      "Djibouti",
+      "DJI",
+      262
+    ]
+  },
+  {
+    "title": "dm",
+    "searchTerms": [
+      "Dominica",
+      "Dominique",
+      "DMA",
+      212
+    ]
+  },
+  {
+    "title": "do",
+    "searchTerms": [
+      "Dominican Republic",
+      "dominicaine (la République)",
+      "DOM",
+      214
+    ]
+  },
+  {
+    "title": "ec",
+    "searchTerms": [
+      "Ecuador",
+      "Équateur",
+      "ECU",
+      218
+    ]
+  },
+  {
+    "title": "eg",
+    "searchTerms": [
+      "Egypt",
+      "Égypte",
+      "EGY",
+      818
+    ]
+  },
+  {
+    "title": "sv",
+    "searchTerms": [
+      "El Salvador",
+      "SLV",
+      222
+    ]
+  },
+  {
+    "title": "gq",
+    "searchTerms": [
+      "Equatorial Guinea",
+      "Guinée équatoriale",
+      "GNQ",
+      226
+    ]
+  },
+  {
+    "title": "er",
+    "searchTerms": [
+      "Eritrea",
+      "Érythrée",
+      "ERI",
+      232
+    ]
+  },
+  {
+    "title": "ee",
+    "searchTerms": [
+      "Estonia",
+      "Estonie",
+      "EST",
+      233
+    ]
+  },
+  {
+    "title": "sz",
+    "searchTerms": [
+      "Eswatini",
+      "SWZ",
+      748
+    ]
+  },
+  {
+    "title": "et",
+    "searchTerms": [
+      "Ethiopia",
+      "Éthiopie",
+      "ETH",
+      231
+    ]
+  },
+  {
+    "title": "fk",
+    "searchTerms": [
+      "Falkland Islands [Malvinas]",
+      "Falkland (les Îles)/Malouines (les Îles)",
+      "FLK",
+      238
+    ]
+  },
+  {
+    "title": "fo",
+    "searchTerms": [
+      "Faroe Islands",
+      "Féroé (les Îles)",
+      "FRO",
+      234
+    ]
+  },
+  {
+    "title": "fj",
+    "searchTerms": [
+      "Fiji",
+      "Fidji",
+      "FJI",
+      242
+    ]
+  },
+  {
+    "title": "fi",
+    "searchTerms": [
+      "Finland",
+      "Finlande",
+      "FIN",
+      246
+    ]
+  },
+  {
+    "title": "fr",
+    "searchTerms": [
+      "France",
+      "FRA",
+      250
+    ]
+  },
+  {
+    "title": "gf",
+    "searchTerms": [
+      "French Guiana",
+      "Guyane française",
+      "GUF",
+      254
+    ]
+  },
+  {
+    "title": "pf",
+    "searchTerms": [
+      "French Polynesia",
+      "Polynésie française",
+      "PYF",
+      258
+    ]
+  },
+  {
+    "title": "tf",
+    "searchTerms": [
+      "French Southern Territories",
+      "Terres australes françaises",
+      "ATF",
+      260
+    ]
+  },
+  {
+    "title": "ga",
+    "searchTerms": [
+      "Gabon",
+      "GAB",
+      266
+    ]
+  },
+  {
+    "title": "gm",
+    "searchTerms": [
+      "Gambia",
+      "Gambie",
+      "GMB",
+      270
+    ]
+  },
+  {
+    "title": "ge",
+    "searchTerms": [
+      "Georgia",
+      "Géorgie",
+      "GEO",
+      268
+    ]
+  },
+  {
+    "title": "de",
+    "searchTerms": [
+      "Germany",
+      "Allemagne",
+      "DEU",
+      276
+    ]
+  },
+  {
+    "title": "gh",
+    "searchTerms": [
+      "Ghana",
+      "GHA",
+      288
+    ]
+  },
+  {
+    "title": "gi",
+    "searchTerms": [
+      "Gibraltar",
+      "GIB",
+      292
+    ]
+  },
+  {
+    "title": "gr",
+    "searchTerms": [
+      "Greece",
+      "Grèce",
+      "GRC",
+      300
+    ]
+  },
+  {
+    "title": "gl",
+    "searchTerms": [
+      "Greenland",
+      "Groenland",
+      "GRL",
+      304
+    ]
+  },
+  {
+    "title": "gd",
+    "searchTerms": [
+      "Grenada",
+      "Grenade",
+      "GRD",
+      308
+    ]
+  },
+  {
+    "title": "gp",
+    "searchTerms": [
+      "Guadeloupe",
+      "GLP",
+      312
+    ]
+  },
+  {
+    "title": "gu",
+    "searchTerms": [
+      "Guam",
+      "GUM",
+      316
+    ]
+  },
+  {
+    "title": "gt",
+    "searchTerms": [
+      "Guatemala",
+      "GTM",
+      320
+    ]
+  },
+  {
+    "title": "gg",
+    "searchTerms": [
+      "Guernsey",
+      "Guernesey",
+      "GGY",
+      831
+    ]
+  },
+  {
+    "title": "gn",
+    "searchTerms": [
+      "Guinea",
+      "Guinée",
+      "GIN",
+      324
+    ]
+  },
+  {
+    "title": "gw",
+    "searchTerms": [
+      "Guinea Bissau",
+      "Guinée Bissau",
+      "GNB",
+      624
+    ]
+  },
+  {
+    "title": "gy",
+    "searchTerms": [
+      "Guyana",
+      "GUY",
+      328
+    ]
+  },
+  {
+    "title": "ht",
+    "searchTerms": [
+      "Haiti",
+      "Haïti",
+      "HTI",
+      332
+    ]
+  },
+  {
+    "title": "hm",
+    "searchTerms": [
+      "Heard Island and McDonald Islands",
+      "Heard et Îles MacDonald (l'Île)",
+      "HMD",
+      334
+    ]
+  },
+  {
+    "title": "va",
+    "searchTerms": [
+      "Holy See",
+      "Saint Siège",
+      "VAT",
+      336
+    ]
+  },
+  {
+    "title": "hn",
+    "searchTerms": [
+      "Honduras",
+      "HND",
+      340
+    ]
+  },
+  {
+    "title": "hk",
+    "searchTerms": [
+      "Hong Kong",
+      "HKG",
+      344
+    ]
+  },
+  {
+    "title": "hu",
+    "searchTerms": [
+      "Hungary",
+      "Hongrie",
+      "HUN",
+      348
+    ]
+  },
+  {
+    "title": "is",
+    "searchTerms": [
+      "Iceland",
+      "Islande",
+      "ISL",
+      352
+    ]
+  },
+  {
+    "title": "in",
+    "searchTerms": [
+      "India",
+      "Inde",
+      "IND",
+      356
+    ]
+  },
+  {
+    "title": "id",
+    "searchTerms": [
+      "Indonesia",
+      "Indonésie",
+      "IDN",
+      360
+    ]
+  },
+  {
+    "title": "ir",
+    "searchTerms": [
+      "Iran (Islamic Republic of)",
+      "Iran (République Islamique d')",
+      "IRN",
+      364
+    ]
+  },
+  {
+    "title": "iq",
+    "searchTerms": [
+      "Iraq",
+      "IRQ",
+      368
+    ]
+  },
+  {
+    "title": "ie",
+    "searchTerms": [
+      "Ireland",
+      "Irlande",
+      "IRL",
+      372
+    ]
+  },
+  {
+    "title": "im",
+    "searchTerms": [
+      "Isle of Man",
+      "Île de Man",
+      "IMN",
+      833
+    ]
+  },
+  {
+    "title": "il",
+    "searchTerms": [
+      "Israel",
+      "Israël",
+      "ISR",
+      376
+    ]
+  },
+  {
+    "title": "it",
+    "searchTerms": [
+      "Italy",
+      "Italie",
+      "ITA",
+      380
+    ]
+  },
+  {
+    "title": "jm",
+    "searchTerms": [
+      "Jamaica",
+      "Jamaïque",
+      "JAM",
+      388
+    ]
+  },
+  {
+    "title": "jp",
+    "searchTerms": [
+      "Japan",
+      "Japon",
+      "JPN",
+      392
+    ]
+  },
+  {
+    "title": "je",
+    "searchTerms": [
+      "Jersey",
+      "JEY",
+      832
+    ]
+  },
+  {
+    "title": "jo",
+    "searchTerms": [
+      "Jordan",
+      "Jordanie",
+      "JOR",
+      400
+    ]
+  },
+  {
+    "title": "kz",
+    "searchTerms": [
+      "Kazakhstan",
+      "KAZ",
+      398
+    ]
+  },
+  {
+    "title": "ke",
+    "searchTerms": [
+      "Kenya",
+      "KEN",
+      404
+    ]
+  },
+  {
+    "title": "ki",
+    "searchTerms": [
+      "Kiribati",
+      "KIR",
+      296
+    ]
+  },
+  {
+    "title": "kp",
+    "searchTerms": [
+      "Korea (the Democratic People's Republic of)",
+      "Corée (la République populaire démocratique de)",
+      "PRK",
+      408
+    ]
+  },
+  {
+    "title": "kr",
+    "searchTerms": [
+      "Korea (the Republic of)",
+      "Corée (la République de)",
+      "KOR",
+      410
+    ]
+  },
+  {
+    "title": "kw",
+    "searchTerms": [
+      "Kuwait",
+      "Koweït",
+      "KWT",
+      414
+    ]
+  },
+  {
+    "title": "kg",
+    "searchTerms": [
+      "Kyrgyzstan",
+      "Kirghizistan",
+      "KGZ",
+      417
+    ]
+  },
+  {
+    "title": "la",
+    "searchTerms": [
+      "Lao People's Democratic Republic",
+      "Lao (la République démocratique populaire)",
+      "LAO",
+      418
+    ]
+  },
+  {
+    "title": "lv",
+    "searchTerms": [
+      "Latvia",
+      "Lettonie",
+      "LVA",
+      428
+    ]
+  },
+  {
+    "title": "lb",
+    "searchTerms": [
+      "Lebanon",
+      "Liban",
+      "LBN",
+      422
+    ]
+  },
+  {
+    "title": "ls",
+    "searchTerms": [
+      "Lesotho",
+      "LSO",
+      426
+    ]
+  },
+  {
+    "title": "lr",
+    "searchTerms": [
+      "Liberia",
+      "Libéria",
+      "LBR",
+      430
+    ]
+  },
+  {
+    "title": "ly",
+    "searchTerms": [
+      "Libya",
+      "Libye",
+      "LBY",
+      434
+    ]
+  },
+  {
+    "title": "li",
+    "searchTerms": [
+      "Liechtenstein",
+      "LIE",
+      438
+    ]
+  },
+  {
+    "title": "lt",
+    "searchTerms": [
+      "Lithuania",
+      "Lituanie",
+      "LTU",
+      440
+    ]
+  },
+  {
+    "title": "lu",
+    "searchTerms": [
+      "Luxembourg",
+      "LUX",
+      442
+    ]
+  },
+  {
+    "title": "mo",
+    "searchTerms": [
+      "Macao",
+      "MAC",
+      446
+    ]
+  },
+  {
+    "title": "mg",
+    "searchTerms": [
+      "Madagascar",
+      "MDG",
+      450
+    ]
+  },
+  {
+    "title": "mw",
+    "searchTerms": [
+      "Malawi",
+      "MWI",
+      454
+    ]
+  },
+  {
+    "title": "my",
+    "searchTerms": [
+      "Malaysia",
+      "Malaisie",
+      "MYS",
+      458
+    ]
+  },
+  {
+    "title": "mv",
+    "searchTerms": [
+      "Maldives",
+      "MDV",
+      462
+    ]
+  },
+  {
+    "title": "ml",
+    "searchTerms": [
+      "Mali",
+      "MLI",
+      466
+    ]
+  },
+  {
+    "title": "mt",
+    "searchTerms": [
+      "Malta",
+      "Malte",
+      "MLT",
+      470
+    ]
+  },
+  {
+    "title": "mh",
+    "searchTerms": [
+      "Marshall Islands",
+      "Marshall (les Îles)",
+      "MHL",
+      584
+    ]
+  },
+  {
+    "title": "mq",
+    "searchTerms": [
+      "Martinique",
+      "MTQ",
+      474
+    ]
+  },
+  {
+    "title": "mr",
+    "searchTerms": [
+      "Mauritania",
+      "Mauritanie",
+      "MRT",
+      478
+    ]
+  },
+  {
+    "title": "mu",
+    "searchTerms": [
+      "Mauritius",
+      "Maurice",
+      "MUS",
+      480
+    ]
+  },
+  {
+    "title": "yt",
+    "searchTerms": [
+      "Mayotte",
+      "MYT",
+      175
+    ]
+  },
+  {
+    "title": "mx",
+    "searchTerms": [
+      "Mexico",
+      "Mexique",
+      "MEX",
+      484
+    ]
+  },
+  {
+    "title": "fm",
+    "searchTerms": [
+      "Micronesia (Federated States of)",
+      "Micronésie (États fédérés de)",
+      "FSM",
+      583
+    ]
+  },
+  {
+    "title": "md",
+    "searchTerms": [
+      "Moldova (the Republic of)",
+      "Moldova (la République de)",
+      "MDA",
+      498
+    ]
+  },
+  {
+    "title": "mc",
+    "searchTerms": [
+      "Monaco",
+      "MCO",
+      492
+    ]
+  },
+  {
+    "title": "mn",
+    "searchTerms": [
+      "Mongolia",
+      "Mongolie",
+      "MNG",
+      496
+    ]
+  },
+  {
+    "title": "me",
+    "searchTerms": [
+      "Montenegro",
+      "Monténégro",
+      "MNE",
+      499
+    ]
+  },
+  {
+    "title": "ms",
+    "searchTerms": [
+      "Montserrat",
+      "MSR",
+      500
+    ]
+  },
+  {
+    "title": "ma",
+    "searchTerms": [
+      "Morocco",
+      "Maroc",
+      "MAR",
+      504
+    ]
+  },
+  {
+    "title": "mz",
+    "searchTerms": [
+      "Mozambique",
+      "MOZ",
+      508
+    ]
+  },
+  {
+    "title": "mm",
+    "searchTerms": [
+      "Myanmar",
+      "MMR",
+      104
+    ]
+  },
+  {
+    "title": "na",
+    "searchTerms": [
+      "Namibia",
+      "Namibie",
+      "NAM",
+      516
+    ]
+  },
+  {
+    "title": "nr",
+    "searchTerms": [
+      "Nauru",
+      "NRU",
+      520
+    ]
+  },
+  {
+    "title": "np",
+    "searchTerms": [
+      "Nepal",
+      "Népal",
+      "NPL",
+      524
+    ]
+  },
+  {
+    "title": "nl",
+    "searchTerms": [
+      "Netherlands (Kingdom of the)",
+      "Pays Bas (Royaume des)",
+      "NLD",
+      528
+    ]
+  },
+  {
+    "title": "nc",
+    "searchTerms": [
+      "New Caledonia",
+      "Nouvelle Calédonie",
+      "NCL",
+      540
+    ]
+  },
+  {
+    "title": "nz",
+    "searchTerms": [
+      "New Zealand",
+      "Nouvelle Zélande",
+      "NZL",
+      554
+    ]
+  },
+  {
+    "title": "ni",
+    "searchTerms": [
+      "Nicaragua",
+      "NIC",
+      558
+    ]
+  },
+  {
+    "title": "ne",
+    "searchTerms": [
+      "Niger",
+      "NER",
+      562
+    ]
+  },
+  {
+    "title": "ng",
+    "searchTerms": [
+      "Nigeria",
+      "Nigéria",
+      "NGA",
+      566
+    ]
+  },
+  {
+    "title": "nu",
+    "searchTerms": [
+      "Niue",
+      "NIU",
+      570
+    ]
+  },
+  {
+    "title": "nf",
+    "searchTerms": [
+      "Norfolk Island",
+      "Norfolk (l'Île)",
+      "NFK",
+      574
+    ]
+  },
+  {
+    "title": "mk",
+    "searchTerms": [
+      "North Macedonia",
+      "Macédoine du Nord",
+      "MKD",
+      807
+    ]
+  },
+  {
+    "title": "mp",
+    "searchTerms": [
+      "Northern Mariana Islands",
+      "Mariannes du Nord (les Îles)",
+      "MNP",
+      580
+    ]
+  },
+  {
+    "title": "no",
+    "searchTerms": [
+      "Norway",
+      "Norvège",
+      "NOR",
+      578
+    ]
+  },
+  {
+    "title": "om",
+    "searchTerms": [
+      "Oman",
+      "OMN",
+      512
+    ]
+  },
+  {
+    "title": "pk",
+    "searchTerms": [
+      "Pakistan",
+      "PAK",
+      586
+    ]
+  },
+  {
+    "title": "pw",
+    "searchTerms": [
+      "Palau",
+      "Palaos",
+      "PLW",
+      585
+    ]
+  },
+  {
+    "title": "ps",
+    "searchTerms": [
+      "Palestine, State of",
+      "Palestine, État de",
+      "PSE",
+      275
+    ]
+  },
+  {
+    "title": "pa",
+    "searchTerms": [
+      "Panama",
+      "PAN",
+      591
+    ]
+  },
+  {
+    "title": "pg",
+    "searchTerms": [
+      "Papua New Guinea",
+      "Papouasie Nouvelle Guinée",
+      "PNG",
+      598
+    ]
+  },
+  {
+    "title": "py",
+    "searchTerms": [
+      "Paraguay",
+      "PRY",
+      600
+    ]
+  },
+  {
+    "title": "pe",
+    "searchTerms": [
+      "Peru",
+      "Pérou",
+      "PER",
+      604
+    ]
+  },
+  {
+    "title": "ph",
+    "searchTerms": [
+      "Philippines",
+      "PHL",
+      608
+    ]
+  },
+  {
+    "title": "pn",
+    "searchTerms": [
+      "Pitcairn",
+      "PCN",
+      612
+    ]
+  },
+  {
+    "title": "pl",
+    "searchTerms": [
+      "Poland",
+      "Pologne",
+      "POL",
+      616
+    ]
+  },
+  {
+    "title": "pt",
+    "searchTerms": [
+      "Portugal",
+      "PRT",
+      620
+    ]
+  },
+  {
+    "title": "pr",
+    "searchTerms": [
+      "Puerto Rico",
+      "Porto Rico",
+      "PRI",
+      630
+    ]
+  },
+  {
+    "title": "qa",
+    "searchTerms": [
+      "Qatar",
+      "QAT",
+      634
+    ]
+  },
+  {
+    "title": "ro",
+    "searchTerms": [
+      "Romania",
+      "Roumanie",
+      "ROU",
+      642
+    ]
+  },
+  {
+    "title": "ru",
+    "searchTerms": [
+      "Russian Federation",
+      "Russie (la Fédération de)",
+      "RUS",
+      643
+    ]
+  },
+  {
+    "title": "rw",
+    "searchTerms": [
+      "Rwanda",
+      "Rwanda",
+      "RWA",
+      646
+    ]
+  },
+  {
+    "title": "re",
+    "searchTerms": [
+      "Réunion",
+      "Réunion",
+      "REU",
+      638
+    ]
+  },
+  {
+    "title": "bl",
+    "searchTerms": [
+      "Saint Barthélemy",
+      "Saint Barthélemy",
+      "BLM",
+      652
+    ]
+  },
+  {
+    "title": "sh",
+    "searchTerms": [
+      "Saint Helena, Ascension and Tristan da Cunha",
+      "Sainte Hélène, Ascension et Tristan da Cunha",
+      "SHN",
+      654
+    ]
+  },
+  {
+    "title": "kn",
+    "searchTerms": [
+      "Saint Kitts and Nevis",
+      "Saint Kitts et Nevis",
+      "KNA",
+      659
+    ]
+  },
+  {
+    "title": "lc",
+    "searchTerms": [
+      "Saint Lucia",
+      "Sainte Lucie",
+      "LCA",
+      662
+    ]
+  },
+  {
+    "title": "mf",
+    "searchTerms": [
+      "Saint Martin (French part)",
+      "Saint Martin (partie française)",
+      "MAF",
+      663
+    ]
+  },
+  {
+    "title": "pm",
+    "searchTerms": [
+      "Saint Pierre and Miquelon",
+      "Saint Pierre et Miquelon",
+      "SPM",
+      666
+    ]
+  },
+  {
+    "title": "vc",
+    "searchTerms": [
+      "Saint Vincent and the Grenadines",
+      "Saint Vincent et les Grenadines",
+      "VCT",
+      670
+    ]
+  },
+  {
+    "title": "ws",
+    "searchTerms": [
+      "Samoa",
+      "Samoa",
+      "WSM",
+      882
+    ]
+  },
+  {
+    "title": "sm",
+    "searchTerms": [
+      "San Marino",
+      "Saint Marin",
+      "SMR",
+      674
+    ]
+  },
+  {
+    "title": "st",
+    "searchTerms": [
+      "Sao Tome and Principe",
+      "Sao Tomé et Principe",
+      "STP",
+      678
+    ]
+  },
+  {
+    "title": "sa",
+    "searchTerms": [
+      "Saudi Arabia",
+      "Arabie saoudite",
+      "SAU",
+      682
+    ]
+  },
+  {
+    "title": "sn",
+    "searchTerms": [
+      "Senegal",
+      "Sénégal",
+      "SEN",
+      686
+    ]
+  },
+  {
+    "title": "rs",
+    "searchTerms": [
+      "Serbia",
+      "Serbie",
+      "SRB",
+      688
+    ]
+  },
+  {
+    "title": "sc",
+    "searchTerms": [
+      "Seychelles",
+      "SYC",
+      690
+    ]
+  },
+  {
+    "title": "sl",
+    "searchTerms": [
+      "Sierra Leone",
+      "SLE",
+      694
+    ]
+  },
+  {
+    "title": "sg",
+    "searchTerms": [
+      "Singapore",
+      "Singapour",
+      "SGP",
+      702
+    ]
+  },
+  {
+    "title": "sx",
+    "searchTerms": [
+      "Sint Maarten (Dutch part)",
+      "Saint Martin (partie néerlandaise)",
+      "SXM",
+      534
+    ]
+  },
+  {
+    "title": "sk",
+    "searchTerms": [
+      "Slovakia",
+      "Slovaquie",
+      "SVK",
+      703
+    ]
+  },
+  {
+    "title": "si",
+    "searchTerms": [
+      "Slovenia",
+      "Slovénie",
+      "SVN",
+      705
+    ]
+  },
+  {
+    "title": "sb",
+    "searchTerms": [
+      "Solomon Islands",
+      "Salomon (les Îles)",
+      "SLB",
+      90
+    ]
+  },
+  {
+    "title": "so",
+    "searchTerms": [
+      "Somalia",
+      "Somalie",
+      "SOM",
+      706
+    ]
+  },
+  {
+    "title": "za",
+    "searchTerms": [
+      "South Africa",
+      "Afrique du Sud",
+      "ZAF",
+      710
+    ]
+  },
+  {
+    "title": "gs",
+    "searchTerms": [
+      "South Georgia and the South Sandwich Islands",
+      "Géorgie du Sud et les Îles Sandwich du Sud",
+      "SGS",
+      239
+    ]
+  },
+  {
+    "title": "ss",
+    "searchTerms": [
+      "South Sudan",
+      "Soudan du Sud",
+      "SSD",
+      728
+    ]
+  },
+  {
+    "title": "es",
+    "searchTerms": [
+      "Spain",
+      "Espagne",
+      "ESP",
+      724
+    ]
+  },
+  {
+    "title": "lk",
+    "searchTerms": [
+      "Sri Lanka",
+      "Sri Lanka",
+      "LKA",
+      144
+    ]
+  },
+  {
+    "title": "sd",
+    "searchTerms": [
+      "Sudan",
+      "Soudan",
+      "SDN",
+      729
+    ]
+  },
+  {
+    "title": "sr",
+    "searchTerms": [
+      "Suriname",
+      "SUR",
+      740
+    ]
+  },
+  {
+    "title": "sj",
+    "searchTerms": [
+      "Svalbard and Jan Mayen",
+      "Svalbard et l'Île Jan Mayen",
+      "SJM",
+      744
+    ]
+  },
+  {
+    "title": "se",
+    "searchTerms": [
+      "Sweden",
+      "Suède",
+      "SWE",
+      752
+    ]
+  },
+  {
+    "title": "ch",
+    "searchTerms": [
+      "Switzerland",
+      "Suisse",
+      "CHE",
+      756
+    ]
+  },
+  {
+    "title": "sy",
+    "searchTerms": [
+      "Syrian Arab Republic",
+      "République arabe syrienne",
+      "SYR",
+      760
+    ]
+  },
+  {
+    "title": "tw",
+    "searchTerms": [
+      "Taiwan (Province of China)",
+      "Taïwan (Province de Chine)",
+      "TWN",
+      158
+    ]
+  },
+  {
+    "title": "tj",
+    "searchTerms": [
+      "Tajikistan",
+      "Tadjikistan",
+      "TJK",
+      762
+    ]
+  },
+  {
+    "title": "tz",
+    "searchTerms": [
+      "Tanzania, the United Republic of",
+      "Tanzanie (la République Unie de)",
+      "TZA",
+      834
+    ]
+  },
+  {
+    "title": "th",
+    "searchTerms": [
+      "Thailand",
+      "Thaïlande",
+      "THA",
+      764
+    ]
+  },
+  {
+    "title": "tl",
+    "searchTerms": [
+      "Timor Leste",
+      "TLS",
+      626
+    ]
+  },
+  {
+    "title": "tg",
+    "searchTerms": [
+      "Togo",
+      "TGO",
+      768
+    ]
+  },
+  {
+    "title": "tk",
+    "searchTerms": [
+      "Tokelau",
+      "TKL",
+      772
+    ]
+  },
+  {
+    "title": "to",
+    "searchTerms": [
+      "Tonga",
+      "TON",
+      776
+    ]
+  },
+  {
+    "title": "tt",
+    "searchTerms": [
+      "Trinidad and Tobago",
+      "Trinité et Tobago",
+      "TTO",
+      780
+    ]
+  },
+  {
+    "title": "tn",
+    "searchTerms": [
+      "Tunisia",
+      "Tunisie",
+      "TUN",
+      788
+    ]
+  },
+  {
+    "title": "tm",
+    "searchTerms": [
+      "Turkmenistan",
+      "Turkménistan",
+      "TKM",
+      795
+    ]
+  },
+  {
+    "title": "tc",
+    "searchTerms": [
+      "Turks and Caicos Islands",
+      "Turks et Caïcos (les Îles)",
+      "TCA",
+      796
+    ]
+  },
+  {
+    "title": "tv",
+    "searchTerms": [
+      "Tuvalu",
+      "Tuvalu",
+      "TUV",
+      798
+    ]
+  },
+  {
+    "title": "tr",
+    "searchTerms": [
+      "Türkiye",
+      "TUR",
+      792
+    ]
+  },
+  {
+    "title": "ug",
+    "searchTerms": [
+      "Uganda",
+      "Ouganda",
+      "UGA",
+      800
+    ]
+  },
+  {
+    "title": "ua",
+    "searchTerms": [
+      "Ukraine",
+      "UKR",
+      804
+    ]
+  },
+  {
+    "title": "ae",
+    "searchTerms": [
+      "United Arab Emirates",
+      "Émirats arabes unis",
+      "ARE",
+      784
+    ]
+  },
+  {
+    "title": "gb",
+    "searchTerms": [
+      "United Kingdom of Great Britain and Northern Ireland",
+      "Royaume Uni de Grande Bretagne et d'Irlande du Nord",
+      "GBR",
+      826
+    ]
+  },
+  {
+    "title": "um",
+    "searchTerms": [
+      "United States Minor Outlying Islands",
+      "Îles mineures éloignées des États Unis",
+      "UMI",
+      581
+    ]
+  },
+  {
+    "title": "us",
+    "searchTerms": [
+      "United States of America",
+      "États Unis d'Amérique",
+      "USA",
+      840
+    ]
+  },
+  {
+    "title": "uy",
+    "searchTerms": [
+      "Uruguay",
+      "URY",
+      858
+    ]
+  },
+  {
+    "title": "uz",
+    "searchTerms": [
+      "Uzbekistan",
+      "Ouzbékistan",
+      "UZB",
+      860
+    ]
+  },
+  {
+    "title": "vu",
+    "searchTerms": [
+      "Vanuatu",
+      "VUT",
+      548
+    ]
+  },
+  {
+    "title": "ve",
+    "searchTerms": [
+      "Venezuela (Bolivarian Republic of)",
+      "Venezuela (République bolivarienne du)",
+      "VEN",
+      862
+    ]
+  },
+  {
+    "title": "vn",
+    "searchTerms": [
+      "Viet Nam",
+      "Viêt Nam",
+      "VNM",
+      704
+    ]
+  },
+  {
+    "title": "vg",
+    "searchTerms": [
+      "Virgin Islands (British)",
+      "Vierges britanniques (les Îles)",
+      "VGB",
+      92
+    ]
+  },
+  {
+    "title": "vi",
+    "searchTerms": [
+      "Virgin Islands (U.S.)",
+      "Vierges des États Unis (les Îles)",
+      "VIR",
+      850
+    ]
+  },
+  {
+    "title": "wf",
+    "searchTerms": [
+      "Wallis and Futuna",
+      "Wallis et Futuna",
+      "WLF",
+      876
+    ]
+  },
+  {
+    "title": "eh",
+    "searchTerms": [
+      "Western Sahara*",
+      "Sahara occidental*",
+      "ESH",
+      732
+    ]
+  },
+  {
+    "title": "ye",
+    "searchTerms": [
+      "Yemen",
+      "Yémen",
+      "YEM",
+      887
+    ]
+  },
+  {
+    "title": "zm",
+    "searchTerms": [
+      "Zambia",
+      "Zambie",
+      "ZMB",
+      894
+    ]
+  },
+  {
+    "title": "zw",
+    "searchTerms": [
+      "Zimbabwe",
+      "Zimbabwe",
+      "ZWE",
+      716
+    ]
+  },
+  {
+    "title": "arab",
+    "searchTerms": [
+      "League of Arab States"
+    ]
+  },
+  {
+    "title": "cefta",
+    "searchTerms": [
+      "Central European Free Trade Agreement",
+      "L'Accord de libre-échange centre européen",
+      "alece "
+    ]
+  },
+  {
+    "title": "cp",
+    "searchTerms": [
+      "Clipperton Island",
+      "Île Clipperton",
+      989
+    ]
+  },
+  {
+    "title": "dg",
+    "searchTerms": [
+      "Diego Garcia",
+      "Diego García",
+      "dga",
+      246
+    ]
+  },
+  {
+    "title": "eac",
+    "searchTerms": [
+      "East African Communit",
+      "La Communauté d'Afrique de l'Est"
+    ]
+  },
+  {
+    "title": "es-ct",
+    "searchTerms": [
+      "Catalonia",
+      "Catalunya"
+    ]
+  },
+  {
+    "title": "es-ga",
+    "searchTerms": [
+      "Galicia",
+      "Galice"
+    ]
+  },
+  {
+    "title": "gb-nir",
+    "searchTerms": [
+      "Northern Ireland",
+      "L'Irlande du Nord",
+      "",
+      826
+    ]
+  },
+  {
+    "title": "gb-sct",
+    "searchTerms": [
+      "Scotland",
+      "Écosse"
+    ]
+  },
+  {
+    "title": "gb-wls",
+    "searchTerms": [
+      "Wales",
+      "Pays de Galles"
+    ]
+  },
+  {
+    "title": "ic",
+    "searchTerms": [
+      "Canary Islands",
+      "les îles Canaries"
+    ]
+  },
+  {
+    "title": "pc",
+    "searchTerms": [
+      "Pacific Community",
+      "Communauté du Pacifique"
+    ]
+  },
+  {
+    "title": "sh-ac",
+    "searchTerms": [
+      "Ascension Island",
+      "Île de l'Ascension",
+      "ac",
+      247
+    ]
+  },
+  {
+    "title": "sh-hl",
+    "searchTerms": [
+      "Saint Helena",
+      "Sainte Hélène",
+      "",
+      290
+    ]
+  },
+  {
+    "title": "sh-ta",
+    "searchTerms": [
+      "Tristan da Cunha",
+      "Île Tristan da Cunha",
+      "ta",
+      290
+    ]
+  },
+  {
+    "title": "un",
+    "searchTerms": [
+      "United Nations",
+      "Nations unies"
+    ]
+  },
+  {
+    "title": "xk",
+    "searchTerms": [
+      "Republic of Kosovo",
+      "république du Kosovo",
+      "xxk",
+      383
+    ]
+  },
+  {
+    "title": "es-pv",
+    "searchTerms": [
+      "Basque"
+    ]
+  },
+  {
+    "title": "eu",
+    "searchTerms": [
+      "Europe"
+    ]
+  },
+  {
+    "title": "gb-eng",
+    "searchTerms": [
+      "England",
+      "Angleterre"
+    ]
+  },
+  {
+    "title": "xx",
+    "searchTerms": [
+      "unknown",
+      "none",
+      "xxx",
+      0
+    ]
+  }
+]

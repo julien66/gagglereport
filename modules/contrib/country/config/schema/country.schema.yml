@@ -1,0 +1,43 @@
+field.field_settings.country:
+  label: 'Country settings'
+  type: mapping
+  mapping:
+    selectable_countries:
+      type: sequence
+      label: 'Selectable countries'
+      sequence:
+        type: string
+
+field.storage_settings.country:
+  label: 'Country settings'
+  type: mapping
+  mapping:
+    selectable_countries:
+      type: sequence
+      label: 'Selectable countries'
+      sequence:
+        type: string
+
+views.filter_value.country_item:
+  type: mapping
+  label: 'Country filter value'
+  mapping:
+    type:
+      type: string
+      label: 'Type'
+
+views.filter.country_item:
+  type: views_filter
+  label: 'Country filter value'
+  mapping:
+    type:
+      type: string
+      label: 'Selection type'
+
+views.sort.country_item:
+  type: views_sort
+  label: 'Country sort'
+  mapping:
+    default_sort:
+      type: boolean
+      label: 'Sort by ISO code'

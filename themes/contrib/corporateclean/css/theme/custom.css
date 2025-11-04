@@ -1,4 +1,14 @@
-# Custom CSS for Union website.
-.thumbsupdown-rating-wrapper submit{
-	display:none !important;
+.content-top-highlighted__section a.btn {
+  background-color: #f6f9fc !important;
+  color : #007e8f !important;
+}
+
+#profile img {
+	margin:auto;
+	display:block;
+}
+
+.comment .field--name-user-picture img,
+.node__meta .field--name-user-picture img {
+	border-radius: 50%;
 }

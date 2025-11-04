@@ -1,0 +1,18 @@
+# @see core/modules/ckeditor5/ckeditor5.ckeditor5.yml
+# @see https://www.drupal.org/project/ckeditor5_dev
+bootstrap_flag_icons_plugin:
+  # Configuration that will be sent to CKEditor 5 JavaScript plugins.
+  ckeditor5:
+    plugins:
+      - flagIcons.FlagIcons
+  drupal:
+    label: Flag Icon
+    library: bootstrap_flag_icons/flag_icons.plugin
+    admin_library: bootstrap_flag_icons/admin.flag_icons
+    toolbar_items:
+      flagIcons:
+        label: Flag icons
+    elements:
+      - <i>
+      - <i class="fi">
+    class: Drupal\bootstrap_flag_icons\Plugin\CKEditor5Plugin\FlagIcons

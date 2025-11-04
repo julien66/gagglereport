@@ -1,0 +1,48 @@
+<?php
+
+namespace Drupal\Tests\{{ machine_name }}\Kernel{{ sub_namespace ? '\\' ~ sub_namespace }};
+
+use Drupal\{{ machine_name }}\Event{{ sub_namespace ? '\\' ~ sub_namespace }}\{{ class }};
+use Drupal\hook_event_dispatcher\HookEventDispatcherInterface;
+use Drupal\KernelTests\KernelTestBase;
+use Drupal\Tests\hook_event_dispatcher\Kernel\ListenerTrait;
+
+/**
+ * Class {{ class }}.
+ *
+ * @group hook_event_dispatcher
+ * @group {{ machine_name }}
+ *
+ * @see {{ machine_name }}_{{ id }}()
+ */
+class {{ class }}Test extends KernelTestBase {
+
+  use ListenerTrait;
+
+  /**
+   * {@inheritdoc}
+   */
+  protected static $modules = [
+    'hook_event_dispatcher',
+    '{{ machine_name }}',
+  ];
+
+  /**
+   * Test {{ class }}.
+   *
+   * @throws \Exception
+   */
+  public function test{{ class }}(): void {
+    $this->listen(HookEventDispatcherInterface::{{ type }}, 'on{{ event_name }}');
+  }
+
+  /**
+   * Callback for {{ class }}.
+   *
+   * @param \Drupal\{{ machine_name }}\Event{{ sub_namespace ? '\\' ~ sub_namespace }}\{{ class}} $event
+   *   The event.
+   */
+  public function on{{ event_name }}({{ class }} $event): void {
+  }
+
+}

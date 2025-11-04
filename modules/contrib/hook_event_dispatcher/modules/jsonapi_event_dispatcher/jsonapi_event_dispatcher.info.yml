@@ -1,0 +1,13 @@
+name: JSON:API Event Dispatcher
+type: module
+description: Registers event dispatchers for several jsonapi hooks
+core_version_requirement: ^10.2 || ^11
+package: Hook events
+dependencies:
+  - hook_event_dispatcher:hook_event_dispatcher
+  - drupal:jsonapi
+
+# Information added by Drupal.org packaging script on 2024-09-22
+version: '4.2.0'
+project: 'hook_event_dispatcher'
+datestamp: 1727021698

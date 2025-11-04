@@ -1,0 +1,10 @@
+name: Flag icons Bootstrap CkEditor
+type: module
+description: Provides a Bootstrap 5 dropdown button to switch between available languages. CkEditor insert flag icon
+package: Multilingual
+core_version_requirement: ^9 || ^10 || ^11 || ^12
+
+# Information added by Drupal.org packaging script on 2025-06-20
+version: '1.0.6'
+project: 'bootstrap_flag_icons'
+datestamp: 1750417883

@@ -1,0 +1,35 @@
+rules.autocomplete:
+  js:
+    js/autocomplete.js: { weight: -1 }
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+    - core/drupal.ajax
+    - core/drupal.autocomplete
+    - core/jquery
+    - core/once
+
+rules_ui.listing:
+  js:
+    js/rules_ui.listing.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/once
+    - rules/rules_ui.styles
+
+rules_ui.styles:
+  css:
+    theme:
+      css/rules_ui.css: {}
+
+rules.debug:
+  js:
+    js/debug.js: {}
+  css:
+    theme:
+      css/debug.css: {}
+  dependencies:
+    - core/drupal
+    - core/once
+    - core/jquery.ui

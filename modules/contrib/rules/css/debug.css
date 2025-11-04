@@ -1,0 +1,35 @@
+/**
+ * @file
+ * Stylesheet for Rules module debugging.
+ */
+
+.rules-debug-log {
+  margin: 1.5em 0;
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+.rules-debug-open-all {
+  position: relative;
+  float: right; /* LTR */
+}
+[dir="rtl"] .rules-debug-open-all {
+  float: left;
+}
+
+.rules-debug-log ul {
+  padding-left: 2em; /* LTR */
+}
+[dir="rtl"] .rules-debug-log ul {
+  padding-right: 2em;
+  padding-left: inherit;
+}
+
+.rules-debug-log .rules-debug-warning {
+  color: #df0101;
+}
+
+.rules-debug-log .rules-debug-error {
+  color: #df0101;
+  font-weight: bold;
+}

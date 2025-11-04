@@ -1,0 +1,746 @@
+.fi::before {
+  margin-left: 1em;
+}
+.fil-af {
+  background-image: url(../flags/4x3/za.svg);
+}
+
+.fil-am {
+  background-image: url(../flags/4x3/et.svg);
+}
+
+.fil-ar {
+  background-image: url(../flags/4x3/dz.svg);
+}
+
+.fil-ast {
+  background-image: url(../flags/4x3/es.svg);
+}
+
+.fil-az {
+  background-image: url(../flags/4x3/az.svg);
+}
+
+.fil-be {
+  background-image: url(../flags/4x3/by.svg);
+}
+
+.fil-bg {
+  background-image: url(../flags/4x3/bg.svg);
+}
+
+.fil-bn {
+  background-image: url(../flags/4x3/bd.svg);
+}
+
+.fil-bo {
+  background-image: url(../flags/4x3/np.svg);
+}
+
+.fil-bs {
+  background-image: url(../flags/4x3/ba.svg);
+}
+
+.fil-ca {
+  background-image: url(../flags/4x3/es-ct.svg);
+}
+
+.fil-cs {
+  background-image: url(../flags/4x3/cz.svg);
+}
+
+.fil-cy {
+  background-image: url(../flags/4x3/gb-wls.svg);
+}
+
+.fil-da {
+  background-image: url(../flags/4x3/dk.svg);
+}
+
+.fil-de {
+  background-image: url(../flags/4x3/de.svg);
+}
+
+.fil-dz {
+  background-image: url(../flags/4x3/np.svg);
+}
+
+.fil-el {
+  background-image: url(../flags/4x3/gr.svg);
+}
+
+.fil-en {
+  background-image: url(../flags/4x3/gb.svg);
+}
+
+.fil-en-x-simple {
+  background-image: url(../flags/4x3/gb-eng.svg);
+}
+
+.fil-eo {
+  background-image: url(../flags/4x3/un.svg);
+}
+
+.fil-es {
+  background-image: url(../flags/4x3/es.svg);
+}
+
+.fil-et {
+  background-image: url(../flags/4x3/et.svg);
+}
+
+.fil-eu {
+  background-image: url(../flags/4x3/fr.svg);
+}
+
+.fil-fa {
+  background-image: url(../flags/4x3/ir.svg);
+}
+
+.fil-fi {
+  background-image: url(../flags/4x3/fi.svg);
+}
+
+.fil-fil {
+  background-image: url(../flags/4x3/ph.svg);
+}
+
+.fil-fo {
+  background-image: url(../flags/4x3/fo.svg);
+}
+
+.fil-fr {
+  background-image: url(../flags/4x3/fr.svg);
+}
+
+.fil-fy {
+  background-image: url(../flags/4x3/nl.svg);
+}
+
+.fil-ga {
+  background-image: url(../flags/4x3/ga.svg);
+}
+
+.fil-gd {
+  background-image: url(../flags/4x3/gd.svg);
+}
+
+.fil-gl {
+  background-image: url(../flags/4x3/gl.svg);
+}
+
+.fil-gsw-berne {
+  background-image: url(../flags/4x3/ch.svg);
+}
+
+.fil-gu {
+  background-image: url(../flags/4x3/gu.svg);
+}
+
+.fil-he {
+  background-image: url(../flags/4x3/il.svg);
+}
+
+.fil-hi {
+  background-image: url(../flags/4x3/in.svg);
+}
+
+.fil-hr {
+  background-image: url(../flags/4x3/hr.svg);
+}
+
+.fil-ht {
+  background-image: url(../flags/4x3/ht.svg);
+}
+
+.fil-hu {
+  background-image: url(../flags/4x3/hu.svg);
+}
+
+.fil-hy {
+  background-image: url(../flags/4x3/am.svg);
+}
+
+.fil-id {
+  background-image: url(../flags/4x3/id.svg);
+}
+
+.fil-is {
+  background-image: url(../flags/4x3/is.svg);
+}
+
+.fil-it {
+  background-image: url(../flags/4x3/it.svg);
+}
+
+.fil-ja {
+  background-image: url(../flags/4x3/jp.svg);
+}
+
+.fil-jv {
+  background-image: url(../flags/4x3/id.svg);
+}
+
+.fil-ka {
+  background-image: url(../flags/4x3/ge.svg);
+}
+
+.fil-kk {
+  background-image: url(../flags/4x3/kz.svg);
+}
+
+.fil-km {
+  background-image: url(../flags/4x3/kh.svg);
+}
+
+.fil-kn {
+  background-image: url(../flags/4x3/in.svg);
+}
+
+.fil-ko {
+  background-image: url(../flags/4x3/kr.svg);
+}
+
+.fil-ku {
+  background-image: url(../flags/4x3/sy.svg);
+}
+
+.fil-ky {
+  background-image: url(../flags/4x3/ky.svg);
+}
+
+.fil-lo {
+  background-image: url(../flags/4x3/la.svg);
+}
+
+.fil-lt {
+  background-image: url(../flags/4x3/lt.svg);
+}
+
+.fil-lv {
+  background-image: url(../flags/4x3/lv.svg);
+}
+
+.fil-mg {
+  background-image: url(../flags/4x3/mg.svg);
+}
+
+.fil-mk {
+  background-image: url(../flags/4x3/mk.svg);
+}
+
+.fil-ml {
+  background-image: url(../flags/4x3/ml.svg);
+}
+
+.fil-mn {
+  background-image: url(../flags/4x3/mn.svg);
+}
+
+.fil-mr {
+  background-image: url(../flags/4x3/mr.svg);
+}
+
+.fil-ms {
+  background-image: url(../flags/4x3/ms.svg);
+}
+
+.fil-my {
+  background-image: url(../flags/4x3/my.svg);
+}
+
+.fil-ne {
+  background-image: url(../flags/4x3/ne.svg);
+}
+
+.fil-nl {
+  background-image: url(../flags/4x3/nl.svg);
+}
+
+.fil-nb {
+  background-image: url(../flags/4x3/no.svg);
+}
+
+.fil-nn {
+  background-image: url(../flags/4x3/no.svg);
+}
+
+.fil-oc {
+  background-image: url(../flags/4x3/fr.svg);
+}
+
+.fil-pa {
+  background-image: url(../flags/4x3/pa.svg);
+}
+
+.fil-pl {
+  background-image: url(../flags/4x3/pl.svg);
+}
+
+.fil-pt-pt {
+  background-image: url(../flags/4x3/pt.svg);
+}
+
+.fil-pt-br {
+  background-image: url(../flags/4x3/br.svg);
+}
+
+.fil-ro {
+  background-image: url(../flags/4x3/ro.svg);
+}
+
+.fil-ru {
+  background-image: url(../flags/4x3/ru.svg);
+}
+
+.fil-sco {
+  background-image: url(../flags/4x3/gb-sct.svg);
+}
+
+.fil-se {
+  background-image: url(../flags/4x3/se.svg);
+}
+
+.fil-si {
+  background-image: url(../flags/4x3/si.svg);
+}
+
+.fil-sk {
+  background-image: url(../flags/4x3/sk.svg);
+}
+
+.fil-sl {
+  background-image: url(../flags/4x3/sl.svg);
+}
+
+.fil-sq {
+  background-image: url(../flags/4x3/al.svg);
+}
+
+.fil-sr {
+  background-image: url(../flags/4x3/sr.svg);
+}
+
+.fil-sv {
+  background-image: url(../flags/4x3/sv.svg);
+}
+
+.fil-sw {
+  background-image: url(../flags/4x3/tz.svg);
+}
+
+.fil-ta {
+  background-image: url(../flags/4x3/in.svg);
+}
+
+.fil-ta-lk {
+  background-image: url(../flags/4x3/lk.svg);
+}
+
+.fil-te {
+  background-image: url(../flags/4x3/in.svg);
+}
+
+.fil-th {
+  background-image: url(../flags/4x3/th.svg);
+}
+
+.fil-tr {
+  background-image: url(../flags/4x3/tr.svg);
+}
+
+.fil-ug {
+  background-image: url(../flags/4x3/kz.svg);
+}
+
+.fil-uk {
+  background-image: url(../flags/4x3/ua.svg);
+}
+
+.fil-ur {
+  background-image: url(../flags/4x3/pk.svg);
+}
+
+.fil-vi {
+  background-image: url(../flags/4x3/vn.svg);
+}
+
+.fil-zh-hans {
+  background-image: url(../flags/4x3/cn.svg);
+}
+
+.fil-zh-hant {
+  background-image: url(../flags/4x3/tw.svg);
+}
+
+.fil-af.fis {
+  background-image: url(../flags/1x1/za.svg);
+}
+
+.fil-am.fis {
+  background-image: url(../flags/1x1/et.svg);
+}
+
+.fil-ar.fis {
+  background-image: url(../flags/1x1/dz.svg);
+}
+
+.fil-ast.fis {
+  background-image: url(../flags/1x1/es.svg);
+}
+
+.fil-az.fis {
+  background-image: url(../flags/1x1/az.svg);
+}
+
+.fil-be.fis {
+  background-image: url(../flags/1x1/by.svg);
+}
+
+.fil-bg.fis {
+  background-image: url(../flags/1x1/bg.svg);
+}
+
+.fil-bn.fis {
+  background-image: url(../flags/1x1/bd.svg);
+}
+
+.fil-bo.fis {
+  background-image: url(../flags/1x1/np.svg);
+}
+
+.fil-bs.fis {
+  background-image: url(../flags/1x1/ba.svg);
+}
+
+.fil-ca.fis {
+  background-image: url(../flags/1x1/es-ct.svg);
+}
+
+.fil-cs.fis {
+  background-image: url(../flags/1x1/cz.svg);
+}
+
+.fil-cy.fis {
+  background-image: url(../flags/1x1/gb-wls.svg);
+}
+
+.fil-da.fis {
+  background-image: url(../flags/1x1/dk.svg);
+}
+
+.fil-de.fis {
+  background-image: url(../flags/1x1/de.svg);
+}
+
+.fil-dz.fis {
+  background-image: url(../flags/1x1/np.svg);
+}
+
+.fil-el.fis {
+  background-image: url(../flags/1x1/gr.svg);
+}
+
+.fil-en.fis {
+  background-image: url(../flags/1x1/gb.svg);
+}
+
+.fil-en-x-simple.fis {
+  background-image: url(../flags/1x1/gb-eng.svg);
+}
+
+.fil-eo.fis {
+  background-image: url(../flags/1x1/un.svg);
+}
+
+.fil-es.fis {
+  background-image: url(../flags/1x1/es.svg);
+}
+
+.fil-et.fis {
+  background-image: url(../flags/1x1/et.svg);
+}
+
+.fil-eu.fis {
+  background-image: url(../flags/1x1/fr.svg);
+}
+
+.fil-fa.fis {
+  background-image: url(../flags/1x1/ir.svg);
+}
+
+.fil-fi.fis {
+  background-image: url(../flags/1x1/fi.svg);
+}
+
+.fil-fil.fis {
+  background-image: url(../flags/1x1/ph.svg);
+}
+
+.fil-fo.fis {
+  background-image: url(../flags/1x1/fo.svg);
+}
+
+.fil-fr.fis {
+  background-image: url(../flags/1x1/fr.svg);
+}
+
+.fil-fy.fis {
+  background-image: url(../flags/1x1/nl.svg);
+}
+
+.fil-ga.fis {
+  background-image: url(../flags/1x1/ga.svg);
+}
+
+.fil-gd.fis {
+  background-image: url(../flags/1x1/gd.svg);
+}
+
+.fil-gl.fis {
+  background-image: url(../flags/1x1/gl.svg);
+}
+
+.fil-gsw-berne.fis {
+  background-image: url(../flags/1x1/ch.svg);
+}
+
+.fil-gu.fis {
+  background-image: url(../flags/1x1/gu.svg);
+}
+
+.fil-he.fis {
+  background-image: url(../flags/1x1/il.svg);
+}
+
+.fil-hi.fis {
+  background-image: url(../flags/1x1/in.svg);
+}
+
+.fil-hr.fis {
+  background-image: url(../flags/1x1/hr.svg);
+}
+
+.fil-ht.fis {
+  background-image: url(../flags/1x1/ht.svg);
+}
+
+.fil-hu.fis {
+  background-image: url(../flags/1x1/hu.svg);
+}
+
+.fil-hy.fis {
+  background-image: url(../flags/1x1/am.svg);
+}
+
+.fil-id.fis {
+  background-image: url(../flags/1x1/id.svg);
+}
+
+.fil-is.fis {
+  background-image: url(../flags/1x1/is.svg);
+}
+
+.fil-it.fis {
+  background-image: url(../flags/1x1/it.svg);
+}
+
+.fil-ja.fis {
+  background-image: url(../flags/1x1/jp.svg);
+}
+
+.fil-jv.fis {
+  background-image: url(../flags/1x1/id.svg);
+}
+
+.fil-ka.fis {
+  background-image: url(../flags/1x1/ge.svg);
+}
+
+.fil-kk.fis {
+  background-image: url(../flags/1x1/kz.svg);
+}
+
+.fil-km.fis {
+  background-image: url(../flags/1x1/kh.svg);
+}
+
+.fil-kn.fis {
+  background-image: url(../flags/1x1/in.svg);
+}
+
+.fil-ko.fis {
+  background-image: url(../flags/1x1/kr.svg);
+}
+
+.fil-ku.fis {
+  background-image: url(../flags/1x1/sy.svg);
+}
+
+.fil-ky.fis {
+  background-image: url(../flags/1x1/ky.svg);
+}
+
+.fil-lo.fis {
+  background-image: url(../flags/1x1/la.svg);
+}
+
+.fil-lt.fis {
+  background-image: url(../flags/1x1/lt.svg);
+}
+
+.fil-lv.fis {
+  background-image: url(../flags/1x1/lv.svg);
+}
+
+.fil-mg.fis {
+  background-image: url(../flags/1x1/mg.svg);
+}
+
+.fil-mk.fis {
+  background-image: url(../flags/1x1/mk.svg);
+}
+
+.fil-ml.fis {
+  background-image: url(../flags/1x1/ml.svg);
+}
+
+.fil-mn.fis {
+  background-image: url(../flags/1x1/mn.svg);
+}
+
+.fil-mr.fis {
+  background-image: url(../flags/1x1/mr.svg);
+}
+
+.fil-ms.fis {
+  background-image: url(../flags/1x1/ms.svg);
+}
+
+.fil-my.fis {
+  background-image: url(../flags/1x1/my.svg);
+}
+
+.fil-ne.fis {
+  background-image: url(../flags/1x1/ne.svg);
+}
+
+.fil-nl.fis {
+  background-image: url(../flags/1x1/nl.svg);
+}
+
+.fil-nb.fis {
+  background-image: url(../flags/1x1/no.svg);
+}
+
+.fil-nn.fis {
+  background-image: url(../flags/1x1/no.svg);
+}
+
+.fil-oc.fis {
+  background-image: url(../flags/1x1/fr.svg);
+}
+
+.fil-pa.fis {
+  background-image: url(../flags/1x1/pa.svg);
+}
+
+.fil-pl.fis {
+  background-image: url(../flags/1x1/pl.svg);
+}
+
+.fil-pt-pt.fis {
+  background-image: url(../flags/1x1/pt.svg);
+}
+
+.fil-pt-br.fis {
+  background-image: url(../flags/1x1/br.svg);
+}
+
+.fil-ro.fis {
+  background-image: url(../flags/1x1/ro.svg);
+}
+
+.fil-ru.fis {
+  background-image: url(../flags/1x1/ru.svg);
+}
+
+.fil-sco.fis {
+  background-image: url(../flags/1x1/gb-sct.svg);
+}
+
+.fil-se.fis {
+  background-image: url(../flags/1x1/se.svg);
+}
+
+.fil-si.fis {
+  background-image: url(../flags/1x1/si.svg);
+}
+
+.fil-sk.fis {
+  background-image: url(../flags/1x1/sk.svg);
+}
+
+.fil-sl.fis {
+  background-image: url(../flags/1x1/sl.svg);
+}
+
+.fil-sq.fis {
+  background-image: url(../flags/1x1/al.svg);
+}
+
+.fil-sr.fis {
+  background-image: url(../flags/1x1/sr.svg);
+}
+
+.fil-sv.fis {
+  background-image: url(../flags/1x1/sv.svg);
+}
+
+.fil-sw.fis {
+  background-image: url(../flags/1x1/tz.svg);
+}
+
+.fil-ta.fis {
+  background-image: url(../flags/1x1/in.svg);
+}
+
+.fil-ta-lk.fis {
+  background-image: url(../flags/1x1/lk.svg);
+}
+
+.fil-te.fis {
+  background-image: url(../flags/1x1/in.svg);
+}
+
+.fil-th.fis {
+  background-image: url(../flags/1x1/th.svg);
+}
+
+.fil-tr.fis {
+  background-image: url(../flags/1x1/tr.svg);
+}
+
+.fil-ug.fis {
+  background-image: url(../flags/1x1/kz.svg);
+}
+
+.fil-uk.fis {
+  background-image: url(../flags/1x1/ua.svg);
+}
+
+.fil-ur.fis {
+  background-image: url(../flags/1x1/pk.svg);
+}
+
+.fil-vi.fis {
+  background-image: url(../flags/1x1/vn.svg);
+}
+
+.fil-zh-hans.fis {
+  background-image: url(../flags/1x1/cn.svg);
+}
+
+.fil-zh-hant.fis {
+  background-image: url(../flags/1x1/tw.svg);
+}

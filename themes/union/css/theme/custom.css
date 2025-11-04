@@ -1,0 +1,7 @@
+.list-container {
+	transform : rotate(180);
+}
+
+.list-entry : {
+	transform : rotate(-180);
+}

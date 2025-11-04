@@ -1,0 +1,38 @@
+# Custom module library for general purposes.
+# cspell:disable
+
+bootstrap_flag_icons:
+  css:
+    component:
+      css/bootstrap-flag-icons.css: {}
+  dependencies:
+    - core/drupalSettings
+    - bootstrap_flag_icons/flag-icons
+
+# Third-party library (CDN).
+flag-icons:
+  remote: https://github.com/lipis/flag-icons
+  version: 7.2.3
+  license:
+    name: MIT
+    url: https://github.com/lipis/flag-icons/blob/main/LICENSE
+    gpl-compatible: true
+  css:
+    component:
+      //cdn.jsdelivr.net/gh/lipis/flag-icons/css/flag-icons.min.css: {type: external, minified: true}
+
+# Loaded in the text format configuration form to provide styling for the icon
+# used in toolbar config.
+admin.flag_icons:
+  css:
+    theme:
+      css/flag-icons.admin.css: { }
+
+# cSpell:ignore svgIcon
+flag_icons.plugin:
+  js:
+    js/build/flagIcons.js: { preprocess: false, minified: true }
+  dependencies:
+    - core/ckeditor5
+    - bootstrap_flag_icons/flag-icons
+    - bootstrap_flag_icons/admin.flag_icons

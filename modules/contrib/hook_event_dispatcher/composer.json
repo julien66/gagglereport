@@ -1,0 +1,42 @@
+{
+    "name": "drupal/hook_event_dispatcher",
+    "description": "Dispatches events for several drupal core hooks.",
+    "type": "drupal-module",
+    "license": "GPL-2.0-or-later",
+    "homepage": "https://drupal.org/project/hook_event_dispatcher",
+    "support": {
+        "issues": "https://drupal.org/project/issues/hook_event_dispatcher",
+        "source": "https://git.drupalcode.org/project/hook_event_dispatcher"
+    },
+    "require": {
+        "php": ">=8.1.0",
+        "drupal/core": "^10.2 || ^11.0"
+    },
+    "require-dev": {
+        "drupal/paragraphs": "^1.10",
+        "drupal/tracer": "^1.0",
+        "drupal/webform": "^6.2",
+        "mglaman/phpstan-drupal": "^1.1",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan-deprecation-rules": "^1.0"
+    },
+    "suggest": {
+        "drupal/token": "Provides additional tokens not supported by core (most notably fields), as well as a UI for browsing tokens.",
+        "drupal/paragraphs": "Enables the creation of paragraphs entities."
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "repositories": {
+        "drupal": {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "allow-plugins": {
+            "phpstan/extension-installer": true
+        }
+    }
+}

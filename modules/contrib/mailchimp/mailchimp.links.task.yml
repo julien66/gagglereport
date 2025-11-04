@@ -1,0 +1,9 @@
+mailchimp.admin:
+  route_name: mailchimp.admin
+  base_route: mailchimp.admin
+  title: 'Global Settings'
+
+mailchimp.admin.oauth:
+  route_name: mailchimp.admin.oauth
+  base_route: mailchimp.admin
+  title: 'OAuth Settings'

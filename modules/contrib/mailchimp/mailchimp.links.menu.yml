@@ -1,0 +1,11 @@
+mailchimp.admin:
+  route_name: mailchimp.admin
+  title: 'Mailchimp'
+  description: 'Manage Mailchimp Settings.'
+  parent: system.admin_config_services
+
+mailchimp.admin.oauth:
+  route_name: mailchimp.admin.oauth
+  title: 'OAuth Settings'
+  description: 'Manage OAuth Settings.'
+  parent: mailchimp.admin

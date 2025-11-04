@@ -1,0 +1,21 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Result of && is always false\\.$#"
+			count: 1
+			path: modules/core_event_dispatcher/src/Event/Token/TokensReplacementEvent.php
+
+		-
+			message: "#^Parameter \\#1 \\$bundle of function entity_test_create_bundle expects string, int\\<0, max\\> given\\.$#"
+			count: 1
+			path: modules/core_event_dispatcher/tests/src/Kernel/Entity/EntityCreateAccessEventTest.php
+
+		-
+			message: "#^Parameter \\#1 \\$entity_bundle of method Drupal\\\\Core\\\\Entity\\\\EntityAccessControlHandlerInterface\\:\\:createAccess\\(\\) expects string\\|null, int\\<0, max\\> given\\.$#"
+			count: 1
+			path: modules/core_event_dispatcher/tests/src/Kernel/Entity/EntityCreateAccessEventTest.php
+
+		-
+			message: "#^Parameter \\#3 \\$replacement of method Drupal\\\\core_event_dispatcher\\\\Event\\\\Token\\\\TokensReplacementEvent\\:\\:setReplacementValue\\(\\) expects Drupal\\\\Component\\\\Render\\\\MarkupInterface\\|string, null given\\.$#"
+			count: 1
+			path: modules/core_event_dispatcher/tests/src/Kernel/Token/TokenReplacementEventTest.php

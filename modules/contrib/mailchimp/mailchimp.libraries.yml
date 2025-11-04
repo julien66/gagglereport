@@ -1,0 +1,9 @@
+authentication:
+  js:
+    js/authentication.js: {}
+  css:
+    component:
+      css/authentication.css: {}
+  dependencies:
+    - core/drupal
+    - core/drupal.ajax

@@ -1,0 +1,15 @@
+services:
+  preprocess_event_test.factory:
+    class: Drupal\Tests\preprocess_event_dispatcher\Unit\Helpers\FakePreprocessEventFactory
+    abstract: true
+    public: false
+  preprocess_event_test.factory.page:
+    parent: preprocess_event_test.factory
+    arguments: ['page']
+    tags:
+      - { name: preprocess_event_factory }
+  preprocess_event_test.factory.html:
+    parent: preprocess_event_test.factory
+    arguments: ['html']
+    tags:
+      - { name: preprocess_event_factory }

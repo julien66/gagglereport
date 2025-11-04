@@ -1,0 +1,19 @@
+add mailchimp event entities:
+  title: 'Create new Mailchimp event types'
+
+administer mailchimp event entities:
+  title: 'Administer Mailchimp event types'
+  description: 'Allow to access the administration form to configure Mailchimp event types.'
+  restrict access: true
+
+delete mailchimp event entities:
+  title: 'Delete Mailchimp event types'
+
+edit mailchimp event entities:
+  title: 'Edit Mailchimp event types'
+
+view published mailchimp event entities:
+  title: 'View published Mailchimp event types'
+
+view unpublished mailchimp event entities:
+  title: 'View unpublished Mailchimp event types'

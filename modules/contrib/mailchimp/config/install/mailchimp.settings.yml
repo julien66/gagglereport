@@ -1,0 +1,9 @@
+api_key: ''
+api_timeout: 10
+domain: ''
+use_oauth: TRUE
+cron: FALSE
+batch_limit: 100
+api_classname: 'Mailchimp\Mailchimp'
+test_mode: FALSE
+optin_check_email_msg: 'Please check your email to confirm your subscription.'

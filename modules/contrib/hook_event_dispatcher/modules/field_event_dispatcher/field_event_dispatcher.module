@@ -1,0 +1,92 @@
+<?php
+
+/**
+ * @file
+ * Field event dispatcher submodule.
+ */
+
+use Drupal\Core\Field\FieldDefinitionInterface;
+use Drupal\Core\Field\FormatterInterface;
+use Drupal\Core\Field\WidgetInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\field_event_dispatcher\Event\Field\FieldFormatterSettingsSummaryAlterEvent;
+use Drupal\field_event_dispatcher\Event\Field\FieldFormatterThirdPartySettingsFormEvent;
+use Drupal\field_event_dispatcher\Event\Field\FieldWidgetSettingsSummaryAlterEvent;
+use Drupal\field_event_dispatcher\Event\Field\FieldWidgetThirdPartySettingsFormEvent;
+
+// @todo hook_field_ui_preconfigured_options_alter()
+// @todo hook_field_storage_config_update_forbid()
+// @todo hook_field_widget_info_alter()
+// @todo hook_field_info_max_weight()
+// @todo hook_field_purge_field_storage()
+// @todo hook_field_purge_field()
+
+/**
+ * Implements hook_field_formatter_settings_summary_alter().
+ *
+ * {@inheritdoc}
+ */
+function field_event_dispatcher_field_formatter_settings_summary_alter(
+  array &$summary,
+  array $context,
+): void {
+  /** @var \Drupal\hook_event_dispatcher\Manager\HookEventDispatcherManagerInterface $manager */
+  $manager = Drupal::service('hook_event_dispatcher.manager');
+  $event = new FieldFormatterSettingsSummaryAlterEvent($summary, $context);
+  $manager->register($event);
+}
+
+/**
+ * Implements hook_field_formatter_third_party_settings_form().
+ *
+ * {@inheritdoc}
+ */
+function field_event_dispatcher_field_formatter_third_party_settings_form(
+  FormatterInterface $plugin,
+  FieldDefinitionInterface $fieldDefinition,
+  string $viewMode,
+  array $form,
+  FormStateInterface $formState,
+): array {
+  /** @var \Drupal\hook_event_dispatcher\Manager\HookEventDispatcherManagerInterface $manager */
+  $manager = Drupal::service('hook_event_dispatcher.manager');
+  $event = new FieldFormatterThirdPartySettingsFormEvent($plugin, $fieldDefinition, $viewMode, $form, $formState);
+  $manager->register($event);
+
+  return $event->getElements();
+}
+
+/**
+ * Implements hook_field_widget_settings_summary_alter().
+ *
+ * {@inheritdoc}
+ */
+function field_event_dispatcher_field_widget_settings_summary_alter(
+  array &$summary,
+  array $context,
+): void {
+  /** @var \Drupal\hook_event_dispatcher\Manager\HookEventDispatcherManagerInterface $manager */
+  $manager = Drupal::service('hook_event_dispatcher.manager');
+  $event = new FieldWidgetSettingsSummaryAlterEvent($summary, $context);
+  $manager->register($event);
+}
+
+/**
+ * Implements hook_field_widget_third_party_settings_form().
+ *
+ * {@inheritdoc}
+ */
+function field_event_dispatcher_field_widget_third_party_settings_form(
+  WidgetInterface $plugin,
+  FieldDefinitionInterface $fieldDefinition,
+  string $formMode,
+  array $form,
+  FormStateInterface $formState,
+): array {
+  /** @var \Drupal\hook_event_dispatcher\Manager\HookEventDispatcherManagerInterface $manager */
+  $manager = Drupal::service('hook_event_dispatcher.manager');
+  $event = new FieldWidgetThirdPartySettingsFormEvent($plugin, $fieldDefinition, $formMode, $form, $formState);
+  $manager->register($event);
+
+  return $event->getElements();
+}

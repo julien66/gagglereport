@@ -1,0 +1,23 @@
+action.configuration.mailchimp_eca_get_list_mergevars:
+  type: mapping
+  label: 'Configuration for the "Get signup list mergevars" action'
+  mapping:
+    list_id:
+      type: string
+      label: 'List/Audience ID'
+    required_only:
+      type: integer
+      label: 'Exclude optional mergevars'
+    token_name:
+      type: required_label
+      label: 'Name of token'
+action.configuration.mailchimp_eca_get_signup_lists:
+  type: mapping
+  label: 'Configuration for the "Get signup lists" action'
+  mapping:
+    token_name:
+      type: required_label
+      label: 'Name of token'
+eca.event.plugin.mailchimp_eca:authenticate:
+  type: eca.event.plugin
+  label: 'Authenticate Mailchimp'

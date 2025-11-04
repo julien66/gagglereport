@@ -1,0 +1,81 @@
+
+{#
+/**
+ * @file
+ * Default theme implementation to present all user data.
+ *
+ * This template is used when viewing a registered user's page,
+ * e.g., example.com/user/123. 123 being the user's ID.
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ *   print a subset such as 'content.field_example'. Fields attached to a user
+ *   such as 'user_picture' are available as 'content.user_picture'.
+ * - attributes: HTML attributes for the container element.
+ * - user: A Drupal User entity.
+ *
+ * @see template_preprocess_user()
+ *
+ * @ingroup themeable
+ */
+#}
+<article{{ attributes }}>
+  {% if content and elements['#view_mode'] == "full" %}
+	<div class="container">
+	<div class="row">
+		<div id="profile" class="col col-sm-6">
+			{{ content.user_picture }}
+			<h3 class="text-center">
+				{{ content.field_name.0}}  {{ content.field_surname.0 }} <br>
+			</h3>
+		</div>
+		<div class="col col-sm-6">
+			{{ content.field_discipline_practiced}}
+			{{ content.field_civlid}}
+			{{ content.field_main_caps}}
+			<br>		
+			{% if content.field_nationality.0 %}
+			<img class="img img-responsive" width="48" src="/modules/contrib/bootstrap_flag_icons/flags/4x3/{{content.field_nationality.0|render|lower}}.svg">
+			{% endif %} 
+			{% if content.field_designer['#items'].value == '1' %}
+				<h3><span class="badge bg-secondary">Designer</span></h3>
+			{% endif %}
+			{% if content.field_organiser['#items'].value == '1' %}
+				<h3><span class="badge bg-secondary">Organiser</span></h3>
+			{% endif %}
+			{% if content.field_pwca_board['#items'].value == '1' %}
+				<h3><span class="badge bg-secondary">PWCA Board</span></h3>
+			{% endif %}
+			{% if content.field_civl_delegate['#items'].value == '1' %}
+				<h3><span class="badge bg-secondary">CIVL Delegate</span></h3>
+			{% endif %}
+				{% if content.field_best_wprs %}
+    					<i class="fas fa-medal fa-2x"></i>
+					{{content.field_best_wprs.0}}
+				{% endif %}
+		</div>
+	</div>
+
+	</div> 
+  {% elseif content %}
+	<div class="row">
+		<div class="col">
+			{{ content.user_picture }}
+		</div>
+		<div class="col">
+		{% if content.field_designer['#items'].value == '1' %}
+			<h5><span class="align-right badge bg-secondary">Designer</span></h5>
+		{% endif %}
+		{% if content.field_organiser['#items'].value == '1' %}
+			<h5><span class="align-right badge bg-secondary">Organiser</span></h5>
+		{% endif %}
+		{% if content.field_pwca_board['#items'].value == '1' %}
+			<h5><span class="align-right badge bg-secondary">PWCA Board</span></h5>
+		{% endif %}
+		{% if content.field_civl_delegate['#items'].value == '1' %}
+			<h5><span class="align-right badge bg-secondary">CIVL Delegate</span></h5>
+		{% endif %}
+		</div>
+	</div>
+  {% endif %}
+</article>

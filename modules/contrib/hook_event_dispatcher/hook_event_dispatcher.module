@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Hook event dispatcher module.
+ */
+
+/**
+ * Implements hook_help().
+ *
+ * {@inheritdoc}
+ */
+function hook_event_dispatcher_help(string $routeName): string {
+  if ($routeName === 'help.page.hook_event_dispatcher') {
+    /** @var \Drupal\Core\Extension\ExtensionPathResolver $resolver */
+    $resolver = \Drupal::service('extension.path.resolver');
+    $path = $resolver->getPath('module', 'hook_event_dispatcher');
+    $output = file_get_contents($path . '/README.md');
+    return '<pre>' . $output . '</pre>';
+  }
+  return '';
+}

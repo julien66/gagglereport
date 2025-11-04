@@ -1,0 +1,83 @@
+<?php
+
+/**
+ * @file
+ * Creates signup forms integrated with Mailchimp.
+ */
+
+use Drupal\mailchimp_signup\Entity\MailchimpSignup;
+
+define('MAILCHIMP_SIGNUP_BLOCK', 1);
+define('MAILCHIMP_SIGNUP_PAGE', 2);
+define('MAILCHIMP_SIGNUP_BOTH', 3);
+
+/**
+ * Implements hook_theme().
+ */
+function mailchimp_signup_theme($existing, $type, $theme, $path) {
+  return [
+    'mailchimp_signup_subscribe_form' => [
+      'render element' => 'element',
+      'template' => 'mailchimp-signup-subscribe-form',
+      'path' => \Drupal::service('extension.list.module')->getPath('mailchimp_signup') . '/templates'
+    ],
+  ];
+}
+
+/**
+ * Prepares variables for the mailchimp_signup subscribe form template.
+ *
+ * Default template: mailchimp-signup-subscribe-form.html.twig.
+ */
+function template_preprocess_mailchimp_signup_subscribe_form(&$vars) {
+  template_preprocess_form($vars);
+}
+
+/**
+ * Loads a single MailchimpSignup entity by ID.
+ *
+ * @param int $signup_id
+ *   The ID of the MailchimpSignup entity to load.
+ *
+ * @return \Drupal\mailchimp_signup\Entity\MailchimpSignup
+ *   The MailchimpSignup entity.
+ */
+function mailchimp_signup_load($signup_id) {
+  return MailchimpSignup::load($signup_id);
+}
+
+/**
+ * Loads multiple MailchimpSignup entities.
+ *
+ * @param array $signup_ids
+ *   Array of MailchimpSignup entity IDs to load.
+ * @param bool $reset
+ *   TRUE to reset cache when loading MailchimpSignup entities.
+ *
+ * @return \Drupal\mailchimp_signup\Entity\MailchimpSignup[]
+ *   Array of MailchimpSignup entities.
+ */
+function mailchimp_signup_load_multiple(array $signup_ids = [], $reset = FALSE) {
+  if (empty($signup_ids)) {
+    $signup_ids = NULL;
+  }
+
+  $controller = \Drupal::entityTypeManager()->getStorage('mailchimp_signup');
+
+  if ($reset) {
+    $controller->resetCache($signup_ids);
+  }
+
+  return $controller->loadMultiple($signup_ids);
+}
+
+/**
+ * Invalidates Mailchimp related cache, useful when altering a signup form.
+ */
+function mailchimp_signup_invalidate_cache() {
+  \Drupal::cache('mailchimp')->invalidateAll();
+
+  if (\Drupal::moduleHandler()->moduleExists('block')) {
+    \Drupal::service('plugin.manager.block')->clearCachedDefinitions();
+  }
+}

@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Webform event dispatcher submodule.
+ */
+
+// @todo add support for hook_webform_handler_info_alter
+// @todo add support for hook_webform_source_entity_info_alter
+// @todo add support for hook_webform_options_alter
+// @todo add support for hook_webform_options_WEBFORM_OPTIONS_ID_alter
+// @todo add support for hook_webform_submission_form_alter
+// @todo add support for hook_webform_admin_third_party_settings_form_alter
+// @todo add support for hook_webform_third_party_settings_form_alter
+// @todo add support for hook_webform_handler_invoke_alter
+// @todo add support for hook_webform_handler_invoke_METHOD_NAME_alter
+// @todo add support for hook_webform_libraries_info
+// @todo add support for hook_webform_libraries_info_alter
+// @todo add support for hook_webform_access_rules
+// @todo add support for hook_webform_access_rules_alter
+// @todo add support for hook_webform_submission_access
+// @todo add support for hook_webform_message_custom

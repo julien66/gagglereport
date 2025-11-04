@@ -1,0 +1,25 @@
+.ckeditor5-toolbar-button-flagIcons {
+  background-image: url(../icons/flag-icons.svg);
+}
+
+.ck-flag-form .ck.ck-list {
+  display: grid !important;
+  gap: 0.6em;
+  overflow-x: hidden;
+  overflow-y: auto;
+  grid-template-columns: repeat(2, 1fr);
+  width: 225px;
+  max-height: 200px;
+}
+
+.ck-flag-form .ck.ck-list .ck.ck-list__item,
+.ck-flag-form .ck.ck-list .ck-list__item .ck-button {
+  min-width: 55px !important;
+  min-height: 55px !important;
+}
+.ck-flag-form .ck.ck-list .ck-list__item .ck-button i {
+  overflow: hidden;
+  white-space: nowrap;
+  text-indent: 100%;
+  font-size: 5em;
+}

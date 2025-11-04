@@ -1,0 +1,7 @@
+services:
+  mailchimp.commands:
+    class: Drupal\mailchimp\Commands\MailchimpCommands
+    arguments:
+      - '@mailchimp.queue.processor'
+    tags:
+      - { name: drush.command }

@@ -1,0 +1,14 @@
+mailchimp_events_example.add_mailchimp_event:
+  path: '/admin/config/services/mailchimp/event/debug/add'
+  defaults:
+    _form: '\Drupal\mailchimp_events_example\Form\AddMailchimpEvent'
+    _title: 'Trigger an event'
+  requirements:
+    _permission: 'administer mailchimp event entities'
+mailchimp_events_example.list_mailchimp_events_for_member:
+  path: '/admin/config/services/mailchimp/event/debug'
+  defaults:
+    _form: '\Drupal\mailchimp_events_example\Form\ListMailchimpEventsForMember'
+    _title: 'List existing events from audience member'
+  requirements:
+    _permission: 'administer mailchimp event entities'

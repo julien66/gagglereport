@@ -1,0 +1,5 @@
+mailchimp_signup.admin:
+  route_name: mailchimp_signup.admin
+  title: 'Signup Forms'
+  description: 'Manage Mailchimp Signup Forms'
+  parent: mailchimp.admin
