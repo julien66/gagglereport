@@ -1,0 +1,12 @@
+/**
+ * @file
+ * Layout overrides for Union Custom theme
+ */
+
+/* Make container-fluid follow the same width as container for screens with width over 1500px */
+
+@media (min-width: 1500px) {
+  .container-fluid {
+    max-width: 1440px;
+  }
+}
