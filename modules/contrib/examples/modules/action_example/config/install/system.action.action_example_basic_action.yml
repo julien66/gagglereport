@@ -1,0 +1,6 @@
+id: action_example_basic_action
+label: 'An action that does nothing'
+status: true
+langcode: en
+type: system
+plugin: action_example_basic_action

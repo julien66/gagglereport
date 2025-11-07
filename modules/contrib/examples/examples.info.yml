@@ -1,0 +1,12 @@
+name: Examples for Developers
+type: module
+description: 'Provides example code for you to learn from.'
+package: Example modules
+core_version_requirement: ^10.3 || ^11.0
+dependencies:
+  - drupal:toolbar
+
+# Information added by Drupal.org packaging script on 2024-09-09
+version: '4.0.4'
+project: 'examples'
+datestamp: 1725887893

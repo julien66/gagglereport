@@ -1,0 +1,70 @@
+<p> Here are some weight datas from {{data.count}} community members. You can adjust WPRS filter below</p>
+<div class="input-group mb-3">
+  <input type="number" class="form-control" aria-label="Min WPRS" step="100" value="{{data.minRank}}">
+  <span class="input-group-text">Low WPRS</span>
+  <input type="number" class="form-control" aria-label="Max WPRS" step="100" value="{{data.maxRank}}">
+  <span class="input-group-text">Top WPRS</span>
+  <button type="submit" class="btn btn-primary">Filter !</button>
+</div>
+
+<h3> Pilots weight / flying weight repartition</h3>
+{% set title = 'Pilots weight chart' %}
+    {%
+      set series = {
+        'my_first_series' : {
+          'title' : 'Body',
+          'data' : data.body,
+          'color': 'turquoise'
+        },
+        'my_second_series' : {
+          'title' : 'Flight',
+          'data' : data.total,
+          'color': 'orange'
+        }
+      }
+    %}
+    {%
+      set xaxis = {
+        'title' : 'Weight ranges in KG',
+        'labels' : data.label
+      }
+    %}
+    {{ chart('my_twig_chart', 'column', title, series, xaxis, [], []) }}
+    <hr>
+    <h3> Total weight flown per body weight range</h3>
+    {% set ctitle = 'Body Weight / Flown chart' %}
+    {%
+      set cseries = {
+        'my_first_series' : {
+          'title' : 'Avg. bag in KG',
+          'data' : data.ballastBodyDataset,
+          'color': 'indianred'
+        },
+      }
+    %}
+    {%
+      set cxaxis = {
+        'title' : 'Pilot body weight ranges in KG',
+        'labels' : data.ballastBodyLabel
+      }
+    %}
+    {{ chart('pilots_weight_flown_chart', 'column', ctitle, cseries, cxaxis, [], []) }}
+    <hr>
+    <h3> Bag weight repartition</h3>
+  {% set btitle = 'Pilots ballast chart' %}
+    {%
+      set bseries = {
+        'my_first_series' : {
+          'title' : 'Bag weight in KG',
+          'data' : data.ballast,
+          'color': 'turquoise'
+        },
+      }
+    %}
+    {%
+      set bxaxis = {
+        'title' : 'Bag weight ranges in KG',
+        'labels' : data.ballastLabel
+      }
+    %}
+    {{ chart('weight_bag_chart', 'line', btitle, bseries, bxaxis, [], []) }}

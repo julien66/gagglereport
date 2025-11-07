@@ -1,0 +1,13 @@
+services:
+  file_example.state_helper:
+    class: Drupal\file_example\FileExampleStateHelper
+    arguments: ['@state']
+  file_example.file_helper:
+    class: Drupal\file_example\FileExampleFileHelper
+    arguments: ['@stream_wrapper_manager', '@entity_type.manager', '@file_url_generator']
+  file_example.session_helper_wrapper:
+    class: Drupal\file_example\FileExampleSessionHelperWrapper
+    arguments: ['@stream_wrapper_example.session_helper']
+  file_example.submit_handler_helper:
+    class: Drupal\file_example\FileExampleSubmitHandlerHelper
+    arguments: ['@file_example.state_helper', '@file_example.file_helper', '@file_example.session_helper_wrapper', '@messenger', '@file.repository', '@file_system', '@event_dispatcher']

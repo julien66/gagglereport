@@ -1,0 +1,14 @@
+config_simple_example.description:
+  path: '/examples/config_simple_example'
+  defaults:
+    _controller: '\Drupal\config_simple_example\Controller\ConfigSimpleController::description'
+    _title: 'Config Simple Example'
+  requirements:
+    _permission: 'access content'
+config_simple_example.settings:
+  path: '/admin/config/form-api-example/config-simple-form'
+  defaults:
+    _form: '\Drupal\config_simple_example\Form\ConfigSimpleExampleSettingsForm'
+    _title: 'Config Simple Example'
+  requirements:
+    _permission: 'administer site configuration'

@@ -1,0 +1,7 @@
+config_simple_example.settings:
+  title: 'Config Simple Example Translatable config'
+  # Route for the translatable configuration form.
+  base_route_name: config_simple_example.settings
+  # The name of all yml files that have to be translatable.
+  names:
+    - config_simple_example.settings

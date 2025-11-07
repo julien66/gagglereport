@@ -1,0 +1,22 @@
+# @see Configuration schema/metadata at https://drupal.org/node/1905070
+#
+field.field_example_rgb.value:
+  type: sequence
+  label: 'Default value'
+  sequence:
+    - type: mapping
+      label: 'Default'
+      mapping:
+        value:
+          type: string
+          label: 'Value'
+
+# Relates to the field_example_color_background formatter plugin.
+# \Drupal\field_example\Plugin\Field\FieldFormatter\ColorBackgroundFormatter.
+field.formatter.settings.field_example_color_background:
+  type: mapping
+  label: Background color formatter settings
+  mapping:
+    adjust_text_color:
+      type: boolean
+      label: Automatically adjust foreground text color based on background color lightness.

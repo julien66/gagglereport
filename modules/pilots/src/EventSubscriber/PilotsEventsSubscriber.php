@@ -23,9 +23,13 @@ class PilotsEventsSubscriber implements EventSubscriberInterface {
 	  $civlid = $entity->get('field_civlid')->value;
 	  if (!empty($civlid)) {
 		  $rank = \Drupal::service('pilots.wprs_forecast_call')->getCurrentRank($civlid);
-		  $entity->set('field_wprs', $rank);
+		  if ($rank > 0) {
+		      $entity->set('field_wprs', $rank);
+		  }
 		  $bestRank = \Drupal::service('pilots.wprs_forecast_call')->getBestRank($civlid);
-		  $entity->set('field_best_wprs', $bestRank);
+		  if ($bestRank > 0) {
+		      $entity->set('field_best_wprs', $bestRank);
+		  }
           }			
       }
   }

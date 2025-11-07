@@ -1,0 +1,17 @@
+{#
+
+Description text for the Config Simple Example.
+
+#}
+
+{% set config_simple_form = path('config_simple_example.settings') %}
+
+{% trans %}
+
+<p>The Config Simple Example module defines a simple translatable config
+   form. You need "Administer site configuration" permission to test it.
+   You will need at least two language enabled to test the translation
+   of the configuration.</p>
+<p><a href={{ config_simple_form }}>Config Simple Form</a></p>
+
+{% endtrans %}

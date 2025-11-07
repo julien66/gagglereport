@@ -1,0 +1,10 @@
+# This file is used to test whether
+# Drupal\Tests\examples\Unit\RetrieveRoutingFilesTrait::routingFilesCallback()
+# returns only .routing.yml files contained in a directory with a .info.yml.
+examples_wrong_route_path_test:
+  path: 'examples/tests/wrong-route-path-without-leading-slash'
+  defaults:
+    # This controller will never be used; there is no module using this file.
+    _controller: '\Drupal\examples_description_test\Controller\SampleExampleController::description'
+  requirements:
+    _permission: 'access content'

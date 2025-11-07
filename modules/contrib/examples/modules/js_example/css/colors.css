@@ -1,0 +1,46 @@
+.js-colors div {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.js-colors div.red {
+  color: red;
+  background-color: burlywood;
+  border-color: red;
+}
+
+.js-colors div.green {
+  color: green;
+  background-color: darkseagreen;
+  border-color: darkgreen;
+}
+
+.js-colors div.blue {
+  color: blue;
+  background-color: lightblue;
+  border-color: darkblue;
+}
+
+.js-colors div.cyan {
+  color: cyan;
+  background-color: lightcyan;
+  border-color: darkcyan;
+}
+
+.js-colors div.magenta {
+  color: magenta;
+  background-color: lightpink;
+  border-color: darkmagenta;
+}
+
+.js-colors div.yellow {
+  color: yellow;
+  background-color: lightgoldenrodyellow;
+  border-color: darkgoldenrod;
+}
+
+.js-colors div.error {
+  color: red;
+  background-color: burlywood;
+  border-color: darkred;
+}

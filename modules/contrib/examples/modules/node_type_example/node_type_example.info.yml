@@ -1,0 +1,15 @@
+name: Node Type Example
+description: Demonstrates implementing a node content type in a module.
+package: Example modules
+type: module
+core_version_requirement: ^10.3 || ^11.0
+dependencies:
+  - drupal:node
+  - drupal:path
+  - drupal:text
+  - examples:examples
+
+# Information added by Drupal.org packaging script on 2024-09-09
+version: '4.0.4'
+project: 'examples'
+datestamp: 1725887893

@@ -4,3 +4,23 @@
  * @file
  * Primary module hooks for pilots module.
  */
+
+/**
+ * Implements hook_theme().
+ */
+ function pilots_theme() {
+	 return [
+	 	'completion_block' => [
+			'variables' => [
+				'data' => [
+				], 
+			],
+		],
+		'weight_data_page' => [
+			'variables' => [
+				'data' => [
+				],
+			],
+		],
+	 ];
+ }

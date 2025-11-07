@@ -1,0 +1,5 @@
+services:
+  charts_twig:
+    class: Drupal\charts_twig\ChartsTwig
+    tags:
+      - { name: twig.extension }

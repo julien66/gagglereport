@@ -7,3 +7,7 @@ services:
     pilots.wprs_forecast_call :
         class : Drupal\pilots\Utils\WPRS_Forecast_Call
         arguments: []
+    
+    pilots.data_builder :
+        class : Drupal\pilots\Utils\DataBuilder
+        arguments: []

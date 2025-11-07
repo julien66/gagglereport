@@ -1,0 +1,11 @@
+# Permissions for the field_permission_example module
+'view own field note':
+  title: View own field note
+'edit own field note':
+  title: Edit own field note
+'view any field note':
+  title: View any field note
+'edit any field note':
+  title: Edit any field note
+'administer the field note field':
+  title: Administer settings for the field note field.

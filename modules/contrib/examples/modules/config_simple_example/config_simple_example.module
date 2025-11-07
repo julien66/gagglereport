@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ * Demonstrates how to create a translatable custom configuration form.
+ */
+
+/**
+ * @defgroup config_simple_example Example: Config Simple
+ * @ingroup examples
+ * @{
+ * Implement a Config Entity.
+ *
+ * This module demonstrates implementing a Simple Translatable Config Form.
+ *
+ * This is an example of a simple translatable configuration form, the kind you
+ * might create to store configuration data. This form can store different data
+ * for each site enabled language.
+ */
+
+/**
+ * @} End of "defgroup config_simple_example".
+ */

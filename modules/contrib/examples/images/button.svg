@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="147.58144mm"
+   height="46.181404mm"
+   viewBox="0 0 147.58144 46.181404"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="button.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.68229167"
+     inkscape:cx="782.65648"
+     inkscape:cy="493.19084"
+     inkscape:window-width="1920"
+     inkscape:window-height="995"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient930">
+      <stop
+         style="stop-color:#cbcbcb;stop-opacity:1;"
+         offset="0.00122768"
+         id="stop926" />
+      <stop
+         style="stop-color:#525252;stop-opacity:1;"
+         offset="1"
+         id="stop928" />
+    </linearGradient>
+    <rect
+       x="90.440842"
+       y="130.11641"
+       width="319.41986"
+       height="88.551529"
+       id="rect3787" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient930"
+       id="linearGradient932"
+       x1="35.71875"
+       y1="99.046822"
+       x2="183.30019"
+       y2="99.046822"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-7.9814237,-51.302665)" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-24.322985,-13.581847)">
+    <g
+       id="g948"
+       transform="translate(-3.4143368,-11.071601)">
+      <rect
+         style="fill:url(#linearGradient932);fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0;paint-order:markers fill stroke"
+         id="rect224"
+         width="147.58144"
+         height="46.181404"
+         x="27.737322"
+         y="24.653448"
+         rx="0" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24.6944px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;display:inline;opacity:1;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0;stroke-dasharray:none;paint-order:markers fill stroke"
+         x="52.991219"
+         y="57.004555"
+         id="text3793"><tspan
+           sodipodi:role="line"
+           id="tspan3791"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24.6944px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke-width:0"
+           x="52.991219"
+           y="57.004555">Click me</tspan></text>
+    </g>
+  </g>
+</svg>

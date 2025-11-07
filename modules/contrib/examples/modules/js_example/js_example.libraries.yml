@@ -1,0 +1,27 @@
+accordion:
+  # Starting from Drupal 10.1.2, the version information plays a critical role
+  # in generating a unique hash for aggregated files. It is important to update
+  # the version value whenever a referenced file undergoes changes.
+  version: 4.0.0
+  js:
+    js/accordion.js: {}
+  css:
+    component:
+      css/accordion.css: {}
+
+colors:
+  version: 4.0.0
+  css:
+    component:
+      css/weights.css: {}
+  js:
+    # We use weight as example attribute. Its usage is discouraged, though;
+    # dependencies should instead be used.
+    # For JavaScript files, its value can be only negative, contrarily to CSS
+    # files for which its value can be between -50 and +50.
+    js/colors.rgb.js: { weight: -2 }
+    js/colors.base.js: { weight: -8 }
+    js/colors.cmy.js: { weight: -4 }
+  dependencies:
+    - core/jquery
+    - core/drupalSettings

@@ -1,0 +1,10 @@
+content_entity_example.contact_add:
+
+  # The route which will be invoked when the link is clicked.
+  route_name: content_entity_example.contact_add
+  title: 'Add contact'
+
+  # The pages where the link appears, indicated by their route names.
+  appears_on:
+    - entity.content_entity_example_contact.collection
+    - entity.content_entity_example_contact.canonical

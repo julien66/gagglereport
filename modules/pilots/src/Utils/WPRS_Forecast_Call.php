@@ -34,7 +34,7 @@ class WPRS_Forecast_Call {
 	    $client = \Drupal::httpClient();
 	    $request = $client->get('https://wprs-forecast.org/api/worldranking/civl-id?apiKey=' . $this ->apiKey . '&civlId=' . (int)$civlid);
 	    $response = json_decode($request->getBody());
-	    return $response[0]->rank;
+	    return isset($response[0]->rank) ? $response[0]->rank : 0;
 	}
 	
 	/*
@@ -44,6 +44,6 @@ class WPRS_Forecast_Call {
 	 * Return the best rank. 
 	 */
 	public function getBestRank($civlid) : int {
-		return $this->bestRanks[$civlid];
+		return isset($this->bestRanks[$civlid]) ? $this->bestRanks[$civlid] : 0;
 	} 
 }

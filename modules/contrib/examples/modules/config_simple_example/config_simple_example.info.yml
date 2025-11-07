@@ -1,0 +1,13 @@
+name: 'Config Simple Example'
+type: module
+description: 'Demonstrates how to create a custom translatable config form.'
+package: Example modules
+core_version_requirement: ^10.3 || ^11.0
+dependencies:
+  - config_translation:config_translation
+  - examples:examples
+
+# Information added by Drupal.org packaging script on 2024-09-09
+version: '4.0.4'
+project: 'examples'
+datestamp: 1725887893

@@ -1,0 +1,3 @@
+purpose: 'Verify that RetrieveConfigFilesTrait::configFilesCallback() returns the right files.'
+ignore: 'yes'
+uuid: 'not-a-uuid'

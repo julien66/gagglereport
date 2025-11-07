@@ -1,0 +1,16 @@
+config_simple_example.settings:
+  # A config_object is a configuration object which can store fields.
+  # You have to map all field types the object stores: string, boolean, etc.
+  # The "text" field type is special because it's translatable by default.
+  # Checkout how to define schema and all available data types in:
+  # https://www.drupal.org/docs/drupal-apis/configuration-api/configuration-schemametadata
+  # Direct link to cheat sheet:
+  # https://www.drupal.org/files/ConfigSchemaCheatSheet2.0.pdf
+  # Use Configuration Inspector to validate schema files:
+  # https://drupal.org/project/config_inspector
+  type: config_object
+  label: 'Example config'
+  mapping:
+    message:
+      type: text
+      label: 'Message'

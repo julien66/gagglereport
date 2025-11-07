@@ -1,0 +1,10 @@
+action.configuration.action_example_basic_action:
+  type: mapping
+  label: 'An action that does nothing'
+  mapping:
+    status:
+      type: bool
+      label: 'Status'
+    message:
+      type: text
+      label: 'Message'

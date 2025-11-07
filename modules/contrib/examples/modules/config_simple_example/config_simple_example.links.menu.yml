@@ -1,0 +1,11 @@
+config_simple_example.description:
+  title: 'Config Simple Example'
+  description: 'Custom translatable config form'
+  route_name: config_simple_example.description
+  expanded: TRUE
+config_simple_example.settings:
+  title: 'Config Simple Example Settings'
+  route_name: config_simple_example.settings
+  parent: config_simple_example.description
+  description: ''
+  weight: -15

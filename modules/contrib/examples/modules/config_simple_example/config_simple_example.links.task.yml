@@ -1,0 +1,8 @@
+# This file is necessary so the configuration form translation tab is shown.
+config_simple_example.settings:
+  # Route of the form.
+  route_name: config_simple_example.settings
+  title: 'Config Simple Example Settings'
+  # Route of the form.
+  base_route: config_simple_example.settings
+  weight: 0

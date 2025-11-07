@@ -1,0 +1,10 @@
+name: Theming example
+type: module
+description: An example module showing how to use theming.
+package: Example modules
+core_version_requirement: ^10.3 || ^11.0
+
+# Information added by Drupal.org packaging script on 2024-09-09
+version: '4.0.4'
+project: 'examples'
+datestamp: 1725887893

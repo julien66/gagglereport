@@ -1,0 +1,131 @@
+<?php
+
+/**
+ * @file
+ * Explains how a module declares theme functions, preprocess functions, and
+ * templates.
+ *
+ * The underlying approach is that a module should allow themes to do all
+ * rendering, but provide default implementations where appropriate.
+ *
+ * Modules are also expected to leave data as render arrays as long as possible,
+ * leaving rendering to theme functions and templates.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * @defgroup theming_example Example: Theming
+ * @ingroup examples
+ * @{
+ * Example of Drupal theming.
+ *
+ * The Theming Example module attempts to show how module developers can add
+ * theme functions to their projects so that themes can modify output.
+ *
+ * Module developers should strive to avoid hard-coding any HTML into the
+ * output of their code. This should all be done in theme functions.
+ *
+ * Starting with the first example, theming_example_page(): The output is put
+ * into an array $content, which is then fed to
+ * theme_theming_example_content_array(), which loops over the content, wrapping
+ * it in HTML markup in the process.
+ *
+ * In order to get theme_theming_example_content_array() recognized, it needs to
+ * be registered in a hook_theme() implementation, theming_example_theme() in
+ * this case.
+ *
+ * theming_example_list_page() and theming_example_order_form() work in the same
+ * way.
+ *
+ * In theming-example-list.html.twig, the content is themed as an ordered
+ * list and given the theming-example-list class attribute, which is defined in
+ * theming_example.css
+ *
+ * The fourth example shows the use of theming_example_text_form.tpl.php.
+ * This file can be copied to a theme's folder, and it will be used instead.
+ *
+ * This example also shows what can be done using template_preprocess_HOOK().
+ * In this case it modifies the output to allow a theme developer to output the
+ * whole form or gain control over some of its parts in the template file.
+ */
+
+/**
+ * Implements hook_theme().
+ *
+ * Defines the theming capabilities provided by this module.
+ */
+function theming_example_theme($existing, $type, $theme, $path) {
+  return [
+    'theming_example_content_array' => [
+      // We use 'render element' when the item to be passed is a self-describing
+      // render array (it will have #theme_wrappers)
+      'render element' => 'element',
+    ],
+    'theming_example_list' => [
+      // We use 'variables' when the item to be passed is an array whose
+      // structure must be described here.
+      'variables' => [
+        'title' => NULL,
+        'items' => NULL,
+      ],
+    ],
+    'theming_example_text_form'  => [
+      'render element' => 'form',
+      // In this one the rendering will be done by a template file
+      // (theming-example-text-form.tpl.php) instead of being rendered by a
+      // function. Note the use of dashes to separate words in place of
+      // underscores. The template file's extension is also left out so that
+      // it may be determined automatically depending on the template engine
+      // the site is using.
+      'template' => 'theming-example-text-form',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function theming_example_preprocess_form_element_label(&$variables) {
+  if (!empty($variables['element']['#attributes']['data-strong'])) {
+    $variables['title']['#prefix'] = '<strong>';
+    $variables['title']['#suffix'] = '</strong>';
+    unset($variables['#attributes']['data-strong']);
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ *
+ * In Drupal 8+, all forms share the same theme hook (form).
+ * Use hook_form_alter()/hook_form_FORM_ID_alter() to modify the form array.
+ */
+function theming_example_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  switch ($form_id) {
+    case 'theming_example_form_select':
+      // Add data-strong attribute to make title strong.
+      // @see theming_example_preprocess_form_element_label().
+      $form['choice']['#label_attributes']['data-strong'] = 1;
+      // Output choice title separately using h3 header.
+      $form['title'] = [
+        '#type' => 'html_tag',
+        '#tag' => 'h3',
+        '#value' => $form['choice']['#title'],
+        '#weight' => -100,
+      ];
+      // Wrap choice and submit elements in inline container.
+      $form['choice']['#prefix'] = '<div class="container-inline choice-wrapper">';
+      $form['submit']['#suffix'] = '</div>';
+      break;
+
+    case 'theming_example_form_text':
+      // Add data-strong attribute to make title strong.
+      // @see theming_example_preprocess_form_element_label().
+      $form['text']['#label_attributes']['data-strong'] = 1;
+      break;
+  }
+}
+
+/**
+ * @} End of "defgroup theming_example".
+ */

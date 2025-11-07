@@ -40,3 +40,6 @@ sites/simpletest
 
 # Ignore multi-site test environment.
 # simpletest
+#
+# Ignore WPRS Forecast API KEY.
+modules/pilots/src/Utils/.apiKey.txt
