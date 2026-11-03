@@ -95,7 +95,7 @@ main { flex: 1; padding: 40px 0 56px; }
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  max-width: 680px;
   gap: 24px;
 }
 .card {
@@ -112,13 +112,6 @@ main { flex: 1; padding: 40px 0 56px; }
 }
 .card p { margin: 0 0 12px; }
 .card p:last-child { margin-bottom: 0; }
-.lang {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--mt-color-primary);
-}
 
 a { color: var(--mt-color-primary); }
 a:hover, a:focus { color: var(--mt-color-primary-dark); }
