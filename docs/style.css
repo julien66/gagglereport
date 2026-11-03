@@ -1,0 +1,141 @@
+/* Closed-site page for gagglereport.org.
+   Colours and fonts come from the old site's theme:
+   Corporate Clean, "turquoise" scheme, Inter font (themes/contrib/corporateclean). */
+:root {
+  --mt-color-base: #555;
+  --mt-color-base-dark: #323232;
+  --mt-color-primary: #007e8f;
+  --mt-color-primary-dark: hsl(187, 100%, 24%);
+  --mt-color-primary-light: hsl(187, 100%, 33%);
+  --mt-color-dark-colored: hsl(187, 100%, 20%);
+  --mt-color-contrast: #f6f9fc;
+  --mt-color-tint: #f6f6f6;
+  --mt-color-bright: #ffffff;
+  --mt-radius: 8px;
+  --mt-font: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; }
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--mt-font);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--mt-color-base);
+  background: var(--mt-color-tint);
+}
+
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Header: white, like the old site's bright header region. */
+.site-header {
+  background: var(--mt-color-bright);
+  border-bottom: 1px solid rgba(50, 50, 50, 0.08);
+}
+.site-header .container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 72px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.site-logo { display: block; width: 40px; height: 40px; flex: none; }
+.site-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--mt-color-base-dark);
+}
+.site-slogan {
+  font-size: 0.85rem;
+  color: var(--mt-color-base);
+}
+
+/* Banner: turquoise, like the old site's coloured regions. */
+.banner {
+  background: var(--mt-color-primary);
+  color: var(--mt-color-contrast);
+  padding: 64px 0 56px;
+}
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border: 1px solid rgba(246, 249, 252, 0.5);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.banner h1 {
+  margin: 16px 0 8px;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--mt-color-bright);
+}
+.banner p {
+  margin: 0;
+  max-width: 40em;
+  font-size: 1.125rem;
+}
+
+main { flex: 1; padding: 40px 0 56px; }
+
+.cards {
+  display: grid;
+  max-width: 680px;
+  gap: 24px;
+}
+.card {
+  background: var(--mt-color-bright);
+  border-radius: var(--mt-radius);
+  padding: 28px;
+  box-shadow: 0 1px 3px rgba(50, 50, 50, 0.08);
+}
+.card h2 {
+  margin: 0 0 12px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--mt-color-base-dark);
+}
+.card p { margin: 0 0 12px; }
+.card p:last-child { margin-bottom: 0; }
+
+a { color: var(--mt-color-primary); }
+a:hover, a:focus { color: var(--mt-color-primary-dark); }
+
+.btn {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 10px 20px;
+  border-radius: var(--mt-radius);
+  background: var(--mt-color-primary);
+  color: var(--mt-color-contrast);
+  font-weight: 600;
+  text-decoration: none;
+}
+.btn:hover, .btn:focus {
+  background: var(--mt-color-primary-dark);
+  color: var(--mt-color-contrast);
+}
+
+/* Footer: dark turquoise. */
+.site-footer {
+  background: var(--mt-color-dark-colored);
+  color: var(--mt-color-contrast);
+  padding: 24px 0;
+  font-size: 0.875rem;
+}
+.site-footer a { color: var(--mt-color-contrast); }
